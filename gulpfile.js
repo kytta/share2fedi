@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
+const terser = require('gulp-terser');
 
 sass.compiler = require('sass');
 
@@ -14,12 +15,13 @@ function html() {
 function css() {
     return gulp.src('./src/style/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([require('autoprefixer')]))
+        .pipe(postcss([require('autoprefixer'), require('cssnano')]))
         .pipe(gulp.dest('./dist/'));
 }
 
 function js() {
-    return gulp.src('./src/script/**/*.js')
+    return gulp.src('./src/script/index.js')
+        .pipe(terser({ ecma: 5 }))
         .pipe(gulp.dest('./dist/'));
 }
 
