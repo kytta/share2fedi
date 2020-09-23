@@ -26,11 +26,10 @@ document
     var instance = e.target.elements['instance'].value;
     var remember = e.target.elements['remember'].checked;
 
-
-    if (!(instance.startsWith("https://") || instance.startsWith("http://"))) {
+    if (instance.indexOf("http://") == -1 && instance.indexOf("https://") == -1) {
         instance = "https://" + instance;
     }
-    if (!instance.endsWith("/")){
+    if (instance.charAt(instance.length - 1) !== '/'){
         instance = instance + "/";
     }
 
