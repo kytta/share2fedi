@@ -1,4 +1,6 @@
-# 🐘 toot
+<div align="center"><a href="https://toot.karamoff.dev"><img src="src/logo.svg" width="64" height="64"></a></div>
+
+# toot
 
 [toot][toot] is a share page for Mastodon, allowing you to share stuff cross-instance.
 Just put in your post text and the instance URL and click "Toot!"
