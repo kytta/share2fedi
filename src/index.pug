@@ -9,10 +9,14 @@ html(lang="en")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap")
     body
         header
-            h1 toot
-            p Share links on any Mastodon instance
+            h1 🐘 toot
+            p
+                | Quickly post on any Mastodon instance
         main
             form#form
+                section
+                    label(for="text") Post text
+                    textarea#text(rows=6, name="text", required)
                 section
                     label(for="instance") Mastodon instance URL
                     input#instance(type="url", name="instance", placeholder="https://", required)

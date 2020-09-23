@@ -71,31 +71,10 @@ main {
             display: inline-block;
         }
 
+        textarea,
         input {
             font-size: 1rem;
             border-radius: 4px;
-
-            &[type=url] {
-                color: inherit;
-                width: 100%;
-                outline: 0;
-                font-family: inherit;
-                resize: vertical;
-                background-color: $input-bg;
-                border: 1px solid color.scale($input-bg, $lightness: -25%);
-                padding: 10px;
-
-                &:focus,
-                &:active {
-                    border: 1px solid $button-bg;
-                    background-color: color.scale($input-bg, $lightness: +5%);
-                }
-
-                &::placeholder {
-                    color: inherit;
-                    opacity: 0.3;
-                }
-            }
 
             &[type=checkbox] {
                 margin-right: 8px;
@@ -119,6 +98,29 @@ main {
             }
 
             transition: background-color 300ms ease, border 300ms ease;
+        }
+
+        textarea,
+        input[type=url] {
+            color: inherit;
+            width: 100%;
+            outline: 0;
+            font-family: inherit;
+            resize: vertical;
+            background-color: $input-bg;
+            border: 1px solid color.scale($input-bg, $lightness: -25%);
+            padding: 10px;
+
+            &:focus,
+            &:active {
+                border: 1px solid $button-bg;
+                background-color: color.scale($input-bg, $lightness: +5%);
+            }
+
+            &::placeholder {
+                color: inherit;
+                opacity: 0.3;
+            }
         }
     }
 }
