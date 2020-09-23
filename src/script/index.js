@@ -1,3 +1,13 @@
+function normalizeUrl(url) {
+    if (url.indexOf("http://") == -1 && url.indexOf("https://") == -1) {
+        url = "https://" + url;
+    }
+    if (url.charAt(url.length - 1) !== '/'){
+        url = url + "/";
+    }
+    return url;
+}
+
 var prefillInstance = window.localStorage.getItem('mastodon_instance');
 
 var paramPairs = window.location.search.substr(1).split('&');
@@ -15,7 +25,7 @@ delete i
 delete paramPair
 
 if (prefillInstance != null) {
-    document.getElementById('instance').value = prefillInstance;
+    document.getElementById('instance').value = normalizeUrl(prefillInstance);
 }
 
 document
@@ -23,15 +33,8 @@ document
   .addEventListener('submit', function (e) {
     e.preventDefault();
     var text = e.target.elements['text'].value;
-    var instance = e.target.elements['instance'].value;
+    var instance = normalizeUrl(e.target.elements['instance'].value);
     var remember = e.target.elements['remember'].checked;
-
-    if (instance.indexOf("http://") == -1 && instance.indexOf("https://") == -1) {
-        instance = "https://" + instance;
-    }
-    if (instance.charAt(instance.length - 1) !== '/'){
-        instance = instance + "/";
-    }
 
     if (remember) {
         window.localStorage.setItem('mastodon_instance', instance);
