@@ -1,7 +1,4 @@
-var remembered = window.localStorage.getItem('mastodon_instance');
-if (remembered != null) {
-    document.getElementById('instance').value = remembered;
-}
+var prefillInstance = window.localStorage.getItem('mastodon_instance');
 
 var paramPairs = window.location.search.substr(1).split('&');
 var paramPairsLength = paramPairs.length;
@@ -10,11 +7,16 @@ for (var i = 0; i < paramPairsLength; i++) {
     var paramPair = paramPairs[i].split('=');
     if (paramPair[0] === 'text') {
         document.getElementById('text').value = decodeURIComponent(paramPair[1]);
-        break;
+    } else if (paramPair[0] === 'instance') {
+        prefillInstance = decodeURIComponent(paramPair[1]);
     }
 }
 delete i
 delete paramPair
+
+if (prefillInstance != null) {
+    document.getElementById('instance').value = prefillInstance;
+}
 
 document
   .getElementById('form')
