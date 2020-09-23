@@ -12,14 +12,14 @@ html(lang="en")
             h1 toot
             p Share links on any Mastodon instance
         main
-            form
+            form#form
                 section
                     label(for="instance") Mastodon instance URL
-                    input#instance(type="url", name="instance", placeholder="https://")
+                    input#instance(type="url", name="instance", placeholder="https://", required)
 
                 section.remember
                     input#remember(type="checkbox", name="remember")
-                    label(for="remember") Remember as my default instance
+                    label(for="remember") Autofill this instance URL next time
 
                 section.submit
                     input(type="submit", value="Share post")
