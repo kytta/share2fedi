@@ -7,13 +7,13 @@ const terser = require('gulp-terser');
 sass.compiler = require('sass');
 
 function html() {
-    return gulp.src('./src/**/*.pug')
+    return gulp.src('./src/index.pug')
         .pipe(pug())
         .pipe(gulp.dest('./dist/'));
 }
 
 function css() {
-    return gulp.src('./src/style/**/*.scss')
+    return gulp.src('./src/style/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([require('autoprefixer'), require('cssnano')]))
         .pipe(gulp.dest('./dist/'));
@@ -25,10 +25,16 @@ function js() {
         .pipe(gulp.dest('./dist/'));
 }
 
-exports.default = gulp.parallel(html, css, js);
+function static() {
+    return gulp.src('./src/static/**/*')
+        .pipe(gulp.dest('./dist/'));
+}
+
+exports.default = gulp.parallel(html, css, js, static);
 
 exports.watch = () => {
-    gulp.watch('./src/**/*.pug', html);
-    gulp.watch('./src/style/**/*.scss', css);
-    gulp.watch('./src/script/**/*.js', js);
+    gulp.watch('./src/index.pug', html);
+    gulp.watch('./src/style/*.scss', css);
+    gulp.watch('./src/script/index.js', js);
+    gulp.watch('./src/static/*', static);
 }
