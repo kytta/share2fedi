@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title toot
+
+        link(rel="stylesheet", href="main.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap")
+    body
+        header
+            h1 toot
+            p Share links on any Mastodon instance
+        main
+            form
+                section
+                    label(for="instance") Mastodon instance URL
+                    input#instance(type="url", name="instance", placeholder="https://")
+
+                section.remember
+                    input#remember(type="checkbox", name="remember")
+                    label(for="remember") Remember as my default instance
+
+                section.submit
+                    input(type="submit", value="Share post")
+        footer
+            section
+                a(href="https://joinmastodon.org/") What is Mastodon?
+            section
+                a(href="https://github.com/NickKaramoff/toot") This project on GitHub
+
+        script(src="index.js")
