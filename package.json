@@ -23,8 +23,5 @@
     "postcss": "^7.0.34",
     "pug": "^3.0.0",
     "sass": "^1.26.11"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }
