@@ -60,6 +60,35 @@ function parseUrl(url) {
     return parser;
 }
 
+function instances_loading_error() {
+    choose_instance.innerHTML = "";
+    add_instance("-- LOADING FAILED! --", true, false, "");
+    console.error('Failed to fetch servers list from joinmastodon.');
+}
+
+function instances_loaded() {
+    if (this.status !== 200) {
+        instances_loading_error();
+        return;
+    }
+
+    const servers = JSON.parse(this.responseText);
+
+    const chosen_instance = choose_instance.value;
+    const domains = servers.map(obj => obj.domain);
+    if (domains.indexOf(chosen_instance) === -1) {
+        domains.push(chosen_instance);
+    }
+    domains.sort();
+
+    choose_instance.innerHTML = "";
+    add_instance("-- Choose an instance --", false, false, "")
+    for (const domain of domains) {
+        const selected = (domain === chosen_instance);
+        add_instance(domain, false, selected);
+    }
+}
+
 if (prefillInstance != null) {
     const url = normalizeUrl(prefillInstance);
     instance.value = url;
@@ -70,34 +99,12 @@ choose_instance.addEventListener('focus', function (e) {
     if (choose_instance.children.length < 3) {
         remove_loading_instance();
         add_loading_instance();
-        fetch('https://api.joinmastodon.org/servers')
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error('Failure response from joinmastodon.');
-              }
-              return response.json();
-          })
-          .then(servers => {
-              const chosen_instance = choose_instance.value;
-              const domains = servers.map(obj => obj.domain);
-              if (domains.indexOf(chosen_instance) === -1) {
-                  domains.push(chosen_instance);
-              }
-              domains.sort();
 
-              choose_instance.innerHTML = "";
-              add_instance("-- Choose an instance --", false, false, "")
-              for (const domain of domains) {
-                  const selected = (domain === chosen_instance);
-                  add_instance(domain, false, selected);
-              }
-          })
-          .catch(error => {
-              choose_instance.innerHTML = "";
-              add_instance("-- LOADING FAILED! --", true, false, "");
-              console.error(
-                'Failed to fetch servers list from joinmastodon.', error);
-          });
+        const req = new XMLHttpRequest();
+        req.addEventListener('load', instances_loaded);
+        req.addEventListener('error', instances_loading_error);
+        req.open('GET', 'https://api.joinmastodon.org/servers');
+        req.send();
     }
 })
 
