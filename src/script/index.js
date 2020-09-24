@@ -40,7 +40,7 @@ function instances_loaded() {
 
     const chosen_instance = instance.value;
     const domains = servers.map(obj => obj.domain);
-    if (domains.indexOf(chosen_instance) === -1) {
+    if (chosen_instance && domains.indexOf(chosen_instance) === -1) {
         domains.push(chosen_instance);
     }
     domains.sort();
