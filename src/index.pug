@@ -28,12 +28,9 @@ html(lang="en")
                     label(for="text") Post text
                     textarea#text(rows=6, name="text", required)
                 section
+                    datalist#instances_list
                     label(for="choose_instance") Choose your Mastodon instance
-                    select#choose_instance()
-                        option(value="") -- Choose an instance --
-                section
-                    label(for="instance") Or type the instance URL
-                    input#instance(type="url", name="instance", placeholder="https://", required)
+                    input#instance(type="url", name="instance", placeholder="https://", list="instances_list", required)
 
                 section.remember
                     input#remember(type="checkbox", name="remember")
