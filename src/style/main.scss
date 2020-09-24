@@ -100,6 +100,7 @@ main {
             transition: background-color 300ms ease, border 300ms ease;
         }
 
+        select,
         textarea,
         input[type=url] {
             color: inherit;
