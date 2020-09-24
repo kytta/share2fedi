@@ -26,7 +26,7 @@ for (var i = 0; i < paramPairsLength; i++) {
 delete i
 delete paramPair
 
-function add_instance(text, disabled, selected) {
+function add_instance(text, disabled, selected, value) {
     const opt = document.createElement('option');
     opt.innerText = text;
     if (disabled) {
@@ -34,6 +34,9 @@ function add_instance(text, disabled, selected) {
     }
     if (selected) {
         opt.setAttribute('selected', true);
+    }
+    if (value !== undefined) {
+        opt.value = value;
     }
     choose_instance.appendChild(opt);
 }
@@ -75,16 +78,23 @@ choose_instance.addEventListener('focus', function (e) {
               return response.json();
           })
           .then(servers => {
-              remove_loading_instance();
+              const chosen_instance = choose_instance.value;
               const domains = servers.map(obj => obj.domain);
+              if (domains.indexOf(chosen_instance) === -1) {
+                  domains.push(chosen_instance);
+              }
               domains.sort();
+
+              choose_instance.innerHTML = "";
+              add_instance("-- Choose an instance --", false, false, "")
               for (const domain of domains) {
-                  add_instance(domain);
+                  const selected = (domain === chosen_instance);
+                  add_instance(domain, false, selected);
               }
           })
           .catch(error => {
-              remove_loading_instance();
-              add_instance("--LOADING FAILED--", true);
+              choose_instance.innerHTML = "";
+              add_instance("-- LOADING FAILED! --", true, false, "");
               console.error(
                 'Failed to fetch servers list from joinmastodon.', error);
           });
