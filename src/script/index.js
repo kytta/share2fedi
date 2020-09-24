@@ -38,6 +38,19 @@ function add_instance(text, disabled, selected) {
     choose_instance.appendChild(opt);
 }
 
+function add_loading_instance() {
+    add_instance("... loading ...", true);
+}
+
+function remove_loading_instance() {
+    const last_index = choose_instance.children.length - 1;
+    const last_entry = choose_instance.children[last_index];
+
+    if (last_entry.innerText === "... loading ...") {
+        last_entry.remove();
+    }
+}
+
 function parseUrl(url) {
     const parser = document.createElement('a');
     parser.href = url;
@@ -52,10 +65,8 @@ if (prefillInstance != null) {
 
 choose_instance.addEventListener('focus', function (e) {
     if (choose_instance.children.length < 3) {
-        if (choose_instance.children.length > 1) {
-            choose_instance.children[1].remove();
-        }
-        add_instance("... loading ...", true);
+        remove_loading_instance();
+        add_loading_instance();
         fetch('https://api.joinmastodon.org/servers')
           .then(response => {
               if (!response.ok) {
@@ -64,7 +75,7 @@ choose_instance.addEventListener('focus', function (e) {
               return response.json();
           })
           .then(servers => {
-              choose_instance.children[1].remove();
+              remove_loading_instance();
               const domains = servers.map(obj => obj.domain);
               domains.sort();
               for (const domain of domains) {
@@ -72,7 +83,7 @@ choose_instance.addEventListener('focus', function (e) {
               }
           })
           .catch(error => {
-              choose_instance.children[1].remove();
+              remove_loading_instance();
               add_instance("--LOADING FAILED--", true);
               console.error(
                 'Failed to fetch servers list from joinmastodon.', error);
