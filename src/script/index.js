@@ -38,10 +38,16 @@ function add_instance(text, disabled, selected) {
     choose_instance.appendChild(opt);
 }
 
+function parseUrl(url) {
+    const parser = document.createElement('a');
+    parser.href = url;
+    return parser;
+}
+
 if (prefillInstance != null) {
     const url = normalizeUrl(prefillInstance);
     instance.value = url;
-    add_instance(url.slice(8, url.length - 1), false, true);
+    add_instance(parseUrl(url).hostname, false, true);
 }
 
 choose_instance.addEventListener('focus', function (e) {
