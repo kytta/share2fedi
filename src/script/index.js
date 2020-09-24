@@ -92,7 +92,7 @@ choose_instance.addEventListener('focus', function (e) {
 })
 
 choose_instance.addEventListener('change', function (e) {
-    instance.value = `https://${choose_instance.value}`;
+    instance.value = normalizeUrl(choose_instance.value);
 });
 
 document
