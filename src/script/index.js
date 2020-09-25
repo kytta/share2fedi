@@ -79,5 +79,5 @@ document
     }
 
     var shareUrl = instance + "share?text=" + encodeURIComponent(text);
-    window.open(shareUrl, '_blank', 'noopener,noreferrer')
+    window.location.href = shareUrl;
   })
