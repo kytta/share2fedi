@@ -1,4 +1,4 @@
-<div align="center"><a href="https://toot.karamoff.dev"><img src="src/logo.svg" width="64" height="64"></a></div>
+<div align="center"><a href="https://toot.karamoff.dev"><img src="assets/logo.svg" width="64" height="64"></a></div>
 
 # toot
 
