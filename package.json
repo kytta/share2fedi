@@ -4,7 +4,7 @@
 	"main": "src/index.pug",
 	"repository": "git@github.com:NickKaramoff/toot.git",
 	"author": "Nikita Karamov <nick@karamoff.dev>",
-	"license": "MIT",
+	"license": "AGPL-3.0-only",
 	"private": "true",
 	"scripts": {
 		"build": "gulp",
