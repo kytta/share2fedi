@@ -1,28 +1,28 @@
 {
-  "name": "toot",
-  "version": "0.0.0",
-  "main": "src/index.pug",
-  "repository": "git@github.com:NickKaramoff/toot.git",
-  "author": "Nikita Karamov <nick@karamoff.dev>",
-  "license": "MIT",
-  "private": "true",
-  "scripts": {
-    "build": "gulp",
-    "dev": "gulp watch"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "browserslist": "^4.14.4",
-    "cross-env": "^7.0.2",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.1.0",
-    "gulp-terser": "^1.4.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^7.0.34",
-    "pug": "^3.0.0",
-    "sass": "^1.26.11"
-  }
+	"name": "toot",
+	"version": "0.0.0",
+	"main": "src/index.pug",
+	"repository": "git@github.com:NickKaramoff/toot.git",
+	"author": "Nikita Karamov <nick@karamoff.dev>",
+	"license": "MIT",
+	"private": "true",
+	"scripts": {
+		"build": "gulp",
+		"dev": "gulp watch"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9.8.6",
+		"browserslist": "^4.14.4",
+		"cross-env": "^7.0.2",
+		"cssnano": "^4.1.10",
+		"gulp": "^4.0.2",
+		"gulp-postcss": "^8.0.0",
+		"gulp-pug": "^4.0.1",
+		"gulp-sass": "^4.1.0",
+		"gulp-terser": "^1.4.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^7.0.34",
+		"pug": "^3.0.0",
+		"sass": "^1.26.11"
+	}
 }
