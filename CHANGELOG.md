@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Add CHANGELOG as file
 
+### Changed
+
+- License changed from MIT to AGPL-3.0
+
 ## [1.0.0]
 
 ### Added

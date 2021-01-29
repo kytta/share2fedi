@@ -18,11 +18,13 @@ custom share buttons for Mastodon:
 The instance URL can be saved in your localStorage to be automatically appended later —
 handy!
 
+## License
 
-## Copyright
+[AGPL-3.0](./LICENSE) © 2020-2021 [Nikita Karamov](nick@karamoff.dev)
 
-The `toot` icon is the altered Elephant emoji (🐘, `U+1F418`) from [Twemoji](https://twemoji.twitter.com),
-originally licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+The `toot` icon is the altered Elephant emoji (🐘, `U+1F418`) from [Twemoji](https://twemoji.twitter.com), licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+The banner includes a Mastodon logo, licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html)
 
 ----
 
