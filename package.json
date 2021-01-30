@@ -8,7 +8,8 @@
 	"private": "true",
 	"scripts": {
 		"build": "gulp",
-		"dev": "gulp watch"
+		"dev": "gulp watch",
+		"serve": "sirv dist/ --dev"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.2.4",
@@ -21,6 +22,7 @@
 		"gulp-terser": "^1.4.0",
 		"postcss": "^8.2.4",
 		"pug": "^3.0.0",
-		"sass": "^1.26.11"
+		"sass": "^1.26.11",
+		"sirv-cli": "^1.0.10"
 	}
 }
