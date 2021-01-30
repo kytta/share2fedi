@@ -1,6 +1,4 @@
-<div align="center"><a href="https://toot.karamoff.dev"><img src="assets/logo.svg" width="64" height="64"></a></div>
-
-# toot
+<h1 align="center"><img src="assets/logo.svg" width="128" height="128" alt="toot"></h1>
 
 [`toot`][toot] is a share page for Mastodon, allowing you to share stuff cross-instance.
 Just put in your post text and the instance URL and click "Toot!"
@@ -22,9 +20,9 @@ handy!
 
 [AGPL-3.0](./LICENSE) © 2020-2021 [Nikita Karamov](nick@karamoff.dev)
 
-The `toot` icon is the altered Elephant emoji (🐘, `U+1F418`) from [Twemoji](https://twemoji.twitter.com), licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The `toot` logo is based on Mastodon's "Simple" logo, licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html).
 
-The banner includes a Mastodon logo, licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html)
+The repo banner includes Mastodon's "Full" logo, licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html).
 
 ----
 
