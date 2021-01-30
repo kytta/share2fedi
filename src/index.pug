@@ -23,7 +23,12 @@ html(lang="en")
 		title toot
 
 		link(rel="stylesheet", href="main.css")
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap")
+		link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+
+		link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="preload" as="style")
+		link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'")
+		noscript
+			link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet")
 
 		link(rel='icon' href='/favicon.ico')
 		link(rel='icon' type='image/svg+xml' href='/apple-touch-icon.png')
