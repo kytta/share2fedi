@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - `.node-version` file for nodenv
+- Added `engines.node` field to `package.json`
+  - this is required to ensure the correct environment for builds
 
 ### Security
 
