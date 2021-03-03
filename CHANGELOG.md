@@ -12,9 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Security
 
-- Bumped Pug libraries
+- Bumped insecure Pug libraries
   - `pug-code-gen` (#9)
   - `pug` (#10)
+- Bumped other dependencies
 
 ## [1.1.0]
 
