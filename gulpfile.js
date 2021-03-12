@@ -1,10 +1,9 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const pug = require('gulp-pug');
-const sass = require('gulp-sass');
+const { sass, sassSync } = require("@mr-hope/gulp-sass");
 const terser = require('gulp-terser');
 
-sass.compiler = require('sass');
 
 function html() {
 	return gulp.src('./src/index.pug')
@@ -14,7 +13,7 @@ function html() {
 
 function css() {
 	return gulp.src('./src/style/*.scss')
-		.pipe(sass.sync().on('error', sass.logError))
+		.pipe(sassSync().on('error', sass.logError))
 		.pipe(postcss([require('autoprefixer'), require('cssnano')]))
 		.pipe(gulp.dest('./dist/'));
 }

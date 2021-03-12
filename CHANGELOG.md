@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Node.js version is now 14, since it's now supported by Vercel
 
+### Security
+
+- migrated from `gulp-sass` to `@mr-hope/gulp-sass` to avoid loading and building `node-sass` and other old deps
+
 ## [1.1.1] - 2021-03-03
 
 ### Added
