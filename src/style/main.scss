@@ -46,19 +46,26 @@ body {
 }
 
 header {
+	border-bottom: 1px solid $border-color;
+	padding: 1.5rem 0;
 	text-align: center;
-	padding-top: 2rem;
+	width: 100%;
 
 	h1 {
-		margin: 0 0 8px;
+		display: inline-block;
+		margin: 0 1rem 0 0;
+		vertical-align: middle;
 	}
 
 	p {
-		margin: 0 0 26px;
+		display: inline-block;
+		line-height: 1.2rem;
+		margin: 0;
+		text-align: left;
+		vertical-align: middle;
 
 		img {
-			display: inline;
-			margin-bottom: -11px;
+			vertical-align: middle;
 		}
 	}
 }
