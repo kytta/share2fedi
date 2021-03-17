@@ -39,6 +39,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - License changed from MIT to AGPL-3.0
 - Add new, Mastodon-like logo (#6)
+- Change "Mastodon" text to Mastodon's logo (#6)
 
 ## [1.0.0] - 2021-01-29
 
