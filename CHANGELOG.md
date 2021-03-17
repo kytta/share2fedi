@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - design of the page so that it looks more like a Mastodon website (without impersonating anyone)
 
+### Fixed
+
+- page displacement if a child is added to `<body>` (#11)
+
 ## [1.1.2] - 2021-03-12
 
 ### Changed
@@ -67,7 +71,8 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://github.com/NickKaramoff/toot/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/NickKaramoff/toot/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/NickKaramoff/toot/compare/v1.1.2...v1.2.0
 [1.1.1]: https://github.com/NickKaramoff/toot/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/NickKaramoff/toot/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/NickKaramoff/toot/compare/v1.0.0...v1.1.0
