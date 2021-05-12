@@ -20,7 +20,7 @@
 		"gulp-postcss": "^9.0.0",
 		"gulp-pug": "^4.0.1",
 		"gulp-terser": "^1.4.0",
-		"postcss": "^8.2.4",
+		"postcss": "^8.2.10",
 		"pug": "^3.0.1",
 		"sass": "^1.26.11",
 		"sirv-cli": "^1.0.10"
