@@ -1,6 +1,6 @@
 {
 	"name": "toot",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"main": "src/index.pug",
 	"repository": "git@github.com:NickKaramoff/toot.git",
 	"author": "Nikita Karamov <nick@karamoff.dev>",
