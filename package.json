@@ -14,15 +14,15 @@
 	"devDependencies": {
 		"@mr-hope/gulp-sass": "^2.0.0",
 		"autoprefixer": "^10.2.4",
-		"browserslist": "^4.14.4",
-		"cssnano": "^4.1.10",
+		"browserslist": "^4.16.6",
+		"cssnano": "^5.0.2",
 		"gulp": "^4.0.2",
 		"gulp-postcss": "^9.0.0",
 		"gulp-pug": "^4.0.1",
-		"gulp-terser": "^1.4.0",
-		"postcss": "^8.2.10",
+		"gulp-terser": "^2.0.1",
+		"postcss": "^8.2.15",
 		"pug": "^3.0.1",
-		"sass": "^1.26.11",
+		"sass": "^1.32.13",
 		"sirv-cli": "^1.0.10"
 	},
 	"engines": {
