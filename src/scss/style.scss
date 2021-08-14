@@ -101,11 +101,11 @@ main {
 			font-size: 1rem;
 			border-radius: 4px;
 
-			&[type=checkbox] {
+			&[type="checkbox"] {
 				margin-right: 8px;
 			}
 
-			&[type=submit] {
+			&[type="submit"] {
 				display: inline-block;
 				text-align: center;
 				background-color: $button-bg;
@@ -127,7 +127,7 @@ main {
 		}
 
 		textarea,
-		input[type=url] {
+		input[type="url"] {
 			color: inherit;
 			width: 100%;
 			outline: 0;
@@ -162,7 +162,7 @@ footer {
 	flex-wrap: wrap;
 
 	section {
-		margin: .5rem 1rem;
+		margin: 0.5rem 1rem;
 
 		a {
 			color: inherit;
