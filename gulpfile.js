@@ -1,13 +1,11 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-const pug = require('gulp-pug');
 const { sass, sassSync } = require("@mr-hope/gulp-sass");
 const terser = require('gulp-terser');
 
 
 function html() {
-	return gulp.src('./src/index.pug')
-		.pipe(pug())
+	return gulp.src('./src/index.html')
 		.pipe(gulp.dest('./dist/'));
 }
 
