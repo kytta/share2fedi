@@ -16,6 +16,18 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+const INSTANCE_LIST_URL = "https://api.joinmastodon.org/servers";
+
+const $instance = document.getElementById("instance");
+const $instanceDatalist = document.getElementById("instanceDatalist");
+const $form = document.getElementById("form");
+
+/**
+ * Adds missing "https://" and ending slash to the URL
+ *
+ * @param {string} url URL to normalize
+ * @return {string} normalized URL
+ */
 function normalizeUrl(url) {
 	if (url.indexOf("http://") == -1 && url.indexOf("https://") == -1) {
 		url = "https://" + url;
@@ -26,72 +38,68 @@ function normalizeUrl(url) {
 	return url;
 }
 
-const instance = document.getElementById("instance");
-const instances_list = document.getElementById("instances_list");
+function onLoadInstancesError() {
+	console.error("Couldn't load instance list");
+}
 
-var prefillInstance = window.localStorage.getItem("mastodon_instance");
+function onLoadInstancesSuccess() {
+	if (this.status >= 400) {
+		return onLoadInstancesError();
+	}
 
-var paramPairs = window.location.search.substr(1).split("&");
-var paramPairsLength = paramPairs.length;
-for (var i = 0; i < paramPairsLength; i++) {
-	var paramPair = paramPairs[i].split("=");
-	if (paramPair[0] === "text") {
-		document.getElementById("text").value = decodeURIComponent(paramPair[1]);
-	} else if (paramPair[0] === "instance") {
-		prefillInstance = decodeURIComponent(paramPair[1]);
+	const currentInstance = $instance.value;
+	const instanceDomains = JSON.parse(this.responseText).map((i) => i.domain);
+	if (currentInstance && instanceDomains.indexOf(currentInstance) < 0) {
+		instanceDomains.push(currentInstance);
+	}
+	instanceDomains.sort();
+
+	for (let i = 0; i < instanceDomains.length; i++) {
+		const $option = document.createElement("option");
+		$option.value = normalizeUrl(instanceDomains[i]);
+		$instanceDatalist.appendChild($option);
 	}
 }
 
-function instances_loading_error() {
-	console.error("Failed to fetch servers list from joinmastodon.");
+function loadInstances() {
+	if ($instanceDatalist.children.length === 0) {
+		const request = new XMLHttpRequest();
+
+		request.addEventListener("load", onLoadInstancesSuccess);
+		request.addEventListener("error", onLoadInstancesError);
+
+		request.open("GET", INSTANCE_LIST_URL);
+		request.send();
+	}
 }
 
-function instances_loaded() {
-	if (this.status !== 200) {
-		instances_loading_error();
-		return;
-	}
+const prefillInstance = window.localStorage.getItem("mastodon_instance");
 
-	const servers = JSON.parse(this.responseText);
-
-	const chosen_instance = instance.value;
-	const domains = servers.map((obj) => obj.domain);
-	if (chosen_instance && domains.indexOf(chosen_instance) === -1) {
-		domains.push(chosen_instance);
-	}
-	domains.sort();
-
-	for (const domain of domains) {
-		const opt = document.createElement("option");
-		opt.value = normalizeUrl(domain);
-		instances_list.appendChild(opt);
+const URLParams = window.location.search.substr(1).split("&");
+for (let i = 0; i < URLParams.length; i++) {
+	const URLParamPair = URLParams[i].split("=");
+	if (URLParamPair[0] === "text") {
+		document.getElementById("text").value = decodeURIComponent(URLParamPair[1]);
+	} else if (URLParamPair[0] === "instance") {
+		prefillInstance = decodeURIComponent(URLParamPair[1]);
 	}
 }
 
 if (prefillInstance != null) {
-	instance.value = normalizeUrl(prefillInstance);
+	$instance.value = normalizeUrl(prefillInstance);
 }
 
-instance.addEventListener("focus", function (e) {
-	if (instances_list.children.length === 0) {
-		const req = new XMLHttpRequest();
-		req.addEventListener("load", instances_loaded);
-		req.addEventListener("error", instances_loading_error);
-		req.open("GET", "https://api.joinmastodon.org/servers");
-		req.send();
-	}
-});
+$instance.addEventListener("focus", loadInstances);
 
-document.getElementById("form").addEventListener("submit", function (e) {
+$form.addEventListener("submit", function (e) {
 	e.preventDefault();
-	var text = e.target.elements["text"].value;
-	var instance = normalizeUrl(e.target.elements["instance"].value);
-	var remember = e.target.elements["remember"].checked;
+	const text = e.target.elements["text"].value;
+	const instanceURL = normalizeUrl(e.target.elements["instance"].value);
+	const remember = e.target.elements["remember"].checked;
 
 	if (remember) {
-		window.localStorage.setItem("mastodon_instance", instance);
+		window.localStorage.setItem("mastodon_instance", instanceURL);
 	}
 
-	var shareUrl = instance + "share?text=" + encodeURIComponent(text);
-	window.location.href = shareUrl;
+	window.location.href = instanceURL + "share?text=" + encodeURIComponent(text);
 });
