@@ -1,4 +1,4 @@
-/*
+/*!
 	toot - Cross-instance share page for Mastodon
 	Copyright (C) 2020-2021  Nikita Karamov <nick@karamoff.dev>
 

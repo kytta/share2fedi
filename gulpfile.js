@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-const { sass, sassSync } = require("@mr-hope/gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
 const terser = require('gulp-terser');
 
 
@@ -10,9 +11,11 @@ function html() {
 }
 
 function css() {
-	return gulp.src('./src/style/*.scss')
-		.pipe(sassSync().on('error', sass.logError))
-		.pipe(postcss([require('autoprefixer'), require('postcss-csso')]))
+	return gulp.src('./src/scss/*.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass.sync().on('error', sass.logError))
+		.pipe(postcss([require("autoprefixer"), require("postcss-csso")]))
+    .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./dist/'));
 }
 
