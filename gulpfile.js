@@ -14,7 +14,7 @@ function html() {
 function css() {
 	return gulp.src('./src/style/*.scss')
 		.pipe(sassSync().on('error', sass.logError))
-		.pipe(postcss([require('autoprefixer'), require('cssnano')]))
+		.pipe(postcss([require('autoprefixer'), require('postcss-csso')]))
 		.pipe(gulp.dest('./dist/'));
 }
 
