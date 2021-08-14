@@ -1,11 +1,15 @@
 {
 	"name": "toot",
 	"version": "1.2.2",
-	"main": "src/index.pug",
-	"repository": "git@github.com:NickKaramoff/toot.git",
+	"description": "Cross-instance share page for Mastodon",
+	"license": "AGPL-3.0-or-later",
 	"author": "Nikita Karamov <nick@karamoff.dev>",
-	"license": "AGPL-3.0-only",
-	"private": "true",
+	"homepage": "https://toot.karamoff.dev/",
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/NickKaramoff/toot.git"
+  },
+	"private": true,
 	"scripts": {
 		"build": "gulp",
 		"dev": "gulp watch",
