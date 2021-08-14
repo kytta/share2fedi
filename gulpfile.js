@@ -20,8 +20,10 @@ function css() {
 }
 
 function js() {
-	return gulp.src('./src/script/index.js')
+	return gulp.src('./src/main.js')
+		.pipe(sourcemaps.init())
 		.pipe(terser({ ecma: 5 }))
+    .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./dist/'));
 }
 
