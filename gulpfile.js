@@ -34,8 +34,8 @@ function static() {
 exports.default = gulp.parallel(html, css, js, static);
 
 exports.watch = () => {
-	gulp.watch("./src/index.pug", html);
-	gulp.watch("./src/style/*.scss", css);
-	gulp.watch("./src/script/index.js", js);
+	gulp.watch("./src/index.html", html);
+	gulp.watch("./src/scss/*.scss", css);
+	gulp.watch("./src/main.js", js);
 	gulp.watch("./src/static/*", static);
 };
