@@ -20,7 +20,6 @@ const INSTANCE_LIST_URL = "https://api.joinmastodon.org/servers";
 
 const $instance = document.getElementById("instance");
 const $instanceDatalist = document.getElementById("instanceDatalist");
-const $form = document.getElementById("form");
 
 /**
  * Adds missing "https://" and ending slash to the URL
@@ -90,16 +89,3 @@ if (prefillInstance != null) {
 }
 
 $instance.addEventListener("focus", loadInstances);
-
-$form.addEventListener("submit", function (e) {
-	e.preventDefault();
-	const text = e.target.elements["text"].value;
-	const instanceURL = normalizeUrl(e.target.elements["instance"].value);
-	const remember = e.target.elements["remember"].checked;
-
-	if (remember) {
-		window.localStorage.setItem("mastodon_instance", instanceURL);
-	}
-
-	window.location.href = instanceURL + "share?text=" + encodeURIComponent(text);
-});
