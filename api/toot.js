@@ -16,20 +16,23 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-module.exports = function (req, res) {
-	let text = "";
-	let instanceURL = "https://mastodon.social/";
-	if (req.body) {
-		if (req.body.text) {
-			text = req.body.text;
-		}
-		if (req.body.instance) {
-			instanceURL = req.body.instance;
-		}
-	}
+const http = require("http");
 
-	return res.redirect(
-		303,
-		instanceURL + "share?text=" + encodeURIComponent(text)
-	);
-};
+http
+	.createServer(async (req, res) => {
+		const buffers = [];
+		for await (const chunk of req) {
+			buffers.push(chunk);
+		}
+		const data = Buffer.concat(buffers).toString();
+		const params = new URLSearchParams(data);
+
+		const text = params.get("text") || "";
+		const instanceURL = params.get("instance") || "https://mastodon.social/";
+
+		const finalURL = new URL("share", instanceURL);
+		finalURL.search = new URLSearchParams({ text }).toString();
+
+		res.writeHead(303, { Location: finalURL.toString() }).end();
+	})
+	.listen(8000);
