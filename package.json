@@ -13,7 +13,7 @@
 	"scripts": {
 		"build": "gulp",
 		"dev": "gulp watch",
-		"serve": "sirv dist/ --dev"
+		"serve": "sirv ./public --dev"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.2.4",
