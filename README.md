@@ -14,6 +14,38 @@ And if you open this page with `text` URL parameter, it will be auto-inserted in
 
 The instance URL can be saved in your `localStorage` to be automatically appended later — handy!
 
+## Hosting
+
+### One-click Vercel deploy
+
+For now, toot is a tad bit vendor-locked to run on
+[Vercel](https://vercel.com/). To deploy it yourself, you can use the following
+button:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FNickKaramoff%2Ftoot)
+
+### Host it yourself
+
+Self-hosting toot outside of Vercel requires some extra setup:
+
+1. Make sure you have got Node.js v12 or later installed
+
+2. Build the static part of toot:
+
+   ```sh
+   yarn        # to install dependencies
+   yarn build  # to build the website
+   ```
+
+3. Run the backend server for the form:
+
+   ```sh
+   node api/toot.js
+   ```
+
+4. Set up a reverse proxy from `localhost:8000` to `/api/toot`
+
+
 ## See also
 
 **[📯 shareon](https://shareon.js.org)** — lightweight, stylish and ethical share buttons — use [toot] under the hood!

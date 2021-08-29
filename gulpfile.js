@@ -1,39 +1,47 @@
-const gulp = require('gulp');
-const postcss = require('gulp-postcss');
-const pug = require('gulp-pug');
-const { sass, sassSync } = require("@mr-hope/gulp-sass");
-const terser = require('gulp-terser');
+const { join, resolve } = require("path");
+const gulp = require("gulp");
+const postcss = require("gulp-postcss");
+const sass = require("gulp-sass")(require("sass"));
+const sourcemaps = require("gulp-sourcemaps");
+const terser = require("gulp-terser");
 
+const SOURCE_DIR = resolve(__dirname, "src");
+const OUTPUT_DIR = resolve(__dirname, "public");
 
 function html() {
-	return gulp.src('./src/index.pug')
-		.pipe(pug())
-		.pipe(gulp.dest('./dist/'));
+	return gulp.src(join(SOURCE_DIR, "index.html")).pipe(gulp.dest(OUTPUT_DIR));
 }
 
 function css() {
-	return gulp.src('./src/style/*.scss')
-		.pipe(sassSync().on('error', sass.logError))
-		.pipe(postcss([require('autoprefixer'), require('postcss-csso')]))
-		.pipe(gulp.dest('./dist/'));
+	return gulp
+		.src(join(SOURCE_DIR, "scss", "*.scss"))
+		.pipe(sourcemaps.init())
+		.pipe(sass.sync().on("error", sass.logError))
+		.pipe(postcss([require("autoprefixer"), require("postcss-csso")]))
+		.pipe(sourcemaps.write("."))
+		.pipe(gulp.dest(OUTPUT_DIR));
 }
 
 function js() {
-	return gulp.src('./src/script/index.js')
+	return gulp
+		.src(join(SOURCE_DIR, "main.js"))
+		.pipe(sourcemaps.init())
 		.pipe(terser({ ecma: 5 }))
-		.pipe(gulp.dest('./dist/'));
+		.pipe(sourcemaps.write("."))
+		.pipe(gulp.dest(OUTPUT_DIR));
 }
 
 function static() {
-	return gulp.src('./src/static/**/*')
-		.pipe(gulp.dest('./dist/'));
+	return gulp
+		.src(join(SOURCE_DIR, "static", "**", "*"))
+		.pipe(gulp.dest(OUTPUT_DIR));
 }
 
 exports.default = gulp.parallel(html, css, js, static);
 
 exports.watch = () => {
-	gulp.watch('./src/index.pug', html);
-	gulp.watch('./src/style/*.scss', css);
-	gulp.watch('./src/script/index.js', js);
-	gulp.watch('./src/static/*', static);
-}
+	gulp.watch(join(SOURCE_DIR, "index.html"), html);
+	gulp.watch(join(SOURCE_DIR, "scss", "*.scss"), css);
+	gulp.watch(join(SOURCE_DIR, "main.js"), js);
+	gulp.watch(join(SOURCE_DIR, "static", "**", "*"), static);
+};

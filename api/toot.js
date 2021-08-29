@@ -1,4 +1,4 @@
-/*
+/*!
 	toot - Cross-instance share page for Mastodon
 	Copyright (C) 2020-2021  Nikita Karamov <nick@karamoff.dev>
 
@@ -16,16 +16,23 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-$text-font: 'Roboto', sans-serif;
+const http = require("http");
 
-$bg: #1F232B;
-$text: #9baec8;
-$title:#d9e1e8;
+http
+	.createServer(async (req, res) => {
+		const buffers = [];
+		for await (const chunk of req) {
+			buffers.push(chunk);
+		}
+		const data = Buffer.concat(buffers).toString();
+		const params = new URLSearchParams(data);
 
-$button-bg: #2b90d9;
-$button-hover-bg: #56a7e1;
-$button-text: white;
+		const text = params.get("text") || "";
+		const instanceURL = params.get("instance") || "https://mastodon.social/";
 
-$input-bg: #131419;
+		const finalURL = new URL("share", instanceURL);
+		finalURL.search = new URLSearchParams({ text }).toString();
 
-$border-color: #303643;
+		res.writeHead(303, { Location: finalURL.toString() }).end();
+	})
+	.listen(8000);

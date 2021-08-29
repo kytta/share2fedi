@@ -1,31 +1,32 @@
 {
 	"name": "toot",
 	"version": "1.2.2",
-	"main": "src/index.pug",
-	"repository": "git@github.com:NickKaramoff/toot.git",
+	"description": "Cross-instance share page for Mastodon",
+	"license": "AGPL-3.0-or-later",
 	"author": "Nikita Karamov <nick@karamoff.dev>",
-	"license": "AGPL-3.0-only",
-	"private": "true",
+	"homepage": "https://toot.karamoff.dev/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/NickKaramoff/toot.git"
+	},
+	"private": true,
 	"scripts": {
 		"build": "gulp",
 		"dev": "gulp watch",
-		"serve": "sirv dist/ --dev"
+		"serve": "sirv ./public --dev"
 	},
 	"devDependencies": {
-		"@mr-hope/gulp-sass": "^2.0.0",
 		"autoprefixer": "^10.2.4",
 		"browserslist": "^4.16.6",
 		"gulp": "^4.0.2",
 		"gulp-postcss": "^9.0.0",
-		"gulp-pug": "^5.0.0",
+		"gulp-sass": "^5.0.0",
+		"gulp-sourcemaps": "^3.0.0",
 		"gulp-terser": "^2.0.1",
 		"postcss": "^8.2.15",
 		"postcss-csso": "^5.0.1",
-		"pug": "^3.0.1",
-		"sass": "^1.32.13",
+		"prettier": "2.3.2",
+		"sass": "^1.37.5",
 		"sirv-cli": "^1.0.10"
-	},
-	"engines": {
-		"node": "^14"
 	}
 }

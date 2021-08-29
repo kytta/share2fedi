@@ -1,0 +1,110 @@
+<!--
+	toot - Cross-instance share page for Mastodon
+	Copyright (C) 2020-2021  Nikita Karamov <nick@karamoff.dev>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as published
+	by the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details.
+
+	You should have received a copy of the GNU Affero General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>toot &mdash; cross-instance share page for Mastodon</title>
+		<meta
+			name="description"
+			content="toot allows you to share stuff on Mastodon, cross-instance. Just put in your post text and the instance URL and click &lsquo;Toot!&rsquo;"
+		/>
+
+		<link href="/style.css" rel="stylesheet" />
+		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="preload"
+			as="style"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
+
+		<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+		<link href="/apple-touch-icon.png" rel="icon" type="image/svg+xml" />
+		<link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+		<link href="/site.webmanifest" rel="manifest" />
+		<meta name="theme-color" content="#3088d4" />
+	</head>
+	<body>
+		<header>
+			<h1>
+				<img src="/icon.svg" alt="toot" width="72" height="72" />
+			</h1>
+			<p>
+				for
+				<img src="/mastodon.svg" alt="Mastodon" width="95.5" height="27" />
+			</p>
+		</header>
+		<main>
+			<form action="/api/toot" method="POST">
+				<section>
+					<label for="text">Post text</label>
+					<textarea
+						name="text"
+						id="text"
+						rows="6"
+						placeholder="What's on your mind?"
+						required
+					></textarea>
+				</section>
+				<section>
+					<datalist id="instanceDatalist"></datalist>
+					<label for="instance">Choose your Mastodon instance</label>
+					<input
+						type="url"
+						name="instance"
+						id="instance"
+						placeholder="https://"
+						list="instanceDatalist"
+						required
+					/>
+				</section>
+				<section class="remember">
+					<input type="checkbox" id="remember" name="remember" />
+					<label for="remember">Remember my instance on this device</label>
+				</section>
+				<section class="submit">
+					<input type="submit" value="TOOT!" />
+				</section>
+			</form>
+		</main>
+		<footer>
+			<section>
+				<a href="https://joinmastodon.org/">What is Mastodon?</a>
+			</section>
+			<section>
+				<a href="https://github.com/NickKaramoff/toot">toot on GitHub</a>
+			</section>
+		</footer>
+		<script src="/main.js"></script>
+	</body>
+</html>
