@@ -58,4 +58,11 @@ The ‘toot’ logo is based on Mastodon’s ‘Simple’ logo, licensed under [
 
 The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html).
 
+----
+
+The source code is being hosted
+on [GitHub](https://github.com/NickKaramoff/toot), with mirrors
+on [GitLab](https://gitlab.com/NickKaramoff/toot)
+and [Codeberg](https://codeberg.org/NickKaramoff/toot).
+
 [toot]: https://toot.karamoff.dev
