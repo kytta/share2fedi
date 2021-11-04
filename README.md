@@ -7,7 +7,7 @@
 And if you open this page with `text` URL parameter, it will be auto-inserted in the text field. The same goes for the `instance` URL parameter. This can be used to build custom share buttons for Mastodon:
 
 ```html
-<a href="https://toot.karamoff.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz">
+<a href="https://toot.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz">
   Share on Mastodon
 </a>
 ```
@@ -62,7 +62,7 @@ The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0]
 
 The source code is being hosted
 on [GitHub](https://github.com/NickKaramoff/toot), with mirrors
-on [GitLab](https://gitlab.com/NickKaramoff/toot)
-and [Codeberg](https://codeberg.org/NickKaramoff/toot).
+on [GitLab](https://gitlab.com/kytta/toot)
+and [Codeberg](https://codeberg.org/kytta/toot).
 
-[toot]: https://toot.karamoff.dev
+[toot]: https://toot.kytta.dev

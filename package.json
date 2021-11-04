@@ -3,8 +3,8 @@
 	"version": "2.1.0",
 	"description": "Cross-instance share page for Mastodon",
 	"license": "AGPL-3.0-or-later",
-	"author": "Nikita Karamov <nick@karamoff.dev>",
-	"homepage": "https://toot.karamoff.dev/",
+	"author": "Nikita Karamov <me@kytta.dev>",
+	"homepage": "https://toot.kytta.dev/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/NickKaramoff/toot.git"
