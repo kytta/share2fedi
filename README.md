@@ -28,13 +28,13 @@ button:
 
 Self-hosting toot outside of Vercel requires some extra setup:
 
-1. Make sure you have got Node.js v12 or later installed
+1. Make sure you have got Node.js v12 or later as well as pnpm installed
 
 2. Build the static part of toot:
 
    ```sh
-   yarn        # to install dependencies
-   yarn build  # to build the website
+   pnpm install    # to install dependencies
+   pnpm run build  # to build the website
    ```
 
 3. Run the backend server for the form:
@@ -44,7 +44,6 @@ Self-hosting toot outside of Vercel requires some extra setup:
    ```
 
 4. Set up a reverse proxy from `localhost:8000` to `/api/toot`
-
 
 ## See also
 
