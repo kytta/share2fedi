@@ -22,7 +22,7 @@ For now, toot is a tad bit vendor-locked to run on
 [Vercel](https://vercel.com/). To deploy it yourself, you can use the following
 button:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FNickKaramoff%2Ftoot)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkytta%2Ftoot)
 
 ### Host it yourself
 
@@ -60,7 +60,7 @@ The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0]
 ----
 
 The source code is being hosted
-on [GitHub](https://github.com/NickKaramoff/toot), with mirrors
+on [GitHub](https://github.com/kytta/toot), with mirrors
 on [GitLab](https://gitlab.com/kytta/toot)
 and [Codeberg](https://codeberg.org/kytta/toot).
 
