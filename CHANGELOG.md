@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.2] - 2022-02-12
+
+### Changed
+
+- repository moved to Codeberg; updated all URLs
+
+## [2.2.1] - 2021-02-02
+
+### Changed
+
+- changed GitHub username from `NickKaramoff` to `kytta`
+
+## [2.2.0] - 2021-11-04
+
+### Changed
+
+- migrated to PNPM as primary package manager
+- change URL from `toot.karamoff.dev` to `toot.kytta.dev`
+
 ## [2.1.0] - 2021-08-29
 
 ### Added
@@ -107,13 +126,16 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.1.0...HEAD
+[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.2.2...HEAD
+[2.2.2]: https://codeberg.org/kytta/toot/compare/v2.2.1...v2.2.2
+[2.2.1]: https://codeberg.org/kytta/toot/compare/v2.2.0...v2.2.1
+[2.2.0]: https://codeberg.org/kytta/toot/compare/v2.1.0...v2.2.0
 [2.1.0]: https://codeberg.org/kytta/toot/compare/v2.0.0...v2.1.0
 [2.0.0]: https://codeberg.org/kytta/toot/compare/v1.2.2...v2.0.0
 [1.2.2]: https://codeberg.org/kytta/toot/compare/v1.2.1...v1.2.2
 [1.2.1]: https://codeberg.org/kytta/toot/compare/v1.2.0...v1.2.1
 [1.2.0]: https://codeberg.org/kytta/toot/compare/v1.1.2...v1.2.0
-[1.1.1]: https://codeberg.org/kytta/toot/compare/v1.1.1...v1.1.2
+[1.1.2]: https://codeberg.org/kytta/toot/compare/v1.1.1...v1.1.2
 [1.1.1]: https://codeberg.org/kytta/toot/compare/v1.1.0...v1.1.1
 [1.1.0]: https://codeberg.org/kytta/toot/compare/v1.0.0...v1.1.0
 [1.0.0]: https://codeberg.org/kytta/toot/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
