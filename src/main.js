@@ -5,7 +5,7 @@
  *            JavaScript code in this page.
  *
  * toot - Cross-instance share page for Mastodon
- * Copyright (C) 2020-2021  Nikita Karamov <me@kytta.dev>
+ * Copyright (C) 2020-2022  Nikita Karamov <me@kytta.dev>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
