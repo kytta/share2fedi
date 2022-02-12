@@ -107,13 +107,13 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://github.com/kytta/toot/compare/v2.1.0...HEAD
-[2.1.0]: https://github.com/kytta/toot/compare/v2.0.0...v2.1.0
-[2.0.0]: https://github.com/kytta/toot/compare/v1.2.2...v2.0.0
-[1.2.2]: https://github.com/kytta/toot/compare/v1.2.1...v1.2.2
-[1.2.1]: https://github.com/kytta/toot/compare/v1.2.0...v1.2.1
-[1.2.0]: https://github.com/kytta/toot/compare/v1.1.2...v1.2.0
-[1.1.1]: https://github.com/kytta/toot/compare/v1.1.1...v1.1.2
-[1.1.1]: https://github.com/kytta/toot/compare/v1.1.0...v1.1.1
-[1.1.0]: https://github.com/kytta/toot/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/kytta/toot/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
+[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.1.0...HEAD
+[2.1.0]: https://codeberg.org/kytta/toot/compare/v2.0.0...v2.1.0
+[2.0.0]: https://codeberg.org/kytta/toot/compare/v1.2.2...v2.0.0
+[1.2.2]: https://codeberg.org/kytta/toot/compare/v1.2.1...v1.2.2
+[1.2.1]: https://codeberg.org/kytta/toot/compare/v1.2.0...v1.2.1
+[1.2.0]: https://codeberg.org/kytta/toot/compare/v1.1.2...v1.2.0
+[1.1.1]: https://codeberg.org/kytta/toot/compare/v1.1.1...v1.1.2
+[1.1.1]: https://codeberg.org/kytta/toot/compare/v1.1.0...v1.1.1
+[1.1.0]: https://codeberg.org/kytta/toot/compare/v1.0.0...v1.1.0
+[1.0.0]: https://codeberg.org/kytta/toot/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0

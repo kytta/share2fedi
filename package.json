@@ -7,7 +7,7 @@
 	"homepage": "https://toot.kytta.dev/",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kytta/toot.git"
+		"url": "https://codeberg.org/kytta/toot.git"
 	},
 	"private": true,
 	"scripts": {
