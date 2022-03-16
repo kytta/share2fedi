@@ -1,0 +1,38 @@
+/*
+ * @source: https://codeberg.org/kytta/toot/src/branch/main/src/scss/_fonts.scss
+ *
+ * toot - Cross-instance share page for Mastodon
+ * Copyright (C) 2020-2022  Nikita Karamov <me@kytta.dev>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Roboto"), url("/fonts/Roboto-400.woff2?v=29") format("woff2"),
+		url("/fonts/Roboto-400.woff?v=29") format("woff");
+}
+
+@font-face {
+	font-family: "Roboto Medium";
+	font-style: normal;
+	font-weight: 500;
+	src: local("Roboto Medium"), local("Roboto-Medium"),
+		url("/fonts/Roboto-500.woff2?v=29") format("woff2"),
+		url("/fonts/Roboto-500.woff?v=29") format("woff");
+}
