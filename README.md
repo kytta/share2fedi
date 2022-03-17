@@ -44,10 +44,25 @@ Self-hosting toot outside of Vercel requires some extra setup:
 3. Run the backend server for the form:
 
    ```sh
-   node api/toot.js
+   pm2 start api/toot.js --watch --ignore-watch="node_modules"
    ```
+   > You can find a summary for pm2 at: https://pm2.keymetrics.io/docs/usage/quick-start/
 
-4. Set up a reverse proxy from `localhost:8000` to `/api/toot`
+4. Set up webserver
+   1. Apache
+    ```
+    placeholder
+    ```
+
+   2. Nginx
+    ```
+    root /home/toot/public;
+    index.html;
+
+    location /api/toot {
+        proxy_pass http://localhost:8000/;
+    }
+    ```
 
 ## See also
 
