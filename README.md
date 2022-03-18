@@ -76,6 +76,17 @@ Self-hosting toot outside of Vercel requires some extra setup:
    }
    ```
 
+   3. Caddy
+
+   ```nginxconf
+   root * path_to_toot/public;
+   try_files index.html
+
+   handle_path /api/toot {
+      reverse_proxy localhost:8000
+   }
+   ```
+
 ## See also
 
 **[📯 Shareon](https://shareon.js.org)**
