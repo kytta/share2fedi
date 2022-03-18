@@ -10,7 +10,9 @@ in the text field. The same goes for the `instance` URL parameter. This can be
 used to build custom share buttons for Mastodon:
 
 ```html
-<a href="https://toot.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz">
+<a
+  href="https://toot.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz"
+>
   Share on Mastodon
 </a>
 ```
@@ -46,6 +48,7 @@ Self-hosting toot outside of Vercel requires some extra setup:
    ```sh
    node api/toot.js
    ```
+
    or if you want to run the process in the background:
 
    ```sh
