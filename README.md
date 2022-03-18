@@ -44,6 +44,11 @@ Self-hosting toot outside of Vercel requires some extra setup:
 3. Run the backend server for the form:
 
    ```sh
+   node api/toot.js
+   ```
+   or if you want to run the process in the background:
+
+   ```sh
    pm2 start api/toot.js --watch --ignore-watch="node_modules"
    ```
 
