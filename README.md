@@ -10,9 +10,7 @@ in the text field. The same goes for the `instance` URL parameter. This can be
 used to build custom share buttons for Mastodon:
 
 ```html
-<a
-  href="https://toot.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz"
->
+<a href="https://toot.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz">
   Share on Mastodon
 </a>
 ```
