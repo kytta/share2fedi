@@ -58,7 +58,7 @@ Self-hosting toot outside of Vercel requires some extra setup:
 
    1. Apache
 
-   ```
+   ```apacheconf
    DocumentRoot "path_to_toot/public"
 
    ProxyPass "/api/toot"  "http://localhost:8000/"
@@ -66,7 +66,7 @@ Self-hosting toot outside of Vercel requires some extra setup:
 
    2. Nginx
 
-   ```
+   ```nginxconf
    root path_to_toot/public;
    index.html;
 
