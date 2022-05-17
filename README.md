@@ -78,7 +78,7 @@ Self-hosting toot outside of Vercel requires some extra setup:
 
    3. Caddy
 
-   ```nginxconf
+   ```caddy
    root * path_to_toot/public;
    try_files index.html
 
