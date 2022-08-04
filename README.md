@@ -47,12 +47,50 @@ Self-hosting toot outside of Vercel requires some extra setup:
    node api/toot.js
    ```
 
-4. Set up a reverse proxy from `localhost:8000` to `/api/toot`
+   or if you want to run the process in the background:
+
+   ```sh
+   pm2 start api/toot.js --watch --ignore-watch="node_modules"
+   ```
+
+   > You can find a summary for pm2 at: https://pm2.keymetrics.io/docs/usage/quick-start/
+
+4. Set up webserver
+
+   1. Apache
+
+   ```apacheconf
+   DocumentRoot "path_to_toot/public"
+
+   ProxyPass "/api/toot"  "http://localhost:8000/"
+   ```
+
+   2. Nginx
+
+   ```nginxconf
+   root path_to_toot/public;
+   index.html;
+
+   location /api/toot {
+       proxy_pass http://localhost:8000/;
+   }
+   ```
+
+   3. Caddy
+
+   ```caddy
+   root * path_to_toot/public;
+   try_files index.html
+
+   handle_path /api/toot {
+      reverse_proxy localhost:8000
+   }
+   ```
 
 ## See also
 
 **[📯 Shareon](https://shareon.js.org)**
-  (lightweight, stylish, and ethical share buttons) uses [toot] under the hood!
+(lightweight, stylish, and ethical share buttons) uses [toot] under the hood!
 
 ## Licence
 
@@ -63,7 +101,7 @@ The ‘toot’ logo is based on Mastodon’s ‘Simple’ logo, licensed under [
 
 The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html).
 
-----
+---
 
 This project is hosted on Codeberg: <https://codeberg.org/kytta/toot>
 
