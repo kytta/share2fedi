@@ -10,26 +10,22 @@
 		"url": "https://codeberg.org/kytta/toot.git"
 	},
 	"private": true,
+	"source": "src/index.html",
 	"scripts": {
-		"build": "gulp",
+		"build": "pnpm run copy-static && parcel build",
 		"build-icons": "svgo --multipass assets/pentagon.svg assets/s2f.svg assets/share2fedi.svg -o assets/pentagon.min.svg assets/s2f.min.svg assets/share2fedi.min.svg",
-		"dev": "gulp watch",
-		"serve": "sirv ./public --dev"
+		"copy-static": "mkdir -p dist/ && cp src/icons/favicon.ico src/robots.txt dist/",
+		"serve": "parcel serve",
+		"watch": "parcel watch"
 	},
 	"browserslist": "> 0.3%, last 2 versions, Firefox ESR, not dead",
 	"devDependencies": {
-		"autoprefixer": "^10.4.2",
-		"browserslist": "^4.19.1",
-		"gulp": "^4.0.2",
-		"gulp-postcss": "^9.0.1",
-		"gulp-sass": "^5.1.0",
-		"gulp-sourcemaps": "^3.0.0",
-		"gulp-terser": "^2.1.0",
-		"postcss": "^8.4.6",
-		"postcss-csso": "^6.0.0",
+		"@parcel/core": "^2.8.0",
+		"@parcel/packager-raw-url": "^2.8.0",
+		"@parcel/transformer-sass": "^2.8.0",
+		"@parcel/transformer-webmanifest": "^2.8.0",
+		"parcel": "^2.8.0",
 		"prettier": "2.5.1",
-		"sass": "^1.49.7",
-		"sirv-cli": "^2.0.2",
 		"svgo": "^3.0.1"
 	}
 }
