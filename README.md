@@ -1,6 +1,6 @@
-<h1 align="center"><img src="assets/logo.svg" width="128" height="128" alt="toot"></h1>
+<h1 align="center"><img src="assets/share2fedi.svg" width="520" height="160" alt="Share2Fedi"></h1>
 
-> Cross-instance share page for Mastodon
+> Instance-agnostic share page for the Fediverse.
 
 [toot] allows you to share stuff on Mastodon, cross-instance. Just put in your
 post text and the instance URL and click ‘Toot!’
