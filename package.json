@@ -15,6 +15,7 @@
 		"build": "pnpm run copy-static && parcel build",
 		"build-icons": "svgo --multipass assets/pentagon.svg assets/s2f.svg assets/share2fedi.svg -o assets/pentagon.min.svg assets/s2f.min.svg assets/share2fedi.min.svg",
 		"copy-static": "mkdir -p dist/ && cp src/icons/favicon.ico src/robots.txt dist/",
+		"fmt": "prettier --write .",
 		"serve": "parcel serve",
 		"watch": "parcel watch"
 	},

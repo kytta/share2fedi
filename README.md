@@ -7,7 +7,9 @@
 Or, open this page with the prefilled `text` URL parameter—it will be automatically inserted into the text field. The same goes for the `instance` URL parameter. This can be used to build custom share buttons for the federated social networks:
 
 ```html
-<a href="https://s2f.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz">
+<a
+  href="https://s2f.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz"
+>
   Share on mastodon.xyz
 </a>
 ```
@@ -23,7 +25,7 @@ For now, **Share₂Fedi** is vendor-locked to run on [Vercel](https://vercel.com
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkytta%2Ftoot)
 
 <!-- TODO: update the selfhosting instructions -->
-<!-- 
+<!--
 ### Host it yourself
 
 Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
@@ -92,7 +94,7 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 ## Licence
 
 © 2020–2022 [Nikita Karamov]\
-Licensed under the [ISC License][ISC].
+Licensed under the [ISC License][isc].
 
 The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0].
 
@@ -100,7 +102,7 @@ The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0]
 
 This project is hosted on Codeberg: <https://codeberg.org/kytta/toot.git>
 
-[AGPL-3.0]: https://spdx.org/licenses/AGPL-3.0-only.html
-[ISC]: https://spdx.org/licenses/ISC.html
-[Nikita Karamov]: https://www.kytta.dev
-[Share₂Fedi]: https://s2f.kytta.dev/
+[agpl-3.0]: https://spdx.org/licenses/AGPL-3.0-only.html
+[isc]: https://spdx.org/licenses/ISC.html
+[nikita karamov]: https://www.kytta.dev
+[share₂fedi]: https://s2f.kytta.dev/

@@ -1,3 +1,6 @@
-*.md
-/public
-/.vercel
+/.idea/
+/.parcel-cache/
+/.vercel/
+/.vscode/
+/dist/
+/pnpm-lock.yaml
