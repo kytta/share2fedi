@@ -92,7 +92,7 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 ## Licence
 
 © 2020–2022 [Nikita Karamov]\
-Licensed under the [GNU Affero General Public License, version 3][AGPL-3.0].
+Licensed under the [ISC License][ISC].
 
 The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0].
 
@@ -101,5 +101,6 @@ The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0]
 This project is hosted on Codeberg: <https://codeberg.org/kytta/toot.git>
 
 [AGPL-3.0]: https://spdx.org/licenses/AGPL-3.0-only.html
+[ISC]: https://spdx.org/licenses/ISC.html
 [Nikita Karamov]: https://www.kytta.dev
 [Share₂Fedi]: https://s2f.kytta.dev/
