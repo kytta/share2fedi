@@ -19,9 +19,9 @@
 
 html,
 body {
-	background-color: $bg;
-	color: $text;
-	font-family: $text-font;
+	background-color: $color-bg-light;
+	color: $color-text-light;
+	font-family: $font-family-sans;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1;
@@ -38,8 +38,8 @@ body {
 }
 
 header {
-	border-bottom: 1px solid $border-color;
 	padding: 1.5rem 0;
+	margin-bottom: 1.5rem;
 	text-align: center;
 	width: 100%;
 
@@ -53,7 +53,7 @@ header {
 main {
 	width: 100%;
 	max-width: 600px;
-	margin: auto;
+	margin: 0 auto auto;
 	padding: 0 0.75rem;
 
 	form {
@@ -83,13 +83,14 @@ main {
 
 			&[type="checkbox"] {
 				margin-right: 8px;
+				accent-color: $color-accent-rgb;
 			}
 
 			&[type="submit"] {
 				display: inline-block;
 				text-align: center;
-				background-color: $button-bg;
-				color: $button-text;
+				background-color: $color-accent;
+				color: $color-text-dark;
 				font-weight: 500;
 				font-family: inherit;
 				height: 2.5rem;
@@ -99,7 +100,7 @@ main {
 				cursor: pointer;
 
 				&:hover {
-					background-color: $button-hover-bg;
+					background-color: $color-accent-lighter;
 				}
 			}
 
@@ -113,14 +114,13 @@ main {
 			outline: 0;
 			font-family: inherit;
 			resize: vertical;
-			background-color: $input-bg;
-			border: 1px solid color.scale($input-bg, $lightness: -25%);
+			background-color: $color-textarea-bg-light;
+			border: 1px solid $color-textarea-border-light;
 			padding: 10px;
 
 			&:focus,
 			&:active {
-				border: 1px solid $button-bg;
-				background-color: color.scale($input-bg, $lightness: +5%);
+				border: 1px solid $color-accent;
 			}
 
 			&::placeholder {
@@ -132,7 +132,7 @@ main {
 }
 
 footer {
-	border-top: 1px solid $border-color;
+	border-top: 1px solid $color-border;
 	padding: 1rem 0;
 	width: 100%;
 	display: flex;
@@ -150,6 +150,24 @@ footer {
 
 			&:hover {
 				text-decoration: underline;
+			}
+		}
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	html,
+	body {
+		background-color: $color-bg-dark;
+		color: $color-text-dark;
+	}
+
+	main {
+		form {
+			textarea,
+			input[type="url"] {
+				background-color: $color-textarea-bg-dark;
+				border: 1px solid $color-textarea-border-dark;
 			}
 		}
 	}

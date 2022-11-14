@@ -8,15 +8,21 @@
  */
 
 $text-font: "Roboto", sans-serif;
+$font-family-sans: Inter, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+	"Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
 
-$bg: #1f232b;
-$text: #9baec8;
-$title: #d9e1e8;
+$color-bg-light: #fff;
+$color-bg-dark: #000;
+$color-text-light: #000;
+$color-text-dark: #fff;
 
-$button-bg: #2b90d9;
-$button-hover-bg: #56a7e1;
-$button-text: white;
+$color-border: #80808060;
 
-$input-bg: #131419;
+$color-textarea-bg-light: #eee;
+$color-textarea-bg-dark: #111;
+$color-textarea-border-light: #80808060;
+$color-textarea-border-dark: #80808060;
 
-$border-color: #303643;
+$color-accent: oklch(63.16% 0.202 142.93);
+$color-accent-rgb: rgb(26.86, 165.96, 30.56);
+$color-accent-lighter: oklch(68.16% 0.202 142.93);
