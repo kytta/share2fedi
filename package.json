@@ -16,6 +16,7 @@
 		"dev": "gulp watch",
 		"serve": "sirv ./public --dev"
 	},
+	"browserslist": "> 0.3%, last 2 versions, Firefox ESR, not dead",
 	"devDependencies": {
 		"autoprefixer": "^10.4.2",
 		"browserslist": "^4.19.1",
