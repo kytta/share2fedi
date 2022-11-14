@@ -2,7 +2,7 @@
 	"name": "toot",
 	"version": "2.4.0",
 	"description": "Cross-instance share page for Mastodon",
-	"license": "AGPL-3.0-or-later",
+	"license": "ISC",
 	"author": "Nikita Karamov <me@kytta.dev>",
 	"homepage": "https://toot.kytta.dev/",
 	"repository": {
