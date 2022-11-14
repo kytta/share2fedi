@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **new project name**: Share₂Fedi (see #1)
   - new default instance URL: <https://s2f.kytta.dev>
   - new logo
+  - new website style
 - the licence changed (again) from AGPL-3.0 to ISC
 
 ## [2.4.0] - 2022-11-14
