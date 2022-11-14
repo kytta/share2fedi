@@ -1,6 +1,6 @@
 {
 	"name": "toot",
-	"version": "2.4.0",
+	"version": "3.0.0-rc.1",
 	"description": "Cross-instance share page for Mastodon",
 	"license": "ISC",
 	"author": "Nikita Karamov <me@kytta.dev>",
