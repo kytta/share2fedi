@@ -1,0 +1,25 @@
+<svg viewBox="0 0 64 64" width="512" height="512" xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<filter id="blur">
+			<feGaussianBlur stdDeviation="15"></feGaussianBlur>
+		</filter>
+		<clipPath id="pentagon">
+			<path d="m38.802 1.632 23.656 29.212-20.473 31.524-36.307-9.729-1.968-37.537z"></path>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#pentagon)">
+		<g filter="url(#blur)">
+			<circle cx="0" cy="10" fill="#F44336" r="39"></circle>
+			<circle cx="45" cy="-5" fill="#FFEB3B" r="39"></circle>
+			<circle cx="70" cy="25" fill="#4CAF50" r="39"></circle>
+			<circle cx="50" cy="65" fill="#03A9F4" r="39"></circle>
+			<circle cx="5" cy="70" fill="#673AB7" r="39"></circle>
+			<circle cx="50" cy="31.5" fill="#4CAF50" r="12"></circle>
+			<circle cx="37.5" cy="50.5" fill="#03A9F4" r="12"></circle>
+			<circle cx="15.5" cy="44.5" fill="#673AB7" r="12"></circle>
+			<circle cx="14" cy="22" fill="#F44336" r="12"></circle>
+			<circle cx="36" cy="14" fill="#FFEB3B" r="12"></circle>
+		</g>
+	</g>
+</svg>
