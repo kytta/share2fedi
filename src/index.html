@@ -15,7 +15,7 @@
 		<title>Share₂Fedi, the instance-agnostic share page for Mastodon.</title>
 		<meta
 			name="description"
-			content="Share₂Fedi allows you to share stuff on Mastodon, instance-agnostic. Just put in your post text and the instance URL and click &lsquo;Toot!&rsquo;"
+			content="Share₂Fedi allows you to share stuff on Mastodon, no matter the instance. Just type in your post text, select the instance URL, and click &lsquo;Post!&rsquo;"
 		/>
 		<link rel="canonical" href="https://toot.kytta.dev/" />
 
@@ -38,10 +38,6 @@
 					height="80"
 				/>
 			</h1>
-			<p>
-				for
-				<img src="./mastodon.svg" alt="Mastodon" width="104.333" height="27" />
-			</p>
 		</header>
 		<main>
 			<form action="/api/toot" method="POST">
@@ -72,7 +68,7 @@
 					<label for="remember">Remember my instance on this device</label>
 				</section>
 				<section class="submit">
-					<input type="submit" value="TOOT!" />
+					<input type="submit" value="Post!" />
 				</section>
 			</form>
 		</main>
