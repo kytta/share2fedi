@@ -51,7 +51,7 @@
 			</p>
 		</header>
 		<main>
-			<form action="/api/toot" method="POST">
+			<form action="/api/toot" method="POST" onsubmit="onFormSubmit(this)">
 				<section>
 					<label for="text">Post text</label>
 					<textarea
