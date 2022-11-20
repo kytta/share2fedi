@@ -27,6 +27,8 @@
  */
 
 const INSTANCE_LIST_URL = "https://api.joinmastodon.org/servers";
+const LOCAL_STORAGE_KEY = "recentInstances";
+const RECENT_INSTANCES_SIZE = 5;
 
 const $instance = document.getElementById("instance");
 const $instanceDatalist = document.getElementById("instanceDatalist");
@@ -82,7 +84,38 @@ function loadInstances() {
 	}
 }
 
-const prefillInstance = window.localStorage.getItem("mastodon_instance");
+function getRecentInstances() {
+	const storedValue = window.localStorage.getItem(LOCAL_STORAGE_KEY);
+	if (!storedValue) return [];
+	return JSON.parse(storedValue);
+}
+
+function rememberInstance(instance) {
+	const recentInstances = getRecentInstances();
+
+	const index = recentInstances.indexOf(instance);
+	if (index >= 0) {
+		recentInstances.splice(index, 1);
+	}
+	recentInstances.unshift(instance);
+	recentInstances.length = RECENT_INSTANCES_SIZE;
+
+	window.localStorage.setItem(
+		LOCAL_STORAGE_KEY,
+		JSON.stringify(recentInstances)
+	);
+}
+
+function onFormSubmit(form) {
+	const formData = new FormData(form);
+
+	if (formData.get("remember")) {
+		rememberInstance(formData.get("instance"));
+	}
+	return true;
+}
+
+const prefillInstance = getRecentInstances()[0];
 
 const URLParams = window.location.search.substr(1).split("&");
 for (let i = 0; i < URLParams.length; i++) {
