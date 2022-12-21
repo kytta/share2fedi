@@ -30,7 +30,7 @@
 			name="description"
 			content="toot allows you to share stuff on Mastodon, cross-instance. Just put in your post text and the instance URL and click &lsquo;Toot!&rsquo;"
 		/>
-		<link rel="canonical" href="https://toot.kytta.dev/">
+		<link rel="canonical" href="https://toot.kytta.dev/" />
 
 		<link href="/style.css" rel="stylesheet" />
 
@@ -90,11 +90,25 @@
 			<section>
 				<a href="https://codeberg.org/kytta/toot">toot on Codeberg</a>
 			</section>
-			<script data-goatcounter="https://share2fedi.goatcounter.com/count"
-			        async src="//gc.zgo.at/count.js"></script>
-			<noscript>
-				<img src="https://share2fedi.goatcounter.com/count?p=/">
-			</noscript>
+			<script>
+				window.goatcounter = {
+					path: "/",
+				};
+				// Only load on production environment.
+				if (
+					window.location.host !== "toot.kytta.dev" &&
+					window.location.host !== "s2f.kytta.dev" &&
+					window.location.host !== "share2fedi.kytta.dev"
+				) {
+					window.goatcounter["no_onload"] = true;
+				}
+			</script>
+			<script
+				data-goatcounter="https://share2fedi.goatcounter.com/count"
+				data-goatcounter-settings='{"path": "/"}'
+				async
+				src="//gc.zgo.at/count.js"
+			></script>
 		</footer>
 		<script src="/main.js"></script>
 	</body>
