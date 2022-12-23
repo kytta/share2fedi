@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   autoprefixer: ^10.4.2
@@ -59,6 +59,12 @@ packages:
     hasBin: true
     dev: true
 
+  /acorn/8.8.1:
+    resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: true
+
   /ansi-colors/1.1.0:
     resolution: {integrity: sha512-SFKX67auSNoVR38N3L+nvsPjOE0bybKTYbkf5tRvushrAPQ9V75huw0ZxBkKVeRU9kqH3d6HA4xTckbwZ4ixmA==}
     engines: {node: '>=0.10.0'}
@@ -93,6 +99,8 @@ packages:
     dependencies:
       micromatch: 3.1.10
       normalize-path: 2.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /anymatch/3.1.2:
@@ -222,7 +230,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.19.1
-      caniuse-lite: 1.0.30001311
+      caniuse-lite: 1.0.30001441
       fraction.js: 4.1.3
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -300,6 +308,8 @@ packages:
       snapdragon-node: 2.1.1
       split-string: 3.1.0
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /braces/3.0.2:
@@ -314,7 +324,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001311
+      caniuse-lite: 1.0.30001441
       electron-to-chromium: 1.4.68
       escalade: 3.1.1
       node-releases: 2.0.2
@@ -357,8 +367,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /caniuse-lite/1.0.30001311:
-    resolution: {integrity: sha512-mleTFtFKfykEeW34EyfhGIFjGCqzhh38Y0LhdQ9aWF+HorZTtdgKV/1hEE0NlFkG2ubvisPV6l400tlbPys98A==}
+  /caniuse-lite/1.0.30001441:
+    resolution: {integrity: sha512-OyxRR4Vof59I3yGWXws6i908EtGbMzVUi3ganaZQHmydk1iwDhRnvaPG2WaR0KcqrDFKrxVZHULT396LEPhXfg==}
     dev: true
 
   /chokidar/2.1.8:
@@ -378,6 +388,8 @@ packages:
       upath: 1.2.0
     optionalDependencies:
       fsevents: 1.2.13
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /chokidar/3.5.3:
@@ -547,16 +559,28 @@ packages:
       debug: 3.2.7
       memoizee: 0.4.15
       object-assign: 4.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.0.0
     dev: true
 
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.1.3
     dev: true
@@ -709,6 +733,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /expand-tilde/2.0.2:
@@ -755,6 +781,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /fancy-log/1.3.3:
@@ -809,6 +837,8 @@ packages:
       is-glob: 3.1.0
       micromatch: 3.1.10
       resolve-dir: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /findup-sync/3.0.0:
@@ -819,6 +849,8 @@ packages:
       is-glob: 4.0.3
       micromatch: 3.1.10
       resolve-dir: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /fined/1.2.0:
@@ -966,6 +998,8 @@ packages:
       just-debounce: 1.1.0
       normalize-path: 3.0.0
       object.defaults: 1.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /glob/7.2.0:
@@ -1033,6 +1067,8 @@ packages:
       semver-greatest-satisfied-range: 1.1.0
       v8flags: 3.2.0
       yargs: 7.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /gulp-postcss/9.0.1_postcss@8.4.6:
@@ -1077,6 +1113,8 @@ packages:
       source-map: 0.6.1
       strip-bom-string: 1.0.0
       through2: 2.0.5
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /gulp-terser/2.1.0:
@@ -1087,8 +1125,6 @@ packages:
       terser: 5.10.0
       through2: 4.0.2
       vinyl-sourcemaps-apply: 0.2.1
-    transitivePeerDependencies:
-      - acorn
     dev: true
 
   /gulp/4.0.2:
@@ -1100,6 +1136,8 @@ packages:
       gulp-cli: 2.3.0
       undertaker: 1.3.0
       vinyl-fs: 3.0.3
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /gulplog/1.0.0:
@@ -1476,6 +1514,8 @@ packages:
       object.map: 1.0.1
       rechoir: 0.6.2
       resolve: 1.22.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /lilconfig/2.0.4:
@@ -1536,6 +1576,8 @@ packages:
       micromatch: 3.1.10
       resolve: 1.22.0
       stack-trace: 0.0.10
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /mdn-data/2.0.23:
@@ -1572,6 +1614,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /minimatch/3.0.5:
@@ -1637,6 +1681,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /next-tick/1.0.0:
@@ -2013,6 +2059,8 @@ packages:
       graceful-fs: 4.2.9
       micromatch: 3.1.10
       readable-stream: 2.3.7
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /readdirp/3.6.0:
@@ -2244,6 +2292,8 @@ packages:
       source-map: 0.5.7
       source-map-resolve: 0.5.3
       use: 3.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /source-map-js/1.0.2:
@@ -2414,12 +2464,11 @@ packages:
     resolution: {integrity: sha512-AMmF99DMfEDiRJfxfY5jj5wNH/bYO09cniSqhfoyxc8sFoYIgkJy86G04UoZU5VjlpnplVu0K6Tx6E9b5+DlHA==}
     engines: {node: '>=10'}
     hasBin: true
-    peerDependencies:
-      acorn: ^8.5.0
     peerDependenciesMeta:
       acorn:
         optional: true
     dependencies:
+      acorn: 8.8.1
       commander: 2.20.3
       source-map: 0.7.3
       source-map-support: 0.5.21
