@@ -38,6 +38,14 @@ fetch("//gc.zgo.at/", { method: "HEAD" })
 			return;
 		}
 
+		if (
+			window.location.host !== "toot.kytta.dev" &&
+			window.location.host !== "s2f.kytta.dev" &&
+			window.location.host !== "share2fedi.kytta.dev"
+		) {
+			return;
+		}
+
 		const screen = encodeURIComponent(
 			[
 				window.screen.width,
