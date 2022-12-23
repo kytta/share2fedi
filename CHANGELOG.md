@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.3] - 2022-12-23
+
+### Changed
+
+- analytics script replaced with own implementation
+  - now uses `navigator.sendBeacon()` for a more lightweight solution
+  - now doesn't send anything other than path and screen size
+- updated CanIUse databases, which may cause some browsers become unsupported
+
 ## [2.4.2] - 2022-12-21
 
 ### Changed
@@ -164,7 +173,8 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.4.2...HEAD
+[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.4.3...HEAD
+[2.4.3]: https://codeberg.org/kytta/toot/compare/v2.4.2...v2.4.3
 [2.4.2]: https://codeberg.org/kytta/toot/compare/v2.4.1...v2.4.2
 [2.4.1]: https://codeberg.org/kytta/toot/compare/v2.4.0...v2.4.1
 [2.4.0]: https://codeberg.org/kytta/toot/compare/v2.3.1...v2.4.0
