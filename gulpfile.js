@@ -24,7 +24,7 @@ function css() {
 
 function js() {
 	return gulp
-		.src(join(SOURCE_DIR, "main.js"))
+		.src([join(SOURCE_DIR, "main.js"), join(SOURCE_DIR, "count.js")])
 		.pipe(sourcemaps.init())
 		.pipe(terser({ ecma: 5 }))
 		.pipe(sourcemaps.write("."))
@@ -42,6 +42,6 @@ exports.default = gulp.parallel(html, css, js, static);
 exports.watch = () => {
 	gulp.watch(join(SOURCE_DIR, "index.html"), html);
 	gulp.watch(join(SOURCE_DIR, "scss", "*.scss"), css);
-	gulp.watch(join(SOURCE_DIR, "main.js"), js);
+	gulp.watch(join(SOURCE_DIR, "*.js"), js);
 	gulp.watch(join(SOURCE_DIR, "static", "**", "*"), static);
 };

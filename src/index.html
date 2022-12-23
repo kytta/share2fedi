@@ -90,26 +90,8 @@
 			<section>
 				<a href="https://codeberg.org/kytta/toot">toot on Codeberg</a>
 			</section>
-			<script>
-				window.goatcounter = {
-					path: "/",
-				};
-				// Only load on production environment.
-				if (
-					window.location.host !== "toot.kytta.dev" &&
-					window.location.host !== "s2f.kytta.dev" &&
-					window.location.host !== "share2fedi.kytta.dev"
-				) {
-					window.goatcounter["no_onload"] = true;
-				}
-			</script>
-			<script
-				data-goatcounter="https://share2fedi.goatcounter.com/count"
-				data-goatcounter-settings='{"path": "/"}'
-				async
-				src="//gc.zgo.at/count.js"
-			></script>
 		</footer>
 		<script src="/main.js"></script>
+		<script src="/count.js" async defer></script>
 	</body>
 </html>
