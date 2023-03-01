@@ -38,25 +38,24 @@ if (
 	window.location.host === "s2f.kytta.dev" ||
 	window.location.host === "share2fedi.kytta.dev"
 ) {
-	fetch("//gc.zgo.at/", { method: "HEAD" })
-		.then((result) => {
-			if (!result.ok) {
-				return;
-			}
+	// eslint-disable-next-line unicorn/prefer-top-level-await
+	fetch("//gc.zgo.at/", { method: "HEAD" }).then((result) => {
+		if (!result.ok) {
+			return;
+		}
 
-			const screen = encodeURIComponent(
-				[
-					window.screen.width,
-					window.screen.height,
-					window.devicePixelRatio || 1,
-				].join(",")
-			);
+		const screen = encodeURIComponent(
+			[
+				window.screen.width,
+				window.screen.height,
+				window.devicePixelRatio || 1,
+			].join(",")
+		);
 
-			const random = encodeURIComponent(Math.random().toString(36).slice(2));
+		const random = encodeURIComponent(Math.random().toString(36).slice(2));
 
-			navigator.sendBeacon(
-				`https://share2fedi.goatcounter.com/count?p=%2F&s=${screen}&b=0&rnd=${random}`
-			);
-		})
-		.catch((_) => {});
+		navigator.sendBeacon(
+			`https://share2fedi.goatcounter.com/count?p=%2F&s=${screen}&b=0&rnd=${random}`
+		);
+	});
 }

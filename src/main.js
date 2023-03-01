@@ -30,8 +30,8 @@ const INSTANCE_LIST_URL = "https://api.joinmastodon.org/servers";
 const LOCAL_STORAGE_KEY = "recentInstances";
 const RECENT_INSTANCES_SIZE = 5;
 
-const $instance = document.getElementById("instance");
-const $instanceDatalist = document.getElementById("instanceDatalist");
+const $instance = document.querySelector("#instance");
+const $instanceDatalist = document.querySelector("#instanceDatalist");
 
 /**
  * Adds missing "https://" and ending slash to the URL
@@ -40,7 +40,7 @@ const $instanceDatalist = document.getElementById("instanceDatalist");
  * @return {string} normalized URL
  */
 function normalizeUrl(url) {
-	if (url.indexOf("http://") == -1 && url.indexOf("https://") == -1) {
+	if (!url.includes("http://") && !url.includes("https://")) {
 		url = "https://" + url;
 	}
 	if (url.charAt(url.length - 1) !== "/") {
@@ -59,16 +59,18 @@ function onLoadInstancesSuccess() {
 	}
 
 	const currentInstance = $instance.value;
-	const instanceDomains = JSON.parse(this.responseText).map((i) => i.domain);
-	if (currentInstance && instanceDomains.indexOf(currentInstance) < 0) {
+	const instanceDomains = JSON.parse(this.responseText).map(
+		(index) => index.domain
+	);
+	if (currentInstance && !instanceDomains.includes(currentInstance)) {
 		instanceDomains.push(currentInstance);
 	}
 	instanceDomains.sort();
 
-	for (let i = 0; i < instanceDomains.length; i++) {
+	for (const instanceDomain of instanceDomains) {
 		const $option = document.createElement("option");
-		$option.value = normalizeUrl(instanceDomains[i]);
-		$instanceDatalist.appendChild($option);
+		$option.value = normalizeUrl(instanceDomain);
+		$instanceDatalist.append($option);
 	}
 }
 
@@ -106,6 +108,8 @@ function rememberInstance(instance) {
 	);
 }
 
+// Used in HTML
+// eslint-disable-next-line no-unused-vars
 function onFormSubmit(form) {
 	const formData = new FormData(form);
 
@@ -117,17 +121,19 @@ function onFormSubmit(form) {
 
 let prefillInstance = getRecentInstances()[0];
 
-const URLParams = window.location.search.substr(1).split("&");
-for (let i = 0; i < URLParams.length; i++) {
-	const URLParamPair = URLParams[i].split("=");
-	if (URLParamPair[0] === "text") {
-		document.getElementById("text").value = decodeURIComponent(URLParamPair[1]);
-	} else if (URLParamPair[0] === "instance") {
-		prefillInstance = decodeURIComponent(URLParamPair[1]);
+const URLParameters = window.location.search.slice(1).split("&");
+for (const URLParameter of URLParameters) {
+	const URLParameterPair = URLParameter.split("=");
+	if (URLParameterPair[0] === "text") {
+		document.querySelector("#text").value = decodeURIComponent(
+			URLParameterPair[1]
+		);
+	} else if (URLParameterPair[0] === "instance") {
+		prefillInstance = decodeURIComponent(URLParameterPair[1]);
 	}
 }
 
-if (prefillInstance != null) {
+if (prefillInstance != undefined) {
 	$instance.value = normalizeUrl(prefillInstance);
 }
 

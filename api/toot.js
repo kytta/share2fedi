@@ -19,20 +19,21 @@
 const http = require("http");
 
 http
-	.createServer(async (req, res) => {
+	.createServer(async (request, response) => {
 		const buffers = [];
-		for await (const chunk of req) {
+		for await (const chunk of request) {
 			buffers.push(chunk);
 		}
 		const data = Buffer.concat(buffers).toString();
-		const params = new URLSearchParams(data);
+		const searchParameters = new URLSearchParams(data);
 
-		const text = params.get("text") || "";
-		const instanceURL = params.get("instance") || "https://mastodon.social/";
+		const text = searchParameters.get("text") || "";
+		const instanceURL =
+			searchParameters.get("instance") || "https://mastodon.social/";
 
 		const finalURL = new URL("share", instanceURL);
 		finalURL.search = new URLSearchParams({ text }).toString();
 
-		res.writeHead(303, { Location: finalURL.toString() }).end();
+		response.writeHead(303, { Location: finalURL.toString() }).end();
 	})
 	.listen(8000);
