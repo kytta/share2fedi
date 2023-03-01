@@ -13,11 +13,17 @@
 	"scripts": {
 		"build": "gulp",
 		"dev": "gulp watch",
+		"fmt": "prettier --write .",
+		"lint": "prettier --check . && eslint .",
+		"test": "pnpm run lint",
 		"serve": "sirv ./public --dev"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.4.2",
 		"browserslist": "^4.19.1",
+		"eslint": "^8.35.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-unicorn": "^45.0.2",
 		"gulp": "^4.0.2",
 		"gulp-postcss": "^9.0.1",
 		"gulp-sass": "^5.1.0",
@@ -25,7 +31,7 @@
 		"gulp-terser": "^2.1.0",
 		"postcss": "^8.4.6",
 		"postcss-csso": "^6.0.0",
-		"prettier": "2.5.1",
+		"prettier": "^2.8.4",
 		"sass": "^1.49.7",
 		"sirv-cli": "^2.0.2"
 	}
