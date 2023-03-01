@@ -115,7 +115,7 @@ function onFormSubmit(form) {
 	return true;
 }
 
-const prefillInstance = getRecentInstances()[0];
+let prefillInstance = getRecentInstances()[0];
 
 const URLParams = window.location.search.substr(1).split("&");
 for (let i = 0; i < URLParams.length; i++) {
