@@ -1,1 +1,4 @@
-{}
+{
+	"quoteProps": "consistent",
+	"trailingComma": "es5"
+}
