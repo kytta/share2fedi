@@ -1,7 +1,7 @@
 {
 	"name": "share2fedi",
 	"version": "2.4.5",
-	"description": "Cross-instance share page for Mastodon",
+	"description": "Instance-agnostic share page for the Fediverse.",
 	"license": "AGPL-3.0-or-later",
 	"author": "Nikita Karamov <me@kytta.dev>",
 	"homepage": "https://s2f.kytta.dev/",
