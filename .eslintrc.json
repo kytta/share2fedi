@@ -15,7 +15,6 @@
 				"browser": false
 			},
 			"rules": {
-				"unicorn/prefer-module": 0,
 				"unicorn/prefer-node-protocol": 0
 			}
 		}

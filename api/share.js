@@ -18,24 +18,28 @@
 	SPDX-License-Identifier: AGPL-3.0-or-later
 */
 
-const http = require("http");
+import http from "http";
 
-http
-	.createServer(async (request, response) => {
-		const buffers = [];
-		for await (const chunk of request) {
-			buffers.push(chunk);
-		}
-		const data = Buffer.concat(buffers).toString();
-		const searchParameters = new URLSearchParams(data);
+const requestListener = async (request, response) => {
+	const buffers = [];
+	for await (const chunk of request) {
+		buffers.push(chunk);
+	}
+	const data = Buffer.concat(buffers).toString();
+	const searchParameters = new URLSearchParams(data);
 
-		const text = searchParameters.get("text") || "";
-		const instanceURL =
-			searchParameters.get("instance") || "https://mastodon.social/";
+	const text = searchParameters.get("text") || "";
+	const instanceURL =
+		searchParameters.get("instance") || "https://mastodon.social/";
 
-		const finalURL = new URL("share", instanceURL);
-		finalURL.search = new URLSearchParams({ text }).toString();
+	const finalURL = new URL("share", instanceURL);
+	finalURL.search = new URLSearchParams({ text }).toString();
 
-		response.writeHead(303, { Location: finalURL.toString() }).end();
-	})
-	.listen(8000);
+	response.writeHead(303, { Location: finalURL.toString() }).end();
+};
+
+if (!import.meta.env || import.meta.env.PROD) {
+	http.createServer(requestListener).listen(8080);
+}
+
+export const viteNodeApp = requestListener;
