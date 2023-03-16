@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [v3 (unreleased)][Unreleased]
 
+
+### ⚠️ BREAKING CHANGES
+
+- **new API endpoint path**: ~~`/api/toot`~~ → `/api/share`
+- API endpoint **is now ESM-based** instead of CommonJS
+
+### Added
+
+- when developing, the API endpoint can now be tested locally thanks to
+  [`vite-plugin-node`](https://github.com/axe-me/vite-plugin-node)
+
 ### Changed
 
 - **new project name**: Share₂Fedi (see #1)
