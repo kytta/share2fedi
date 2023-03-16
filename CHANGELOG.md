@@ -20,6 +20,8 @@ as to indicate that sharing to other federated networks is now possible.
 
 - when developing, the API endpoint can now be tested locally thanks to
   [`vite-plugin-node`](https://github.com/axe-me/vite-plugin-node)
+- a privacy policy describing what data is being processed and stored
+- a link to the status page
 
 ### Changed
 
