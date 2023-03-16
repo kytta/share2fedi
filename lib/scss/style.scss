@@ -24,16 +24,50 @@
 @import "fonts";
 @import "variables";
 
-* {
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+}
+
+:root {
+	--s2f-bg-color: #eff3f5;
+	--s2f-text-color: #282c37;
+	--s2f-border-color: #ccd7e0;
+
+	--s2f-input-bg-color: #ffffff;
+	--s2f-input-text-color: #000000;
+	--s2f-input-placeholder-color: #444b5d;
+	--s2f-input-border-color: #c0cdd9;
+
+	--s2f-button-bg-color: #6d6eff;
+	--s2f-button-hover-bg-color: #6364ff;
+	--s2f-button-text-color: #ffffff;
+
+	accent-color: var(--s2f-button-bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--s2f-bg-color: #191b22;
+		--s2f-text-color: #9caec8;
+		--s2f-border-color: #313543;
+
+		--s2f-input-text-color: #282c37;
+		--s2f-input-placeholder-color: #606984;
+		--s2f-input-border-color: transparent;
+
+		--s2f-button-bg-color: #595aff;
+		--s2f-button-hover-bg-color: #6364ff;
+	}
 }
 
 html,
 body {
-	background-color: $bg;
-	color: $text;
+	background-color: var(--s2f-bg-color);
+	color: var(--s2f-text-color);
 	font-family: $text-font;
 	font-size: 16px;
 	font-weight: 400;
@@ -51,7 +85,7 @@ body {
 }
 
 header {
-	border-bottom: 1px solid $border-color;
+	border-bottom: 1px solid var(--s2f-border-color);
 	padding: 1.5rem 0 0.5rem;
 	text-align: center;
 	width: 100%;
@@ -113,8 +147,8 @@ main {
 			&[type="submit"] {
 				display: inline-block;
 				text-align: center;
-				background-color: $button-bg;
-				color: $button-text;
+				background-color: var(--s2f-button-bg-color);
+				color: var(--s2f-button-text-color);
 				font-weight: 500;
 				font-family: inherit;
 				height: 2.5rem;
@@ -124,7 +158,7 @@ main {
 				cursor: pointer;
 
 				&:hover {
-					background-color: $button-hover-bg;
+					background-color: var(--s2f-button-hover-bg-color);
 				}
 			}
 
@@ -133,31 +167,23 @@ main {
 
 		textarea,
 		input[type="url"] {
-			color: inherit;
+			color: var(--s2f-input-text-color);
 			width: 100%;
-			outline: 0;
 			font-family: inherit;
 			resize: vertical;
-			background-color: $input-bg;
-			border: 1px solid color.scale($input-bg, $lightness: -25%);
+			background-color: var(--s2f-input-bg-color);
+			border: 1px solid var(--s2f-input-border-color);
 			padding: 10px;
 
-			&:focus,
-			&:active {
-				border: 1px solid $button-bg;
-				background-color: color.scale($input-bg, $lightness: +5%);
-			}
-
 			&::placeholder {
-				color: inherit;
-				opacity: 0.3;
+				color: var(--s2f-input-placeholder-color);
 			}
 		}
 	}
 }
 
 footer {
-	border-top: 1px solid $border-color;
+	border-top: 1px solid var(--s2f-border-color);
 	padding: 1rem 0;
 	width: 100%;
 	display: flex;
