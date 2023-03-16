@@ -7,7 +7,9 @@
 Or, open this page with the prefilled `text` URL parameter—it will be automatically inserted into the text field. The same goes for the `instance` URL parameter. This can be used to build custom share buttons for the federated social networks:
 
 ```html
-<a href="https://s2f.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz">
+<a
+  href="https://s2f.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz"
+>
   Share on mastodon.xyz
 </a>
 ```
