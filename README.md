@@ -103,8 +103,6 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 © 2020–2022 [Nikita Karamov]\
 Licensed under the [GNU Affero General Public License, version 3][AGPL-3.0].
 
-The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0].
-
 ---
 
 This project is hosted on GitHub: <https://github.com/kytta/share2fedi.git>
