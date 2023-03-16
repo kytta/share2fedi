@@ -12,7 +12,9 @@ as to indicate that sharing to other federated networks is now possible.
 ### ⚠️ BREAKING CHANGES
 
 - **new API endpoint path**: ~~`/api/toot`~~ → `/api/share`
+- **new API endpoint port**: ~~`:8000`~~ → `:8080`
 - API endpoint **is now ESM-based** instead of CommonJS
+- **new static path**: ~~`./public`~~ → `./dist`
 
 ### Added
 
