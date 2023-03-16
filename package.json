@@ -1,10 +1,10 @@
 {
-	"name": "toot",
+	"name": "share2fedi",
 	"version": "2.4.4",
 	"description": "Cross-instance share page for Mastodon",
 	"license": "AGPL-3.0-or-later",
 	"author": "Nikita Karamov <me@kytta.dev>",
-	"homepage": "https://toot.kytta.dev/",
+	"homepage": "https://s2f.kytta.dev/",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kytta/share2fedi.git"

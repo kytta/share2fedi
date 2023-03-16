@@ -1,6 +1,6 @@
 {
-	"name": "toot",
-	"short_name": "toot",
+	"name": "Share₂Fedi",
+	"short_name": "Share₂Fedi",
 	"icons": [
 		{
 			"src": "/icon-192.png",
@@ -13,5 +13,5 @@
 			"type": "image/png"
 		}
 	],
-	"theme_color": "#3088d4"
+	"theme_color": "#40665c"
 }
