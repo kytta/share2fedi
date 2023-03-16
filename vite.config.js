@@ -1,4 +1,5 @@
 import legacy from "@vitejs/plugin-legacy";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { VitePluginNode } from "vite-plugin-node";
 
 const vitePluginNode = VitePluginNode({
@@ -20,5 +21,5 @@ export default {
 		terserOptions: { ecma: 5 },
 		sourcemap: "true",
 	},
-	plugins: [legacy(), ...vitePluginNode],
+	plugins: [legacy(), ...vitePluginNode, ViteImageOptimizer({})],
 };
