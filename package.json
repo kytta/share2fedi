@@ -16,7 +16,7 @@
 		"build-icons": "svgo --multipass assets/pentagon.svg assets/s2f.svg assets/share2fedi.svg -o assets/pentagon.min.svg assets/s2f.min.svg assets/share2fedi.min.svg",
 		"dev": "vite",
 		"fmt": "prettier --write .",
-		"lint": "prettier --check . && eslint .",
+		"lint": "prettier --check . && eslint . && stylelint '**/*.scss'",
 		"preview": "vite preview",
 		"test": "pnpm run lint"
 	},
@@ -32,6 +32,8 @@
 		"postcss-csso": "^6.0.1",
 		"prettier": "^2.8.4",
 		"sass": "^1.59.3",
+		"stylelint": "^15.2.0",
+		"stylelint-config-standard-scss": "^7.0.1",
 		"svgo": "^3.0.2",
 		"terser": "^5.16.6",
 		"vite": "^4.2.0",
@@ -43,5 +45,8 @@
 			"autoprefixer": {},
 			"postcss-csso": {}
 		}
+	},
+	"stylelint": {
+		"extends": "stylelint-config-standard-scss"
 	}
 }
