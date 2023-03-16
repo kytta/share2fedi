@@ -23,7 +23,7 @@ For now, **Share₂Fedi** is vendor-locked to run on [Vercel](https://vercel.com
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkytta%2Ftoot)
 
 <!-- TODO: update the selfhosting instructions -->
-<!-- 
+<!--
 ### Host it yourself
 
 Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
