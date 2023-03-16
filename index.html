@@ -43,25 +43,24 @@
 	</head>
 	<body>
 		<header>
-			<h1>
-				<img src="/logo.svg" alt="Share2Fedi" width="260" height="80" />
-			</h1>
+			<img src="/logo.svg" alt="Share2Fedi" width="260" height="80" />
 		</header>
 		<main>
 			<form id="js-s2f-form" action="/api/share" method="POST">
-				<section>
-					<label for="text">Post text</label>
+				<label>
+					Post text
 					<textarea
 						name="text"
 						id="text"
-						rows="6"
+						rows="7"
 						placeholder="What's on your mind?"
 						required
 					></textarea>
-				</section>
-				<section>
-					<datalist id="instanceDatalist"></datalist>
-					<label for="instance">Choose your Mastodon instance</label>
+				</label>
+
+				<datalist id="instanceDatalist"></datalist>
+				<label>
+					Choose your Mastodon instance
 					<input
 						type="url"
 						name="instance"
@@ -70,23 +69,19 @@
 						list="instanceDatalist"
 						required
 					/>
-				</section>
-				<section class="remember">
+				</label>
+
+				<label for="remember">
 					<input type="checkbox" id="remember" name="remember" />
-					<label for="remember">Remember my instance on this device</label>
-				</section>
-				<section class="submit">
-					<input type="submit" value="TOOT!" />
-				</section>
+					Remember my instance on this device
+				</label>
+
+				<input type="submit" value="Publish" />
 			</form>
 		</main>
 		<footer>
-			<section>
-				<a href="https://joinmastodon.org/">What is Mastodon?</a>
-			</section>
-			<section>
-				<a href="https://github.com/kytta/share2fedi">toot on GitHub</a>
-			</section>
+			<a href="https://joinmastodon.org/">What is Mastodon?</a>
+			<a href="https://github.com/kytta/share2fedi">toot on GitHub</a>
 		</footer>
 	</body>
 </html>
