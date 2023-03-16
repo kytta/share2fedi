@@ -27,22 +27,17 @@
 }
 
 :root {
-	color-scheme: light dark;
-
 	--s2f-accent-color: #40665c;
 	--s2f-accent-color-light: #5d8379;
 	--s2f-accent-color-contrast: #005e4e;
-
 	--s2f-border-color: #ccc;
+	--s2f-input-bg-color: #fff;
+	--s2f-input-text-color: #000;
+	--s2f-button-text-color: #fff;
 
-	--s2f-input-bg-color: #ffffff;
-	--s2f-input-text-color: #000000;
-
-	--s2f-button-text-color: #ffffff;
-
+	color-scheme: light dark;
 	accent-color: var(--s2f-accent-color);
-
-	font-family: "Helvetica Neue", Helvetica, FreeSans, "Nimbus Sans L", "Inter",
+	font-family: "Helvetica Neue", Helvetica, FreeSans, "Nimbus Sans L", Inter,
 		Arial, system-ui, sans-serif;
 	font-size: 16px;
 }
@@ -66,7 +61,6 @@ footer {
 	margin-top: 2rem;
 	border-top: 1px solid var(--s2f-border-color);
 	padding: 1rem 0;
-
 	display: flex;
 	flex-flow: row wrap;
 	flex-direction: row;
@@ -96,7 +90,6 @@ textarea {
 	line-height: 1.15;
 	margin: 0;
 	padding: 0.5rem;
-
 	border-radius: 4px;
 }
 
@@ -107,7 +100,6 @@ textarea {
 input[type="url"],
 textarea {
 	width: 100%;
-
 	color: var(--s2f-input-text-color);
 	background-color: var(--s2f-input-bg-color);
 	border: 1px solid var(--s2f-border-color);
@@ -126,9 +118,7 @@ input[type="submit"] {
 	padding: 0.5rem 2rem;
 	border: 0;
 	cursor: pointer;
-
 	appearance: button;
-	-webkit-appearance: button;
 
 	&:hover {
 		background-color: var(--s2f-accent-color-light);
@@ -140,7 +130,6 @@ input[type="submit"] {
 		--s2f-accent-color: #43776a;
 		--s2f-accent-color-light: #619587;
 		--s2f-accent-color-contrast: #a8f7e2;
-
 		--s2f-border-color: #333;
 	}
 }
