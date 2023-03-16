@@ -1,5 +1,4 @@
 *.md
 /dist/
-/public/
 /.vercel/
 pnpm-lock.yaml
