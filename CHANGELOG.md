@@ -24,6 +24,7 @@ as to indicate that sharing to other federated networks is now possible.
 - **new project name**: Share₂Fedi (see #1)
   - new default instance URL: <https://s2f.kytta.dev>
   - new logo
+  - new design
 - repository moved back to GitHub
 - s2f is now being built with Vite
   - `@vitejs/plugin-legacy` is used, which allows JS work on old browsers, which
