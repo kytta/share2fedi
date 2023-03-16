@@ -13,7 +13,6 @@
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
-		"build-icons": "svgo --multipass assets/pentagon.svg assets/s2f.svg assets/share2fedi.svg -o assets/pentagon.min.svg assets/s2f.min.svg assets/share2fedi.min.svg",
 		"dev": "vite",
 		"fmt": "prettier --write .",
 		"lint": "prettier --check . && eslint . && stylelint '**/*.scss'",
