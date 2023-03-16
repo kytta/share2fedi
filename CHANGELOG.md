@@ -12,6 +12,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - new default instance URL: <https://s2f.kytta.dev>
   - new logo
 - repository moved back to GitHub
+- s2f is now being built with Vite
+  - `@vitejs/plugin-legacy` is used, which allows JS work on old browsers, which
+    comes, with big bundle sizes. Modern browsers still get a small bundle.
 
 ## [2.4.5] - 2023-06-17
 
