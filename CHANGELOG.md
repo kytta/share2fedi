@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [v3 (unreleased)][Unreleased]
 
+This version is a huge reinvention of toot. The name was changed to Share₂Fedi,
+as to indicate that sharing to other federated networks is now possible.
 
 ### ⚠️ BREAKING CHANGES
 
