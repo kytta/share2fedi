@@ -9,7 +9,7 @@
 	},
 	"overrides": [
 		{
-			"files": ["gulpfile.js", "api/*.js"],
+			"files": ["api/*.js"],
 			"env": {
 				"node": true,
 				"browser": false

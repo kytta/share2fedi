@@ -302,5 +302,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,now,visualstudiocode,webstorm+all,windows,macos,linux
 
-/public
+/dist/
 *.min.svg
