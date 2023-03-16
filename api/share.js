@@ -21,21 +21,27 @@
 import http from "http";
 
 const requestListener = async (request, response) => {
-	const buffers = [];
-	for await (const chunk of request) {
-		buffers.push(chunk);
+	if (request.method !== "POST") {
+		response.writeHead(405).end();
+		return;
 	}
-	const data = Buffer.concat(buffers).toString();
-	const searchParameters = new URLSearchParams(data);
 
-	const text = searchParameters.get("text") || "";
-	const instanceURL =
-		searchParameters.get("instance") || "https://mastodon.social/";
+	let data = "";
+	request.on("data", (chunk) => {
+		data += chunk.toString();
+	});
 
-	const finalURL = new URL("share", instanceURL);
-	finalURL.search = new URLSearchParams({ text }).toString();
+	request.on("end", () => {
+		const requestBody = new URLSearchParams(data);
+		const postText = requestBody.get("text") || "";
+		const instanceURL =
+			requestBody.get("instance") || "https://mastodon.social/";
 
-	response.writeHead(303, { Location: finalURL.toString() }).end();
+		const finalURL = new URL("share", instanceURL);
+		finalURL.search = new URLSearchParams({ postText }).toString();
+
+		response.writeHead(303, { Location: finalURL.toString() }).end();
+	});
 };
 
 if (!import.meta.env || import.meta.env.PROD) {
