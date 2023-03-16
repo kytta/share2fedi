@@ -98,7 +98,7 @@ The repo banner includes Mastodon’s ‘Full’ logo, licensed under [AGPL-3.0]
 
 ---
 
-This project is hosted on Codeberg: <https://codeberg.org/kytta/toot.git>
+This project is hosted on GitHub: <https://github.com/kytta/share2fedi.git>
 
 [AGPL-3.0]: https://spdx.org/licenses/AGPL-3.0-only.html
 [Nikita Karamov]: https://www.kytta.dev

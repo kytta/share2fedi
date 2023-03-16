@@ -1,5 +1,5 @@
 /*!
- * @source: https://codeberg.org/kytta/toot/src/branch/main/src/main.js
+ * @source: https://github.com/kytta/share2fedi/blob/main/src/main.js
  *
  * @licstart  The following is the entire license notice for the
  *            JavaScript code in this page.
