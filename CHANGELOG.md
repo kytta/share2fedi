@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **new project name**: Share₂Fedi (see #1)
   - new default instance URL: <https://s2f.kytta.dev>
   - new logo
+- repository moved back to GitHub
 
 ## [2.4.5] - 2023-06-17
 
@@ -193,24 +194,24 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.4.5...HEAD
-[2.4.5]: https://codeberg.org/kytta/toot/compare/v2.4.4...v2.4.5
-[2.4.4]: https://codeberg.org/kytta/toot/compare/v2.4.3...v2.4.4
-[2.4.3]: https://codeberg.org/kytta/toot/compare/v2.4.2...v2.4.3
-[2.4.2]: https://codeberg.org/kytta/toot/compare/v2.4.1...v2.4.2
-[2.4.1]: https://codeberg.org/kytta/toot/compare/v2.4.0...v2.4.1
-[2.4.0]: https://codeberg.org/kytta/toot/compare/v2.3.1...v2.4.0
-[2.3.1]: https://codeberg.org/kytta/toot/compare/v2.3.0...v2.3.1
-[2.3.0]: https://codeberg.org/kytta/toot/compare/v2.2.2...v2.3.0
-[2.2.2]: https://codeberg.org/kytta/toot/compare/v2.2.1...v2.2.2
-[2.2.1]: https://codeberg.org/kytta/toot/compare/v2.2.0...v2.2.1
-[2.2.0]: https://codeberg.org/kytta/toot/compare/v2.1.0...v2.2.0
-[2.1.0]: https://codeberg.org/kytta/toot/compare/v2.0.0...v2.1.0
-[2.0.0]: https://codeberg.org/kytta/toot/compare/v1.2.2...v2.0.0
-[1.2.2]: https://codeberg.org/kytta/toot/compare/v1.2.1...v1.2.2
-[1.2.1]: https://codeberg.org/kytta/toot/compare/v1.2.0...v1.2.1
-[1.2.0]: https://codeberg.org/kytta/toot/compare/v1.1.2...v1.2.0
-[1.1.2]: https://codeberg.org/kytta/toot/compare/v1.1.1...v1.1.2
-[1.1.1]: https://codeberg.org/kytta/toot/compare/v1.1.0...v1.1.1
-[1.1.0]: https://codeberg.org/kytta/toot/compare/v1.0.0...v1.1.0
-[1.0.0]: https://codeberg.org/kytta/toot/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
+[Unreleased]: https://github.com/kytta/share2fedi/compare/v2.4.5...HEAD
+[2.4.5]: https://github.com/kytta/share2fedi/compare/v2.4.4...v2.4.5
+[2.4.4]: https://github.com/kytta/share2fedi/compare/v2.4.3...v2.4.4
+[2.4.3]: https://github.com/kytta/share2fedi/compare/v2.4.2...v2.4.3
+[2.4.2]: https://github.com/kytta/share2fedi/compare/v2.4.1...v2.4.2
+[2.4.1]: https://github.com/kytta/share2fedi/compare/v2.4.0...v2.4.1
+[2.4.0]: https://github.com/kytta/share2fedi/compare/v2.3.1...v2.4.0
+[2.3.1]: https://github.com/kytta/share2fedi/compare/v2.3.0...v2.3.1
+[2.3.0]: https://github.com/kytta/share2fedi/compare/v2.2.2...v2.3.0
+[2.2.2]: https://github.com/kytta/share2fedi/compare/v2.2.1...v2.2.2
+[2.2.1]: https://github.com/kytta/share2fedi/compare/v2.2.0...v2.2.1
+[2.2.0]: https://github.com/kytta/share2fedi/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/kytta/share2fedi/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/kytta/share2fedi/compare/v1.2.2...v2.0.0
+[1.2.2]: https://github.com/kytta/share2fedi/compare/v1.2.1...v1.2.2
+[1.2.1]: https://github.com/kytta/share2fedi/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/kytta/share2fedi/compare/v1.1.2...v1.2.0
+[1.1.2]: https://github.com/kytta/share2fedi/compare/v1.1.1...v1.1.2
+[1.1.1]: https://github.com/kytta/share2fedi/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/kytta/share2fedi/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/kytta/share2fedi/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
