@@ -1,5 +1,5 @@
 <!--
-	@source: https://github.com/kytta/share2fedi/blob/main/src/index.html
+	@source: https://github.com/kytta/share2fedi/blob/main/index.html
 
 	share2fedi - Instance-agnostic share page for the Fediverse.
 	Copyright (C) 2020-2023  Nikita Karamov <me@kytta.dev>
@@ -32,7 +32,8 @@
 		/>
 		<link rel="canonical" href="https://toot.kytta.dev/" />
 
-		<link href="/style.css" rel="stylesheet" />
+		<script type="module" src="/lib/main.js" async defer></script>
+		<script type="module" src="/lib/count.js" async defer></script>
 
 		<link href="/favicon.ico" rel="icon" type="image/x-icon" />
 		<link href="/apple-touch-icon.png" rel="icon" type="image/svg+xml" />
@@ -91,7 +92,5 @@
 				<a href="https://github.com/kytta/share2fedi">toot on GitHub</a>
 			</section>
 		</footer>
-		<script src="/main.js"></script>
-		<script src="/count.js" async defer></script>
 	</body>
 </html>
