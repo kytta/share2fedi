@@ -4,8 +4,8 @@
  * @licstart  The following is the entire license notice for the
  *            JavaScript code in this page.
  *
- * toot - Cross-instance share page for Mastodon
- * Copyright (C) 2020-2022  Nikita Karamov <me@kytta.dev>
+ * share2fedi - Instance-agnostic share page for the Fediverse.
+ * Copyright (C) 2020-2023  Nikita Karamov <me@kytta.dev>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
