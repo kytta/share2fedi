@@ -19,6 +19,7 @@
 		"test": "pnpm run lint",
 		"serve": "sirv ./public --dev"
 	},
+	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
 	"devDependencies": {
 		"autoprefixer": "^10.4.2",
 		"browserslist": "^4.19.1",
