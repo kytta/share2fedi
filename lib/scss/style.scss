@@ -20,10 +20,6 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-@use "sass:color";
-@import "fonts";
-@import "variables";
-
 *,
 *::before,
 *::after {
@@ -68,7 +64,8 @@ html,
 body {
 	background-color: var(--s2f-bg-color);
 	color: var(--s2f-text-color);
-	font-family: $text-font;
+	font-family: "Helvetica Neue", Helvetica, FreeSans, "Nimbus Sans L", "Inter",
+		Arial, system-ui, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1;
