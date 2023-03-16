@@ -44,7 +44,7 @@
 	</head>
 	<body>
 		<header>
-			<img src="/logo.svg" alt="Share2Fedi" width="260" height="80" />
+			<img src="/logo.svg" alt="Share2Fedi" width="195" height="60" />
 		</header>
 		<main>
 			<form id="js-s2f-form" action="/api/share" method="POST">
@@ -80,7 +80,41 @@
 				<input type="submit" value="Publish" />
 			</form>
 		</main>
-		<footer>
+		<aside>
+			<p>
+				Share₂Fedi is an instance-agnostic share page for
+				<a href="https://en.wikipedia.org/wiki/Fediverse">the Fediverse</a>.
+				With it, you can post to various federated platforms from a single page.
+			</p>
+			<p><b>Supported projects:</b></p>
+			<ul>
+				<li>Mastodon</li>
+				<li>
+					GNU Social <small><b>(new!)</b></small>
+				</li>
+			</ul>
+			<p>
+				Share₂Fedi is developed and maintained by
+				<a href="https://www.kytta.dev/">Nikita Karamov</a>. Source code is
+				<a href="https://github.com/kytta/share2fedi">on GitHub</a>. Hosted with
+				<a href="https://vercel.com">Vercel</a>.
+				<a href="https://stats.uptimerobot.com/QOXj3uXPDX">Status page</a>.
+			</p>
+			<details>
+				<summary>Licence</summary>
+				<p>
+					Share₂Fedi is free software: you can redistribute it and/or modify it
+					under the terms of the GNU Affero General Public License as published
+					by the Free Software Foundation, either version 3 of the License, or
+					(at your option) any later version.
+				</p>
+				<p>
+					Share₂Fedi is distributed in the hope that it will be useful, but
+					WITHOUT ANY WARRANTY; without even the implied warranty of
+					MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+					Affero General Public License for more details.
+				</p>
+			</details>
 			<details>
 				<summary>Privacy Notice</summary>
 				<p>
@@ -119,9 +153,6 @@
 					data. Please refer to the privacy policy of the respective instance.
 				</p>
 			</details>
-			<a href="https://joinmastodon.org/">What is Mastodon?</a>
-			<a href="https://github.com/kytta/share2fedi">Share₂Fedi on GitHub</a>
-			<a href="https://stats.uptimerobot.com/QOXj3uXPDX">Status</a>
-		</footer>
+		</aside>
 	</body>
 </html>
