@@ -19,6 +19,45 @@
 */
 
 import http from "http";
+import https from "https";
+
+const pathsMap = {
+	mastodon: {
+		checkUrl: "/api/v1/instance",
+		postUrl: "share",
+		textParam: "text",
+	},
+	gnuSocial: {
+		checkUrl: "/api/statusnet/version.xml",
+		postUrl: "/notice/new",
+		textParam: "status_textarea",
+	},
+};
+
+const queryUrl = (url, service) => {
+	return new Promise((resolve, reject) => {
+		const get = url.protocol === "https:" ? https.get : http.get;
+		get(url, ({ statusCode }) => {
+			if (statusCode === 200) {
+				console.debug(url.href, "is", service);
+				resolve(service);
+			} else {
+				reject(url);
+			}
+		}).on("error", (error) => {
+			reject(error);
+		});
+	});
+};
+
+const detectService = async (instanceURL) => {
+	const checkPromises = Object.entries(pathsMap).map(
+		([service, { checkUrl }]) =>
+			queryUrl(new URL(checkUrl, instanceURL), service)
+	);
+
+	return await Promise.any(checkPromises);
+};
 
 const requestListener = async (request, response) => {
 	if (request.method !== "POST") {
@@ -37,10 +76,17 @@ const requestListener = async (request, response) => {
 		const instanceURL =
 			requestBody.get("instance") || "https://mastodon.social/";
 
-		const finalURL = new URL("share", instanceURL);
-		finalURL.search = new URLSearchParams({ postText }).toString();
-
-		response.writeHead(303, { Location: finalURL.toString() }).end();
+		detectService(instanceURL)
+			.then((service) => {
+				const publishUrl = new URL(pathsMap[service].postUrl, instanceURL);
+				publishUrl.search = new URLSearchParams([
+					[pathsMap[service].textParam, postText],
+				]);
+				response.writeHead(303, { Location: publishUrl.toString() }).end();
+			})
+			.catch((error) => {
+				response.writeHead(400).end(error);
+			});
 	});
 };
 
