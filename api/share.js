@@ -53,7 +53,7 @@ const queryUrl = (url, service) => {
 const detectService = async (instanceURL) => {
 	const checkPromises = Object.entries(pathsMap).map(
 		([service, { checkUrl }]) =>
-			queryUrl(new URL(checkUrl, instanceURL), service)
+			queryUrl(new URL(checkUrl, instanceURL), service),
 	);
 
 	return await Promise.any(checkPromises);

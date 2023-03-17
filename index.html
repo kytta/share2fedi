@@ -24,7 +24,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
 		<title>
 			Share₂Fedi &mdash; an instance-agnostic share page for the Fediverse
 		</title>
@@ -32,22 +35,58 @@
 			name="description"
 			content="Share₂Fedi is a share page for Mastodon and GNU Social. Type in your post text and the instance URL and click &lsquo;Publish!&rsquo;"
 		/>
-		<link rel="canonical" href="https://s2f.kytta.dev/" />
+		<link
+			rel="canonical"
+			href="https://s2f.kytta.dev/"
+		/>
 
-		<script type="module" src="/lib/main.js" async defer></script>
-		<script type="module" src="/lib/count.js" async defer></script>
+		<script
+			type="module"
+			src="/lib/main.js"
+			async
+			defer
+		></script>
+		<script
+			type="module"
+			src="/lib/count.js"
+			async
+			defer
+		></script>
 
-		<link rel="icon" href="/favicon.ico" sizes="any" />
-		<link rel="icon" href="/icon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="manifest" href="/manifest.webmanifest" />
+		<link
+			rel="icon"
+			href="/favicon.ico"
+			sizes="any"
+		/>
+		<link
+			rel="icon"
+			href="/icon.svg"
+			type="image/svg+xml"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="manifest"
+			href="/manifest.webmanifest"
+		/>
 	</head>
 	<body>
 		<header>
-			<img src="/logo.svg" alt="Share2Fedi" width="195" height="60" />
+			<img
+				src="/logo.svg"
+				alt="Share2Fedi"
+				width="195"
+				height="60"
+			/>
 		</header>
 		<main>
-			<form id="js-s2f-form" action="/api/share" method="POST">
+			<form
+				id="js-s2f-form"
+				action="/api/share"
+				method="POST"
+			>
 				<label>
 					Post text
 					<textarea
@@ -73,11 +112,18 @@
 				</label>
 
 				<label for="remember">
-					<input type="checkbox" id="remember" name="remember" />
+					<input
+						type="checkbox"
+						id="remember"
+						name="remember"
+					/>
 					Remember my instance on this device
 				</label>
 
-				<input type="submit" value="Publish" />
+				<input
+					type="submit"
+					value="Publish"
+				/>
 			</form>
 		</main>
 		<aside>

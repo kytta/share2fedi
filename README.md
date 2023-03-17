@@ -2,9 +2,14 @@
 
 > Instance-agnostic share page for the Fediverse.
 
-**[Share₂Fedi]** allows you to share stuff on Mastodon, GoToSocial, Pleroma, and other federated social networks, instance-agnostic. Just type in the post text and the instance URL, and click ‘Post!’
+**[Share₂Fedi]** allows you to share stuff on Mastodon, GoToSocial, Pleroma, and
+other federated social networks, instance-agnostic. Just type in the post text
+and the instance URL, and click ‘Post!’
 
-Or, open this page with the prefilled `text` URL parameter—it will be automatically inserted into the text field. The same goes for the `instance` URL parameter. This can be used to build custom share buttons for the federated social networks:
+Or, open this page with the prefilled `text` URL parameter—it will be
+automatically inserted into the text field. The same goes for the `instance` URL
+parameter. This can be used to build custom share buttons for the federated
+social networks:
 
 ```html
 <a
@@ -14,14 +19,15 @@ Or, open this page with the prefilled `text` URL parameter—it will be automati
 </a>
 ```
 
-The instance URL can be saved in your `localStorage` to be automatically appended if used later—handy!
+The instance URL can be saved in your `localStorage` to be automatically
+appended if used later—handy!
 
 ## Hosting
 
 ### One-click Vercel deploy
 
-**Share₂Fedi** is designed to run on [Vercel](https://vercel.com/).
-To deploy it yourself (it's free!), you can use the following button:
+**Share₂Fedi** is designed to run on [Vercel](https://vercel.com/). To deploy it
+yourself (it's free!), you can use the following button:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkytta%2Fshare2fedi)
 
@@ -55,13 +61,14 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
    pm2 start api/share.js --watch --ignore-watch="node_modules"
    ```
 
-   > You can find a summary for pm2 at: https://pm2.keymetrics.io/docs/usage/quick-start/
+   > You can find a summary for pm2 at:
+   > https://pm2.keymetrics.io/docs/usage/quick-start/
 
 4. Set up a web server
 
-   Basically, you need to run a server that would proxy the requests to `/api/share`.
-   to the Node.js server you started. Here's how to achieve this in various HTTP
-   servers:
+   Basically, you need to run a server that would proxy the requests to
+   `/api/share`. to the Node.js server you started. Here's how to achieve this
+   in various HTTP servers:
 
    1. Apache
 
@@ -95,8 +102,8 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 
 ## See also
 
-**[📯 Shareon](https://shareon.js.org)**
-(lightweight, stylish, and ethical share buttons) uses **Share₂Fedi** under the hood!
+**[📯 Shareon](https://shareon.js.org)** (lightweight, stylish, and ethical
+share buttons) uses **Share₂Fedi** under the hood!
 
 ## Licence
 
