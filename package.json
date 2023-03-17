@@ -47,6 +47,13 @@
 			"postcss-csso": {}
 		}
 	},
+	"prettier": {
+		"printWidth": 80,
+		"quoteProps": "as-needed",
+		"trailingComma": "all",
+		"proseWrap": "always",
+		"singleAttributePerLine": true
+	},
 	"stylelint": {
 		"extends": "stylelint-config-standard-scss"
 	}
