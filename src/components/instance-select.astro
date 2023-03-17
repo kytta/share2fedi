@@ -12,7 +12,7 @@ try {
 <datalist id="instanceDatalist">
 	{instances.map((instance) => <option value={instance} />)}
 </datalist>
-<label>
+<label id="s2f-instanceContainer">
 	Mastodon, Pleroma, or GNU Social instance
 	<div class="instance-input">
 		<span id="https-label">https://</span>
@@ -38,12 +38,19 @@ try {
 </label>
 
 <style lang="scss">
+	:global(.previously-used) {
+		color: var(--s2f-accent-color-contrast);
+		cursor: pointer;
+		text-decoration: 1px solid underline currentColor;
+	}
+
 	.instance-input {
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: stretch;
 		width: 100%;
+		margin-bottom: 1rem;
 
 		span {
 			display: flex;
@@ -61,10 +68,13 @@ try {
 </style>
 
 <script>
-	import { extractHost } from "../util";
+	import { extractHost, normalizeURL } from "../util";
 
 	const LOCAL_STORAGE_KEY = "recentInstances";
+	const RECENT_INSTANCES_SIZE = 5;
 
+	const $form = document.querySelector("#js-s2f-form");
+	const $instanceContainer = document.querySelector("#s2f-instanceContainer");
 	const $instance: HTMLInputElement = document.querySelector("#instance");
 
 	const getSavedInstances = (): Array<string> => {
@@ -76,8 +86,51 @@ try {
 		return JSON.parse(storageValue);
 	};
 
-	const savedInstance = getSavedInstances()[0];
-	if (savedInstance) {
-		$instance.value = extractHost(savedInstance);
+	const savedInstances = getSavedInstances();
+
+	if (savedInstances.length > 0) {
+		$instanceContainer.append(
+			"Previously used: ",
+			...savedInstances
+				.flatMap((instance, index) => {
+					if (!instance) {
+						return [];
+					}
+
+					const host = extractHost(instance);
+					if (index == 0) {
+						$instance.value = host;
+					}
+					const element = document.createElement("span");
+					element.textContent = host;
+					element.classList.add("previously-used");
+					element.addEventListener("click", () => {
+						$instance.value = host;
+					});
+					return [element, ", "];
+				})
+				.slice(0, -1),
+		);
 	}
+
+	$form.addEventListener("submit", (event) => {
+		const formData = new FormData(event.target as HTMLFormElement);
+
+		if (formData.get("remember")) {
+			const instance = normalizeURL(formData.get("instance") as string);
+			const index = savedInstances.indexOf(instance);
+			if (index >= 0) {
+				savedInstances.splice(index, 1);
+			}
+			savedInstances.unshift(instance);
+			savedInstances.length = RECENT_INSTANCES_SIZE;
+
+			window.localStorage.setItem(
+				LOCAL_STORAGE_KEY,
+				JSON.stringify(savedInstances),
+			);
+		}
+
+		return true;
+	});
 </script>
