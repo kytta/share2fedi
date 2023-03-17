@@ -16,15 +16,20 @@ repos:
       - id: prettier
         additional_dependencies:
           - prettier@2
+          - prettier-plugin-astro
   - repo: https://github.com/pre-commit/mirrors-eslint
     rev: "v8.36.0"
     hooks:
       - id: eslint
         additional_dependencies:
           - eslint
+          - "@typescript-eslint/eslint-plugin"
+          - "@typescript-eslint/parser"
           - eslint-config-prettier
+          - eslint-plugin-astro
           - eslint-plugin-unicorn
           - prettier@2
+          - prettier-plugin-astro
   - repo: https://github.com/awebdeveloper/pre-commit-stylelint
     rev: "0.0.2"
     hooks:
