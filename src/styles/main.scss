@@ -31,6 +31,7 @@
 	--s2f-accent-color-light: #5d8379;
 	--s2f-accent-color-contrast: #005e4e;
 	--s2f-border-color: #ccc;
+	--s2f-input-group-bg-color: #eee;
 	--s2f-input-bg-color: #fff;
 	--s2f-input-text-color: #000;
 	--s2f-button-text-color: #fff;
@@ -103,7 +104,7 @@ textarea {
 	resize: vertical;
 }
 
-input[type="url"],
+input[type="text"],
 textarea {
 	width: 100%;
 	color: var(--s2f-input-text-color);
@@ -137,6 +138,7 @@ input[type="submit"] {
 		--s2f-accent-color-light: #619587;
 		--s2f-accent-color-contrast: #a8f7e2;
 		--s2f-border-color: #333;
+		--s2f-input-group-bg-color: #111;
 	}
 }
 

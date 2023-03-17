@@ -1,0 +1,61 @@
+---
+let instances;
+try {
+	const response = await fetch(new URL("/api/instances", Astro.url));
+	instances = await response.json();
+} catch {
+	console.error("Couln't fetch instances");
+	instances = [];
+}
+---
+
+<datalist id="instanceDatalist">
+	{instances.map((instance) => <option value="{instance}" />)}
+</datalist>
+<label>
+	Mastodon, Pleroma, or GNU Social instance
+	<div class="instance-input">
+		<span id="https-label">https://</span>
+		<input
+			type="text"
+			name="instance"
+			id="instance"
+			placeholder="mastodon.social"
+			list="instanceDatalist"
+			required
+			aria-describedby="https-label"
+		/>
+	</div>
+</label>
+
+<label for="remember">
+	<input
+		type="checkbox"
+		id="remember"
+		name="remember"
+	/>
+	Remember my instance on this device
+</label>
+
+<style lang="scss">
+	.instance-input {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		width: 100%;
+
+		span {
+			display: flex;
+			align-items: center;
+			padding: 0.5rem;
+			font-size: 1rem;
+		}
+
+		input[type="text"] {
+			position: relative;
+			flex: 1 1 auto;
+			width: 1%;
+		}
+	}
+</style>
