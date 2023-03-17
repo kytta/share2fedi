@@ -1,5 +1,9 @@
+---
+import "../styles/main.scss";
+---
+
 <!--
-	@source: https://github.com/kytta/share2fedi/blob/main/index.html
+	@source: https://github.com/kytta/share2fedi/blob/main/src/pages/index.astro
 
 	share2fedi - Instance-agnostic share page for the Fediverse.
 	Copyright (C) 2020-2023  Nikita Karamov <me@kytta.dev>
@@ -40,7 +44,7 @@
 			href="https://s2f.kytta.dev/"
 		/>
 
-		<script
+		<!-- <script
 			type="module"
 			src="/lib/main.js"
 			async
@@ -51,7 +55,7 @@
 			src="/lib/count.js"
 			async
 			defer
-		></script>
+		></script> -->
 
 		<link
 			rel="icon"
@@ -70,6 +74,11 @@
 		<link
 			rel="manifest"
 			href="/manifest.webmanifest"
+		/>
+
+		<meta
+			name="generator"
+			content="{Astro.generator}"
 		/>
 	</head>
 	<body>
