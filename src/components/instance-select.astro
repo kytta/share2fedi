@@ -7,6 +7,8 @@ try {
 	console.error("Couln't fetch instances:", error);
 	instances = [];
 }
+
+const { prefilledInstance } = Astro.props;
 ---
 
 <datalist id="instanceDatalist">
@@ -24,6 +26,7 @@ try {
 			list="instanceDatalist"
 			required
 			aria-describedby="https-label"
+			value={prefilledInstance}
 		/>
 	</div>
 </label>
@@ -98,7 +101,7 @@ try {
 					}
 
 					const host = extractHost(instance);
-					if (index == 0) {
+					if (index == 0 && !$instance.value) {
 						$instance.value = host;
 					}
 					const element = document.createElement("span");
