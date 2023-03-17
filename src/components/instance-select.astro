@@ -3,8 +3,8 @@ let instances;
 try {
 	const response = await fetch(new URL("/api/instances", Astro.url));
 	instances = await response.json();
-} catch {
-	console.error("Couln't fetch instances");
+} catch (error) {
+	console.error("Couln't fetch instances:", error);
 	instances = [];
 }
 ---
