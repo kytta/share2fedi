@@ -29,7 +29,6 @@
 // This is the analytics code for Share₂Fedi. It just sends a beacon
 // to GoatCounter with hardcoded path. This is way more lightweight, performant
 // and privacy-friendly than the default GC script.
-
 if (
 	window.location.host === "s2f.kytta.dev" ||
 	window.location.host === "share2fedi.kytta.dev"
