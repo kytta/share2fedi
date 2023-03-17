@@ -2,7 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [v3 (unreleased)][Unreleased]
 
@@ -153,7 +155,8 @@ as to indicate that sharing to other federated networks is now possible.
 
 ### Changed
 
-- design of the page so that it looks more like a Mastodon website (without impersonating anyone)
+- design of the page so that it looks more like a Mastodon website (without
+  impersonating anyone)
 
 ### Fixed
 
@@ -167,7 +170,8 @@ as to indicate that sharing to other federated networks is now possible.
 
 ### Security
 
-- migrated from `gulp-sass` to `@mr-hope/gulp-sass` to avoid loading and building `node-sass` and other old deps
+- migrated from `gulp-sass` to `@mr-hope/gulp-sass` to avoid loading and
+  building `node-sass` and other old deps
 
 ## [1.1.1] - 2021-03-03
 
@@ -236,4 +240,5 @@ Initial release of the site
 [1.1.2]: https://github.com/kytta/share2fedi/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/kytta/share2fedi/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/kytta/share2fedi/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/kytta/share2fedi/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
+[1.0.0]:
+  https://github.com/kytta/share2fedi/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
