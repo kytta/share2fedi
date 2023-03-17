@@ -1,4 +1,5 @@
 ---
+import InstanceSelect from "../components/instance-select.astro";
 import "../styles/main.scss";
 ---
 
@@ -22,9 +23,7 @@ import "../styles/main.scss";
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 	SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
-<!DOCTYPE html>
+--><!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -37,7 +36,7 @@ import "../styles/main.scss";
 		</title>
 		<meta
 			name="description"
-			content="Share₂Fedi is a share page for Mastodon, Pleroma, and GNU Social. Type in your post text and the instance URL and click &lsquo;Publish!&rsquo;"
+			content="Share₂Fedi is a share page for Mastodon, Pleroma, and GNU Social. Type in your post text and the instance URL and click ‘Publish!’"
 		/>
 		<link
 			rel="canonical"
@@ -107,27 +106,7 @@ import "../styles/main.scss";
 					></textarea>
 				</label>
 
-				<datalist id="instanceDatalist"></datalist>
-				<label>
-					Choose your Mastodon, Pleroma, or GNU Social instance
-					<input
-						type="url"
-						name="instance"
-						id="instance"
-						placeholder="https://"
-						list="instanceDatalist"
-						required
-					/>
-				</label>
-
-				<label for="remember">
-					<input
-						type="checkbox"
-						id="remember"
-						name="remember"
-					/>
-					Remember my instance on this device
-				</label>
+				<InstanceSelect />
 
 				<input
 					type="submit"
