@@ -59,3 +59,25 @@ try {
 		}
 	}
 </style>
+
+<script>
+	import { extractHost } from "../util";
+
+	const LOCAL_STORAGE_KEY = "recentInstances";
+
+	const $instance: HTMLInputElement = document.querySelector("#instance");
+
+	const getSavedInstances = (): Array<string> => {
+		const storageValue = window.localStorage.getItem(LOCAL_STORAGE_KEY);
+		if (!storageValue) {
+			return [];
+		}
+
+		return JSON.parse(storageValue);
+	};
+
+	const savedInstance = getSavedInstances()[0];
+	if (savedInstance) {
+		$instance.value = extractHost(savedInstance);
+	}
+</script>
