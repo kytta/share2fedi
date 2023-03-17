@@ -20,6 +20,7 @@ as to indicate that sharing to other federated networks is now possible.
 
 ### Added
 
+- support for Pleroma
 - support for GNU Social
 - when developing, the API endpoint can now be tested locally thanks to
   [`vite-plugin-node`](https://github.com/axe-me/vite-plugin-node)

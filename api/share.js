@@ -23,7 +23,7 @@ import https from "https";
 
 const pathsMap = {
 	mastodon: {
-		checkUrl: "/api/v1/instance",
+		checkUrl: "/api/v1/instance/rules",
 		postUrl: "share",
 		textParam: "text",
 	},
@@ -31,6 +31,11 @@ const pathsMap = {
 		checkUrl: "/api/statusnet/version.xml",
 		postUrl: "/notice/new",
 		textParam: "status_textarea",
+	},
+	pleroma: {
+		checkUrl: "/api/v1/pleroma/federation_status",
+		postUrl: "share",
+		textParam: "message",
 	},
 };
 
