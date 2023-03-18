@@ -28,6 +28,13 @@ const PROJECTS = {
 			text: "message",
 		},
 	},
+	friendica: {
+		checkUrl: "/api/statusnet/config",
+		publishEndpoint: "compose",
+		params: {
+			text: "body",
+		},
+	},
 };
 
 const checkProjectUrl = (
