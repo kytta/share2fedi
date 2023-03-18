@@ -4,20 +4,52 @@
  */
 
 import type { APIRoute } from "astro";
+import { FediverseProject } from "../../constants";
 
-interface MastodonServer {
-	[key: string]: unknown;
+interface ProjectInstance {
 	domain: string;
+	score: number;
+	active_users_monthly: number;
+	status: number;
 }
+
+const PROJECTS = Object.values(FediverseProject);
+
+export const fetchInstances = async (
+	projectId: string,
+): Promise<ProjectInstance[]> => {
+	const response = await fetch("https://api.fediverse.observer/", {
+		headers: {
+			Accept: "*/*",
+			"Accept-Language": "en;q=1.0",
+			"Content-Type": "application/json",
+		},
+		referrer: "https://api.fediverse.observer/",
+		body: `{"query":"{\\n  nodes(softwarename: \\"${projectId}\\") {\\n    domain\\n    score\\n    active_users_monthly\\n    status\\n  }\\n}\\n"}`,
+		method: "POST",
+	});
+	const json = await response.json();
+	const instances: ProjectInstance[] = json.data.nodes;
+	return instances.filter(
+		(instance) => instance.score > 0 && instance.status === 1,
+	);
+};
 
 export const get: APIRoute = async () => {
 	try {
-		const response = await fetch("https://api.joinmastodon.org/servers");
-		const instances = await response.json();
+		const response = await Promise.all(
+			PROJECTS.map((projectId) => fetchInstances(projectId)),
+		);
+		const instances = response.flat();
+		instances.sort((a, b) => {
+			return b.active_users_monthly - a.active_users_monthly;
+		});
 
 		return new Response(
 			JSON.stringify(
-				instances.map((instance: MastodonServer) => instance.domain),
+				instances
+					.slice(0, 200)
+					.map((instance: ProjectInstance) => instance.domain),
 			),
 			{
 				headers: {
