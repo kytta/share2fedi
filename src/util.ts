@@ -1,3 +1,8 @@
+/*!
+ * © 2023 Nikita Karamov
+ * Licensed under AGPL v3 or later
+ */
+
 /**
  * Adds missing "https://" and ending slash to the URL
  *

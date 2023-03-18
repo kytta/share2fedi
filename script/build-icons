@@ -1,6 +1,9 @@
 #!/bin/bash
 # This script converts raw SVG icons to favicons according to the article:
 # https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+#
+# © 2023 Nikita Karamov
+# Licensed under AGPL v3 or later
 
 set -euo pipefail
 

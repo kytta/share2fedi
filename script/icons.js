@@ -1,3 +1,8 @@
+/*!
+ * © 2023 Nikita Karamov
+ * Licensed under AGPL v3 or later
+ */
+
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
