@@ -9,17 +9,9 @@ if ! type "magick"; then
 	exit 1
 fi
 
-echo "[1/4] Making 'favicon.ico' for legacy browsers..."
-magick convert -background none assets/pentagon.svg -alpha Set -define icon:auto-resize="32,16" -channel RGBA -depth 8 public/favicon.ico
+node script/icons.js
 
-echo "[2/4] Making 'icon.svg' for modern browsers..."
-cp -f assets/pentagon.svg public/icon.svg
-
-echo "[3/4] Making 'apple-touch-icon.png'..."
-magick convert assets/s2f.svg -resize 140x140 -background white -gravity center -extent 180x180 public/apple-touch-icon.png
-
-echo "[4/4] Making 'icon-*.png' icons for PWAs..."
-magick convert -background none assets/s2f.svg -alpha Set -resize 192x192 public/icon-192.png
-magick convert -background none assets/s2f.svg -alpha Set -resize 512x512 public/icon-512.png
+magick convert public/favicon-32.png public/favicon-16.png public/favicon.ico
+rm public/favicon-32.png public/favicon-16.png
 
 echo "Done."
