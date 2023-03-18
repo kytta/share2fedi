@@ -173,7 +173,7 @@ export const get: APIRoute = async ({ params }) => {
 		);
 	} catch {
 		return new Response(JSON.stringify({ error: "Couldn't detect instance" }), {
-			status: 400,
+			status: 404,
 			headers: {
 				"Content-Type": "application/json",
 			},
