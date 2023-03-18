@@ -15,7 +15,7 @@ const PROJECTS = {
 		},
 	},
 	gnuSocial: {
-		checkUrl: "/api/statusnet/version.xml",
+		checkUrl: "/api/gnusocial/config.xml",
 		publishEndpoint: "/notice/new",
 		params: {
 			text: "status_textarea",
