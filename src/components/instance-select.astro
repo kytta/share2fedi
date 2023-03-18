@@ -17,7 +17,7 @@ const { prefilledInstance } = Astro.props;
 ---
 
 <datalist id="instanceDatalist">
-	{instances.map((instance) => <option value={instance} />)}
+	{instances.map((instance: string) => <option value={instance} />)}
 </datalist>
 <label id="s2f-instanceContainer">
 	Fediverse instance
@@ -81,9 +81,11 @@ const { prefilledInstance } = Astro.props;
 	const LOCAL_STORAGE_KEY = "recentInstances";
 	const RECENT_INSTANCES_SIZE = 5;
 
-	const $form = document.querySelector("#js-s2f-form");
-	const $instanceContainer = document.querySelector("#s2f-instanceContainer");
-	const $instance: HTMLInputElement = document.querySelector("#instance");
+	const $form = document.querySelector("#js-s2f-form") as HTMLFormElement;
+	const $instanceContainer = document.querySelector(
+		"#s2f-instanceContainer",
+	) as HTMLLabelElement;
+	const $instance = document.querySelector("#instance") as HTMLInputElement;
 
 	const getSavedInstances = (): Array<string> => {
 		const storageValue = window.localStorage.getItem(LOCAL_STORAGE_KEY);
