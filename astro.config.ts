@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 
+import cloudflare from "@astrojs/cloudflare";
 import netlify from "@astrojs/netlify/functions";
 import node from "@astrojs/node";
 import vercel from "@astrojs/vercel/serverless";
@@ -11,6 +12,9 @@ if (process.env.VERCEL) {
 } else if (process.env.NETLIFY) {
 	console.debug("Using Netlify adapter");
 	astroAdapter = netlify();
+} else if (process.env.CF_PAGES) {
+	console.debug("Using Cloudflare adapter");
+	astroAdapter = cloudflare();
 } else {
 	console.debug("Using Node.js adapter");
 	astroAdapter = node({
