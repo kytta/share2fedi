@@ -20,6 +20,8 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+@use "sass:math";
+
 *,
 *::before,
 *::after {
@@ -149,10 +151,10 @@ input[type="submit"] {
 	}
 
 	main {
-		width: (200% / 3);
+		width: math.div(200%, 3);
 	}
 
 	aside {
-		width: (100% / 3);
+		width: math.div(100%, 3);
 	}
 }
