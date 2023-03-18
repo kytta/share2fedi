@@ -13,15 +13,27 @@ as to indicate that sharing to other federated networks is now possible.
 
 ### ⚠️ BREAKING CHANGES
 
-- **new API endpoint path**: ~~`/api/toot`~~ → `/api/share`
-- **new API endpoint port**: ~~`:8000`~~ → `:8080`
-- API endpoint **is now ESM-based** instead of CommonJS
-- **new static path**: ~~`./public`~~ → `./dist`
+Share₂Fedi is now an [Astro](https://astro.build/) site. The migration allowed
+us to have a performant service that is easily hostable on both serverless
+platforms, like Vercel or Netlify, as well as locally. Setting the project up
+now takes seconds! This comes with changes, though:
+
+- **static files aren't built any more**, but generated server-side
+- **new output directory**: ~~`public`~~ → `dist`
+  - this also means that `public` **is not ignored any more**
+
+Some changes came with the name change:
+
+- **changed API endpoint path**: ~~`/api/toot`~~ → `/api/share`
 
 ### Added
 
 - support for Pleroma
 - support for GNU Social
+- remembering of multiple Fediverse instances
+- new API endpoints
+  - `/api/instances` will return the list of popular instances
+  - `/api/detect/[host]` will detect the Fediverse project used by a host
 - when developing, the API endpoint can now be tested locally thanks to
   [`vite-plugin-node`](https://github.com/axe-me/vite-plugin-node)
 - a privacy policy describing what data is being processed and stored
@@ -34,9 +46,9 @@ as to indicate that sharing to other federated networks is now possible.
   - new logo
   - new design
 - repository moved back to GitHub
-- s2f is now being built with Vite
-  - `@vitejs/plugin-legacy` is used, which allows JS work on old browsers, which
-    comes, with big bundle sizes. Modern browsers still get a small bundle.
+- s2f is now being built with Astro
+  - Share₂Fedi is now 100% server-side rendered. You don't have to host any
+    static files, all you need is to run the Node server.
 
 ## [2.4.4] - 2023-03-01
 
