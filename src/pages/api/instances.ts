@@ -3,7 +3,12 @@
  * Licensed under AGPL v3 or later
  */
 
-import { APIRoute } from "astro";
+import type { APIRoute } from "astro";
+
+interface MastodonServer {
+	[key: string]: unknown;
+	domain: string;
+}
 
 export const get: APIRoute = async () => {
 	try {
@@ -11,7 +16,9 @@ export const get: APIRoute = async () => {
 		const instances = await response.json();
 
 		return new Response(
-			JSON.stringify(instances.map((instance) => instance.domain)),
+			JSON.stringify(
+				instances.map((instance: MastodonServer) => instance.domain),
+			),
 			{
 				headers: {
 					"Cache-Control": "s-maxage=86400, max-age=86400, public",

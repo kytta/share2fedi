@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/netlify': ^2.2.0
   '@astrojs/node': ^5.1.0
   '@astrojs/vercel': ^3.2.1
+  '@types/node': ^18.15.3
   '@typescript-eslint/eslint-plugin': ^5.55.0
   '@typescript-eslint/parser': ^5.55.0
   astro: ^2.1.3
@@ -30,9 +31,10 @@ dependencies:
   '@astrojs/netlify': 2.2.0_astro@2.1.3
   '@astrojs/node': 5.1.0_astro@2.1.3
   '@astrojs/vercel': 3.2.1_astro@2.1.3
-  astro: 2.1.3_sass@1.59.3+sharp@0.31.3
+  astro: 2.1.3_b7kyvtkw6asrh6mzxwjxmawde4
 
 devDependencies:
+  '@types/node': 18.15.3
   '@typescript-eslint/eslint-plugin': 5.55.0_qsnvknysi52qtaxqdyqyohkcku
   '@typescript-eslint/parser': 5.55.0_j4766f7ecgqbon3u7zlxn5zszu
   autoprefixer: 10.4.14_postcss@8.4.21
@@ -67,7 +69,7 @@ packages:
     peerDependencies:
       astro: ^2.1.3
     dependencies:
-      astro: 2.1.3_sass@1.59.3+sharp@0.31.3
+      astro: 2.1.3_b7kyvtkw6asrh6mzxwjxmawde4
       esbuild: 0.15.18
       tiny-glob: 0.2.9
     dev: false
@@ -103,7 +105,7 @@ packages:
       astro: ^2.1.0
     dependencies:
       '@astrojs/prism': 2.1.1
-      astro: 2.1.3_sass@1.59.3+sharp@0.31.3
+      astro: 2.1.3_b7kyvtkw6asrh6mzxwjxmawde4
       github-slugger: 1.5.0
       image-size: 1.0.2
       import-meta-resolve: 2.2.2
@@ -128,7 +130,7 @@ packages:
     dependencies:
       '@astrojs/webapi': 2.1.0
       '@netlify/functions': 1.4.0
-      astro: 2.1.3_sass@1.59.3+sharp@0.31.3
+      astro: 2.1.3_b7kyvtkw6asrh6mzxwjxmawde4
       esbuild: 0.15.18
     dev: false
 
@@ -138,7 +140,7 @@ packages:
       astro: ^2.1.0
     dependencies:
       '@astrojs/webapi': 2.1.0
-      astro: 2.1.3_sass@1.59.3+sharp@0.31.3
+      astro: 2.1.3_b7kyvtkw6asrh6mzxwjxmawde4
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -176,7 +178,7 @@ packages:
       '@astrojs/webapi': 2.1.0
       '@vercel/analytics': 0.1.11
       '@vercel/nft': 0.22.6
-      astro: 2.1.3_sass@1.59.3+sharp@0.31.3
+      astro: 2.1.3_b7kyvtkw6asrh6mzxwjxmawde4
       fast-glob: 3.2.12
       set-cookie-parser: 2.5.1
       web-vitals: 3.3.0
@@ -926,6 +928,9 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
+  /@types/node/18.15.3:
+    resolution: {integrity: sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==}
+
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
@@ -1260,7 +1265,7 @@ packages:
       - supports-color
     dev: true
 
-  /astro/2.1.3_sass@1.59.3+sharp@0.31.3:
+  /astro/2.1.3_b7kyvtkw6asrh6mzxwjxmawde4:
     resolution: {integrity: sha512-5LFo/ixDXs84tgrSbzz0X5c7nzLfkag7w4tgOpBRL/DkveP83v+nSe3KjqwYLPL5vNY9UvryKHsfC0uu4TQz0g==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -1321,7 +1326,7 @@ packages:
       typescript: 5.0.2
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.2.0_sass@1.59.3
+      vite: 4.2.0_bbhgkqmop4v24vevyan3j2nitq
       vitefu: 0.2.4_vite@4.2.0
       yargs-parser: 21.1.1
       zod: 3.21.4
@@ -5111,7 +5116,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite/4.2.0_sass@1.59.3:
+  /vite/4.2.0_bbhgkqmop4v24vevyan3j2nitq:
     resolution: {integrity: sha512-AbDTyzzwuKoRtMIRLGNxhLRuv1FpRgdIw+1y6AQG73Q5+vtecmvzKo/yk8X/vrHDpETRTx01ABijqUHIzBXi0g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5136,6 +5141,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.15.3
       esbuild: 0.17.11
       postcss: 8.4.21
       resolve: 1.22.1
@@ -5153,7 +5159,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.2.0_sass@1.59.3
+      vite: 4.2.0_bbhgkqmop4v24vevyan3j2nitq
     dev: false
 
   /vscode-css-languageservice/6.2.4:

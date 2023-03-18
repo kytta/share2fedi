@@ -15,7 +15,7 @@
 		"build": "astro build",
 		"dev": "astro dev",
 		"fmt": "prettier --write --plugin-search-dir=. .",
-		"lint": "prettier --check . && eslint . && stylelint '**/*.scss'",
+		"lint": "prettier --check . && eslint . && stylelint '**/*.scss' && tsc",
 		"preview": "astro preview",
 		"start": "astro dev",
 		"test": "pnpm run lint"
@@ -29,6 +29,7 @@
 		"astro": "^2.1.3"
 	},
 	"devDependencies": {
+		"@types/node": "^18.15.3",
 		"@typescript-eslint/eslint-plugin": "^5.55.0",
 		"@typescript-eslint/parser": "^5.55.0",
 		"autoprefixer": "^10.4.14",
