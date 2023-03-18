@@ -1,0 +1,144 @@
+---
+/*!
+ * © 2023 Nikita Karamov
+ * Licensed under AGPL v3 or later
+ */
+
+let instances;
+try {
+	const response = await fetch(new URL("/api/instances", Astro.url));
+	instances = await response.json();
+} catch (error) {
+	console.error("Couln't fetch instances:", error);
+	instances = [];
+}
+
+const { prefilledInstance } = Astro.props;
+---
+
+<datalist id="instanceDatalist">
+	{instances.map((instance) => <option value={instance} />)}
+</datalist>
+<label id="s2f-instanceContainer">
+	Mastodon, Pleroma, or GNU Social instance
+	<div class="instance-input">
+		<span id="https-label">https://</span>
+		<input
+			type="text"
+			name="instance"
+			id="instance"
+			placeholder="mastodon.social"
+			list="instanceDatalist"
+			required
+			aria-describedby="https-label"
+			value={prefilledInstance}
+		/>
+	</div>
+</label>
+
+<label for="remember">
+	<input
+		type="checkbox"
+		id="remember"
+		name="remember"
+	/>
+	Remember my instance on this device
+</label>
+
+<style lang="scss">
+	:global(.previously-used) {
+		color: var(--s2f-accent-color-contrast);
+		cursor: pointer;
+		text-decoration: 1px solid underline currentColor;
+	}
+
+	.instance-input {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		width: 100%;
+		margin-bottom: 1rem;
+
+		span {
+			display: flex;
+			align-items: center;
+			padding: 0.5rem;
+			font-size: 1rem;
+		}
+
+		input[type="text"] {
+			position: relative;
+			flex: 1 1 auto;
+			width: 1%;
+		}
+	}
+</style>
+
+<script>
+	import { extractHost, normalizeURL } from "../util";
+
+	const LOCAL_STORAGE_KEY = "recentInstances";
+	const RECENT_INSTANCES_SIZE = 5;
+
+	const $form = document.querySelector("#js-s2f-form");
+	const $instanceContainer = document.querySelector("#s2f-instanceContainer");
+	const $instance: HTMLInputElement = document.querySelector("#instance");
+
+	const getSavedInstances = (): Array<string> => {
+		const storageValue = window.localStorage.getItem(LOCAL_STORAGE_KEY);
+		if (!storageValue) {
+			return [];
+		}
+
+		return JSON.parse(storageValue);
+	};
+
+	const savedInstances = getSavedInstances();
+
+	if (savedInstances.length > 0) {
+		$instanceContainer.append(
+			"Previously used: ",
+			...savedInstances
+				.flatMap((instance, index) => {
+					if (!instance) {
+						return [];
+					}
+
+					const host = extractHost(instance);
+					if (index == 0 && !$instance.value) {
+						$instance.value = host;
+					}
+					const element = document.createElement("span");
+					element.textContent = host;
+					element.classList.add("previously-used");
+					element.addEventListener("click", () => {
+						$instance.value = host;
+					});
+					return [element, ", "];
+				})
+				.slice(0, -1),
+		);
+	}
+
+	$form.addEventListener("submit", (event) => {
+		const formData = new FormData(event.target as HTMLFormElement);
+
+		if (formData.get("remember")) {
+			const instance = normalizeURL(formData.get("instance") as string);
+			const index = savedInstances.indexOf(instance);
+			if (index >= 0) {
+				savedInstances.splice(index, 1);
+			}
+			savedInstances.unshift(instance);
+			savedInstances.length = RECENT_INSTANCES_SIZE;
+
+			window.localStorage.setItem(
+				LOCAL_STORAGE_KEY,
+				JSON.stringify(savedInstances),
+			);
+		}
+
+		return true;
+	});
+</script>

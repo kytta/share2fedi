@@ -1,29 +1,20 @@
-<!--
-	@source: https://github.com/kytta/share2fedi/blob/main/index.html
+---
+/*!
+ * © 2023 Nikita Karamov
+ * Licensed under AGPL v3 or later
+ */
+import InstanceSelect from "../components/instance-select.astro";
+import "../styles/main.scss";
 
-	share2fedi - Instance-agnostic share page for the Fediverse.
-	Copyright (C) 2020-2023  Nikita Karamov <me@kytta.dev>
-
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU Affero General Public License as published
-	by the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU Affero General Public License for more details.
-
-	You should have received a copy of the GNU Affero General Public License
-	along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-	SPDX-License-Identifier: AGPL-3.0-or-later
--->
+const searchParameters = new URL(Astro.request.url).searchParams;
+const prefilledText = searchParameters.get("text");
+const prefilledInstance = searchParameters.get("instance");
+---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="utf-8" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
@@ -33,26 +24,14 @@
 		</title>
 		<meta
 			name="description"
-			content="Share₂Fedi is a share page for Mastodon, Pleroma, and GNU Social. Type in your post text and the instance URL and click &lsquo;Publish!&rsquo;"
+			content="Share₂Fedi is a share page for Mastodon, Pleroma, and GNU Social. Type in your post text and the instance URL and click ‘Publish!’"
 		/>
 		<link
 			rel="canonical"
 			href="https://s2f.kytta.dev/"
 		/>
 
-		<script
-			type="module"
-			src="/lib/main.js"
-			async
-			defer
-		></script>
-		<script
-			type="module"
-			src="/lib/count.js"
-			async
-			defer
-		></script>
-
+		<script src="../count.js"></script>
 		<link
 			rel="icon"
 			href="/favicon.ico"
@@ -70,6 +49,11 @@
 		<link
 			rel="manifest"
 			href="/manifest.webmanifest"
+		/>
+
+		<meta
+			name="generator"
+			content="{Astro.generator}"
 		/>
 	</head>
 	<body>
@@ -95,30 +79,11 @@
 						rows="7"
 						placeholder="What's on your mind?"
 						required
-					></textarea>
+						>{prefilledText}</textarea
+					>
 				</label>
 
-				<datalist id="instanceDatalist"></datalist>
-				<label>
-					Choose your Mastodon, Pleroma, or GNU Social instance
-					<input
-						type="url"
-						name="instance"
-						id="instance"
-						placeholder="https://"
-						list="instanceDatalist"
-						required
-					/>
-				</label>
-
-				<label for="remember">
-					<input
-						type="checkbox"
-						id="remember"
-						name="remember"
-					/>
-					Remember my instance on this device
-				</label>
+				<InstanceSelect prefilledInstance={prefilledInstance} />
 
 				<input
 					type="submit"
