@@ -89,6 +89,33 @@ const PROJECTS: Map<string, FediverseProject> = new Map([
 			},
 		},
 	],
+	[
+		"misskey",
+		{
+			check: async (url: string): Promise<string> => {
+				const response = await fetch(new URL("/api/meta", url), {
+					method: "POST",
+					headers: {
+						Accept: "application/json",
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						detail: false,
+					}),
+				});
+				const metadata = await response.json();
+				if (metadata.version) {
+					return "misskey";
+				}
+				throw new Error(`${url} doesn't host Misskey`);
+			},
+			checkUrl: "/",
+			publishEndpoint: "share",
+			params: {
+				text: "text",
+			},
+		},
+	],
 ]);
 
 const checkProjectUrl = (
@@ -113,7 +140,7 @@ const checkProjectUrl = (
 export const get: APIRoute = async ({ params }) => {
 	const host = params.host as string;
 
-	const promises = Object.entries(PROJECTS).map(([service, project]) => {
+	const promises = [...PROJECTS.entries()].map(([service, project]) => {
 		const url = normalizeURL(host);
 		if (project.check !== undefined) {
 			return project.check(url);
