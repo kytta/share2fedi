@@ -34,8 +34,6 @@ Some changes came with the name change:
 - new API endpoints
   - `/api/instances` will return the list of popular instances
   - `/api/detect/[host]` will detect the Fediverse project used by a host
-- when developing, the API endpoint can now be tested locally thanks to
-  [`vite-plugin-node`](https://github.com/axe-me/vite-plugin-node)
 - a privacy policy describing what data is being processed and stored
 - a link to the status page
 
@@ -49,6 +47,7 @@ Some changes came with the name change:
 - s2f is now being built with Astro
   - Share₂Fedi is now 100% server-side rendered. You don't have to host any
     static files, all you need is to run the Node server.
+  - when developing, the API endpoint can now be tested locally
 
 ## [2.4.5] - 2023-06-17
 
