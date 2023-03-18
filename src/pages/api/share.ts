@@ -3,7 +3,7 @@
  * Licensed under AGPL v3 or later
  */
 
-import { APIRoute } from "astro";
+import type { APIRoute } from "astro";
 
 export const post: APIRoute = async ({ redirect, request, url }) => {
 	const formData = await request.formData();
