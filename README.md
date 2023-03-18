@@ -37,67 +37,64 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 
 **Prerequisites:** modern Node.js (v16 or later), `pnpm`.
 
-1. Install the dependencies:
+1. Install dependencies.
 
    ```sh
    pnpm install
    ```
 
-2. Build the static files:
+2. Build.
 
    ```sh
    pnpm build
    ```
 
-3. Run the backend server for the form:
+3. Run server.
+
+   > By default, this will only listen on localhost port 3000. To enable
+   > listening on a ceratin hostand/or port, set the `HOST` and `PORT`
+   > environment variables, respectively.
 
    ```sh
-   node api/share.js
+   node dist/server/entry.mjs
    ```
 
    alternatively, if you want to run the process in the background:
 
    ```sh
-   pm2 start api/share.js --watch --ignore-watch="node_modules"
+   pm2 start dist/server/entry.mjs --watch --ignore-watch="node_modules"
    ```
 
    > You can find a summary for pm2 at:
    > https://pm2.keymetrics.io/docs/usage/quick-start/
 
-4. Set up a web server
+   > More information about self-hosting an Astro website with Node:
+   > https://docs.astro.build/en/guides/integrations-guide/node/#standalone
 
-   Basically, you need to run a server that would proxy the requests to
-   `/api/share`. to the Node.js server you started. Here's how to achieve this
-   in various HTTP servers:
+4. Set up a reverse proxy.
+
+   Basically, you need to run a reverse proxy that would redirect all incoming
+   requests to `localhost:3000`. Here's how to achieve this in various HTTP
+   servers:
 
    1. Apache
 
    ```apacheconf
-   DocumentRoot "<PATH_TO_SHARE2FEDI>/dist"
-
-   ProxyPass "/api/share"  "http://localhost:8080/"
+   ProxyPass "/" "http://localhost:3000/"
    ```
 
    2. Nginx
 
    ```nginxconf
-   root <PATH_TO_SHARE2FEDI>/dist;
-   index.html;
-
-   location /api/share {
-       proxy_pass http://localhost:8080/;
+   location / {
+       proxy_pass http://localhost:3000/;
    }
    ```
 
    3. Caddy
 
    ```caddy
-   root * <PATH_TO_SHARE2FEDI>/dist;
-   try_files index.html
-
-   handle_path /api/share {
-      reverse_proxy localhost:8080
-   }
+   reverse_proxy :3000
    ```
 
 ## See also
