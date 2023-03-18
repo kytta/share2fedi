@@ -28,8 +28,15 @@ Some changes came with the name change:
 
 ### Added
 
-- support for Pleroma
-- support for GNU Social
+- **new federated social networks**
+  - Friendica
+  - GNU Social
+  - Hubzilla
+  - Misskey
+  - Pleroma
+- **new ways to host**
+  - Netlify
+  - Cloudflare Pages
 - remembering of multiple Fediverse instances
 - new API endpoints
   - `/api/instances` will return the list of popular instances
