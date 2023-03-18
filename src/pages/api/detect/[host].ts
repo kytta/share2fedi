@@ -1,3 +1,8 @@
+/*!
+ * © 2023 Nikita Karamov
+ * Licensed under AGPL v3 or later
+ */
+
 import { APIRoute } from "astro";
 import { normalizeURL } from "../../../util";
 
