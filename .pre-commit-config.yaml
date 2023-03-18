@@ -24,9 +24,10 @@ repos:
         files: \.([jt]s|astro)$ # *.js, *.ts and *.astro
         types: [file]
         additional_dependencies:
-          - eslint
           - "@typescript-eslint/eslint-plugin"
           - "@typescript-eslint/parser"
+          - astro-eslint-parser
+          - eslint
           - eslint-config-prettier
           - eslint-plugin-astro
           - eslint-plugin-unicorn
@@ -36,4 +37,6 @@ repos:
     rev: "0.0.2"
     hooks:
       - id: stylelint
-        additional_dependencies: ["stylelint", "stylelint-config-standard-scss"]
+        additional_dependencies:
+          - stylelint
+          - stylelint-config-standard-scss
