@@ -5,6 +5,7 @@
  * as the icon names, etc.
  */
 export enum FediverseProject {
+	Akkoma = "akkoma",
 	Friendica = "friendica",
 	GNUSocial = "gnusocial",
 	Hubzilla = "hubzilla",

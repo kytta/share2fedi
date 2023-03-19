@@ -14,7 +14,15 @@ interface FediverseProjectData {
 	};
 }
 
+const pleromaSettings = {
+	publishEndpoint: "share",
+	params: {
+		text: "message",
+	},
+};
+
 const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map([
+	[FediverseProject.Akkoma, pleromaSettings],
 	[
 		FediverseProject.Mastodon,
 		{
@@ -33,15 +41,7 @@ const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map([
 			},
 		},
 	],
-	[
-		FediverseProject.Pleroma,
-		{
-			publishEndpoint: "share",
-			params: {
-				text: "message",
-			},
-		},
-	],
+	[FediverseProject.Pleroma, pleromaSettings],
 	[
 		FediverseProject.Friendica,
 		{
