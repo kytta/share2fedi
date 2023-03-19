@@ -58,21 +58,20 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 3. Run server.
 
    > By default, this will only listen on localhost port 3000. To enable
-   > listening on a ceratin hostand/or port, set the `HOST` and `PORT`
+   > listening on a ceratin host and/or port, set the `HOST` and `PORT`
    > environment variables, respectively.
 
    ```sh
    node dist/server/entry.mjs
    ```
 
-   alternatively, if you want to run the process in the background:
+   In production, you might want to use a process manager, like
+   [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/):
 
    ```sh
-   pm2 start dist/server/entry.mjs --watch --ignore-watch="node_modules"
+   # Start the app, restart on file changes (except node_modules)
+   pm2 start dist/server/entry.mjs --name "Share2Fedi" --watch --ignore-watch="node_modules"
    ```
-
-   > You can find a summary for pm2 at:
-   > https://pm2.keymetrics.io/docs/usage/quick-start/
 
    > More information about self-hosting an Astro website with Node:
    > https://docs.astro.build/en/guides/integrations-guide/node/#standalone
@@ -103,6 +102,13 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
    reverse_proxy :3000
    ```
 
+### Docker
+
+If you _really_ have to use Docker, there is
+[a good guide on building Astro apps with Docker](https://docs.astro.build/en/recipes/docker/).
+**I will not** provide support for Docker-based deployments in the observable
+future.
+
 ## See also
 
 **[📯 Shareon](https://shareon.js.org)** (lightweight, stylish, and ethical
@@ -110,13 +116,13 @@ share buttons) uses **Share₂Fedi** under the hood!
 
 ## Licence
 
-© 2020–2022 [Nikita Karamov]\
-Licensed under the [GNU Affero General Public License, version 3][AGPL-3.0].
+© 2020–2023 [Nikita Karamov]\
+Licensed under the [GNU Affero General Public License v3.0 or later][AGPL-3.0].
 
 ---
 
 This project is hosted on GitHub: <https://github.com/kytta/share2fedi.git>
 
-[AGPL-3.0]: https://spdx.org/licenses/AGPL-3.0-only.html
+[AGPL-3.0]: https://spdx.org/licenses/AGPL-3.0-or-later.html
 [Nikita Karamov]: https://www.kytta.dev
 [Share₂Fedi]: https://s2f.kytta.dev/
