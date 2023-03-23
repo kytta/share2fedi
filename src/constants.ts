@@ -8,6 +8,7 @@ export enum FediverseProject {
 	Akkoma = "akkoma",
 	Friendica = "friendica",
 	GNUSocial = "gnusocial",
+	Hometown = "hometown",
 	Hubzilla = "hubzilla",
 	Mastodon = "mastodon",
 	Misskey = "misskey",
