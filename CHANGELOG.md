@@ -56,6 +56,10 @@ Some changes came with the name change:
     static files, all you need is to run the Node server.
   - when developing, the API endpoint can now be tested locally
 
+### Removed
+
+- GoatCounter analytics. I will no longer track the visitors of s2f.kytta.dev
+
 ## [2.4.5] - 2023-06-17
 
 ### Fixed
