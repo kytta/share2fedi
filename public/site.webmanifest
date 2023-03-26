@@ -1,6 +1,8 @@
 {
 	"name": "Share₂Fedi",
 	"short_name": "Share₂Fedi",
+	"background_color": "#000",
+	"display": "standalone",
 	"icons": [
 		{
 			"src": "/icon-192.png",
