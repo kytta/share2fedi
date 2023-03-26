@@ -4,6 +4,8 @@
  * Licensed under AGPL v3 or later
  */
 import InstanceSelect from "../components/instance-select.astro";
+import { Content as PrivacyNotice } from "./_privacy.md";
+import { Content as Licence } from "./_licence.md";
 import "../styles/main.scss";
 
 const searchParameters = new URL(Astro.request.url).searchParams;
@@ -125,56 +127,11 @@ const prefilledInstance = searchParameters.get("instance");
 			</p>
 			<details>
 				<summary>Licence</summary>
-				<p>
-					Share₂Fedi is free software: you can redistribute it and/or modify it
-					under the terms of the GNU Affero General Public License as published
-					by the Free Software Foundation, either version 3 of the License, or
-					(at your option) any later version.
-				</p>
-				<p>
-					Share₂Fedi is distributed in the hope that it will be useful, but
-					WITHOUT ANY WARRANTY; without even the implied warranty of
-					MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-					Affero General Public License for more details.
-				</p>
+				<Licence />
 			</details>
 			<details>
 				<summary>Privacy Notice</summary>
-				<p>
-					Share₂Fedi uses GoatCounter to collect usage information.
-					<a href="https://share2fedi.goatcounter.com/">
-						The usage data is public.
-					</a>
-					The following information gets collected:
-				</p>
-				<ul>
-					<li><code>User-Agent</code> header</li>
-					<li>Screen size</li>
-					<li>A hash of the IP address, User-Agent, and random number</li>
-				</ul>
-				<p>
-					This data is kept for the maximum of 90 days. None of this information
-					is shared with third parties. See
-					<a href="https://www.goatcounter.com/help/privacy"
-						>GoatCounter’s privacy policy</a
-					>
-					for more information.
-				</p>
-				<p>
-					s2f.kytta.dev is hosted on Vercel. Vercel processes IP addresses,
-					system configuration information, and other information about traffic
-					to and from s2f.kytta.dev. Vercel does not store this information nor
-					does it get shared with third parties. See
-					<a href="https://vercel.com/legal/privacy-policy#customers"
-						>Vercel's privacy policy</a
-					>
-					for more information.
-				</p>
-				<p>
-					When you click the ‘Publish’ button, you’ll get redirected to a
-					Fediverse instance you’ve specified. It may process and/or store your
-					data. Please refer to the privacy policy of the respective instance.
-				</p>
+				<PrivacyNotice />
 			</details>
 		</aside>
 	</body>
