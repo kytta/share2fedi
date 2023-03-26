@@ -4,21 +4,10 @@
  * Licensed under AGPL v3 or later
  */
 
-let instances;
-try {
-	const response = await fetch(new URL("/api/instances", Astro.url));
-	instances = await response.json();
-} catch (error) {
-	console.error("Couln't fetch instances:", error);
-	instances = [];
-}
-
 const { prefilledInstance } = Astro.props;
 ---
 
-<datalist id="instanceDatalist">
-	{instances.map((instance: string) => <option value={instance} />)}
-</datalist>
+<datalist id="instance-list"></datalist>
 <label id="s2f-instanceContainer">
 	Fediverse instance
 	<div class="instance-input">
@@ -28,7 +17,7 @@ const { prefilledInstance } = Astro.props;
 			name="instance"
 			id="instance"
 			placeholder="mastodon.social"
-			list="instanceDatalist"
+			list="instance-list"
 			required
 			aria-describedby="https-label"
 			value={prefilledInstance}
@@ -144,3 +133,4 @@ const { prefilledInstance } = Astro.props;
 		return true;
 	});
 </script>
+<script src="../fetch-instances.ts" async defer></script>
