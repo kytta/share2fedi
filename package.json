@@ -13,11 +13,10 @@
 	"type": "module",
 	"scripts": {
 		"build": "astro build",
-		"dev": "astro dev",
+		"dev": "astro dev --host 127.0.0.1",
 		"fmt": "prettier --write --plugin-search-dir=. .",
 		"lint": "prettier --check . && eslint . && stylelint '**/*.scss' && tsc",
 		"preview": "astro preview",
-		"start": "astro dev",
 		"test": "pnpm run lint"
 	},
 	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
