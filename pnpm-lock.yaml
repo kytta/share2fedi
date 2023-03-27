@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/netlify': ^2.2.0
   '@astrojs/node': ^5.1.0
   '@astrojs/vercel': ^3.2.1
+  '@nanostores/persistent': ^0.7.0
   '@types/node': ^18.15.10
   '@typescript-eslint/eslint-plugin': ^5.57.0
   '@typescript-eslint/parser': ^5.57.0
@@ -15,6 +16,7 @@ specifiers:
   eslint-config-prettier: ^8.8.0
   eslint-plugin-astro: ^0.26.1
   eslint-plugin-unicorn: ^46.0.0
+  nanostores: ^0.7.4
   postcss: ^8.4.21
   postcss-csso: ^6.0.1
   prettier: ^2.8.7
@@ -31,7 +33,9 @@ dependencies:
   '@astrojs/netlify': 2.2.0_astro@2.1.7
   '@astrojs/node': 5.1.0_astro@2.1.7
   '@astrojs/vercel': 3.2.1_astro@2.1.7
+  '@nanostores/persistent': 0.7.0_nanostores@0.7.4
   astro: 2.1.7_zfwagalafqqey6uoinf67yy4wu
+  nanostores: 0.7.4
 
 devDependencies:
   '@types/node': 18.15.10
@@ -801,6 +805,15 @@ packages:
     transitivePeerDependencies:
       - encoding
       - supports-color
+    dev: false
+
+  /@nanostores/persistent/0.7.0_nanostores@0.7.4:
+    resolution: {integrity: sha512-4PAInL/T1hbftZUJ0cmgdFHBMalUoq7BUXFBy7QfyMv/8X3LPTYNh/yxspL7+J+XM3UNvVI7IFRMMs6FBasjhQ==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+    peerDependencies:
+      nanostores: ^0.7.0
+    dependencies:
+      nanostores: 0.7.4
     dev: false
 
   /@netlify/functions/1.4.0:
@@ -3667,6 +3680,11 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+
+  /nanostores/0.7.4:
+    resolution: {integrity: sha512-MBeUVt7NBcXqh7AGT+KSr3O0X/995CZsvcP2QEMP+PXFwb07qv3Vjyq+EX0yS8f12Vv3Tn2g/BvK/OZoMhJlOQ==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
+    dev: false
 
   /napi-build-utils/1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
