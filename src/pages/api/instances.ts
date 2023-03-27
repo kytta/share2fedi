@@ -4,7 +4,7 @@
  */
 
 import type { APIRoute } from "astro";
-import { FediverseProject } from "../../constants";
+import { FediverseProject } from "@scripts/constants";
 
 interface ProjectInstance {
 	domain: string;
