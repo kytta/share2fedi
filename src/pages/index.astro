@@ -4,7 +4,7 @@
  * Licensed under AGPL v3 or later
  */
 import Layout from "@layouts/layout.astro";
-import InstanceSelect from "@components/instance-select.astro";
+import Form from "@components/form.astro";
 import { Content as PrivacyNotice } from "@pages/_privacy.md";
 import { Content as Licence } from "@pages/_licence.md";
 
@@ -23,30 +23,10 @@ const prefilledInstance = searchParameters.get("instance");
 		/>
 	</header>
 	<main>
-		<form
-			id="js-s2f-form"
-			action="/api/share"
-			method="POST"
-		>
-			<label>
-				Post text
-				<textarea
-					name="text"
-					id="text"
-					rows="7"
-					placeholder="What's on your mind?"
-					required
-					>{prefilledText}</textarea
-				>
-			</label>
-
-			<InstanceSelect prefilledInstance={prefilledInstance} />
-
-			<input
-				type="submit"
-				value="Publish"
-			/>
-		</form>
+		<Form
+			{prefilledText}
+			{prefilledInstance}
+		/>
 	</main>
 	<aside>
 		<p>

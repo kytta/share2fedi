@@ -1,0 +1,34 @@
+---
+/*!
+ * © 2023 Nikita Karamov
+ * Licensed under AGPL v3 or later
+ */
+import InstanceSelect from "@components/instance-select.astro";
+
+const { prefilledText, prefilledInstance } = Astro.props;
+---
+
+<form
+	id="js-s2f-form"
+	action="/api/share"
+	method="POST"
+>
+	<label>
+		Post text
+		<textarea
+			name="text"
+			id="text"
+			rows="7"
+			placeholder="What's on your mind?"
+			required
+			>{prefilledText}</textarea
+		>
+	</label>
+
+	<InstanceSelect {prefilledInstance} />
+
+	<input
+		type="submit"
+		value="Publish"
+	/>
+</form>
