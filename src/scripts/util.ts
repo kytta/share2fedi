@@ -19,9 +19,14 @@ export const normalizeURL = (url: string): string => {
 	return url;
 };
 
-export const extractHost = (url: string): string => {
-	if (!(url.startsWith("https://") || url.startsWith("http://"))) {
-		url = "https://" + url;
+export const getUrlDomain = (url: string | URL): string => {
+	if (typeof url === "string") {
+		url = url.trim();
+
+		if (!/^https?:\/\//.test(url)) {
+			url = `https://${url}`;
+		}
 	}
+
 	return new URL(url).host;
 };

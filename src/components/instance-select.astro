@@ -65,7 +65,7 @@ const { prefilledInstance } = Astro.props;
 </style>
 
 <script>
-	import { extractHost, normalizeURL } from "@scripts/util";
+	import { getUrlDomain, normalizeURL } from "@scripts/util";
 	import {
 		savedInstances as instanceStore,
 		saveInstance,
@@ -88,7 +88,7 @@ const { prefilledInstance } = Astro.props;
 						return [];
 					}
 
-					const host = extractHost(instance);
+					const host = getUrlDomain(instance);
 					if (index == 0 && !$instance.value) {
 						$instance.value = host;
 					}
