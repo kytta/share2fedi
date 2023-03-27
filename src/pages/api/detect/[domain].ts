@@ -4,8 +4,8 @@
  */
 
 import type { APIRoute } from "astro";
-import { FediverseProject } from "../../../constants";
-import { normalizeURL } from "../../../util";
+import { FediverseProject } from "@scripts/constants";
+import { normalizeURL } from "@scripts/util";
 
 interface FediverseProjectData {
 	publishEndpoint: string;
