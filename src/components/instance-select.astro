@@ -66,9 +66,10 @@ const { prefilledInstance } = Astro.props;
 
 <script>
 	import { extractHost, normalizeURL } from "@scripts/util";
-
-	const LOCAL_STORAGE_KEY = "recentInstances";
-	const RECENT_INSTANCES_SIZE = 5;
+	import {
+		savedInstances as instanceStore,
+		saveInstance,
+	} from "@stores/saved-instances.ts";
 
 	const $form = document.querySelector("#js-s2f-form") as HTMLFormElement;
 	const $instanceContainer = document.querySelector(
@@ -76,22 +77,13 @@ const { prefilledInstance } = Astro.props;
 	) as HTMLLabelElement;
 	const $instance = document.querySelector("#instance") as HTMLInputElement;
 
-	const getSavedInstances = (): Array<string> => {
-		const storageValue = window.localStorage.getItem(LOCAL_STORAGE_KEY);
-		if (!storageValue) {
-			return [];
-		}
+	const savedInstances: Set<string> = instanceStore.get();
 
-		return JSON.parse(storageValue);
-	};
-
-	const savedInstances = getSavedInstances();
-
-	if (savedInstances.length > 0) {
+	if (savedInstances.size > 0) {
 		$instanceContainer.append(
 			"Previously used: ",
-			...savedInstances
-				.flatMap((instance, index) => {
+			...[...savedInstances]
+				.flatMap((instance: string, index: number) => {
 					if (!instance) {
 						return [];
 					}
@@ -117,17 +109,8 @@ const { prefilledInstance } = Astro.props;
 
 		if (formData.get("remember")) {
 			const instance = normalizeURL(formData.get("instance") as string);
-			const index = savedInstances.indexOf(instance);
-			if (index >= 0) {
-				savedInstances.splice(index, 1);
-			}
-			savedInstances.unshift(instance);
-			savedInstances.length = RECENT_INSTANCES_SIZE;
 
-			window.localStorage.setItem(
-				LOCAL_STORAGE_KEY,
-				JSON.stringify(savedInstances),
-			);
+			saveInstance(instance);
 		}
 
 		return true;
