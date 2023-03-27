@@ -3,135 +3,90 @@
  * © 2023 Nikita Karamov
  * Licensed under AGPL v3 or later
  */
+import Layout from "../layouts/layout.astro";
 import InstanceSelect from "../components/instance-select.astro";
 import { Content as PrivacyNotice } from "./_privacy.md";
 import { Content as Licence } from "./_licence.md";
-import "../styles/main.scss";
 
 const searchParameters = new URL(Astro.request.url).searchParams;
 const prefilledText = searchParameters.get("text");
 const prefilledInstance = searchParameters.get("instance");
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
+<Layout title="Share₂Fedi — an instance-agnostic share page for the Fediverse">
+	<header>
+		<img
+			src="/logo.svg"
+			alt="Share2Fedi"
+			width="195"
+			height="60"
 		/>
-		<title>
-			Share₂Fedi &mdash; an instance-agnostic share page for the Fediverse
-		</title>
-		<meta
-			name="description"
-			content="Share₂Fedi is a share page for Mastodon, Pleroma, Misskey, and others. Type in your post text and the instance URL and click ‘Publish!’"
-		/>
-		<link
-			rel="canonical"
-			href="https://s2f.kytta.dev/"
-		/>
+	</header>
+	<main>
+		<form
+			id="js-s2f-form"
+			action="/api/share"
+			method="POST"
+		>
+			<label>
+				Post text
+				<textarea
+					name="text"
+					id="text"
+					rows="7"
+					placeholder="What's on your mind?"
+					required
+					>{prefilledText}</textarea
+				>
+			</label>
 
-		<link
-			rel="icon"
-			href="/favicon.ico"
-			sizes="any"
-		/>
-		<link
-			rel="icon"
-			href="/icon.svg"
-			type="image/svg+xml"
-		/>
-		<link
-			rel="apple-touch-icon"
-			href="/apple-touch-icon.png"
-		/>
-		<link
-			rel="manifest"
-			href="/site.webmanifest"
-		/>
+			<InstanceSelect prefilledInstance={prefilledInstance} />
 
-		<meta
-			name="generator"
-			content="{Astro.generator}"
-		/>
-	</head>
-	<body>
-		<header>
-			<img
-				src="/logo.svg"
-				alt="Share2Fedi"
-				width="195"
-				height="60"
+			<input
+				type="submit"
+				value="Publish"
 			/>
-		</header>
-		<main>
-			<form
-				id="js-s2f-form"
-				action="/api/share"
-				method="POST"
-			>
-				<label>
-					Post text
-					<textarea
-						name="text"
-						id="text"
-						rows="7"
-						placeholder="What's on your mind?"
-						required
-						>{prefilledText}</textarea
-					>
-				</label>
-
-				<InstanceSelect prefilledInstance={prefilledInstance} />
-
-				<input
-					type="submit"
-					value="Publish"
-				/>
-			</form>
-		</main>
-		<aside>
-			<p>
-				Share₂Fedi is an instance-agnostic share page for
-				<a href="https://en.wikipedia.org/wiki/Fediverse">the Fediverse</a>.
-				With it, you can post to various federated platforms from a single page.
-			</p>
-			<p><b>Supported projects:</b></p>
-			<ul>
-				<li>Mastodon</li>
-				<li>
-					Pleroma (incl. Akkoma) <small><b>(new!)</b></small>
-				</li>
-				<li>
-					Misskey <small><b>(new!)</b></small>
-				</li>
-				<li>
-					Friendica <small><b>(new!)</b></small>
-				</li>
-				<li>
-					Hubzilla <small><b>(new!)</b></small>
-				</li>
-				<li>
-					GNU Social <small><b>(new!)</b></small>
-				</li>
-			</ul>
-			<p>
-				Share₂Fedi is developed and maintained by
-				<a href="https://www.kytta.dev/">Nikita Karamov</a>. Source code is
-				<a href="https://github.com/kytta/share2fedi">on GitHub</a>. Hosted with
-				<a href="https://vercel.com">Vercel</a>.
-				<a href="https://stats.uptimerobot.com/QOXj3uXPDX">Status page</a>.
-			</p>
-			<details>
-				<summary>Licence</summary>
-				<Licence />
-			</details>
-			<details>
-				<summary>Privacy Notice</summary>
-				<PrivacyNotice />
-			</details>
-		</aside>
-	</body>
-</html>
+		</form>
+	</main>
+	<aside>
+		<p>
+			Share₂Fedi is an instance-agnostic share page for
+			<a href="https://en.wikipedia.org/wiki/Fediverse">the Fediverse</a>. With
+			it, you can post to various federated platforms from a single page.
+		</p>
+		<p><b>Supported projects:</b></p>
+		<ul>
+			<li>Mastodon</li>
+			<li>
+				Pleroma (incl. Akkoma) <small><b>(new!)</b></small>
+			</li>
+			<li>
+				Misskey <small><b>(new!)</b></small>
+			</li>
+			<li>
+				Friendica <small><b>(new!)</b></small>
+			</li>
+			<li>
+				Hubzilla <small><b>(new!)</b></small>
+			</li>
+			<li>
+				GNU Social <small><b>(new!)</b></small>
+			</li>
+		</ul>
+		<p>
+			Share₂Fedi is developed and maintained by
+			<a href="https://www.kytta.dev/">Nikita Karamov</a>. Source code is
+			<a href="https://github.com/kytta/share2fedi">on GitHub</a>. Hosted with
+			<a href="https://vercel.com">Vercel</a>.
+			<a href="https://stats.uptimerobot.com/QOXj3uXPDX">Status page</a>.
+		</p>
+		<details>
+			<summary>Licence</summary>
+			<Licence />
+		</details>
+		<details>
+			<summary>Privacy Notice</summary>
+			<PrivacyNotice />
+		</details>
+	</aside>
+</Layout>
