@@ -3,6 +3,7 @@
  * Licensed under AGPL v3 or later
  */
 
+import { getUrlDomain } from "@scripts/util";
 import type { APIRoute } from "astro";
 
 export const post: APIRoute = async ({ redirect, request, url }) => {
@@ -10,7 +11,7 @@ export const post: APIRoute = async ({ redirect, request, url }) => {
 
 	const text = (formData.get("text") as string) || "";
 	const instanceHost =
-		(formData.get("instance") as string) || "mastodon.social";
+		getUrlDomain(formData.get("instance") as string) || "mastodon.social";
 
 	try {
 		const response = await fetch(new URL(`/api/detect/${instanceHost}`, url));
