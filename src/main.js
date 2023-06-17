@@ -43,7 +43,7 @@ function normalizeUrl(url) {
 	if (!url.includes("http://") && !url.includes("https://")) {
 		url = "https://" + url;
 	}
-	if (url.charAt(url.length - 1) !== "/") {
+	if (url.at(-1) !== "/") {
 		url = url + "/";
 	}
 	return url;
