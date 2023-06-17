@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.4.5] - 2023-06-17
 
 ### Fixed
 
@@ -185,7 +185,8 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.4.4...HEAD
+[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.4.5...HEAD
+[2.4.5]: https://codeberg.org/kytta/toot/compare/v2.4.4...v2.4.5
 [2.4.4]: https://codeberg.org/kytta/toot/compare/v2.4.3...v2.4.4
 [2.4.3]: https://codeberg.org/kytta/toot/compare/v2.4.2...v2.4.3
 [2.4.2]: https://codeberg.org/kytta/toot/compare/v2.4.1...v2.4.2
