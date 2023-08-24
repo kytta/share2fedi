@@ -18,6 +18,13 @@ used to build custom share buttons for Mastodon:
 The instance URL can be saved in your `localStorage` to be automatically
 appended later — handy!
 
+The following languages are also supported, by adding `&lang=` to the URL:
+
+- `fr`: French
+- `es`: Spanish
+- `de`: German
+- `ru`: Russian
+
 ## Hosting
 
 ### One-click Vercel deploy
@@ -94,7 +101,8 @@ Self-hosting toot outside of Vercel requires some extra setup:
 
 ## Licence
 
-Copyright © 2020–2022 [Nikita Karamov](https://www.kytta.dev/)  
+Copyright © 2020–2022 [Nikita Karamov](https://www.kytta.dev/)
+
 Licenced under the [GNU Affero General Public License, version 3](https://spdx.org/licenses/AGPL-3.0-only.html)
 
 The ‘toot’ logo is based on Mastodon’s ‘Simple’ logo, licensed under [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html).

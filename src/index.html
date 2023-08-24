@@ -46,25 +46,28 @@
 				<img src="/icon.svg" alt="toot" width="72" height="72" />
 			</h1>
 			<p>
-				for
+				<span data-translate-inner="for">for</span>
 				<img src="/mastodon.svg" alt="Mastodon" width="95.5" height="27" />
 			</p>
 		</header>
 		<main>
 			<form action="/api/toot" method="POST" onsubmit="onFormSubmit(this)">
 				<section>
-					<label for="text">Post text</label>
+					<label for="text" data-translate-inner="post_text">Post text</label>
 					<textarea
 						name="text"
 						id="text"
 						rows="6"
 						placeholder="What's on your mind?"
 						required
+						data-translate-placeholder="post_text_placeholder"
 					></textarea>
 				</section>
 				<section>
 					<datalist id="instanceDatalist"></datalist>
-					<label for="instance">Choose your Mastodon instance</label>
+					<label for="instance" data-translate-inner="choose_instance">
+						Choose your Mastodon instance
+					</label>
 					<input
 						type="url"
 						name="instance"
@@ -76,7 +79,9 @@
 				</section>
 				<section class="remember">
 					<input type="checkbox" id="remember" name="remember" />
-					<label for="remember">Remember my instance on this device</label>
+					<label for="remember" data-translate-inner="remember_instance">
+						Remember my instance on this device
+					</label>
 				</section>
 				<section class="submit">
 					<input type="submit" value="TOOT!" />
@@ -85,13 +90,24 @@
 		</main>
 		<footer>
 			<section>
-				<a href="https://joinmastodon.org/">What is Mastodon?</a>
+				<a
+					href="https://joinmastodon.org/"
+					data-translate-inner="what_is_mastodon"
+				>
+					What is Mastodon?
+				</a>
 			</section>
 			<section>
-				<a href="https://codeberg.org/kytta/toot">toot on Codeberg</a>
+				<a
+					href="https://github.com/kytta/share2fedi/"
+					data-translate-inner="share2fedi_on_github"
+				>
+					share2fedi on GitHub
+				</a>
 			</section>
 		</footer>
 		<script src="/main.js"></script>
+		<script src="/translate.js"></script>
 		<script src="/count.js" async defer></script>
 	</body>
 </html>

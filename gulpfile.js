@@ -26,7 +26,11 @@ function css() {
 
 function js() {
 	return gulp
-		.src([path.join(SOURCE_DIR, "main.js"), path.join(SOURCE_DIR, "count.js")])
+		.src([
+			path.join(SOURCE_DIR, "main.js"),
+			path.join(SOURCE_DIR, "count.js"),
+			path.join(SOURCE_DIR, "translate.js"),
+		])
 		.pipe(sourcemaps.init())
 		.pipe(terser({ ecma: 5 }))
 		.pipe(sourcemaps.write("."))
