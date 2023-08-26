@@ -1,29 +1,54 @@
 import { defineConfig } from "astro/config";
 
 import cloudflare from "@astrojs/cloudflare";
-import { netlifyFunctions } from "@astrojs/netlify";
+import deno from "@astrojs/deno";
+import netlify from "@astrojs/netlify";
 import node from "@astrojs/node";
 import vercel from "@astrojs/vercel/serverless";
 
-let astroAdapter;
-if (process.env.CF_PAGES) {
-	console.debug("Using Cloudflare adapter");
-	astroAdapter = cloudflare();
-} else if (process.env.VERCEL) {
-	console.debug("Using Vercel adapter");
-	astroAdapter = vercel();
+let configMixin = {};
+if (process.env.VERCEL) {
+	console.info("Using Vercel (serverless) adapter...");
+	configMixin = {
+		output: "server",
+		adapter: vercel(),
+		build: {
+			split: true,
+		},
+	};
+} else if (process.env.CF_PAGES) {
+	console.info("Using Cloudflare adapter...");
+	configMixin = {
+		output: "server",
+		adapter: cloudflare(),
+	};
 } else if (process.env.NETLIFY) {
-	console.debug("Using Netlify adapter");
-	astroAdapter = netlifyFunctions();
+	console.info("Using Netlify (Functions) adapter...");
+	configMixin = {
+		output: "server",
+		adapter: netlify(),
+		build: {
+			split: true,
+		},
+	};
+} else if (process.argv.includes("--s2f-use-deno")) {
+	console.info("Using Deno adapter...");
+	configMixin = {
+		output: "server",
+		adapter: deno(),
+	};
 } else {
-	console.debug("Using Node.js adapter");
-	astroAdapter = node({
-		mode: "standalone",
-	});
+	console.info("Using Node.js adapter...");
+	console.info("Run with '--s2f-use-deno' flag to use Deno");
+	configMixin = {
+		output: "server",
+		adapter: node({
+			mode: "standalone",
+		}),
+	};
 }
 
 export default defineConfig({
 	site: "https://s2f.kytta.dev",
-	adapter: astroAdapter,
-	output: "server",
+	...configMixin,
 });

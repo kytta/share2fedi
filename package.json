@@ -22,6 +22,7 @@
 	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
 	"dependencies": {
 		"@astrojs/cloudflare": "^6.8.1",
+		"@astrojs/deno": "^4.3.0",
 		"@astrojs/netlify": "^2.6.0",
 		"@astrojs/node": "^5.3.6",
 		"@astrojs/vercel": "^3.8.2",
