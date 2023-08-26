@@ -36,10 +36,14 @@ const pleromaSettings = {
 };
 
 const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map()
+	.set(FediverseProject.Mastodon, mastodonSettings)
 	.set(FediverseProject.Fedibird, mastodonSettings)
 	.set(FediverseProject.Hometown, mastodonSettings)
-	.set(FediverseProject.Mastodon, mastodonSettings)
 	.set(FediverseProject.Misskey, misskeySettings)
+	.set(FediverseProject.Calckey, misskeySettings)
+	.set(FediverseProject.Firefish, misskeySettings)
+	.set(FediverseProject.FoundKey, misskeySettings)
+	.set(FediverseProject.Meisskey, misskeySettings)
 	.set(FediverseProject.Akkoma, pleromaSettings)
 	.set(FediverseProject.Pleroma, pleromaSettings)
 	.set(FediverseProject.GNUSocial, {

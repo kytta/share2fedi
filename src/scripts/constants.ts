@@ -6,12 +6,16 @@
  */
 export enum FediverseProject {
 	Akkoma = "akkoma",
+	Calckey = "calckey",
 	Fedibird = "fedibird",
+	Firefish = "firefish",
+	FoundKey = "foundkey",
 	Friendica = "friendica",
 	GNUSocial = "gnusocial",
 	Hometown = "hometown",
 	Hubzilla = "hubzilla",
 	Mastodon = "mastodon",
+	Meisskey = "meisskey",
 	Misskey = "misskey",
 	Pleroma = "pleroma",
 }
