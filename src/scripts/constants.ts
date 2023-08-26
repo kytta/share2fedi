@@ -6,6 +6,7 @@
  */
 export enum FediverseProject {
 	Akkoma = "akkoma",
+	Fedibird = "fedibird",
 	Friendica = "friendica",
 	GNUSocial = "gnusocial",
 	Hometown = "hometown",
