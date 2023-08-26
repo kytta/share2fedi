@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import lightningcss from "vite-plugin-lightningcss";
 
 import cloudflare from "@astrojs/cloudflare";
 import deno from "@astrojs/deno";
@@ -51,4 +52,7 @@ if (process.env.VERCEL) {
 export default defineConfig({
 	site: "https://s2f.kytta.dev",
 	...configMixin,
+	vite: {
+		plugins: [lightningcss()],
+	},
 });

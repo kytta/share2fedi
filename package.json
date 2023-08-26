@@ -34,14 +34,10 @@
 		"@types/node": "^18.17.11",
 		"@typescript-eslint/eslint-plugin": "^6.4.1",
 		"@typescript-eslint/parser": "^6.4.1",
-		"autoprefixer": "^10.4.15",
-		"browserslist": "^4.21.10",
 		"eslint": "^8.48.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-astro": "^0.29.0",
 		"eslint-plugin-unicorn": "^48.0.1",
-		"postcss": "^8.4.28",
-		"postcss-csso": "^6.0.1",
 		"prettier": "^3.0.2",
 		"prettier-plugin-astro": "^0.12.0",
 		"sass": "^1.66.1",
@@ -49,14 +45,8 @@
 		"stylelint": "^15.10.3",
 		"stylelint-config-standard-scss": "^10.0.0",
 		"svgo": "^3.0.2",
-		"typescript": "^5.0.2"
-	},
-	"postcss": {
-		"map": true,
-		"plugins": {
-			"autoprefixer": {},
-			"postcss-csso": {}
-		}
+		"typescript": "^5.0.2",
+		"vite-plugin-lightningcss": "^0.0.5"
 	},
 	"prettier": {
 		"printWidth": 80,
