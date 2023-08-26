@@ -38,6 +38,7 @@ const pleromaSettings = {
 const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map()
 	.set(FediverseProject.Mastodon, mastodonSettings)
 	.set(FediverseProject.Fedibird, mastodonSettings)
+	.set(FediverseProject.GlitchCafe, mastodonSettings)
 	.set(FediverseProject.Hometown, mastodonSettings)
 	.set(FediverseProject.Misskey, misskeySettings)
 	.set(FediverseProject.Calckey, misskeySettings)
