@@ -7,8 +7,8 @@
 const { prefilledInstance } = Astro.props;
 ---
 
-<datalist id="instances"></datalist>
-<label id="s2f-instanceContainer">
+<datalist id="popular-instances"></datalist>
+<label>
 	Fediverse instance
 	<div class="instance-input">
 		<span id="https-label">https://</span>
@@ -17,13 +17,15 @@ const { prefilledInstance } = Astro.props;
 			name="instance"
 			id="instance"
 			placeholder="mastodon.social"
-			list="instances"
+			list="popular-instances"
 			required
 			aria-describedby="https-label"
 			value={prefilledInstance}
 		/>
 	</div>
 </label>
+
+<div id="saved-instances"></div>
 
 <label for="remember">
 	<input
@@ -35,19 +37,12 @@ const { prefilledInstance } = Astro.props;
 </label>
 
 <style lang="scss">
-	:global(.previously-used) {
-		color: var(--s2f-accent-color-contrast);
-		cursor: pointer;
-		text-decoration: 1px solid underline currentColor;
-	}
-
 	.instance-input {
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: stretch;
 		width: 100%;
-		margin-bottom: 1rem;
 
 		span {
 			display: flex;
@@ -62,68 +57,73 @@ const { prefilledInstance } = Astro.props;
 			width: 1%;
 		}
 	}
+
+	#saved-instances {
+		margin-bottom: 1rem;
+
+		:global(span) {
+			color: var(--s2f-accent-color-contrast);
+			cursor: pointer;
+			text-decoration: 1px solid underline currentColor;
+		}
+	}
 </style>
 
 <script>
 	import { getUrlDomain, normalizeURL } from "@scripts/util";
-	import { $savedInstances, save } from "@stores/saved-instances";
 	import { $popularInstances } from "@stores/popular-instances";
+	import { $savedInstances, save } from "@stores/saved-instances";
 
-	const $form = document.querySelector("#js-s2f-form") as HTMLFormElement;
-	const $instanceContainer = document.querySelector(
-		"#s2f-instanceContainer",
-	) as HTMLLabelElement;
-	const $instance = document.querySelector("#instance") as HTMLInputElement;
+	const instanceElement = document.querySelector(
+		"#instance",
+	) as HTMLInputElement;
+	$savedInstances.subscribe((instances) => {
+		if (instances.size === 0) {
+			return;
+		}
 
-	const savedInstances: Set<string> = $savedInstances.get();
+		const savedInstances = [...instances];
+		if (!instanceElement.value) {
+			instanceElement.value = getUrlDomain(savedInstances[0] as string);
+		}
 
-	if (savedInstances.size > 0) {
-		$instanceContainer.append(
+		document.querySelector("#saved-instances")!.replaceChildren(
 			"Previously used: ",
-			...[...savedInstances]
-				.flatMap((instance: string, index: number) => {
+			...savedInstances
+				.flatMap((instance: string) => {
 					if (!instance) {
 						return [];
 					}
 
 					const host = getUrlDomain(instance);
-					if (index == 0 && !$instance.value) {
-						$instance.value = host;
-					}
 					const element = document.createElement("span");
 					element.textContent = host;
-					element.classList.add("previously-used");
 					element.addEventListener("click", () => {
-						$instance.value = host;
+						instanceElement.value = host;
 					});
 					return [element, ", "];
 				})
 				.slice(0, -1),
 		);
-	}
+	});
 
-	$form.addEventListener("submit", (event) => {
+	document.querySelector("#form")!.addEventListener("submit", (event) => {
 		const formData = new FormData(event.target as HTMLFormElement);
 
 		if (formData.get("remember")) {
-			const instance = normalizeURL(formData.get("instance") as string);
-
-			save(instance);
+			save(normalizeURL(formData.get("instance") as string));
 		}
 
 		return true;
 	});
 
-	const instancesElement = document.querySelector("#instances");
-	if (instancesElement != undefined) {
-		$popularInstances.subscribe((instances) => {
-			instancesElement.replaceChildren(
-				...instances.map((domain) => {
-					const option = document.createElement("option");
-					option.value = domain;
-					return option;
-				}),
-			);
-		});
-	}
+	$popularInstances.subscribe((instances) => {
+		document.querySelector("#popular-instances")!.replaceChildren(
+			...instances.map((domain) => {
+				const option = document.createElement("option");
+				option.value = domain;
+				return option;
+			}),
+		);
+	});
 </script>
