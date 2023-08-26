@@ -7,7 +7,7 @@
 const { prefilledInstance } = Astro.props;
 ---
 
-<datalist id="instance-list"></datalist>
+<datalist id="instances"></datalist>
 <label id="s2f-instanceContainer">
 	Fediverse instance
 	<div class="instance-input">
@@ -17,7 +17,7 @@ const { prefilledInstance } = Astro.props;
 			name="instance"
 			id="instance"
 			placeholder="mastodon.social"
-			list="instance-list"
+			list="instances"
 			required
 			aria-describedby="https-label"
 			value={prefilledInstance}
@@ -67,6 +67,7 @@ const { prefilledInstance } = Astro.props;
 <script>
 	import { getUrlDomain, normalizeURL } from "@scripts/util";
 	import { $savedInstances, save } from "@stores/saved-instances";
+	import { $popularInstances } from "@stores/popular-instances";
 
 	const $form = document.querySelector("#js-s2f-form") as HTMLFormElement;
 	const $instanceContainer = document.querySelector(
@@ -112,5 +113,17 @@ const { prefilledInstance } = Astro.props;
 
 		return true;
 	});
+
+	const instancesElement = document.querySelector("#instances");
+	if (instancesElement != undefined) {
+		$popularInstances.subscribe((instances) => {
+			instancesElement.replaceChildren(
+				...instances.map((domain) => {
+					const option = document.createElement("option");
+					option.value = domain;
+					return option;
+				}),
+			);
+		});
+	}
 </script>
-<script src="../scripts/fetch-instances.ts"></script>
