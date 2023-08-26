@@ -7,6 +7,7 @@
 export enum FediverseProject {
 	Akkoma = "akkoma",
 	Calckey = "calckey",
+	GlitchCafe = "glitchcafe",
 	Fedibird = "fedibird",
 	Firefish = "firefish",
 	FoundKey = "foundkey",
