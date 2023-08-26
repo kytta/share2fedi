@@ -10,7 +10,7 @@ interface ProjectInstance {
 	domain: string;
 	score: number;
 	active_users_monthly: number;
-	status: number;
+	total_users: number;
 }
 
 const PROJECTS = Object.values(FediverseProject);
@@ -25,13 +25,17 @@ export const fetchInstances = async (
 			"Content-Type": "application/json",
 		},
 		referrer: "https://api.fediverse.observer/",
-		body: `{"query":"{\\n  nodes(softwarename: \\"${projectId}\\") {\\n    domain\\n    score\\n    active_users_monthly\\n    status\\n  }\\n}\\n"}`,
+		body: JSON.stringify({
+			query: `{nodes(status:"UP",softwarename:"${projectId}"){domain score active_users_monthly total_users}}`,
+		}),
 		method: "POST",
 	});
 	const json = await response.json();
 	const instances: ProjectInstance[] = json.data.nodes;
 	return instances.filter(
-		(instance) => instance.score > 0 && instance.status === 1,
+		(instance) =>
+			instance.score > 90 &&
+			instance.total_users >= instance.active_users_monthly,
 	);
 };
 
