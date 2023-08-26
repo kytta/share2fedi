@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/cloudflare':
     specifier: ^6.8.1
     version: 6.8.1(astro@2.10.14)
+  '@astrojs/deno':
+    specifier: ^4.3.0
+    version: 4.3.0(astro@2.10.14)
   '@astrojs/netlify':
     specifier: ^2.6.0
     version: 2.6.0(astro@2.10.14)
@@ -119,6 +122,15 @@ packages:
   /@astrojs/compiler@2.0.1:
     resolution: {integrity: sha512-DfBR7Cf+tOgQ4n7TIgTtU5x5SEA/08DNshpEPcT+91A0KbBlmUOYMBM/O6qAaHkmVo1KIoXQYhAmfdTT1zx9PQ==}
     dev: true
+
+  /@astrojs/deno@4.3.0(astro@2.10.14):
+    resolution: {integrity: sha512-bGBhdvlJ6XhnCGNNM6T0uTRBI1/DK7ZxtlDPoCeYbIK4u+A+NN7ixe585DjvtvfHOuoJinVpAMGmpfdyadlB8Q==}
+    peerDependencies:
+      astro: ^2.9.3
+    dependencies:
+      astro: 2.10.14(@types/node@18.17.11)(sass@1.66.1)(sharp@0.32.5)
+      esbuild: 0.15.18
+    dev: false
 
   /@astrojs/internal-helpers@0.1.2:
     resolution: {integrity: sha512-YXLk1CUDdC9P5bjFZcGjz+cE/ZDceXObDTXn/GCID4r8LjThuexxi+dlJqukmUpkSItzQqgzfWnrPLxSFPejdA==}
