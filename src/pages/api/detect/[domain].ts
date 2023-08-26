@@ -21,6 +21,13 @@ const mastodonSettings = {
 	},
 };
 
+const misskeySettings = {
+	publishEndpoint: "share",
+	params: {
+		text: "text",
+	},
+};
+
 const pleromaSettings = {
 	publishEndpoint: "share",
 	params: {
@@ -28,48 +35,30 @@ const pleromaSettings = {
 	},
 };
 
-const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map([
-	[FediverseProject.Akkoma, pleromaSettings],
-	[FediverseProject.Mastodon, mastodonSettings],
-	[FediverseProject.Hometown, mastodonSettings],
-	[
-		FediverseProject.GNUSocial,
-		{
-			publishEndpoint: "/notice/new",
-			params: {
-				text: "status_textarea",
-			},
+const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map()
+	.set(FediverseProject.Hometown, mastodonSettings)
+	.set(FediverseProject.Mastodon, mastodonSettings)
+	.set(FediverseProject.Misskey, misskeySettings)
+	.set(FediverseProject.Akkoma, pleromaSettings)
+	.set(FediverseProject.Pleroma, pleromaSettings)
+	.set(FediverseProject.GNUSocial, {
+		publishEndpoint: "/notice/new",
+		params: {
+			text: "status_textarea",
 		},
-	],
-	[FediverseProject.Pleroma, pleromaSettings],
-	[
-		FediverseProject.Friendica,
-		{
-			publishEndpoint: "compose",
-			params: {
-				text: "body",
-			},
+	})
+	.set(FediverseProject.Friendica, {
+		publishEndpoint: "compose",
+		params: {
+			text: "body",
 		},
-	],
-	[
-		FediverseProject.Hubzilla,
-		{
-			publishEndpoint: "rpost",
-			params: {
-				text: "body",
-			},
+	})
+	.set(FediverseProject.Hubzilla, {
+		publishEndpoint: "rpost",
+		params: {
+			text: "body",
 		},
-	],
-	[
-		FediverseProject.Misskey,
-		{
-			publishEndpoint: "share",
-			params: {
-				text: "text",
-			},
-		},
-	],
-]);
+	});
 
 interface NodeInfoList {
 	links: {
