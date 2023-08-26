@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"files": ["api/*.js", "astro.config.ts"],
+			"files": ["api/*.js", "astro.config.mjs"],
 			"env": {
 				"node": true,
 				"browser": false
