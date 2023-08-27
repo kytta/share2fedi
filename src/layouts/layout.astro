@@ -16,10 +16,12 @@ const { title } = Astro.props;
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>{title}</title>
+		<title data-translate="title">{title}</title>
 		<meta
 			name="description"
 			content="Share₂Fedi is a share page for Mastodon, Pleroma, Misskey, and others. Type in your post text and the instance URL and click ‘Publish!’"
+			data-translate="metaDescription"
+			data-translate-attribute="content"
 		/>
 		<link
 			rel="canonical"

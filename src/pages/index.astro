@@ -8,6 +8,8 @@ import Form from "@components/form.astro";
 import { Content as PrivacyNotice } from "@pages/_privacy.md";
 import { Content as Licence } from "@pages/_licence.md";
 
+import LanguageSelect from "@components/language-select.astro";
+
 const searchParameters = new URL(Astro.request.url).searchParams;
 const prefilledText = searchParameters.get("text");
 const prefilledInstance = searchParameters.get("instance");
@@ -21,6 +23,8 @@ const prefilledInstance = searchParameters.get("instance");
 			width="195"
 			height="60"
 		/>
+
+		<LanguageSelect />
 	</header>
 	<main>
 		<Form
@@ -29,43 +33,53 @@ const prefilledInstance = searchParameters.get("instance");
 		/>
 	</main>
 	<aside>
-		<p>
+		<p data-translate="description">
 			Share₂Fedi is an instance-agnostic share page for
-			<a href="https://en.wikipedia.org/wiki/Fediverse">the Fediverse</a>. With
-			it, you can post to various federated platforms from a single page.
+			<a
+				href="https://en.wikipedia.org/wiki/Fediverse"
+				data-translate="fediverse"
+				>the Fediverse</a
+			>. With it, you can post to various federated platforms from a single
+			page.
 		</p>
-		<p><b>Supported projects:</b></p>
+		<p><b data-translate="supportedProjects">Supported projects:</b></p>
 		<ul>
-			<li>Mastodon (incl. Hometown, Fedibird, GlitchCafé)</li>
 			<li>
-				Pleroma (incl. Akkoma)
+				Mastodon (<span data-translate="incl">incl.</span> Hometown, Fedibird,
+				GlitchCafé)
 			</li>
 			<li>
-				Misskey (incl. Firefish/Calckey, FoundKey, Meisskey)
+				Pleroma (<span data-translate="incl">incl.</span> Akkoma)
 			</li>
 			<li>
-				Friendica
+				Misskey (<span data-translate="incl">incl.</span> Firefish/Calckey,
+				FoundKey, Meisskey)
 			</li>
-			<li>
-				Hubzilla
-			</li>
-			<li>
-				GNU Social
-			</li>
+			<li>Friendica</li>
+			<li>Hubzilla</li>
+			<li>GNU Social</li>
 		</ul>
-		<p>
+		<p data-translate="credits">
 			Share₂Fedi is developed and maintained by
 			<a href="https://www.kytta.dev/">Nikita Karamov</a>. Source code is
-			<a href="https://github.com/kytta/share2fedi">on GitHub</a>. Hosted with
+			<a
+				href="https://github.com/kytta/share2fedi"
+				data-translate="onGitHub"
+				>on GitHub</a
+			>. Hosted with
 			<a href="https://vercel.com">Vercel</a>.
-			<a href="https://stats.uptimerobot.com/QOXj3uXPDX">Status page</a>.
+			<a
+				href="https://stats.uptimerobot.com/QOXj3uXPDX"
+				data-translate="statusPage"
+				>Status page</a
+			>.
 		</p>
 		<details>
-			<summary>Licence</summary>
+			<summary data-translate="licence">Licence</summary>
 			<Licence />
 		</details>
 		<details>
-			<summary>Privacy Notice</summary>
+			<summary data-translate="privacyNotice">Privacy Notice</summary>
 			<PrivacyNotice />
 		</details>
 	</aside>

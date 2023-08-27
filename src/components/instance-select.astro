@@ -8,7 +8,7 @@ const { prefilledInstance } = Astro.props;
 ---
 
 <datalist id="popular-instances"></datalist>
-<label>
+<label data-translate="instance">
 	Fediverse instance
 	<div class="instance-input">
 		<span id="https-label">https://</span>
@@ -16,7 +16,6 @@ const { prefilledInstance } = Astro.props;
 			type="text"
 			name="instance"
 			id="instance"
-			placeholder="mastodon.social"
 			list="popular-instances"
 			required
 			aria-describedby="https-label"
@@ -25,15 +24,24 @@ const { prefilledInstance } = Astro.props;
 	</div>
 </label>
 
-<div id="saved-instances"></div>
+<div
+	id="saved-instances"
+	data-translate="previouslyUsed"
+>
+	Previously used:
+	<div></div>
+</div>
 
-<label for="remember">
+<label
+	for="remember"
+	data-translate="rememberInstance"
+>
 	<input
 		type="checkbox"
 		id="remember"
 		name="remember"
 	/>
-	 Remember my instance on this device
+	 Remember instance on this device
 </label>
 
 <style lang="scss">
@@ -61,6 +69,10 @@ const { prefilledInstance } = Astro.props;
 	#saved-instances {
 		margin-bottom: 1rem;
 
+		> div {
+			display: inline-block;
+		}
+
 		:global(span) {
 			color: var(--s2f-accent-color-contrast);
 			cursor: pointer;
@@ -87,8 +99,7 @@ const { prefilledInstance } = Astro.props;
 			instanceElement.value = getUrlDomain(savedInstances[0] as string);
 		}
 
-		document.querySelector("#saved-instances")!.replaceChildren(
-			"Previously used: ",
+		document.querySelector("#saved-instances>div")!.replaceChildren(
 			...savedInstances
 				.flatMap((instance: string) => {
 					if (!instance) {
