@@ -28,13 +28,6 @@ const misskeySettings = {
 	},
 };
 
-const pleromaSettings = {
-	publishEndpoint: "share",
-	params: {
-		text: "message",
-	},
-};
-
 const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map()
 	.set(FediverseProject.Mastodon, mastodonSettings)
 	.set(FediverseProject.Fedibird, mastodonSettings)
@@ -45,8 +38,6 @@ const PROJECTS: Map<FediverseProject, FediverseProjectData> = new Map()
 	.set(FediverseProject.Firefish, misskeySettings)
 	.set(FediverseProject.FoundKey, misskeySettings)
 	.set(FediverseProject.Meisskey, misskeySettings)
-	.set(FediverseProject.Akkoma, pleromaSettings)
-	.set(FediverseProject.Pleroma, pleromaSettings)
 	.set(FediverseProject.GNUSocial, {
 		publishEndpoint: "/notice/new",
 		params: {

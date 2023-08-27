@@ -33,7 +33,6 @@ Some changes came with the name change:
   - GNU Social
   - Hubzilla
   - Misskey (+ flavours)
-  - Pleroma (+ flavours)
 - **new ways to host**
   - Netlify
   - Cloudflare Pages

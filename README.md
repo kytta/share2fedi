@@ -3,7 +3,7 @@
 > Instance-agnostic share page for the Fediverse.
 
 **[Share₂Fedi]** (pronounced ‘share-to-fedi’) allows you to share stuff on
-Mastodon, GoToSocial, Pleroma, and other federated social networks,
+Mastodon, Misskey, Friendica, and other federated social networks,
 instance-agnostic. Just type in the post text and the instance URL, and click
 ‘Post!’
 
