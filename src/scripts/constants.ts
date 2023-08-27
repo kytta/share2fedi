@@ -5,7 +5,6 @@
  * as the icon names, etc.
  */
 export enum FediverseProject {
-	Akkoma = "akkoma",
 	Calckey = "calckey",
 	GlitchCafe = "glitchcafe",
 	Fedibird = "fedibird",
@@ -18,5 +17,4 @@ export enum FediverseProject {
 	Mastodon = "mastodon",
 	Meisskey = "meisskey",
 	Misskey = "misskey",
-	Pleroma = "pleroma",
 }

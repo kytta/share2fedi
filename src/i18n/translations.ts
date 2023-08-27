@@ -8,7 +8,7 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 	en: {
 		title: "Share₂Fedi — an instance-agnostic share page for the Fediverse",
 		metaDescription:
-			"Share₂Fedi is a share page for Mastodon, Pleroma, Misskey, and others. Type in your post text and the instance URL and click ‘Publish!’",
+			"Share₂Fedi is a share page for Mastodon, Misskey, Friendica, and others. Type in your post text and the instance URL and click ‘Publish!’",
 		language: "Language:",
 		description:
 			"Share₂Fedi is an instance-agnostic share page for {}. With it, you can post to various federated platforms from a single page.",
@@ -32,7 +32,7 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 	de: {
 		title: "Share₂Fedi — eine instanzunabhängige Share-Seite für das Fediverse",
 		metaDescription:
-			"Share₂Fedi ist eine Share-Seite für Mastodon, Pleroma, Misskey und andere. Geben Sie Ihren Beitragstext und die Instanz-URL ein und klicken Sie auf „Veröffentlichen“!",
+			"Share₂Fedi ist eine Share-Seite für Mastodon, Misskey, Friendica und andere. Geben Sie Ihren Beitragstext und die Instanz-URL ein und klicken Sie auf „Veröffentlichen“!",
 		language: "Sprache:",
 		description:
 			"Share₂Fedi ist eine instanzunabhängige Share-Seite für {}. Mit ihr können Sie von einer einzigen Seite aus auf verschiedenen föderierten Plattformen posten.",
@@ -56,7 +56,7 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 	ru: {
 		title: "Share₂Fedi — инстанс-независимая share-страница для Федивёрса",
 		metaDescription:
-			"Share₂Fedi — это share-страница для Mastodon, Pleroma, Misskey и других сервисов. Введите текст поста и URL-адрес инстанса и нажмите «Опубликовать!».",
+			"Share₂Fedi — это share-страница для Mastodon, Misskey, Friendica и других сервисов. Введите текст поста и URL-адрес инстанса и нажмите «Опубликовать!».",
 		language: "Язык:",
 		description:
 			"Share₂Fedi — это инстанс-независимая share-страница для {}. С её помощью вы можете делиться информацией на различных федеративных платформах с одной страницы.",
