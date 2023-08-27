@@ -13,9 +13,6 @@ if (process.env.VERCEL) {
 	configMixin = {
 		output: "server",
 		adapter: vercel(),
-		build: {
-			split: true,
-		},
 	};
 } else if (process.env.CF_PAGES) {
 	console.info("Using Cloudflare adapter...");
@@ -28,9 +25,6 @@ if (process.env.VERCEL) {
 	configMixin = {
 		output: "server",
 		adapter: netlify(),
-		build: {
-			split: true,
-		},
 	};
 } else if (process.argv.includes("--s2f-use-deno")) {
 	console.info("Using Deno adapter...");
