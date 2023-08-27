@@ -19,8 +19,8 @@ platforms, like Vercel or Netlify, as well as locally. Setting the project up
 now takes seconds! This comes with changes, though:
 
 - **static files aren't built any more**, but generated server-side
-- **new output directory**: ~~`public`~~ → `dist`
-  - this also means that `public` **is not ignored any more**
+- **new output directory**: ~~`public/`~~ → `dist/`
+  - this also means that `public/` **is not ignored any more**
 
 Some changes came with the name change:
 
@@ -32,11 +32,14 @@ Some changes came with the name change:
   - Friendica
   - GNU Social
   - Hubzilla
-  - Misskey
-  - Pleroma
+  - Misskey (+ flavours)
+  - Pleroma (+ flavours)
 - **new ways to host**
   - Netlify
   - Cloudflare Pages
+- **multilingual share page**
+  - Share₂Fedi can be used in English, German, and Russian.
+    [Help us with other languages!](./src/i18n/translations.ts)
 - remembering of multiple Fediverse instances
 - new API endpoints
   - `/api/instances` will return the list of popular instances
@@ -46,7 +49,8 @@ Some changes came with the name change:
 
 ### Changed
 
-- **new project name**: Share₂Fedi (see #1)
+- **new project name**: Share₂Fedi (see
+  [GH#24](https://github.com/kytta/share2fedi/issues/24))
   - new default instance URL: <https://s2f.kytta.dev>
   - new logo
   - new design
