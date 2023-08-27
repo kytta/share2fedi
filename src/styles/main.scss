@@ -50,6 +50,14 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	> div {
+		text-align: right;
+	}
+}
+
+main {
+	margin-bottom: 2rem;
 }
 
 main,
