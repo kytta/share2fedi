@@ -1,6 +1,7 @@
 export const languages = {
 	en: "English",
 	de: "Deutsch",
+	ru: "Русский",
 };
 
 export const strings: Record<keyof typeof languages, Record<string, string>> = {
@@ -16,6 +17,7 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 		incl: "incl.",
 		credits:
 			"Share₂Fedi is developed and maintained by {}. Source code is {}. Hosted with {}. {}.",
+		nikita: "Nikita Karamov",
 		onGitHub: "on GitHub",
 		statusPage: "Status page",
 		licence: "Licence",
@@ -39,6 +41,7 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 		incl: "inkl.",
 		credits:
 			"Share₂Fedi wird von {} entwickelt und gepflegt. Der Quellcode ist {}. Gehostet mit {}. {}.",
+		nikita: "Nikita Karamov",
 		onGitHub: "auf GitHub",
 		statusPage: "Statusseite",
 		licence: "Lizenz",
@@ -49,6 +52,30 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 		previouslyUsed: "Bisher verwendet: {}",
 		rememberInstance: "{} Instanz auf diesem Gerät merken",
 		publish: "Veröffentlichen",
+	},
+	ru: {
+		title: "Share₂Fedi — инстанс-независимая share-страница для Федивёрса",
+		metaDescription:
+			"Share₂Fedi — это share-страница для Mastodon, Pleroma, Misskey и других сервисов. Введите текст поста и URL-адрес инстанса и нажмите «Опубликовать!».",
+		language: "Язык:",
+		description:
+			"Share₂Fedi — это инстанс-независимая share-страница для {}. С её помощью вы можете делиться информацией на различных федеративных платформах с одной страницы.",
+		fediverse: "Федивёрса",
+		supportedProjects: "Поддерживаемые проекты:",
+		incl: "вкл.",
+		credits:
+			"Share₂Fedi разрабатывается и поддерживается {}. Исходный код {}. Хостится на {}. {}.",
+		nikita: "Никитой Карамовым",
+		onGitHub: "на GitHub",
+		statusPage: "Статус",
+		licence: "Лицензия",
+		privacyNotice: "Политика конфиденциальности",
+		postText: "Текст поста{}",
+		postTextPlaceholder: "О чём думаете?",
+		instance: "Инстанс Федивёрса{}",
+		previouslyUsed: "Ранее использовались: {}",
+		rememberInstance: "{} Запомнить инстанс на этом устройстве",
+		publish: "Опубликовать",
 	},
 } as const;
 
