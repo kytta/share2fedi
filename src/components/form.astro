@@ -13,14 +13,16 @@ const { prefilledText, prefilledInstance } = Astro.props;
 	action="/api/share"
 	method="POST"
 >
-	<label>
+	<label data-translate="postText">
 		Post text
 		<textarea
 			name="text"
 			id="text"
 			rows="7"
-			placeholder="What's on your mind?"
+			placeholder="What’s on your mind?"
 			required
+			data-translate="postTextPlaceholder"
+			data-translate-attribute="placeholder"
 			>{prefilledText}</textarea
 		>
 	</label>
@@ -30,5 +32,7 @@ const { prefilledText, prefilledInstance } = Astro.props;
 	<input
 		type="submit"
 		value="Publish"
+		data-translate="publish"
+		data-translate-attribute="value"
 	/>
 </form>
