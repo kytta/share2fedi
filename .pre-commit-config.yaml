@@ -15,6 +15,7 @@ repos:
     hooks:
       - id: prettier
         additional_dependencies:
+          - prettier # needed for pre-commit.ci
           - prettier-plugin-astro@^0.12.0
   - repo: https://github.com/pre-commit/mirrors-eslint
     rev: "v8.48.0"
@@ -28,6 +29,7 @@ repos:
           - eslint
           - eslint-config-prettier
           - eslint-plugin-astro
+          - astro-eslint-parser # needed for pre-commit.ci
           - eslint-plugin-unicorn
           - prettier@^3.0.2
           - prettier-plugin-astro@^0.12.0
