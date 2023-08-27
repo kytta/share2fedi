@@ -21,6 +21,12 @@ social networks:
 The instance URL can be saved in your `localStorage` to be automatically
 appended if used later—handy!
 
+> [!IMPORTANT]  
+> I know I provide [a Share₂Fedi instance](https://s2f.kytta.dev) for others to
+> use, but if you want to use Share₂Fedi for your share buttons, **please
+> consider self-hosting it**. Although it's free now, running my instance may
+> become too expensive for me in the future.
+
 ## Hosting
 
 ### Vercel, Netlify, Cloudflare Pages
