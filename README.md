@@ -2,9 +2,10 @@
 
 > Instance-agnostic share page for the Fediverse.
 
-**[Share₂Fedi]** allows you to share stuff on Mastodon, GoToSocial, Pleroma, and
-other federated social networks, instance-agnostic. Just type in the post text
-and the instance URL, and click ‘Post!’
+**[Share₂Fedi]** (pronounced ‘share-to-fedi’) allows you to share stuff on
+Mastodon, GoToSocial, Pleroma, and other federated social networks,
+instance-agnostic. Just type in the post text and the instance URL, and click
+‘Post!’
 
 Or, open this page with the prefilled `text` URL parameter—it will be
 automatically inserted into the text field. The same goes for the `instance` URL
@@ -12,9 +13,7 @@ parameter. This can be used to build custom share buttons for the federated
 social networks:
 
 ```html
-<a
-  href="https://s2f.kytta.dev/?text=Hello%20world!&instance=https%3A%2F%2Fmastodon.xyz"
->
+<a href="https://s2f.kytta.dev/?text=Hello%20world!&instance=mastodon.xyz">
   Share on mastodon.xyz
 </a>
 ```
@@ -41,7 +40,8 @@ To deploy to Cloudflare Pages, fork the repo and
 
 Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 
-**Prerequisites:** modern Node.js (v16 or later), `pnpm`.
+**Prerequisites:** modern Node.js (v16 or later), `pnpm`. You can host with
+Deno, but Node.js is still required.
 
 1. Install dependencies.
 
@@ -53,6 +53,12 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 
    ```sh
    pnpm build
+   ```
+
+   If you want to use Deno, add the `--s2f-use-deno` flag:
+
+   ```sh
+   pnpm build --s2f-use-deno
    ```
 
 3. Run server.
@@ -75,6 +81,15 @@ Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
 
    > More information about self-hosting an Astro website with Node:
    > https://docs.astro.build/en/guides/integrations-guide/node/#standalone
+
+   If you've built Share₂Fedi for Deno:
+
+   ```sh
+   deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs
+   ```
+
+   > More information about self-hosting an Astro website with Deno:
+   > https://docs.astro.build/en/guides/integrations-guide/deno/#usage
 
 4. Set up a reverse proxy.
 
