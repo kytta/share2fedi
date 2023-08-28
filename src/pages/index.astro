@@ -5,8 +5,8 @@
  */
 import Layout from "@layouts/layout.astro";
 import Form from "@components/form.astro";
-import { Content as PrivacyNotice } from "@pages/_privacy.md";
-import { Content as Licence } from "@pages/_licence.md";
+import Licence from "@components/licence.html";
+import Privacy from "@components/privacy.html";
 
 import LanguageSelect from "@components/language-select.astro";
 
@@ -75,13 +75,7 @@ const prefilledInstance = searchParameters.get("instance");
 				>Status page</a
 			>.
 		</p>
-		<details>
-			<summary data-translate="licence">Licence</summary>
-			<Licence />
-		</details>
-		<details>
-			<summary data-translate="privacyNotice">Privacy Notice</summary>
-			<PrivacyNotice />
-		</details>
+		<Licence />
+		<Privacy />
 	</aside>
 </Layout>
