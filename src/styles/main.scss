@@ -72,6 +72,14 @@ hr {
 	border-width: 0.5px;
 }
 
+details {
+	font-size: smaller;
+}
+
+summary {
+	font-weight: bolder;
+}
+
 a {
 	color: var(--s2f-accent-color-contrast);
 }
