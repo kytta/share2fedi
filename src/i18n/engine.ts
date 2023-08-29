@@ -12,6 +12,11 @@ export function useTranslations(language: string) {
 }
 
 export function findBestLanguage(): string {
+	const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+	if (urlLanguage && urlLanguage in languages) {
+		return urlLanguage;
+	}
+
 	let browserLanguages = navigator.languages;
 	if (!navigator.languages) browserLanguages = [navigator.language];
 	for (const language of browserLanguages) {
