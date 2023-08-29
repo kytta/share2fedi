@@ -1,6 +1,8 @@
 export const languages = {
 	en: "English",
 	de: "Deutsch",
+	es: "Español",
+	fr: "Français",
 	ru: "Русский",
 };
 
@@ -70,6 +72,73 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 		previouslyUsed: "Bisher verwendet: {}",
 		rememberInstance: "{} Instanz auf diesem Gerät merken",
 		publish: "Veröffentlichen",
+	},
+	es: {
+		title:
+			"Share₂Fedi — una página de compartir independiente de la instancia para el Fediverso",
+		metaDescription:
+			"Share₂Fedi es una página de compartir para Mastodon, Misskey, Friendica y otros. ¡Escriba su texto de publicación y la URL de la instancia y haga clic en «Publicar»!",
+		language: "Idioma:",
+		description:
+			"Share₂Fedi es una página de compartir independiente de la instancia para {}. Con ella, puede publicar en varias plataformas federadas desde una sola página.",
+		fediverse: "el Fediverso",
+		supportedProjects: "Proyectos compatibles:",
+		incl: "incl.",
+		credits:
+			"Share₂Fedi es desarrollado y mantenido por {}. El código fuente es {}. Alojado con {}. {}.",
+		nikita: "Nikita Karamov",
+		onGitHub: "en GitHub",
+		statusPage: "Página de estado",
+		licence: "Licencia",
+		licence1:
+			"Share₂Fedi es software libre: puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General Affero de GNU, publicada por la Free Software Foundation, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior.",
+		licence2:
+			"Share₂Fedi se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; sin siquiera la garantía implícita de COMERCIABILIDAD o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consulte la Licencia Pública General Affero de GNU para obtener más detalles.",
+		privacyNotice: "Aviso de privacidad",
+		privacy1:
+			"s2f.kytta.dev está alojado en Vercel. Vercel procesa las direcciones IP, la información de configuración del sistema y otra información sobre el tráfico hacia y desde s2f.kytta.dev. Vercel no almacena esta información ni la comparte con terceros. Consulte {} para obtener más información.",
+		privacy2:
+			"Cuando hace clic en el botón «Publicar», se le redirige a una instancia de Fediverso que ha especificado. Puede procesar y/o almacenar sus datos. Consulte la política de privacidad de la instancia correspondiente.",
+		vercelPP: "Política de privacidad de Vercel",
+		postText: "Texto de la publicación{}",
+		postTextPlaceholder: "¿Qué hay de nuevo?",
+		instance: "Instancia del Fediverso{}",
+		previouslyUsed: "Usado anteriormente: {}",
+		rememberInstance: "{} Recordar instancia en este dispositivo",
+		publish: "Publicar",
+	},
+	fr: {
+		title: "Share₂Fedi — une page de partage indépendante pour le Fediverse",
+		metaDescription:
+			"Share₂Fedi est une page de partage pour Mastodon, Misskey, Friendica et autres. Tapez votre texte de publication et l’URL de l’instance, puis cliquez sur « Publier ! »",
+		language: "Langue :",
+		description:
+			"Share₂Fedi est une page de partage indépendante pour {}. Avec elle, vous pouvez publier sur diverses plateformes fédérées depuis une seule page.",
+		fediverse: "le Fediverse",
+		supportedProjects: "Projets pris en charge :",
+		incl: "dont",
+		credits:
+			"Share₂Fedi est développé et maintenu par {}. Le code source est {}. Hébergé avec {}. {}.",
+		nikita: "Nikita Karamov",
+		onGitHub: "sur GitHub",
+		statusPage: "Page de statut",
+		licence: "Licence",
+		licence1:
+			"Share₂Fedi est un logiciel libre : vous pouvez le redistribuer et/ou le modifier selon les termes de la licence publique générale Affero de la Free Software Foundation, telle que publiée par la Free Software Foundation, soit la version 3 de la licence, soit (à votre choix) toute version ultérieure.",
+		licence2:
+			"Share₂Fedi est distribué dans l’espoir qu’il sera utile, mais SANS AUCUNE GARANTIE ; sans même la garantie implicite de QUALITÉ MARCHANDE ou D’ADÉQUATION À UN USAGE PARTICULIER. Consultez la licence publique générale Affero de GNU pour plus de détails.",
+		privacyNotice: "Avis de confidentialité",
+		privacy1:
+			"s2f.kytta.dev est hébergé sur Vercel. Vercel traite les adresses IP, les informations de configuration système et d’autres informations sur le trafic vers et depuis s2f.kytta.dev. Vercel ne stocke pas ces informations et ne les partage pas avec des tiers. Voir {} pour plus d’informations.",
+		privacy2:
+			"Lorsque vous cliquez sur le bouton « Publier », vous êtes redirigé vers une instance du Fediverse que vous avez spécifiée. Elle peut traiter et/ou stocker vos données. Veuillez vous référer à la politique de confidentialité de l’instance respective.",
+		vercelPP: "Politique de confidentialité de Vercel",
+		postText: "Texte de la publication{}",
+		postTextPlaceholder: "Quoi de neuf ?",
+		instance: "Instance du Fediverse{}",
+		previouslyUsed: "Utilisé précédemment : {}",
+		rememberInstance: "{} Se souvenir de l’instance sur cet appareil",
+		publish: "Publier",
 	},
 	ru: {
 		title: "Share₂Fedi — инстанс-независимая share-страница для Федивёрса",
