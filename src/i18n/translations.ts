@@ -74,7 +74,8 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 		publish: "Veröffentlichen",
 	},
 	es: {
-		title: "Share₂Fedi — una página de compartir independiente de la instancia para el Fediverso",
+		title:
+			"Share₂Fedi — una página de compartir independiente de la instancia para el Fediverso",
 		metaDescription:
 			"Share₂Fedi es una página de compartir para Mastodon, Misskey, Friendica y otros. ¡Escriba su texto de publicación y la URL de la instancia y haga clic en «Publicar»!",
 		language: "Idioma:",
