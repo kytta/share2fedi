@@ -8,9 +8,9 @@ instance-agnostic. Just type in the post text and the instance URL, and click
 ‘Post!’
 
 Or, open this page with the prefilled `text` URL parameter—it will be
-automatically inserted into the text field. The same goes for the `instance` URL
-parameter. This can be used to build custom share buttons for the federated
-social networks:
+automatically inserted into the text field. The same goes for the `instance` and
+`lang` URL parameters. This can be used to build custom share buttons for the
+federated social networks:
 
 ```html
 <a href="https://s2f.kytta.dev/?text=Hello%20world!&instance=mastodon.xyz">
