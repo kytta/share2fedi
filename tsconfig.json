@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"ignoreDeprecations": "5.0",
 		"baseUrl": ".",
+		"resolveJsonModule": true,
 		"paths": {
 			"@components/*": ["src/components/*"],
 			"@i18n/*": ["src/i18n/*"],
