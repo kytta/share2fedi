@@ -12,8 +12,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "astro dev --host 127.0.0.1",
-		"start": "astro dev --host 127.0.0.1",
+		"dev": "astro dev",
+		"start": "astro dev",
 		"build": "astro build",
 		"build:icons": "bash ./script/build-icons",
 		"preview": "astro preview",

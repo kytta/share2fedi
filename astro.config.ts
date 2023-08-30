@@ -8,36 +8,31 @@ import netlify from "@astrojs/netlify";
 import node from "@astrojs/node";
 import vercel from "@astrojs/vercel/serverless";
 
-let configMixin = {};
+let adapterConfig = {};
 if (process.env.VERCEL) {
 	console.info("Using Vercel (serverless) adapter...");
-	configMixin = {
-		output: "server",
+	adapterConfig = {
 		adapter: vercel(),
 	};
 } else if (process.env.CF_PAGES) {
 	console.info("Using Cloudflare adapter...");
-	configMixin = {
-		output: "server",
+	adapterConfig = {
 		adapter: cloudflare(),
 	};
 } else if (process.env.NETLIFY) {
 	console.info("Using Netlify (Functions) adapter...");
-	configMixin = {
-		output: "server",
+	adapterConfig = {
 		adapter: netlify(),
 	};
 } else if (process.argv.includes("--s2f-use-deno")) {
 	console.info("Using Deno adapter...");
-	configMixin = {
-		output: "server",
+	adapterConfig = {
 		adapter: deno(),
 	};
 } else {
 	console.info("Using Node.js adapter...");
 	console.info("Run with '--s2f-use-deno' flag to use Deno");
-	configMixin = {
-		output: "server",
+	adapterConfig = {
 		adapter: node({
 			mode: "standalone",
 		}),
@@ -46,7 +41,18 @@ if (process.env.VERCEL) {
 
 export default defineConfig({
 	site: "https://s2f.kytta.dev",
-	...configMixin,
+	redirects: {
+		"/api/toot": {
+			destination: "/api/share",
+			status: 308,
+		},
+	},
+
+	compressHTML: true,
+
+	output: "server",
+	...adapterConfig,
+
 	vite: {
 		plugins: [lightningcss()],
 	},
