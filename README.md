@@ -39,7 +39,7 @@ free!), you can use the following buttons:
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkytta%2Fshare2fedi)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/kytta/share2fedi)
 
-To deploy to Cloudflare Pages, fork the repo and
+To deploy to Cloudflare Pages, fork the repository and
 [follow the instructions](https://docs.astro.build/en/guides/deploy/cloudflare/#how-to-deploy-a-site-with-git).
 
 ### Host it yourself
@@ -70,7 +70,7 @@ with Deno, but Node.js is still required to build Share₂Fedi.
 3. Run server.
 
    > By default, this will only listen on localhost port 3000. To enable
-   > listening on a ceratin host and/or port, set the `HOST` and `PORT`
+   > listening on a certain host and/or port, set the `HOST` and `PORT`
    > environment variables, respectively.
 
    ```sh
