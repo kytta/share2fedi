@@ -5,7 +5,7 @@
 **[Share₂Fedi]** (pronounced ‘share-to-fedi’) allows you to share stuff on
 Mastodon, Misskey, Friendica, and other federated social networks,
 instance-agnostic. Just type in the post text and the instance URL, and click
-‘Post!’
+‘Post’!
 
 Or, open this page with the prefilled `text` URL parameter—it will be
 automatically inserted into the text field. The same goes for the `instance` and
@@ -31,7 +31,7 @@ appended if used later—handy!
 
 ### Vercel, Netlify, Cloudflare Pages
 
-**Share₂Fedi** was designed to run on [Vercel](https://vercel.com/), but you can
+Share₂Fedi was designed to run on [Vercel](https://vercel.com/), but you can
 also run it on [Netlify](https://www.netlify.com/) or
 [Cloudflare Pages](https://pages.cloudflare.com/). To deploy it yourself (it's
 free!), you can use the following buttons:
@@ -44,10 +44,10 @@ To deploy to Cloudflare Pages, fork the repo and
 
 ### Host it yourself
 
-Self-hosting **Share₂Fedi** outside of Vercel requires some extra setup:
+Self-hosting Share₂Fedi outside of SSR providers requires some extra setup:
 
-**Prerequisites:** modern Node.js (v16 or later), `pnpm`. You can host with
-Deno, but Node.js is still required.
+**Prerequisites:** modern Node.js (v18 is recommended), `pnpm`. You can host
+with Deno, but Node.js is still required to build Share₂Fedi.
 
 1. Install dependencies.
 
