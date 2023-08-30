@@ -48,11 +48,14 @@ export function applyTranslations(language: string) {
 			continue;
 		}
 
-		const splitTranslated = t(dataset.translate!).split("{}");
+		let splitTranslated = t(dataset.translate!).split("{}");
 		if (splitTranslated.length === 1) {
 			node.innerHTML = t(dataset.translate!);
 			continue;
 		}
+		// XXX: this is needed for the strings where the placholder sits at the very
+		// beginning, which introduces phantom empty strings.
+		splitTranslated = splitTranslated.filter((string) => string !== "");
 
 		for (const child of node.childNodes) {
 			if (child.nodeType === Node.TEXT_NODE) {
