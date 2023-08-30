@@ -1,4 +1,7 @@
+.vercel/
 /dist/
-/.vercel/
+node_modules/
+script/
+
 pnpm-lock.yaml
 src/i18n/translations/*.json

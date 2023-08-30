@@ -5,8 +5,8 @@
 node_modules/
 
 # Editors/IDEs
-/.idea/
-/.vscode/
+.idea/
+.vscode/
 
 # Backend
-/.vercel/
+.vercel/
