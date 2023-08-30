@@ -20,22 +20,6 @@
 				"parser": "@typescript-eslint/parser",
 				"extraFileExtensions": [".astro"]
 			}
-		},
-		{
-			"files": ["api/*.js", "astro.config.mjs"],
-			"env": {
-				"node": true,
-				"browser": false
-			},
-			"rules": {
-				"unicorn/prefer-node-protocol": 0
-			}
-		},
-		{
-			"files": ["src/env.d.ts"],
-			"rules": {
-				"unicorn/prevent-abbreviations": 0
-			}
 		}
 	]
 }

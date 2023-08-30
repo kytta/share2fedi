@@ -1,3 +1,4 @@
+/* eslint-env node */
 import { defineConfig } from "astro/config";
 import lightningcss from "vite-plugin-lightningcss";
 
