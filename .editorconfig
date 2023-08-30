@@ -9,6 +9,10 @@ insert_final_newline = true
 max_line_length = 80
 trim_trailing_whitespace = true
 
+[src/i18n/translations/*.json]
+indent_style = space
+indent_size = 4
+
 [*.md]
 indent_style = space
 max_line_length = off
