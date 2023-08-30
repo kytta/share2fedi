@@ -15,9 +15,20 @@
 		"dev": "astro dev --host 127.0.0.1",
 		"start": "astro dev --host 127.0.0.1",
 		"build": "astro build",
+		"build:icons": "bash ./script/build-icons",
 		"preview": "astro preview",
-		"lint": "prettier --write --plugin=prettier-plugin-astro . && eslint --fix . && stylelint --fix '**/*.scss' && tsc --noEmit",
-		"test": "astro check && pnpm run lint"
+		"check": "pnpm run /^check:/",
+		"check:astro": "astro check",
+		"check:eslint": "eslint .",
+		"check:prettier": "prettier --check --plugin=prettier-plugin-astro .",
+		"check:stylelint": "stylelint **/*.scss",
+		"check:typescript": "tsc --noEmit",
+		"fix": "pnpm fix:prettier . && pnpm fix:eslint .",
+		"fix:eslint": "eslint --fix",
+		"fix:prettier": "prettier --write --ignore-unknown --plugin=prettier-plugin-astro",
+		"fix:stylelint": "stylelint --fix",
+		"test": "pnpm run check",
+		"prepare": "husky install"
 	},
 	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
 	"dependencies": {
@@ -38,6 +49,8 @@
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-astro": "^0.29.0",
 		"eslint-plugin-unicorn": "^48.0.1",
+		"husky": "^8.0.0",
+		"lint-staged": "^14.0.1",
 		"prettier": "^3.0.2",
 		"prettier-plugin-astro": "^0.12.0",
 		"sass": "^1.66.1",
@@ -47,6 +60,12 @@
 		"svgo": "^3.0.2",
 		"typescript": "^5.0.2",
 		"vite-plugin-lightningcss": "^0.0.5"
+	},
+	"lint-staged": {
+		"*": "pnpm run fix:prettier",
+		"*.{astro,js,ts}": "pnpm run fix:eslint",
+		"*.scss": "pnpm run fix:stylelint",
+		"assets/*.{png,svg}": "pnpm run build:icons"
 	},
 	"prettier": {
 		"printWidth": 80,
