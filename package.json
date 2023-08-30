@@ -68,9 +68,6 @@
 		"assets/*.{png,svg}": "pnpm run build:icons"
 	},
 	"prettier": {
-		"printWidth": 80,
-		"quoteProps": "as-needed",
-		"trailingComma": "all",
 		"proseWrap": "always",
 		"singleAttributePerLine": true
 	},

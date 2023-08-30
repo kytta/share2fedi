@@ -10,12 +10,12 @@ max_line_length = 80
 trim_trailing_whitespace = true
 
 [src/i18n/translations/*.json]
+max_line_length = off
 indent_style = space
 indent_size = 4
 
 [*.md]
 indent_style = space
-max_line_length = off
 trim_trailing_whitespace = false
 
 [*.yml]
