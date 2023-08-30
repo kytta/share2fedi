@@ -7,7 +7,11 @@ export function useTranslations(language: string) {
 	return function t(
 		key: keyof (typeof strings)[typeof defaultLanguage],
 	): string {
-		return strings[language]![key] || strings[defaultLanguage]![key] || "";
+		return (
+			strings[language as keyof typeof strings][key] ||
+			strings[defaultLanguage][key] ||
+			""
+		);
 	};
 }
 
