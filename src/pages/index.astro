@@ -7,7 +7,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import Layout from "@layouts/layout.astro";
-import Form from "@components/form.astro";
+import InstanceSelect from "@components/instance-select.astro";
 
 const searchParameters = new URL(Astro.request.url).searchParams;
 const prefilledText = searchParameters.get("text");
@@ -15,8 +15,32 @@ const prefilledInstance = searchParameters.get("instance");
 ---
 
 <Layout title="Share₂Fedi — an instance-agnostic share page for the Fediverse">
-	<Form
-		{prefilledText}
-		{prefilledInstance}
-	/>
+	<form
+		id="form"
+		action="/api/share"
+		method="POST"
+	>
+		<label data-translate="postText">
+			Post text
+			<textarea
+				name="text"
+				id="text"
+				rows="7"
+				placeholder="What’s on your mind?"
+				required
+				data-translate="postTextPlaceholder"
+				data-translate-attribute="placeholder"
+				>{prefilledText}</textarea
+			>
+		</label>
+
+		<InstanceSelect {prefilledInstance} />
+
+		<input
+			type="submit"
+			value="Publish"
+			data-translate="publish"
+			data-translate-attribute="value"
+		/>
+	</form>
 </Layout>
