@@ -8,6 +8,10 @@
  */
 import "@styles/main.scss";
 
+import LanguageSelect from "@components/language-select.astro";
+import Licence from "@components/licence.html";
+import Privacy from "@components/privacy.html";
+
 const { title } = Astro.props;
 ---
 
@@ -55,7 +59,67 @@ const { title } = Astro.props;
 			content={Astro.generator}
 		/>
 	</head>
+	<header>
+		<img
+			src="/logo.svg"
+			alt="Share2Fedi"
+			width="195"
+			height="60"
+		/>
+
+		<LanguageSelect />
+	</header>
 	<body>
-		<slot />
+		<main>
+			<slot />
+		</main>
+		<aside>
+			<p data-translate="description">
+				Share₂Fedi is an instance-agnostic share page for
+				<a
+					href="https://en.wikipedia.org/wiki/Fediverse"
+					data-translate="fediverse"
+					>the Fediverse</a
+				>. With it, you can post to various federated platforms from a single
+				page.
+			</p>
+			<p><b data-translate="supportedProjects">Supported projects:</b></p>
+			<ul>
+				<li>
+					Mastodon (<span data-translate="incl">incl.</span> Hometown, Fedibird,
+					GlitchCafé)
+				</li>
+				<li>
+					Misskey (<span data-translate="incl">incl.</span> Firefish/Calckey,
+					FoundKey, Meisskey)
+				</li>
+				<li>Friendica</li>
+				<li>Hubzilla</li>
+				<li>GNU Social</li>
+			</ul>
+			<p data-translate="credits">
+				Share₂Fedi is developed and maintained by
+				<a
+					href="https://www.kytta.dev/"
+					data-translate="nikita"
+					>Nikita Karamov</a
+				>. Source code is
+				<a
+					href="https://github.com/kytta/share2fedi"
+					data-translate="onGitHub"
+					>on GitHub</a
+				>. Hosted with
+				<a href="https://vercel.com">Vercel</a>.
+				<a
+					href="https://stats.uptimerobot.com/QOXj3uXPDX"
+					data-translate="statusPage"
+					>Status page</a
+				>.
+			</p>
+			<Licence />
+			<Privacy />
+		</aside>
 	</body>
+
+
 </html>
