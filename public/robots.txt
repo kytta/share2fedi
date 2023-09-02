@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /$
+Disallow: /
+
+# Following borrowed from https://seirdy.one/robots.txt
+# SPDX-FileCopyrightText: © 2023 Rohan Kumar <seirdy@seirdy.one>
+# SPDX-License-Identifier: ISC
+
+# I opt out of online advertising so malware that injects ads on my site won't get paid.
+# You should do the same.
+User-Agent: Adsbot
+Disallow: /
+
+# > This robot collects content from the Internet for the sole purpose of # helping educational institutions prevent plagiarism. [...] we compare student papers against the content we find on the Internet to see if we # can find similarities. (http://www.turnitin.com/robot/crawlerinfo.html)
+User-Agent: TurnitinBot
+Disallow: /
+
+# > NameProtect engages in crawling activity in search of a wide range of brand and other intellectual property violations that may be of interest to our clients. (http://www.nameprotect.com/botinfo.html)
+User-Agent: NPBot
+Disallow: /
+
+# iThenticate is a new service we have developed to combat the piracy of intellectual property and ensure the originality of written work for# publishers, non-profit agencies, corporations, and newspapers. (http://www.slysearch.com/)
+User-Agent: SlySearch
+Disallow: /
+
+# BLEXBot assists internet marketers to get information on the link structure of sites and their interlinking on the web, to avoid any technical and possible legal issues and improve overall online experience. (http://webmeup-crawler.com/)
+User-Agent: BLEXBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /

@@ -1,8 +1,79 @@
+<!--
+This change log is part of Share₂Fedi
+https://github.com/kytta/share2fedi
+
+SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [v3 (unreleased)][Unreleased]
+
+This version is a huge reinvention of toot. The name was changed to Share₂Fedi,
+as to indicate that sharing to other federated networks is now possible.
+
+### ⚠️ BREAKING CHANGES
+
+Share₂Fedi is now an [Astro](https://astro.build/) site. The migration allowed
+us to have a performant service that is easily hostable on both serverless
+platforms, like Vercel or Netlify, as well as locally. Setting the project up
+now takes seconds! This comes with changes, though:
+
+- **static files aren't built any more**, but generated server-side
+- **new output directory**: ~~`public/`~~ → `dist/`
+  - this also means that `public/` **is not ignored any more**
+
+Some changes came with the name change:
+
+- **changed API endpoint path**: ~~`/api/toot`~~ → `/`
+  - just send a POST request instead of a GET request with the same body
+
+### Added
+
+- **new federated social networks**
+  - Friendica
+  - GNU Social
+  - Hubzilla
+  - Misskey (+ flavours)
+- **new ways to host**
+  - Netlify
+  - Cloudflare Pages
+- **multilingual share page**
+  - Share₂Fedi can be used in English, German, and Russian.
+    [Help us with other languages!](./src/i18n/translations.ts)
+- remembering of multiple Fediverse instances
+- new API endpoints
+  - `/api/instances` will return the list of popular instances
+  - `/api/detect/[host]` will detect the Fediverse project used by a host
+- a privacy policy describing what data is being processed and stored
+- a link to the status page
+
+### Changed
+
+- **new project name**: Share₂Fedi (see
+  [GH#24](https://github.com/kytta/share2fedi/issues/24))
+  - new default instance URL: <https://s2f.kytta.dev>
+  - new logo
+  - new design
+- repository moved back to GitHub
+- licence of the project is now AGPL v3 **only**
+  - for now, this has no effect. If AGPL v4 ever comes out, Share₂Fedi v2 will
+    not be available under it
+- s2f is now being built with Astro
+  - Share₂Fedi is now 100% server-side rendered. You don't have to host any
+    static files, all you need is to run the Node server.
+  - when developing, the API endpoint can now be tested locally
+
+### Removed
+
+- GoatCounter analytics. I will no longer track the visitors of s2f.kytta.dev
 
 ## [2.4.5] - 2023-06-17
 
@@ -122,7 +193,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- design of the page so that it looks more like a Mastodon website (without impersonating anyone)
+- design of the page so that it looks more like a Mastodon website (without
+  impersonating anyone)
 
 ### Fixed
 
@@ -136,7 +208,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Security
 
-- migrated from `gulp-sass` to `@mr-hope/gulp-sass` to avoid loading and building `node-sass` and other old deps
+- migrated from `gulp-sass` to `@mr-hope/gulp-sass` to avoid loading and
+  building `node-sass` and other old deps
 
 ## [1.1.1] - 2021-03-03
 
@@ -185,24 +258,25 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://codeberg.org/kytta/toot/compare/v2.4.5...HEAD
-[2.4.5]: https://codeberg.org/kytta/toot/compare/v2.4.4...v2.4.5
-[2.4.4]: https://codeberg.org/kytta/toot/compare/v2.4.3...v2.4.4
-[2.4.3]: https://codeberg.org/kytta/toot/compare/v2.4.2...v2.4.3
-[2.4.2]: https://codeberg.org/kytta/toot/compare/v2.4.1...v2.4.2
-[2.4.1]: https://codeberg.org/kytta/toot/compare/v2.4.0...v2.4.1
-[2.4.0]: https://codeberg.org/kytta/toot/compare/v2.3.1...v2.4.0
-[2.3.1]: https://codeberg.org/kytta/toot/compare/v2.3.0...v2.3.1
-[2.3.0]: https://codeberg.org/kytta/toot/compare/v2.2.2...v2.3.0
-[2.2.2]: https://codeberg.org/kytta/toot/compare/v2.2.1...v2.2.2
-[2.2.1]: https://codeberg.org/kytta/toot/compare/v2.2.0...v2.2.1
-[2.2.0]: https://codeberg.org/kytta/toot/compare/v2.1.0...v2.2.0
-[2.1.0]: https://codeberg.org/kytta/toot/compare/v2.0.0...v2.1.0
-[2.0.0]: https://codeberg.org/kytta/toot/compare/v1.2.2...v2.0.0
-[1.2.2]: https://codeberg.org/kytta/toot/compare/v1.2.1...v1.2.2
-[1.2.1]: https://codeberg.org/kytta/toot/compare/v1.2.0...v1.2.1
-[1.2.0]: https://codeberg.org/kytta/toot/compare/v1.1.2...v1.2.0
-[1.1.2]: https://codeberg.org/kytta/toot/compare/v1.1.1...v1.1.2
-[1.1.1]: https://codeberg.org/kytta/toot/compare/v1.1.0...v1.1.1
-[1.1.0]: https://codeberg.org/kytta/toot/compare/v1.0.0...v1.1.0
-[1.0.0]: https://codeberg.org/kytta/toot/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
+[Unreleased]: https://github.com/kytta/share2fedi/compare/v2.4.5...HEAD
+[2.4.5]: https://github.com/kytta/share2fedi/compare/v2.4.4...v2.4.5
+[2.4.4]: https://github.com/kytta/share2fedi/compare/v2.4.3...v2.4.4
+[2.4.3]: https://github.com/kytta/share2fedi/compare/v2.4.2...v2.4.3
+[2.4.2]: https://github.com/kytta/share2fedi/compare/v2.4.1...v2.4.2
+[2.4.1]: https://github.com/kytta/share2fedi/compare/v2.4.0...v2.4.1
+[2.4.0]: https://github.com/kytta/share2fedi/compare/v2.3.1...v2.4.0
+[2.3.1]: https://github.com/kytta/share2fedi/compare/v2.3.0...v2.3.1
+[2.3.0]: https://github.com/kytta/share2fedi/compare/v2.2.2...v2.3.0
+[2.2.2]: https://github.com/kytta/share2fedi/compare/v2.2.1...v2.2.2
+[2.2.1]: https://github.com/kytta/share2fedi/compare/v2.2.0...v2.2.1
+[2.2.0]: https://github.com/kytta/share2fedi/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/kytta/share2fedi/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/kytta/share2fedi/compare/v1.2.2...v2.0.0
+[1.2.2]: https://github.com/kytta/share2fedi/compare/v1.2.1...v1.2.2
+[1.2.1]: https://github.com/kytta/share2fedi/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/kytta/share2fedi/compare/v1.1.2...v1.2.0
+[1.1.2]: https://github.com/kytta/share2fedi/compare/v1.1.1...v1.1.2
+[1.1.1]: https://github.com/kytta/share2fedi/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/kytta/share2fedi/compare/v1.0.0...v1.1.0
+[1.0.0]:
+  https://github.com/kytta/share2fedi/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0

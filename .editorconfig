@@ -1,17 +1,27 @@
+# This EditorConfig is part of Share₂Fedi
+# https://github.com/kytta/share2fedi
+#
+# SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+# SPDX-License-Identifier: CC0-1.0
+
 root = true
 
 [*]
 charset = utf-8
 end_of_line = lf
 indent_style = tab
+tab_width = 2
 insert_final_newline = true
 max_line_length = 80
 trim_trailing_whitespace = true
 
-[*.md]
-indent_size = 2
-indent_style = space
+[src/i18n/translations/*.json]
 max_line_length = off
+indent_style = space
+indent_size = 4
+
+[*.md]
+indent_style = space
 trim_trailing_whitespace = false
 
 [*.yml]

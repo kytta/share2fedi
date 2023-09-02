@@ -1,0 +1,23 @@
+#!/bin/bash
+# This file is part of Share₂Fedi
+# https://github.com/kytta/share2fedi
+#
+# SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+# SPDX-License-Identifier: AGPL-3.0-only
+
+# This script converts raw SVG icons to favicons according to the article:
+# https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+
+set -euo pipefail
+
+if ! type "magick"; then
+	echo "ImageMagick ('magick') not found; exiting"
+	exit 1
+fi
+
+node script/icons.js
+
+magick convert public/favicon-32.png public/favicon-16.png public/favicon.ico
+rm public/favicon-32.png public/favicon-16.png
+
+echo "Done."

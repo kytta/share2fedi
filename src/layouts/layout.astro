@@ -1,0 +1,146 @@
+---
+/*!
+ * This file is part of Share₂Fedi
+ * https://github.com/kytta/share2fedi
+ *
+ * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+import "@styles/main.scss";
+
+import LanguageSelect from "@components/language-select.astro";
+import Licence from "@components/licence.html";
+import Privacy from "@components/privacy.html";
+
+import package_ from "../../package.json";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Share₂Fedi</title>
+		<meta
+			name="description"
+			content="Share₂Fedi is a share page for Mastodon, Misskey, Friendica, and others. Type in your post text and the instance URL and click ‘Publish!’"
+			data-translate="metaDescription"
+			data-translate-attribute="content"
+		/>
+		<link
+			rel="canonical"
+			href={Astro.url}
+		/>
+		<meta
+			property="og:title"
+			content="Share₂Fedi, a share page for the Fediverse"
+		/>
+		<meta
+			property="og:type"
+			content="website"
+		/>
+		<meta
+			property="og:image"
+			content="/banner.png"
+		/>
+		<meta
+			property="og:url"
+			content={`${Astro.url}banner.png`}
+		/>
+
+		<link
+			rel="icon"
+			href="/favicon.ico"
+			sizes="32x32"
+		/>
+		<link
+			rel="icon"
+			href="/icon.svg"
+			type="image/svg+xml"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="manifest"
+			href="/site.webmanifest"
+		/>
+
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+
+		<meta
+			itemprop="version"
+			content={package_.version}
+		/>
+	</head>
+	<header>
+		<img
+			src="/logo.svg"
+			alt="Share2Fedi"
+			width="195"
+			height="60"
+		/>
+
+		<LanguageSelect />
+	</header>
+	<body>
+		<main>
+			<slot />
+		</main>
+		<aside>
+			<p data-translate="description">
+				Share₂Fedi is an instance-agnostic share page for
+				<a
+					href="https://en.wikipedia.org/wiki/Fediverse"
+					data-translate="fediverse"
+					>the Fediverse</a
+				>. With it, you can post to various federated platforms from a single
+				page.
+			</p>
+			<p><b data-translate="supportedProjects">Supported projects:</b></p>
+			<ul>
+				<li>
+					Mastodon (<span data-translate="incl">incl.</span> Hometown, Fedibird,
+					GlitchCafé)
+				</li>
+				<li>
+					Misskey (<span data-translate="incl">incl.</span> Firefish/Calckey,
+					FoundKey, Meisskey)
+				</li>
+				<li>Friendica</li>
+				<li>Hubzilla</li>
+				<li>GNU Social</li>
+			</ul>
+			<p data-translate="credits">
+				Share₂Fedi is developed and maintained by
+				<a
+					href="https://www.kytta.dev/"
+					data-translate="nikita"
+					>Nikita Karamov</a
+				>. Source code is
+				<a
+					href="https://github.com/kytta/share2fedi"
+					data-translate="onGitHub"
+					>on GitHub</a
+				>. Hosted with
+				<a href="https://vercel.com">Vercel</a>.
+				<a
+					href="https://stats.uptimerobot.com/QOXj3uXPDX"
+					data-translate="statusPage"
+					>Status page</a
+				>.
+			</p>
+			<Licence />
+			<Privacy />
+		</aside>
+	</body>
+
+
+</html>

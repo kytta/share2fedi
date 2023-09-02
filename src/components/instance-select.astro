@@ -1,0 +1,169 @@
+---
+/*!
+ * This file is part of Share₂Fedi
+ * https://github.com/kytta/share2fedi
+ *
+ * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+const { instance, errors } = Astro.props;
+---
+
+<datalist id="popular-instances"></datalist>
+<label
+	class="mt1r"
+	data-translate="instance"
+>
+	Fediverse instance
+	<div class="instance-input">
+		<span id="https-label">https://</span>
+		<input
+			type="text"
+			name="instance"
+			id="instance"
+			list="popular-instances"
+			required
+			aria-invalid={Boolean(errors)}
+			aria-errormessage={errors ? "instance-error" : undefined}
+			aria-describedby="https-label"
+			value={instance}
+		/>
+	</div>
+	{
+		errors && (
+			<p
+				class="error"
+				id="instance-error"
+				aria-live="assertive"
+			>
+				{errors}
+			</p>
+		)
+	}
+</label>
+
+<div
+	id="saved-instances"
+	class="mt1r"
+	data-translate="previouslyUsed"
+>
+	Previously used:
+	<span class="list"></span>
+</div>
+
+<label
+	class="mt1r"
+	for="remember"
+	data-translate="rememberInstance"
+>
+	<input
+		type="checkbox"
+		id="remember"
+		name="remember"
+	/>
+	 Remember instance on this device<noscript>.</noscript>
+	<noscript style="color:darkred;font-size:smaller">
+		This will not work when JavaScript is disabled.</noscript
+	>
+</label>
+
+<style lang="scss">
+	.instance-input {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		width: 100%;
+
+		span {
+			display: flex;
+			align-items: center;
+			padding: 0.5rem;
+			font-size: 1rem;
+		}
+
+		input[type="text"] {
+			position: relative;
+			flex: 1 1 auto;
+			width: 1%;
+		}
+	}
+
+	#saved-instances {
+		margin-bottom: 1rem;
+
+		> div {
+			display: inline-block;
+		}
+
+		:global(span.link) {
+			color: var(--s2f-accent-color-contrast);
+			cursor: pointer;
+			text-decoration: 1px solid underline currentColor;
+		}
+	}
+</style>
+
+<script>
+	import { getUrlDomain, normalizeURL } from "@lib/url";
+	import { $popularInstances } from "@stores/popular-instances";
+	import { $savedInstances, save } from "@stores/saved-instances";
+
+	const instanceElement = document.querySelector(
+		"#instance",
+	) as HTMLInputElement;
+	const savedInstancesElement = document.querySelector(
+		"#saved-instances",
+	) as HTMLDivElement;
+	$savedInstances.subscribe((instances) => {
+		if (instances.size === 0) {
+			savedInstancesElement.style.display = "none";
+			return;
+		}
+
+		const savedInstances = [...instances];
+		if (!instanceElement.value) {
+			instanceElement.value = getUrlDomain(savedInstances[0] as string);
+		}
+
+		savedInstancesElement.style.display = "block";
+		document.querySelector("#saved-instances>.list")!.replaceChildren(
+			...savedInstances
+				.flatMap((instance: string) => {
+					if (!instance) {
+						return [];
+					}
+
+					const host = getUrlDomain(instance);
+					const element = document.createElement("span");
+					element.classList.add("link");
+					element.textContent = host;
+					element.addEventListener("click", () => {
+						instanceElement.value = host;
+					});
+					return [element, ", "];
+				})
+				.slice(0, -1),
+		);
+	});
+
+	document.querySelector("#form")!.addEventListener("submit", (event) => {
+		const formData = new FormData(event.target as HTMLFormElement);
+
+		if (formData.get("remember")) {
+			save(normalizeURL(formData.get("instance") as string));
+		}
+
+		return true;
+	});
+
+	$popularInstances.subscribe((instances) => {
+		document.querySelector("#popular-instances")!.replaceChildren(
+			...instances.map((domain) => {
+				const option = document.createElement("option");
+				option.value = domain;
+				return option;
+			}),
+		);
+	});
+</script>

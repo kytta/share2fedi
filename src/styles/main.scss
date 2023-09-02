@@ -1,0 +1,183 @@
+/*!
+ * This file is part of Share₂Fedi
+ * https://github.com/kytta/share2fedi
+ *
+ * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+
+@use "sass:math";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--s2f-accent-color: #40665c;
+	--s2f-accent-color-light: #5d8379;
+	--s2f-accent-color-contrast: #005e4e;
+	--s2f-error-color: #a12f2d;
+	--s2f-border-color: #ccc;
+	--s2f-border-width: 1px;
+	--s2f-input-group-bg-color: #eee;
+	--s2f-input-bg-color: #fff;
+	--s2f-input-text-color: #000;
+	--s2f-button-text-color: #fff;
+
+	color-scheme: light dark;
+	accent-color: var(--s2f-accent-color);
+	font-family: "Helvetica Neue", Helvetica, FreeSans, "Nimbus Sans L", Inter,
+		Arial, system-ui, sans-serif;
+	font-size: 16px;
+}
+
+html {
+	line-height: 1.5;
+}
+
+body {
+	max-width: 60em;
+	margin: 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+
+	> * {
+		flex-shrink: 0;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+header {
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	> div {
+		text-align: right;
+	}
+}
+
+main {
+	margin-bottom: 2rem;
+}
+
+main,
+aside {
+	padding: 0 1rem;
+}
+
+hr {
+	height: 0;
+	color: inherit;
+	border-color: var(--s2f-border-color);
+	border-width: 0.5px;
+}
+
+details {
+	font-size: smaller;
+}
+
+summary {
+	font-weight: bolder;
+}
+
+a {
+	color: var(--s2f-accent-color-contrast);
+}
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+label {
+	display: block;
+}
+
+input,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+	padding: 0.5rem;
+	border-radius: 4px;
+}
+
+textarea {
+	resize: vertical;
+}
+
+input[type="text"],
+textarea {
+	width: 100%;
+	color: var(--s2f-input-text-color);
+	background-color: var(--s2f-input-bg-color);
+	border: var(--s2f-border-width) solid var(--s2f-border-color);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	vertical-align: middle;
+}
+
+input[type="submit"] {
+	background-color: var(--s2f-accent-color);
+	color: var(--s2f-button-text-color);
+	font-weight: bolder;
+	height: 2.5rem;
+	padding: 0.5rem 1.5rem;
+	border: 0;
+	cursor: pointer;
+	appearance: button;
+
+	&:hover {
+		background-color: var(--s2f-accent-color-light);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--s2f-accent-color: #43776a;
+		--s2f-accent-color-light: #619587;
+		--s2f-accent-color-contrast: #a8f7e2;
+		--s2f-border-color: #333;
+		--s2f-input-group-bg-color: #111;
+	}
+}
+
+@media screen and (width >= 768px) {
+	main,
+	aside {
+		flex: 0 0 auto;
+	}
+
+	main {
+		width: math.div(200%, 3);
+	}
+
+	aside {
+		width: math.div(100%, 3);
+	}
+}
+
+[aria-invalid="true"],
+[aria-errormessage] {
+	--s2f-input-text-color: var(--s2f-error-color);
+	--s2f-border-color: var(--s2f-error-color);
+
+	accent-color: var(--s2f-error-color);
+}
+
+p.error {
+	color: var(--s2f-error-color);
+	margin: 0 0 1rem;
+}
+
+.mt1r {
+	margin-top: 1rem !important;
+}

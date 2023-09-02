@@ -1,22 +1,29 @@
+// This ESLint config is part of Share₂Fedi
+// https://github.com/kytta/share2fedi
+//
+// SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+// SPDX-License-Identifier: CC0-1.0
 {
+	"root": true,
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:unicorn/recommended",
+		"plugin:astro/recommended",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint"],
 	"env": {
 		"browser": true
 	},
-	"extends": ["eslint:recommended", "plugin:unicorn/recommended", "prettier"],
-	"parserOptions": {
-		"ecmaVersion": "latest",
-		"sourceType": "module"
-	},
 	"overrides": [
 		{
-			"files": ["gulpfile.js", "api/*.js"],
-			"env": {
-				"node": true,
-				"browser": false
-			},
-			"rules": {
-				"unicorn/prefer-module": 0,
-				"unicorn/prefer-node-protocol": 0
+			"files": ["*.astro"],
+			"parser": "astro-eslint-parser",
+			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
+				"extraFileExtensions": [".astro"]
 			}
 		}
 	]

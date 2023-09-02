@@ -1,0 +1,58 @@
+---
+/*!
+ * This file is part of Share₂Fedi
+ * https://github.com/kytta/share2fedi
+ *
+ * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+ * SPDX-License-Identifier: AGPL-3.0-only
+ */
+import { languages } from "@i18n/translations";
+
+const initialLanguage = "en";
+---
+
+<label data-translate="language">
+	Language:
+	<select
+		name="language"
+		id="language"
+	>
+		{
+			Object.entries(languages).map(([k, v]) => {
+				return (
+					<option
+						selected={k === initialLanguage}
+						value={k}
+					>
+						{v}
+					</option>
+				);
+			})
+		}
+	</select>
+</label>
+
+<script>
+	import { findBestLanguage } from "@i18n/engine";
+	import { applyTranslations } from "@i18n/engine";
+	import { $locale } from "@stores/i18n";
+
+	const select: HTMLSelectElement = document.querySelector("#language")!;
+
+	document.addEventListener("DOMContentLoaded", () => {
+		$locale.subscribe((newLocale) => {
+			if (newLocale === undefined) {
+				newLocale = findBestLanguage();
+			}
+
+			applyTranslations(newLocale);
+			if (select.value !== newLocale) {
+				select.value = newLocale;
+			}
+		});
+
+		select.addEventListener("change", (event) => {
+			$locale.set((event.target as typeof select).value);
+		});
+	});
+</script>
