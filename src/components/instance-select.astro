@@ -43,7 +43,10 @@ const { prefilledInstance } = Astro.props;
 		id="remember"
 		name="remember"
 	/>
-	 Remember instance on this device
+	 Remember instance on this device<noscript>.</noscript>
+	<noscript style="color:darkred;font-size:smaller">
+		This will not work when JavaScript is disabled.</noscript
+	>
 </label>
 
 <style lang="scss">
