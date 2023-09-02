@@ -11,6 +11,8 @@ import "@styles/main.scss";
 import LanguageSelect from "@components/language-select.astro";
 import Licence from "@components/licence.html";
 import Privacy from "@components/privacy.html";
+
+import package_ from "../../package.json";
 ---
 
 <!doctype html>
@@ -71,6 +73,11 @@ import Privacy from "@components/privacy.html";
 		<meta
 			name="generator"
 			content={Astro.generator}
+		/>
+
+		<meta
+			itemprop="version"
+			content={package_.version}
 		/>
 	</head>
 	<header>
