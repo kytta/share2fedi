@@ -11,7 +11,7 @@ import lightningcss from "vite-plugin-lightningcss";
 
 import cloudflare from "@astrojs/cloudflare";
 import deno from "@astrojs/deno";
-import netlify from "@astrojs/netlify";
+import netlify from "@astrojs/netlify/functions";
 import node from "@astrojs/node";
 import vercel from "@astrojs/vercel/serverless";
 
@@ -31,7 +31,9 @@ if (process.env.VERCEL) {
 } else if (process.env.NETLIFY) {
 	console.info("Using Netlify (Functions) adapter...");
 	adapterConfig = {
-		adapter: netlify(),
+		adapter: netlify({
+			functionPerRoute: true,
+		}),
 	};
 } else if (process.argv.includes("--s2f-use-deno")) {
 	console.info("Using Deno adapter...");
