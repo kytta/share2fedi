@@ -31,9 +31,7 @@ if (process.env.VERCEL) {
 } else if (process.env.NETLIFY) {
 	console.info("Using Netlify (Functions) adapter...");
 	adapterConfig = {
-		adapter: netlify({
-			functionPerRoute: true,
-		}),
+		adapter: netlify(),
 	};
 } else if (process.argv.includes("--s2f-use-deno")) {
 	console.info("Using Deno adapter...");
