@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v3 (unreleased)][Unreleased]
+## [v3][3.0.0]
 
 This version is a huge reinvention of toot. The name was changed to Share₂Fedi,
 as to indicate that sharing to other federated networks is now possible.
@@ -258,7 +258,8 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://github.com/kytta/share2fedi/compare/v2.4.5...HEAD
+[Unreleased]: https://github.com/kytta/share2fedi/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/kytta/share2fedi/compare/v2.4.5...v3.0.0
 [2.4.5]: https://github.com/kytta/share2fedi/compare/v2.4.4...v2.4.5
 [2.4.4]: https://github.com/kytta/share2fedi/compare/v2.4.3...v2.4.4
 [2.4.3]: https://github.com/kytta/share2fedi/compare/v2.4.2...v2.4.3
