@@ -87,7 +87,7 @@ const { prefilledInstance } = Astro.props;
 </style>
 
 <script>
-	import { getUrlDomain, normalizeURL } from "@scripts/util";
+	import { getUrlDomain, normalizeURL } from "@lib/url";
 	import { $popularInstances } from "@stores/popular-instances";
 	import { $savedInstances, save } from "@stores/saved-instances";
 

@@ -14,7 +14,7 @@
 			"@i18n/*": ["src/i18n/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@pages/*": ["src/pages/*"],
-			"@scripts/*": ["src/scripts/*"],
+			"@lib/*": ["src/lib/*"],
 			"@stores/*": ["src/stores/*"],
 			"@styles/*": ["src/styles/*"]
 		}

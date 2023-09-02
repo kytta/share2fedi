@@ -7,7 +7,7 @@
  */
 
 import { persistentAtom } from "@nanostores/persistent";
-import { getUrlDomain } from "@scripts/util";
+import { getUrlDomain } from "@lib/url";
 import { action, onMount } from "nanostores";
 
 const OLD_LOCAL_STORAGE_KEY = "recentInstances";
