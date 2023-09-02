@@ -26,7 +26,6 @@ const getInstancesForProject = async (
 				"Accept-Language": "en;q=1.0",
 				"Content-Type": "application/json",
 			},
-			referrer: "https://api.fediverse.observer/",
 			body: JSON.stringify({
 				query: `{nodes(status:"UP",softwarename:"${project}"){domain score active_users_monthly total_users}}`,
 			}),
