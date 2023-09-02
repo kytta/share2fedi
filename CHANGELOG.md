@@ -1,3 +1,11 @@
+<!--
+This change log is part of Share₂Fedi
+https://github.com/kytta/share2fedi
+
+SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -54,6 +62,9 @@ Some changes came with the name change:
   - new logo
   - new design
 - repository moved back to GitHub
+- licence of the project is now AGPL v3 **only**
+  - for now, this has no effect. If AGPL v4 ever comes out, Share₂Fedi v2 will
+    not be available under it
 - s2f is now being built with Astro
   - Share₂Fedi is now 100% server-side rendered. You don't have to host any
     static files, all you need is to run the Node server.

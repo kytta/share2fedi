@@ -1,9 +1,12 @@
 #!/bin/bash
+# This file is part of Share₂Fedi
+# https://github.com/kytta/share2fedi
+#
+# SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+# SPDX-License-Identifier: AGPL-3.0-only
+
 # This script converts raw SVG icons to favicons according to the article:
 # https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
-#
-# © 2023 Nikita Karamov
-# Licensed under AGPL v3 or later
 
 set -euo pipefail
 

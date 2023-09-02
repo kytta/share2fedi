@@ -1,6 +1,9 @@
 /*!
- * © 2023 Nikita Karamov
- * Licensed under AGPL v3 or later
+ * This file is part of Share₂Fedi
+ * https://github.com/kytta/share2fedi
+ *
+ * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+ * SPDX-License-Identifier: AGPL-3.0-only
  */
 
 import { readFileSync, writeFileSync } from "node:fs";

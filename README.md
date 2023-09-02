@@ -1,3 +1,11 @@
+<!--
+This README is part of Share₂Fedi
+https://github.com/kytta/share2fedi
+
+SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+SPDX-License-Identifier: CC0-1.0
+-->
+
 <h1 align="center"><img src="assets/share2fedi.svg" width="520" height="160" alt="Share2Fedi"></h1>
 
 > Instance-agnostic share page for the Fediverse.
@@ -138,12 +146,12 @@ share buttons) uses **Share₂Fedi** under the hood!
 ## Licence
 
 © 2020–2023 [Nikita Karamov]\
-Licensed under the [GNU Affero General Public License v3.0 or later][AGPL-3.0].
+Licensed under the [GNU Affero General Public License v3.0 only][AGPL-3.0-only].
 
 ---
 
 This project is hosted on GitHub: <https://github.com/kytta/share2fedi.git>
 
-[AGPL-3.0]: https://spdx.org/licenses/AGPL-3.0-or-later.html
+[AGPL-3.0-only]: https://spdx.org/licenses/AGPL-3.0-only.html
 [Nikita Karamov]: https://www.kytta.dev
 [Share₂Fedi]: https://s2f.kytta.dev/

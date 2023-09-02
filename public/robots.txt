@@ -3,6 +3,8 @@ Allow: /$
 Disallow: /
 
 # Following borrowed from https://seirdy.one/robots.txt
+# SPDX-FileCopyrightText: © 2023 Rohan Kumar <seirdy@seirdy.one>
+# SPDX-License-Identifier: ISC
 
 # I opt out of online advertising so malware that injects ads on my site won't get paid.
 # You should do the same.

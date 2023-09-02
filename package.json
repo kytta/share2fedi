@@ -2,7 +2,7 @@
 	"name": "share2fedi",
 	"version": "2.4.5",
 	"description": "Instance-agnostic share page for the Fediverse.",
-	"license": "AGPL-3.0-or-later",
+	"license": "AGPL-3.0-only",
 	"author": "Nikita Karamov <me@kytta.dev>",
 	"homepage": "https://s2f.kytta.dev/",
 	"repository": {
