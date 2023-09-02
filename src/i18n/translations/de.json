@@ -1,7 +1,7 @@
 {
     "title": "Share₂Fedi — eine instanzunabhängige Share-Seite für das Fediverse",
     "metaDescription": "Share₂Fedi ist eine Share-Seite für Mastodon, Misskey, Friendica und andere. Geben Sie Ihren Beitragstext und die Instanz-URL ein und klicken Sie auf „Veröffentlichen“!",
-    "language": "Sprache:",
+    "language": "Sprache: {}",
     "description": "Share₂Fedi ist eine instanzunabhängige Share-Seite für {}. Mit ihr können Sie von einer einzigen Seite aus auf verschiedenen föderierten Plattformen posten.",
     "fediverse": "das Fediverse",
     "supportedProjects": "Unterstützte Projekte:",

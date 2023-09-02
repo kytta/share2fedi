@@ -1,7 +1,7 @@
 {
     "title": "Share₂Fedi — инстанс-независимая share-страница для Федивёрса",
-    "metaDescription": "Share₂Fedi — это share-страница для Mastodon, Misskey, Friendica и других сервисов. Введите текст поста и URL-адрес инстанса и нажмите «Опубликовать!».",
-    "language": "Язык:",
+    "metaDescription": "Share₂Fedi — это share-страница для Mastodon, Misskey, Friendica и других сервисов. Введите текст поста и URL-адрес инстанса и нажмите «Опубликовать»!",
+    "language": "Язык: {}",
     "description": "Share₂Fedi — это инстанс-независимая share-страница для {}. С её помощью вы можете делиться информацией на различных федеративных платформах с одной страницы.",
     "fediverse": "Федивёрса",
     "supportedProjects": "Поддерживаемые проекты:",

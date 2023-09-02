@@ -1,7 +1,7 @@
 {
     "title": "Share₂Fedi — une page de partage indépendante pour le Fediverse",
-    "metaDescription": "Share₂Fedi est une page de partage pour Mastodon, Misskey, Friendica et autres. Tapez votre texte de publication et l’URL de l’instance, puis cliquez sur « Publier ! »",
-    "language": "Langue :",
+    "metaDescription": "Share₂Fedi est une page de partage pour Mastodon, Misskey, Friendica et autres. Tapez votre texte de publication et l’URL de l’instance, puis cliquez sur « Publier » !",
+    "language": "Langue : {}",
     "description": "Share₂Fedi est une page de partage indépendante pour {}. Avec elle, vous pouvez publier sur diverses plateformes fédérées depuis une seule page.",
     "fediverse": "le Fediverse",
     "supportedProjects": "Projets pris en charge :",

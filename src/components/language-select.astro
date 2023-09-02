@@ -11,8 +11,8 @@ import { languages } from "@i18n/translations";
 const initialLanguage = "en";
 ---
 
-<div>
-	<span data-translate="language">Language:</span>
+<label data-translate="language">
+	Language:
 	<select
 		name="language"
 		id="language"
@@ -30,7 +30,7 @@ const initialLanguage = "en";
 			})
 		}
 	</select>
-</div>
+</label>
 
 <script>
 	import { findBestLanguage } from "@i18n/engine";
