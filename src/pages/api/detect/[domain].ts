@@ -7,7 +7,7 @@
  */
 
 import { getSoftwareName } from "@lib/nodeinfo";
-import { ProjectPublishConfig, supportedProjects } from "@lib/project";
+import { type ProjectPublishConfig, supportedProjects } from "@lib/project";
 import { error, json } from "@lib/response";
 import type { APIRoute } from "astro";
 
@@ -16,7 +16,7 @@ export type Detection = {
 	project: keyof typeof supportedProjects;
 } & ProjectPublishConfig;
 
-export const get: APIRoute = async ({ params }) => {
+export const GET: APIRoute = async ({ params }) => {
 	const domain = params.domain as string;
 
 	const softwareName = await getSoftwareName(domain);

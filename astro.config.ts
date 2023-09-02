@@ -19,10 +19,9 @@ let adapterConfig = {};
 if (process.env.VERCEL) {
 	console.info("Using Vercel (serverless) adapter...");
 	adapterConfig = {
-		adapter: vercel(),
-		build: {
-			split: true,
-		},
+		adapter: vercel({
+			functionPerRoute: true,
+		}),
 	};
 } else if (process.env.CF_PAGES) {
 	console.info("Using Cloudflare adapter...");
@@ -51,8 +50,6 @@ if (process.env.VERCEL) {
 
 export default defineConfig({
 	site: "https://s2f.kytta.dev",
-
-	compressHTML: true,
 
 	output: "server",
 	...adapterConfig,

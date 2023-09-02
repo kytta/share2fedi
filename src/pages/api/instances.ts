@@ -10,7 +10,7 @@ import type { APIRoute } from "astro";
 import { getPopularInstanceDomains } from "@lib/instance";
 import { json } from "@lib/response";
 
-export const get: APIRoute = async () => {
+export const GET: APIRoute = async () => {
 	const popularInstanceDomains = await getPopularInstanceDomains();
 
 	return json(popularInstanceDomains, 200, {
