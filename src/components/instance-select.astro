@@ -10,7 +10,10 @@ const { instance, errors } = Astro.props;
 ---
 
 <datalist id="popular-instances"></datalist>
-<label data-translate="instance">
+<label
+	class="mt1r"
+	data-translate="instance"
+>
 	Fediverse instance
 	<div class="instance-input">
 		<span id="https-label">https://</span>
@@ -41,13 +44,15 @@ const { instance, errors } = Astro.props;
 
 <div
 	id="saved-instances"
+	class="mt1r"
 	data-translate="previouslyUsed"
 >
 	Previously used:
-	<div></div>
+	<span class="list"></span>
 </div>
 
 <label
+	class="mt1r"
 	for="remember"
 	data-translate="rememberInstance"
 >
@@ -91,7 +96,7 @@ const { instance, errors } = Astro.props;
 			display: inline-block;
 		}
 
-		:global(span) {
+		:global(span.link) {
 			color: var(--s2f-accent-color-contrast);
 			cursor: pointer;
 			text-decoration: 1px solid underline currentColor;
@@ -107,8 +112,12 @@ const { instance, errors } = Astro.props;
 	const instanceElement = document.querySelector(
 		"#instance",
 	) as HTMLInputElement;
+	const savedInstancesElement = document.querySelector(
+		"#saved-instances",
+	) as HTMLDivElement;
 	$savedInstances.subscribe((instances) => {
 		if (instances.size === 0) {
+			savedInstancesElement.style.display = "none";
 			return;
 		}
 
@@ -117,7 +126,8 @@ const { instance, errors } = Astro.props;
 			instanceElement.value = getUrlDomain(savedInstances[0] as string);
 		}
 
-		document.querySelector("#saved-instances>div")!.replaceChildren(
+		savedInstancesElement.style.display = "block";
+		document.querySelector("#saved-instances>.list")!.replaceChildren(
 			...savedInstances
 				.flatMap((instance: string) => {
 					if (!instance) {
@@ -126,6 +136,7 @@ const { instance, errors } = Astro.props;
 
 					const host = getUrlDomain(instance);
 					const element = document.createElement("span");
+					element.classList.add("link");
 					element.textContent = host;
 					element.addEventListener("click", () => {
 						instanceElement.value = host;

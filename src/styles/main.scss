@@ -94,9 +94,8 @@ strong {
 	font-weight: bolder;
 }
 
-form label {
+label {
 	display: block;
-	margin-bottom: 1rem;
 }
 
 input,
@@ -177,4 +176,8 @@ input[type="submit"] {
 p.error {
 	color: var(--s2f-error-color);
 	margin: 0 0 1rem;
+}
+
+.mt1r {
+	margin-top: 1rem !important;
 }
