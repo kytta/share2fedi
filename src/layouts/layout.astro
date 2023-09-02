@@ -11,8 +11,6 @@ import "@styles/main.scss";
 import LanguageSelect from "@components/language-select.astro";
 import Licence from "@components/licence.html";
 import Privacy from "@components/privacy.html";
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +21,7 @@ const { title } = Astro.props;
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title data-translate="title">{title}</title>
+		<title data-translate="title">Share₂Fedi</title>
 		<meta
 			name="description"
 			content="Share₂Fedi is a share page for Mastodon, Misskey, Friendica, and others. Type in your post text and the instance URL and click ‘Publish!’"
@@ -33,6 +31,22 @@ const { title } = Astro.props;
 		<link
 			rel="canonical"
 			href={Astro.url}
+		/>
+		<meta
+			property="og:title"
+			content="Share₂Fedi, a share page for the Fediverse"
+		/>
+		<meta
+			property="og:type"
+			content="website"
+		/>
+		<meta
+			property="og:image"
+			content="/banner.png"
+		/>
+		<meta
+			property="og:url"
+			content={`${Astro.url}banner.png`}
 		/>
 
 		<link

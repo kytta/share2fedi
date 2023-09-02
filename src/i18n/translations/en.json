@@ -1,5 +1,4 @@
 {
-    "title": "Share₂Fedi — an instance-agnostic share page for the Fediverse",
     "metaDescription": "Share₂Fedi is a share page for Mastodon, Misskey, Friendica, and others. Type in your post text and the instance URL and click ‘Publish’!",
     "language": "Language: {}",
     "description": "Share₂Fedi is an instance-agnostic share page for {}. With it, you can post to various federated platforms from a single page.",
