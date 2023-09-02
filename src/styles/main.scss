@@ -18,7 +18,9 @@
 	--s2f-accent-color: #40665c;
 	--s2f-accent-color-light: #5d8379;
 	--s2f-accent-color-contrast: #005e4e;
+	--s2f-error-color: #a12f2d;
 	--s2f-border-color: #ccc;
+	--s2f-border-width: 1px;
 	--s2f-input-group-bg-color: #eee;
 	--s2f-input-bg-color: #fff;
 	--s2f-input-text-color: #000;
@@ -116,7 +118,7 @@ textarea {
 	width: 100%;
 	color: var(--s2f-input-text-color);
 	background-color: var(--s2f-input-bg-color);
-	border: 1px solid var(--s2f-border-color);
+	border: var(--s2f-border-width) solid var(--s2f-border-color);
 }
 
 input[type="checkbox"],
@@ -162,4 +164,17 @@ input[type="submit"] {
 	aside {
 		width: math.div(100%, 3);
 	}
+}
+
+[aria-invalid="true"],
+[aria-errormessage] {
+	--s2f-input-text-color: var(--s2f-error-color);
+	--s2f-border-color: var(--s2f-error-color);
+
+	accent-color: var(--s2f-error-color);
+}
+
+p.error {
+	color: var(--s2f-error-color);
+	margin: 0 0 1rem;
 }

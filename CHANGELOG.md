@@ -32,7 +32,8 @@ now takes seconds! This comes with changes, though:
 
 Some changes came with the name change:
 
-- **changed API endpoint path**: ~~`/api/toot`~~ → `/api/share`
+- **changed API endpoint path**: ~~`/api/toot`~~ → `/`
+  - just send a POST request instead of a GET request with the same body
 
 ### Added
 

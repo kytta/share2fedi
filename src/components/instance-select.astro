@@ -6,7 +6,7 @@
  * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-const { prefilledInstance } = Astro.props;
+const { instance, errors } = Astro.props;
 ---
 
 <datalist id="popular-instances"></datalist>
@@ -20,10 +20,23 @@ const { prefilledInstance } = Astro.props;
 			id="instance"
 			list="popular-instances"
 			required
+			aria-invalid={Boolean(errors)}
+			aria-errormessage={errors ? "instance-error" : undefined}
 			aria-describedby="https-label"
-			value={prefilledInstance}
+			value={instance}
 		/>
 	</div>
+	{
+		errors && (
+			<p
+				class="error"
+				id="instance-error"
+				aria-live="assertive"
+			>
+				{errors}
+			</p>
+		)
+	}
 </label>
 
 <div

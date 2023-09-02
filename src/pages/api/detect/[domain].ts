@@ -21,11 +21,11 @@ export const get: APIRoute = async ({ params }) => {
 
 	const softwareName = await getSoftwareName(domain);
 	if (softwareName === undefined) {
-		return error("Could not detect software; NodeInfo not present.");
+		return error("Could not detect Fediverse project.");
 	}
 
 	if (!(softwareName in supportedProjects)) {
-		return error(`"${softwareName}" is not supported yet.`);
+		return error(`Fediverse project "${softwareName}" is not supported yet.`);
 	}
 
 	const publishConfig = supportedProjects[softwareName] as ProjectPublishConfig;

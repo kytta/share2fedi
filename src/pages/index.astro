@@ -9,15 +9,56 @@
 import Layout from "@layouts/layout.astro";
 import InstanceSelect from "@components/instance-select.astro";
 
+import { getUrlDomain } from "@lib/url";
+import type { Detection } from "./api/detect/[domain]";
+
 const searchParameters = new URL(Astro.request.url).searchParams;
-const prefilledText = searchParameters.get("text");
-const prefilledInstance = searchParameters.get("instance");
+let text: string | null = searchParameters.get("text");
+let instance: string | null = searchParameters.get("instance");
+
+const errors = { text: "", instance: "" };
+if (Astro.request.method === "POST") {
+	const formData = await Astro.request.formData();
+	text = formData.get("text") as string | null;
+	instance = formData.get("instance") as string | null;
+
+	if (typeof text !== "string" || text.length === 0) {
+		errors.text += "Please enter post text. ";
+	}
+
+	let detection: Detection | undefined;
+	if (typeof instance !== "string" || instance.length === 0) {
+		errors.instance += "Please enter instance domain. ";
+	} else {
+		instance = getUrlDomain(instance);
+
+		const detectResponse = await fetch(
+			new URL(`/api/detect/${instance}`, Astro.url),
+		);
+		const detectJson = await detectResponse.json();
+		if (detectJson.error) {
+			errors.instance += detectJson.error + " ";
+		} else {
+			detection = detectJson;
+		}
+	}
+
+	const hasErrors = Object.values(errors).some(Boolean);
+	if (!hasErrors && detection !== undefined) {
+		const { domain, endpoint, params } = detection;
+		const publishUrl = new URL(endpoint, `https://${domain}/`);
+		publishUrl.search = new URLSearchParams([
+			[params.text, text as string],
+		]).toString();
+		// eslint-disable-next-line unicorn/prefer-module
+		return Astro.redirect(publishUrl.toString(), 303);
+	}
+}
 ---
 
 <Layout title="Share₂Fedi — an instance-agnostic share page for the Fediverse">
 	<form
 		id="form"
-		action="/api/share"
 		method="POST"
 	>
 		<label data-translate="postText">
@@ -28,13 +69,29 @@ const prefilledInstance = searchParameters.get("instance");
 				rows="7"
 				placeholder="What’s on your mind?"
 				required
+				aria-invalid={Boolean(errors.text)}
+				aria-errormessage={errors.text ? "text-error" : undefined}
 				data-translate="postTextPlaceholder"
 				data-translate-attribute="placeholder"
-				>{prefilledText}</textarea
+				>{text}</textarea
 			>
+			{
+				errors.text && (
+					<p
+						class="error"
+						id="text-error"
+						aria-live="assertive"
+					>
+						{errors.text}
+					</p>
+				)
+			}
 		</label>
 
-		<InstanceSelect {prefilledInstance} />
+		<InstanceSelect
+			{instance}
+			errors={errors.instance}
+		/>
 
 		<input
 			type="submit"
