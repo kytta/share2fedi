@@ -10,6 +10,7 @@ import de from "./translations/de.json";
 import en from "./translations/en.json";
 import es from "./translations/es.json";
 import fr from "./translations/fr.json";
+import nl from "./translations/nl.json";
 import ru from "./translations/ru.json";
 
 export const languages = {
@@ -17,6 +18,7 @@ export const languages = {
 	de: "Deutsch",
 	es: "Español",
 	fr: "Français",
+	nl: "Nederlands",
 	ru: "Русский",
 };
 
@@ -25,6 +27,7 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 	de,
 	es,
 	fr,
+	nl,
 	ru,
 } as const;
 
