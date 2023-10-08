@@ -36,7 +36,7 @@
 		"@astrojs/deno": "^5.0.1",
 		"@astrojs/netlify": "^3.0.2",
 		"@astrojs/node": "^6.0.3",
-		"@astrojs/vercel": "^4.0.5",
+		"@astrojs/vercel": "^5.0.2",
 		"@nanostores/persistent": "^0.9.1",
 		"astro": "^3.2.3",
 		"nanostores": "^0.9.3"
