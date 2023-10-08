@@ -57,7 +57,7 @@
 		"sass": "^1.69.0",
 		"sharp": "^0.32.6",
 		"stylelint": "^15.10.3",
-		"stylelint-config-standard-scss": "^10.0.0",
+		"stylelint-config-standard-scss": "^11.0.0",
 		"svgo": "^3.0.2",
 		"typescript": "^5.2.2",
 		"vite-plugin-lightningcss": "^0.0.5"
