@@ -39,7 +39,8 @@ html {
 
 body {
 	max-width: 60em;
-	margin: 0 auto;
+	margin-block: 0;
+	margin-inline: auto;
 	display: flex;
 	flex-flow: row wrap;
 
@@ -55,19 +56,16 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
-	> div {
-		text-align: right;
-	}
 }
 
 main {
-	margin-bottom: 2rem;
+	margin-block-end: 2rem;
 }
 
 main,
 aside {
-	padding: 0 1rem;
+	padding-block: 0;
+	padding-inline: 1rem;
 }
 
 hr {
@@ -110,6 +108,7 @@ textarea {
 
 textarea {
 	resize: vertical;
+	resize: block;
 }
 
 input[type="text"],
@@ -130,7 +129,8 @@ input[type="submit"] {
 	color: var(--s2f-button-text-color);
 	font-weight: bolder;
 	height: 2.5rem;
-	padding: 0.5rem 1.5rem;
+	padding-block: 0.5rem;
+	padding-inline: 1.5rem;
 	border: 0;
 	cursor: pointer;
 	appearance: button;
@@ -175,9 +175,10 @@ input[type="submit"] {
 
 p.error {
 	color: var(--s2f-error-color);
-	margin: 0 0 1rem;
+	margin-block: 0 1rem;
+	margin-inline: 0;
 }
 
 .mt1r {
-	margin-top: 1rem !important;
+	margin-block-start: 1rem !important;
 }
