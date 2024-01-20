@@ -15,7 +15,10 @@ const { instance, errors } = Astro.props;
 	data-translate="instance"
 >
 	Fediverse instance
-	<div class="instance-input">
+	<div
+		class="instance-input"
+		dir="ltr"
+	>
 		<span id="https-label">https://</span>
 		<input
 			type="text"
@@ -90,7 +93,7 @@ const { instance, errors } = Astro.props;
 	}
 
 	#saved-instances {
-		margin-bottom: 1rem;
+		margin-block-end: 1rem;
 
 		> div {
 			display: inline-block;

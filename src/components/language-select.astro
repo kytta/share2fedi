@@ -11,8 +11,8 @@ import { languages } from "@i18n/translations";
 const initialLanguage = "en";
 ---
 
-<label data-translate="language">
-	Language:
+<label>
+	🌍 <span data-translate="language">Language:</span>
 	<select
 		name="language"
 		id="language"
@@ -24,7 +24,7 @@ const initialLanguage = "en";
 						selected={k === initialLanguage}
 						value={k}
 					>
-						{v}
+						{v.autonym}
 					</option>
 				);
 			})
