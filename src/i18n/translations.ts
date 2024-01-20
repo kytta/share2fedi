@@ -14,12 +14,12 @@ import nl from "./translations/nl.json";
 import ru from "./translations/ru.json";
 
 export const languages = {
-	en: "English",
-	de: "Deutsch",
-	es: "Español",
-	fr: "Français",
-	nl: "Nederlands",
-	ru: "Русский",
+	en: { autonym: "English", dir: "ltr" },
+	de: { autonym: "Deutsch", dir: "ltr" },
+	es: { autonym: "Español", dir: "ltr" },
+	fr: { autonym: "Français", dir: "ltr" },
+	nl: { autonym: "Nederlands", dir: "ltr" },
+	ru: { autonym: "Русский", dir: "ltr" },
 };
 
 export const strings: Record<keyof typeof languages, Record<string, string>> = {

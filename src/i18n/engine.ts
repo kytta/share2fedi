@@ -71,4 +71,8 @@ export function applyTranslations(language: string) {
 			}
 		}
 	}
+
+	document.documentElement.lang = language;
+	document.documentElement.dir =
+		languages[language as keyof typeof languages].dir;
 }
