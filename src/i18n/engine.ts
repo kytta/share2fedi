@@ -9,9 +9,6 @@
 import { strings, defaultLanguage, languages } from "./translations";
 
 export function useTranslations(language: string) {
-	if (!(language in strings)) {
-		language = defaultLanguage;
-	}
 	return function t(
 		key: keyof (typeof strings)[typeof defaultLanguage],
 	): string {
@@ -46,6 +43,9 @@ export function findBestLanguage(): string {
 }
 
 export function applyTranslations(language: string) {
+	if (!(language in strings)) {
+		language = defaultLanguage;
+	}
 	const t = useTranslations(language);
 
 	for (const node of document.querySelectorAll("[data-translate]")) {
