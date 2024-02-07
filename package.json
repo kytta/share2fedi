@@ -28,7 +28,7 @@
 		"fix:prettier": "prettier --write --ignore-unknown --plugin=prettier-plugin-astro",
 		"fix:stylelint": "stylelint --fix",
 		"test": "pnpm run check",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
 	"dependencies": {
@@ -50,7 +50,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-astro": "^0.31.4",
 		"eslint-plugin-unicorn": "^51.0.1",
-		"husky": "^8.0.3",
+		"husky": "^9.0.10",
 		"lint-staged": "^14.0.1",
 		"prettier": "^3.2.5",
 		"prettier-plugin-astro": "^0.13.0",
