@@ -279,5 +279,4 @@ Initial release of the site
 [1.1.2]: https://github.com/kytta/share2fedi/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/kytta/share2fedi/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/kytta/share2fedi/compare/v1.0.0...v1.1.0
-[1.0.0]:
-  https://github.com/kytta/share2fedi/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
+[1.0.0]: https://github.com/kytta/share2fedi/compare/e85aa15400bcdbcccf655d331f72df8304744b85...v1.0.0
