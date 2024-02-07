@@ -138,6 +138,34 @@ If you _really_ have to use Docker, there is
 **I will not** provide support for Docker-based deployments in the observable
 future.
 
+## Contribute
+
+### Source code
+
+TL;DR: `pnpm install && pnpm dev`
+
+See [contributing guide](CONTRIBUTING.md#improving-code) for instructions on how
+to contribute source code to the project, including adding new Fediverse
+projects.
+
+### Translations
+
+Share₂Fedi uses Hosted Weblate for translations.
+[You can edit translations using it's practical interface.](https://hosted.weblate.org/engage/share2fedi/).
+You also could do it manually by editing files in `src/i18n/translations`, but
+this is NOT recommended.
+
+<a href="https://hosted.weblate.org/engage/share2fedi/">
+<img src="https://hosted.weblate.org/widget/share2fedi/site/multi-auto.svg" alt="Translation status" />
+</a>
+
+> [!NOTE]
+> New languages do not become automatically available. For this, a
+> separate change to our ad-hoc i18n engine has to be made. See
+> [contributing guide](CONTRIBUTING.md#translating) for instructions
+
+_We thank Weblate for providing Libre hosting!_
+
 ## See also
 
 **[📯 Shareon](https://shareon.js.org)** (lightweight, stylish, and ethical

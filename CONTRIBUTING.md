@@ -87,15 +87,36 @@ form of JSON-based dictionaries.
 
 There are two ways you can add/edit translations:
 
-1. The JSON files under `src/i18n/translations` represent dictionaried for
+1. [Weblate](https://hosted.weblate.org/engage/share2fedi/), a web-based tool
+   that simplifies this process.
+   - we use Hosted Weblate. You can login using any account. Make sure to set
+     the correct email so that the changes can be attributed to you!
+   - Weblate handles PRs automatically. You do not need to do anything other
+     than use it to edit translations
+2. The JSON files under `src/i18n/translations` represent dictionaried for
    different languages. The two-letter codes correspond to the ISO 639-1
    language codes.
    - to edit translations, just edit the files. Refer to
      [the coding guide](#improving-code) for more information on how to do this.
-2. [Weblate](https://translate.codeberg.org/engage/share2fedi/), a web-based
-   tool that simplifies this process.
-   - we use Codeberg's Weblate instance, which requires a Codeberg account. If
-     you have one, this is the easiest way to edit translations.
+
+### Adding new languages
+
+You may notice that adding a new language in Weblate or in the code does not add
+it to the language dropdown. This is due to the i18n needing to define the
+languages for the dropdown.
+
+To add a new language, edit the `src/i18n/translations.ts` file. Import the JSON
+file with the translations and add a new entry to the `languages` mapping.
+
+> [!IMPORTANT]
+> For the language name, use a **capitalized autonym**. An autonym
+> is the name of the language in the language itself. You can consult CLDR or
+> Wikipedia for this. It should be capitalized, if it makes sense in the
+> language. It should NOT include the word "language" unless it's common to use
+> it ("Bahasa Indonesia", but "Русский", not "русский язык")
+>
+> A good rule of thumb is to take the value that Wikipedia uses in their
+> [language list](https://www.wikipedia.org/#js-lang-lists).
 
 ## Reporting bugs
 

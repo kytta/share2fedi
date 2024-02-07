@@ -69,7 +69,6 @@
 		"assets/*.{png,svg}": "pnpm run build:icons"
 	},
 	"prettier": {
-		"proseWrap": "always",
 		"singleAttributePerLine": true
 	},
 	"stylelint": {
