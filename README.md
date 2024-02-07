@@ -159,7 +159,8 @@ this is NOT recommended.
 <img src="https://hosted.weblate.org/widget/share2fedi/site/multi-auto.svg" alt="Translation status" />
 </a>
 
-> [!NOTE] New languages do not become automatically available. For this, a
+> [!NOTE]
+> New languages do not become automatically available. For this, a
 > separate change to our ad-hoc i18n engine has to be made. See
 > [contributing guide](CONTRIBUTING.md#translating) for instructions
 
