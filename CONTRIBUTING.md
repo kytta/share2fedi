@@ -108,7 +108,8 @@ languages for the dropdown.
 To add a new language, edit the `src/i18n/translations.ts` file. Import the JSON
 file with the translations and add a new entry to the `languages` mapping.
 
-> [!IMPORTANT] For the language name, use a **capitalized autonym**. An autonym
+> [!IMPORTANT]
+> For the language name, use a **capitalized autonym**. An autonym
 > is the name of the language in the language itself. You can consult CLDR or
 > Wikipedia for this. It should be capitalized, if it makes sense in the
 > language. It should NOT include the word "language" unless it's common to use
