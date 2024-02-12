@@ -1,6 +1,6 @@
 {
     "metaDescription": "Share₂Fedi est une page de partage pour Mastodon, Misskey, Friendica et autres. Tapez votre texte de publication et l’URL de l’instance, puis cliquez sur « Publier » !",
-    "language": "Langue : {}",
+    "language": "Langue :",
     "description": "Share₂Fedi est une page de partage indépendante pour {}. Avec elle, vous pouvez publier sur diverses plateformes fédérées depuis une seule page.",
     "fediverse": "le Fediverse",
     "supportedProjects": "Projets pris en charge :",
@@ -16,10 +16,10 @@
     "privacy1": "s2f.kytta.dev est hébergé sur Vercel. Vercel traite les adresses IP, les informations de configuration système et d’autres informations sur le trafic vers et depuis s2f.kytta.dev. Vercel ne stocke pas ces informations et ne les partage pas avec des tiers. Voir {} pour plus d’informations.",
     "privacy2": "Lorsque vous cliquez sur le bouton « Publier », vous êtes redirigé vers une instance du Fediverse que vous avez spécifiée. Elle peut traiter et/ou stocker vos données. Veuillez vous référer à la politique de confidentialité de l’instance respective.",
     "vercelPP": "Politique de confidentialité de Vercel",
-    "postText": "Texte de la publication{}",
+    "postText": "Texte de la publication",
     "postTextPlaceholder": "Quoi de neuf ?",
-    "instance": "Instance du Fediverse{}",
-    "previouslyUsed": "Utilisé précédemment : {}",
-    "rememberInstance": "{} Se souvenir de l’instance sur cet appareil",
+    "instance": "Instance du Fediverse",
+    "previouslyUsed": "Utilisé précédemment :",
+    "rememberInstance": "Se souvenir de l’instance sur cet appareil",
     "publish": "Publier"
 }
