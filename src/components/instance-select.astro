@@ -137,6 +137,7 @@ const { instance, errors } = Astro.props;
 					const element = document.createElement("span");
 					element.classList.add("link");
 					element.textContent = host;
+					element.dir = "ltr";
 					element.addEventListener("click", () => {
 						instanceElement.value = host;
 					});
