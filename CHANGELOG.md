@@ -14,6 +14,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2024-02-12
+
+## Added
+
+- new translation languages
+  - Nederlands/Dutch (thx [Heimen](https://github.com/Vistaus)!)
+  - Español/Spanish (thx gallegonovato!)
+  - <span dir="rtl">العربية</span>/Arabic (thx ButterflyOfFire](https://mstdn.fr/@butterflyoffire)!)
+
+### Fixed
+
+- locale switcher would not work if an unknown locale is in the local storage
+
+### Changed
+
+- i18n engine improved
+  - added support for RTL languages
+  - enumerations (of project variations) are now done with Intl.ListFormat and
+    thus adhere to the language rules
+- disabled search indexing
+  - hopefully this will prevent Google shamelessly indexing other's peoples'
+    content in Chrome
+- moved translations to [Hosted Weblate](https://hosted.weblate.org/engage/share2fedi/)
+- updated dependencies
+
 ## [v3][3.0.0]
 
 This version is a huge reinvention of toot. The name was changed to Share₂Fedi,
@@ -258,7 +283,8 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://github.com/kytta/share2fedi/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/kytta/share2fedi/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/kytta/share2fedi/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/kytta/share2fedi/compare/v2.4.5...v3.0.0
 [2.4.5]: https://github.com/kytta/share2fedi/compare/v2.4.4...v2.4.5
 [2.4.4]: https://github.com/kytta/share2fedi/compare/v2.4.3...v2.4.4
