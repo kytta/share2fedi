@@ -72,6 +72,18 @@ export function applyTranslations(language: string) {
 		}
 	}
 
+	if (Intl.ListFormat) {
+		const formatter = new Intl.ListFormat(language, {
+			style: "short",
+			type: "conjunction",
+		});
+
+		for (const node of document.querySelectorAll("[data-enumerate]")) {
+			const dataset = (node as HTMLElement).dataset;
+			node.innerHTML = formatter.format(dataset.enumerate!.split(","));
+		}
+	}
+
 	document.documentElement.lang = language;
 	document.documentElement.dir =
 		languages[language as keyof typeof languages].dir;
