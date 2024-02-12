@@ -7,13 +7,15 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 import { defineConfig } from "astro/config";
-import lightningcss from "vite-plugin-lightningcss";
 
 import cloudflare from "@astrojs/cloudflare";
 import deno from "@astrojs/deno";
-import netlify from "@astrojs/netlify/functions";
+import netlify from "@astrojs/netlify";
 import node from "@astrojs/node";
 import vercel from "@astrojs/vercel/serverless";
+
+import browserslist from "browserslist";
+import { browserslistToTargets, transform } from "lightningcss";
 
 let adapterConfig = {};
 if (process.env.VERCEL) {
@@ -24,7 +26,7 @@ if (process.env.VERCEL) {
 		}),
 	};
 } else if (process.env.CF_PAGES) {
-	console.info("Using Cloudflare adapter...");
+	console.info("Using Cloudflare (Pages) adapter...");
 	adapterConfig = {
 		adapter: cloudflare(),
 	};
@@ -48,6 +50,29 @@ if (process.env.VERCEL) {
 	};
 }
 
+const lightningCssPlugin = () => {
+	const targets = browserslistToTargets(browserslist());
+	return {
+		name: "vite-plugin-lightningcss",
+		transform(source, id) {
+			if (!id.endsWith(".css")) return;
+
+			const { code, map } = transform({
+				filename: id,
+				code: Buffer.from(source),
+				minify: true,
+				sourceMap: true,
+				targets,
+			});
+			return {
+				code: code.toString(),
+				// eslint-disable-next-line unicorn/no-null
+				map: map ? map.toString() : null,
+			};
+		},
+	};
+};
+
 export default defineConfig({
 	site: "https://s2f.kytta.dev",
 
@@ -55,6 +80,6 @@ export default defineConfig({
 	...adapterConfig,
 
 	vite: {
-		plugins: [lightningcss()],
+		plugins: [lightningCssPlugin()],
 	},
 });
