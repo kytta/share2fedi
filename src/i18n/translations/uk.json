@@ -2,12 +2,12 @@
     "privacyNotice": "Політика конфіденційності",
     "incl": "вкл.",
     "postTextPlaceholder": "Що у вас на думці?",
-    "rememberInstance": "{} Запам'ятати інстанс на цьому пристрої",
+    "rememberInstance": "Запам'ятати інстанс на цьому пристрої",
     "metaDescription": "Share₂Fedi — це share-сторінка для Mastodon, Misskey, Friendica та інших сервісів. Введіть текст посту та URL-адресу інстансу та натисніть «Опублікувати»!",
     "statusPage": "Статус",
     "publish": "Опублікувати",
     "licence": "Ліцензія",
-    "language": "Мова: {}",
+    "language": "Мова:",
     "supportedProjects": "Підтримувані проєкти:",
     "onGitHub": "на GitHub"
 }

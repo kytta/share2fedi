@@ -10,11 +10,8 @@ const { instance, errors } = Astro.props;
 ---
 
 <datalist id="popular-instances"></datalist>
-<label
-	class="mt1r"
-	data-translate="instance"
->
-	Fediverse instance
+<label class="mt1r">
+	<span data-translate="instance">Fediverse instance</span>
 	<div
 		class="instance-input"
 		dir="ltr"
@@ -48,23 +45,22 @@ const { instance, errors } = Astro.props;
 <div
 	id="saved-instances"
 	class="mt1r"
-	data-translate="previouslyUsed"
 >
-	Previously used:
+	<span data-translate="previouslyUsed">Previously used:</span>&#x0020;
 	<span class="list"></span>
 </div>
 
 <label
 	class="mt1r"
 	for="remember"
-	data-translate="rememberInstance"
 >
 	<input
 		type="checkbox"
 		id="remember"
 		name="remember"
-	/>
-	 Remember instance on this device<noscript>.</noscript>
+	/>&#x0020;
+	<span data-translate="rememberInstance">Remember instance on this device</span
+	><noscript>.</noscript>
 	<noscript style="color:darkred;font-size:smaller">
 		This will not work when JavaScript is disabled.</noscript
 	>
@@ -141,6 +137,7 @@ const { instance, errors } = Astro.props;
 					const element = document.createElement("span");
 					element.classList.add("link");
 					element.textContent = host;
+					element.dir = "ltr";
 					element.addEventListener("click", () => {
 						instanceElement.value = host;
 					});

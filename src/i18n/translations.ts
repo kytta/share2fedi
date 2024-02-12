@@ -6,6 +6,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
+import ar from "./translations/ar.json";
 import de from "./translations/de.json";
 import en from "./translations/en.json";
 import es from "./translations/es.json";
@@ -14,8 +15,9 @@ import nl from "./translations/nl.json";
 import ru from "./translations/ru.json";
 
 export const languages = {
-	en: { autonym: "English", dir: "ltr" },
+	ar: { autonym: "العربية", dir: "rtl" },
 	de: { autonym: "Deutsch", dir: "ltr" },
+	en: { autonym: "English", dir: "ltr" },
 	es: { autonym: "Español", dir: "ltr" },
 	fr: { autonym: "Français", dir: "ltr" },
 	nl: { autonym: "Nederlands", dir: "ltr" },
@@ -23,8 +25,9 @@ export const languages = {
 };
 
 export const strings: Record<keyof typeof languages, Record<string, string>> = {
-	en,
+	ar,
 	de,
+	en,
 	es,
 	fr,
 	nl,
