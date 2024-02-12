@@ -16,8 +16,8 @@ import ru from "./translations/ru.json";
 
 export const languages = {
 	ar: { autonym: "العربية", dir: "rtl" },
-	en: { autonym: "English", dir: "ltr" },
 	de: { autonym: "Deutsch", dir: "ltr" },
+	en: { autonym: "English", dir: "ltr" },
 	es: { autonym: "Español", dir: "ltr" },
 	fr: { autonym: "Français", dir: "ltr" },
 	nl: { autonym: "Nederlands", dir: "ltr" },
@@ -26,8 +26,8 @@ export const languages = {
 
 export const strings: Record<keyof typeof languages, Record<string, string>> = {
 	ar,
-	en,
 	de,
+	en,
 	es,
 	fr,
 	nl,
