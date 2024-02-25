@@ -54,7 +54,7 @@ const lightningCssPlugin = () => {
 	const targets = browserslistToTargets(browserslist());
 	return {
 		name: "vite-plugin-lightningcss",
-		transform(source, id) {
+		transform(source: string, id: string) {
 			if (!id.endsWith(".css")) return;
 
 			const { code, map } = transform({
