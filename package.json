@@ -37,9 +37,9 @@
 		"@astrojs/netlify": "^5.5.2",
 		"@astrojs/node": "^8.3.3",
 		"@astrojs/vercel": "^7.8.1",
-		"@nanostores/persistent": "^0.9.1",
+		"@nanostores/persistent": "^0.10.2",
 		"astro": "^4.15.4",
-		"nanostores": "^0.9.5"
+		"nanostores": "^0.11.3"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.3",

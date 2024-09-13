@@ -8,7 +8,7 @@
 
 import { persistentAtom } from "@nanostores/persistent";
 import { getUrlDomain } from "@lib/url";
-import { action, onMount } from "nanostores";
+import { onMount } from "nanostores";
 
 const OLD_LOCAL_STORAGE_KEY = "recentInstances";
 const LOCAL_STORAGE_KEY = "savedInstances";
@@ -41,8 +41,10 @@ onMount($savedInstances, () => {
 	localStorage.removeItem(OLD_LOCAL_STORAGE_KEY);
 });
 
-export const save = action($savedInstances, "save", (store, instance) => {
-	store.set(
-		new Set([getUrlDomain(instance), ...store.get()].slice(0, CAPACITY)),
+export const save = (instance: string) => {
+	$savedInstances.set(
+		new Set(
+			[getUrlDomain(instance), ...$savedInstances.get()].slice(0, CAPACITY),
+		),
 	);
-});
+};
