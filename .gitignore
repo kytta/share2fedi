@@ -10,6 +10,12 @@
 # generated types
 .astro/
 
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
 # Cache/state
 node_modules/
 
