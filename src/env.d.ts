@@ -6,4 +6,5 @@
  * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
  * SPDX-License-Identifier: CC0-1.0
  */
-/// <reference types="astro/client" />
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+/// <reference path="../.astro/types.d.ts" />

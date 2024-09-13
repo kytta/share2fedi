@@ -7,6 +7,9 @@
 # Outputs
 /dist/
 
+# generated types
+.astro/
+
 # Cache/state
 node_modules/
 
