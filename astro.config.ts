@@ -8,18 +8,13 @@
  */
 import { defineConfig } from "astro/config";
 
-import cloudflare from "@astrojs/cloudflare";
-import deno from "@astrojs/deno";
-import netlify from "@astrojs/netlify";
-import node from "@astrojs/node";
-import vercel from "@astrojs/vercel/serverless";
-
 import browserslist from "browserslist";
 import { browserslistToTargets, transform } from "lightningcss";
 
 let adapterConfig = {};
 if (process.env.VERCEL) {
 	console.info("Using Vercel (serverless) adapter...");
+	const { default: vercel } = await import("@astrojs/vercel/serverless");
 	adapterConfig = {
 		adapter: vercel({
 			functionPerRoute: true,
@@ -27,22 +22,26 @@ if (process.env.VERCEL) {
 	};
 } else if (process.env.CF_PAGES) {
 	console.info("Using Cloudflare (Pages) adapter...");
+	const { default: cloudflare } = await import("@astrojs/cloudflare");
 	adapterConfig = {
 		adapter: cloudflare(),
 	};
 } else if (process.env.NETLIFY) {
 	console.info("Using Netlify (Functions) adapter...");
+	const { default: netlify } = await import("@astrojs/netlify");
 	adapterConfig = {
 		adapter: netlify(),
 	};
 } else if (process.argv.includes("--s2f-use-deno")) {
 	console.info("Using Deno adapter...");
+	const { default: deno } = await import("@astrojs/deno");
 	adapterConfig = {
 		adapter: deno(),
 	};
 } else {
 	console.info("Using Node.js adapter...");
 	console.info("Run with '--s2f-use-deno' flag to use Deno");
+	const { default: node } = await import("@astrojs/node");
 	adapterConfig = {
 		adapter: node({
 			mode: "standalone",
