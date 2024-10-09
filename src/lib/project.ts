@@ -35,6 +35,7 @@ const misskeyConfig: ProjectPublishConfig = {
  */
 export const supportedProjects: Record<string, ProjectPublishConfig> = {
 	calckey: misskeyConfig,
+	chuckya: mastodonConfig,
 	fedibird: mastodonConfig,
 	firefish: misskeyConfig,
 	foundkey: misskeyConfig,
@@ -58,7 +59,9 @@ export const supportedProjects: Record<string, ProjectPublishConfig> = {
 			text: "body",
 		},
 	},
+	iceshrimp: misskeyConfig,
 	mastodon: mastodonConfig,
 	meisskey: misskeyConfig,
 	misskey: misskeyConfig,
+	sharkey: misskeyConfig
 };
