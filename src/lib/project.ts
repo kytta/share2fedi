@@ -58,7 +58,9 @@ export const supportedProjects: Record<string, ProjectPublishConfig> = {
 			text: "body",
 		},
 	},
+	iceshrimp: misskeyConfig,
 	mastodon: mastodonConfig,
 	meisskey: misskeyConfig,
 	misskey: misskeyConfig,
+	sharkey: misskeyConfig
 };
