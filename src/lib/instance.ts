@@ -27,8 +27,7 @@ const getInstancesForProject = async (
 	try {
 		const response = await fetch("https://api.fediverse.observer/", {
 			headers: {
-				Accept: "*/*",
-				"Accept-Language": "en;q=1.0",
+				Accept: "application/json",
 				"Content-Type": "application/json",
 				"User-Agent": `Share2Fedi/${version} (+${repository.url}) node/${process.versions.node}`,
 			},
