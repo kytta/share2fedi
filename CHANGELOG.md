@@ -14,6 +14,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- (POTENTIALLY BREAKING) Node.js version fixed to either 18 or 20.
+  - this (temporarily) drops (non-existent) support for Node.js 22
+  - by default, Share₂Fedi now assumes and prefers Node.js 20
+- updated dependencies
+
 ## [3.1.0] - 2024-02-12
 
 ## Added
@@ -71,7 +80,7 @@ Some changes came with the name change:
   - Netlify
   - Cloudflare Pages
 - **multilingual share page**
-  - Share₂Fedi can be used in English, German, and Russian.
+  - Share₂Fedi can be used in English, French, German, Russian, and Spanish.
     [Help us with other languages!](./src/i18n/translations.ts)
 - remembering of multiple Fediverse instances
 - new API endpoints
