@@ -43,7 +43,7 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.3",
-		"@types/node": "^18.19.50",
+		"@types/node": "^20.17.14",
 		"@typescript-eslint/eslint-plugin": "^7.18.0",
 		"@typescript-eslint/parser": "^7.18.0",
 		"browserslist": "^4.23.3",
