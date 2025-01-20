@@ -6,7 +6,6 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import process from "node:process";
 import { supportedProjects } from "./project";
 import {
 	version,
@@ -29,7 +28,7 @@ const getInstancesForProject = async (
 			headers: {
 				Accept: "application/json",
 				"Content-Type": "application/json",
-				"User-Agent": `Share2Fedi/${version} (+${repository.url}) node/${process.versions.node}`,
+				"User-Agent": `Share2Fedi/${version} (+${repository.url})`,
 			},
 			body: JSON.stringify({
 				query: `{nodes(status:"UP",softwarename:"${project}"){domain score active_users_monthly total_users}}`,
