@@ -23,13 +23,16 @@ const getInstancesForProject = async (
 	project: keyof typeof supportedProjects,
 ): Promise<Instance[]> => {
 	let instances: Instance[];
+
+	const headers = new Headers();
+	headers.set("Accept", "application/graphql-response+json; charset=utf-8");
+	headers.append("Accept", "application/json; charset=utf-8");
+	headers.set("Content-Type", "application/json");
+	headers.set("User-Agent", `Share2Fedi/${version} (+${repository.url})`);
+
 	try {
 		const response = await fetch("https://api.fediverse.observer/", {
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json",
-				"User-Agent": `Share2Fedi/${version} (+${repository.url})`,
-			},
+			headers,
 			body: JSON.stringify({
 				query: `{nodes(status:"UP",softwarename:"${project}"){domain score active_users_monthly total_users}}`,
 			}),
