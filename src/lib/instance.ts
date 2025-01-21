@@ -34,7 +34,8 @@ const getInstancesForProject = async (
 		const response = await fetch("https://api.fediverse.observer/", {
 			headers,
 			body: JSON.stringify({
-				query: `{nodes(status:"UP",softwarename:"${project}"){domain score active_users_monthly total_users}}`,
+				query: `query($project:String!){nodes(status:"UP",softwarename:$project){domain score active_users_monthly total_users}}`,
+				variables: { project },
 			}),
 			method: "POST",
 		});
