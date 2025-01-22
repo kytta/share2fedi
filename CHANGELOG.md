@@ -16,11 +16,17 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Share2Fedi now adds a proper user agent header with project information
+
 ### Changed
 
 - (POTENTIALLY BREAKING) Node.js version fixed to either 18 or 20.
   - this (temporarily) drops (non-existent) support for Node.js 22
   - by default, Share₂Fedi now assumes and prefers Node.js 20
+- GraphQL requests now use variables (instead of string interpolation)
+- proxy cache (`s-maxage`) increased from 1 day to 1 week
 - updated dependencies
 
 ## [3.1.0] - 2024-02-12
