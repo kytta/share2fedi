@@ -19,6 +19,8 @@ and this project adheres to
 ### Added
 
 - Share2Fedi now adds a proper user agent header with project information
+- new translation languages
+  - Simplified Chinese (thx [Poesty](https://social.qunn.eu/user)!)
 
 ### Changed
 
