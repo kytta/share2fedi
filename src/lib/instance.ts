@@ -7,6 +7,10 @@
  */
 
 import { supportedProjects } from "./project";
+import {
+	version,
+	repository,
+} from "../../package.json" assert { type: "json" };
 
 interface Instance {
 	domain: string;
@@ -19,15 +23,19 @@ const getInstancesForProject = async (
 	project: keyof typeof supportedProjects,
 ): Promise<Instance[]> => {
 	let instances: Instance[];
+
+	const headers = new Headers();
+	headers.set("Accept", "application/graphql-response+json; charset=utf-8");
+	headers.append("Accept", "application/json; charset=utf-8");
+	headers.set("Content-Type", "application/json");
+	headers.set("User-Agent", `Share2Fedi/${version} (+${repository.url})`);
+
 	try {
 		const response = await fetch("https://api.fediverse.observer/", {
-			headers: {
-				Accept: "*/*",
-				"Accept-Language": "en;q=1.0",
-				"Content-Type": "application/json",
-			},
+			headers,
 			body: JSON.stringify({
-				query: `{nodes(status:"UP",softwarename:"${project}"){domain score active_users_monthly total_users}}`,
+				query: `query($project:String!){nodes(status:"UP",softwarename:$project){domain score active_users_monthly total_users}}`,
+				variables: { project },
 			}),
 			method: "POST",
 		});
