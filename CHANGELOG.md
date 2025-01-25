@@ -33,7 +33,7 @@ and this project adheres to
 
 ## [3.1.0] - 2024-02-12
 
-## Added
+### Added
 
 - new translation languages
   - Nederlands/Dutch (thx [Heimen](https://github.com/Vistaus)!)
