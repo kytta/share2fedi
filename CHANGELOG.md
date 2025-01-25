@@ -22,6 +22,10 @@ and this project adheres to
 - new translation languages
   - Simplified Chinese (thx [Poesty](https://social.qunn.eu/user)!)
 
+### Fixed
+
+- Share2Fedi can be deployed to Deno Deploy again
+
 ### Changed
 
 - (POTENTIALLY BREAKING) Node.js version fixed to either 18 or 20.
@@ -29,6 +33,7 @@ and this project adheres to
   - by default, Share₂Fedi now assumes and prefers Node.js 20
 - GraphQL requests now use variables (instead of string interpolation)
 - proxy cache (`s-maxage`) increased from 1 day to 1 week
+- Instead of API requests, Share2Fedi now uses Astro actions on the backend
 - updated dependencies
 
 ## [3.1.0] - 2024-02-12

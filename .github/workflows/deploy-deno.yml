@@ -3,10 +3,14 @@
 #
 # SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
 # SPDX-License-Identifier: AGPL-3.0-only
-name: Deploy to Deno
+---
+name: Deno
 
 on:
   push:
+    branches:
+      - "main"
+  pull_request:
     branches:
       - "main"
 
@@ -20,6 +24,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: pnpm/action-setup@v4
         with:
           version: 9
