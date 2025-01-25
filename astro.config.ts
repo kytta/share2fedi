@@ -34,7 +34,7 @@ if (process.env.VERCEL) {
 	};
 } else if (process.argv.includes("--s2f-use-deno")) {
 	console.info("Using Deno adapter...");
-	const { default: deno } = await import("@astrojs/deno");
+	const { default: deno } = await import("@deno/astro-adapter");
 	adapterConfig = {
 		adapter: deno(),
 	};
