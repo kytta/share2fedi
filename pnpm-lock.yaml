@@ -10,25 +10,25 @@ importers:
     dependencies:
       '@astrojs/cloudflare':
         specifier: ^12.2.1
-        version: 12.2.1(@types/node@20.17.16)(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
+        version: 12.2.1(@types/node@22.10.10)(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
       '@astrojs/netlify':
         specifier: ^6.1.0
-        version: 6.1.0(@types/node@20.17.16)(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(yaml@2.7.0)
+        version: 6.1.0(@types/node@22.10.10)(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(yaml@2.7.0)
       '@astrojs/node':
         specifier: ^9.0.2
-        version: 9.0.2(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))
+        version: 9.0.2(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))
       '@astrojs/vercel':
         specifier: ^8.0.4
-        version: 8.0.4(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(rollup@4.32.0)
+        version: 8.0.4(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(rollup@4.32.0)
       '@deno/astro-adapter':
         specifier: ~0.2.0
-        version: 0.2.0(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))
+        version: 0.2.0(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))
       '@nanostores/persistent':
         specifier: ^0.10.2
         version: 0.10.2(nanostores@0.11.3)
       astro:
         specifier: ^5.1.9
-        version: 5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
+        version: 5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
       nanostores:
         specifier: ^0.11.3
         version: 0.11.3
@@ -40,8 +40,8 @@ importers:
         specifier: ^0.9.4
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.2)
       '@types/node':
-        specifier: ^20.17.16
-        version: 20.17.16
+        specifier: ^22.10.10
+        version: 22.10.10
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.18.0
         version: 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.6.2))(eslint@8.57.0)(typescript@5.6.2)
@@ -1066,8 +1066,8 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
-  '@types/node@20.17.16':
-    resolution: {integrity: sha512-vOTpLduLkZXePLxHiHsBLp98mHGnl8RptV4YAO3HfKO5UHjDvySGbxKtpYfy8Sx5+WKcgc45qNreJJRVM3L6mw==}
+  '@types/node@22.10.10':
+    resolution: {integrity: sha512-X47y/mPNzxviAGY5TcYPtYL8JsY3kAq2n8fMmKoRCxq/c4v4pyGNCzM2R6+M5/umG4ZfHuT+sgqDYqWc9rJ6ww==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -3365,8 +3365,8 @@ packages:
   uncrypto@0.1.3:
     resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   undici@5.28.5:
     resolution: {integrity: sha512-zICwjrDrcrUE0pyyJc1I2QzBkLM8FINsgOrt6WjA+BgajVq9Nxu2PbFFXUrAggLfDXlZGZBVZYw7WNV5KiBiBA==}
@@ -3814,18 +3814,18 @@ snapshots:
       - prettier
       - prettier-plugin-astro
 
-  '@astrojs/cloudflare@12.2.1(@types/node@20.17.16)(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)':
+  '@astrojs/cloudflare@12.2.1(@types/node@22.10.10)(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.2
       '@astrojs/underscore-redirects': 0.6.0
       '@cloudflare/workers-types': 4.20250124.3
-      astro: 5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
+      astro: 5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
       esbuild: 0.24.2
       estree-walker: 3.0.3
       magic-string: 0.30.17
       miniflare: 3.20250124.0
       tiny-glob: 0.2.9
-      vite: 6.0.11(@types/node@20.17.16)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
+      vite: 6.0.11(@types/node@22.10.10)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
       wrangler: 3.105.1(@cloudflare/workers-types@4.20250124.3)
     transitivePeerDependencies:
       - '@types/node'
@@ -3897,15 +3897,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/netlify@6.1.0(@types/node@20.17.16)(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(yaml@2.7.0)':
+  '@astrojs/netlify@6.1.0(@types/node@22.10.10)(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(yaml@2.7.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.2
       '@astrojs/underscore-redirects': 0.6.0
       '@netlify/functions': 2.8.1
       '@vercel/nft': 0.29.0(rollup@4.32.0)
-      astro: 5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
+      astro: 5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
       esbuild: 0.24.2
-      vite: 6.0.11(@types/node@20.17.16)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
+      vite: 6.0.11(@types/node@22.10.10)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - encoding
@@ -3922,9 +3922,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/node@9.0.2(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))':
+  '@astrojs/node@9.0.2(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))':
     dependencies:
-      astro: 5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
+      astro: 5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
       send: 1.1.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -3948,13 +3948,13 @@ snapshots:
 
   '@astrojs/underscore-redirects@0.6.0': {}
 
-  '@astrojs/vercel@8.0.4(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(rollup@4.32.0)':
+  '@astrojs/vercel@8.0.4(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))(rollup@4.32.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.2
       '@vercel/analytics': 1.4.1
       '@vercel/edge': 1.2.1
       '@vercel/nft': 0.29.0(rollup@4.32.0)
-      astro: 5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
+      astro: 5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
       esbuild: 0.24.2
       fast-glob: 3.3.3
     transitivePeerDependencies:
@@ -4040,9 +4040,9 @@ snapshots:
     dependencies:
       postcss-selector-parser: 6.1.2
 
-  '@deno/astro-adapter@0.2.0(astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))':
+  '@deno/astro-adapter@0.2.0(astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0))':
     dependencies:
-      astro: 5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
+      astro: 5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0)
       esbuild: 0.19.12
       lodash: 4.17.21
 
@@ -4601,9 +4601,9 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/node@20.17.16':
+  '@types/node@22.10.10':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.20.0
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -4892,7 +4892,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@5.1.9(@types/node@20.17.16)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0):
+  astro@5.1.9(@types/node@22.10.10)(lightningcss@1.27.0)(rollup@4.32.0)(sass@1.78.0)(typescript@5.6.2)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
@@ -4944,8 +4944,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.14.4
       vfile: 6.0.3
-      vite: 6.0.11(@types/node@20.17.16)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
-      vitefu: 1.0.5(vite@6.0.11(@types/node@20.17.16)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0))
+      vite: 6.0.11(@types/node@22.10.10)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
+      vitefu: 1.0.5(vite@6.0.11(@types/node@22.10.10)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0))
       which-pm: 3.0.0
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
@@ -7365,7 +7365,7 @@ snapshots:
 
   uncrypto@0.1.3: {}
 
-  undici-types@6.19.8: {}
+  undici-types@6.20.0: {}
 
   undici@5.28.5:
     dependencies:
@@ -7484,21 +7484,21 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.0.11(@types/node@20.17.16)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0):
+  vite@6.0.11(@types/node@22.10.10)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.1
       rollup: 4.32.0
     optionalDependencies:
-      '@types/node': 20.17.16
+      '@types/node': 22.10.10
       fsevents: 2.3.3
       lightningcss: 1.27.0
       sass: 1.78.0
       yaml: 2.7.0
 
-  vitefu@1.0.5(vite@6.0.11(@types/node@20.17.16)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)):
+  vitefu@1.0.5(vite@6.0.11(@types/node@22.10.10)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)):
     optionalDependencies:
-      vite: 6.0.11(@types/node@20.17.16)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
+      vite: 6.0.11(@types/node@22.10.10)(lightningcss@1.27.0)(sass@1.78.0)(yaml@2.7.0)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.11):
     dependencies:
