@@ -1,0 +1,41 @@
+version = 1
+SPDX-PackageName = "Share₂Fedi"
+SPDX-PackageSupplier = "Nikita Karamov <me@kytta.dev>"
+SPDX-PackageDownloadLocation = "https://github.com/kytta/share2fedi"
+
+[[annotations]]
+path = [
+  "public/site.webmanifest",
+  "public/robots.txt",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Nikita Karamov <me@kytta.dev>"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "src/i18n/translations/**.json"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023-2025 Nikita Karamov, and translators"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = [
+  "assets/**.png",
+  "assets/**.svg",
+  "public/**.ico",
+  "public/**.png",
+  "public/**.svg"
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Nikita Karamov <me@kytta.dev>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# simple configs
+[[annotations]]
+path = [
+  ".node-version",
+  "netlify.toml",
+  "vercel.json"
+]
+SPDX-FileCopyrightText = "2023-2025 Nikita Karamov <me@kytta.dev>"
+SPDX-License-Identifier = "CC0-1.0"
