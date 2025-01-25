@@ -31,14 +31,15 @@
 	},
 	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
 	"dependencies": {
-		"@astrojs/cloudflare": "^11.0.4",
-		"@astrojs/netlify": "^5.5.2",
-		"@astrojs/node": "^8.3.3",
-		"@astrojs/vercel": "^7.8.1",
+		"@astrojs/cloudflare": "^11.2.0",
+		"@astrojs/netlify": "^5.5.4",
+		"@astrojs/node": "^8.3.4",
+		"@astrojs/vercel": "^7.8.2",
 		"@deno/astro-adapter": "~0.1.5",
 		"@nanostores/persistent": "^0.10.2",
-		"astro": "^4.15.4",
-		"nanostores": "^0.11.3"
+		"astro": "^4.16.18",
+		"nanostores": "^0.11.3",
+		"zod": "^3.24.1"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
@@ -48,7 +49,7 @@
 		"browserslist": "^4.23.3",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-astro": "^1.2.4",
+		"eslint-plugin-astro": "^1.3.1",
 		"eslint-plugin-unicorn": "^55.0.0",
 		"husky": "^9.1.6",
 		"lightningcss": "^1.27.0",
