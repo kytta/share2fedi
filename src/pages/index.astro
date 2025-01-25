@@ -6,11 +6,13 @@
  * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
  * SPDX-License-Identifier: AGPL-3.0-only
  */
+import { actions } from "astro:actions";
+
 import Layout from "@layouts/layout.astro";
 import InstanceSelect from "@components/instance-select.astro";
 
 import { getUrlDomain } from "@lib/url";
-import type { Detection } from "./api/detect/[domain]";
+import type { Detection } from "@actions/index.ts";
 
 const searchParameters = new URL(Astro.request.url).searchParams;
 let text: string | null = searchParameters.get("text");
@@ -31,15 +33,12 @@ if (Astro.request.method === "POST") {
 		errors.instance += "Please enter instance domain. ";
 	} else {
 		instance = getUrlDomain(instance);
+		const { data, error } = await actions.detect(instance);
 
-		const detectResponse = await fetch(
-			new URL(`/api/detect/${instance}`, Astro.url),
-		);
-		const detectJson = await detectResponse.json();
-		if (detectJson.error) {
-			errors.instance += detectJson.error + " ";
+		if (error) {
+			errors.instance += error.message + " ";
 		} else {
-			detection = detectJson;
+			detection = data;
 		}
 	}
 

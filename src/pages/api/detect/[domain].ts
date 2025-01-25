@@ -6,38 +6,21 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { getSoftwareName } from "@lib/nodeinfo";
-import { type ProjectPublishConfig, supportedProjects } from "@lib/project";
-import { error, json } from "@lib/response";
 import type { APIRoute } from "astro";
+import { actions } from "astro:actions";
 
-export type Detection = {
-	domain: string;
-	project: keyof typeof supportedProjects;
-} & ProjectPublishConfig;
+import { error, json } from "@lib/response";
 
-export const GET: APIRoute = async ({ params }) => {
+export const GET: APIRoute = async ({ params, callAction }) => {
 	const domain = params.domain as string;
 
-	const softwareName = await getSoftwareName(domain);
-	if (softwareName === undefined) {
-		return error("Could not detect Fediverse project.");
+	const { data, error: actionError } = await callAction(actions.detect, domain);
+
+	if (actionError) {
+		return error(actionError.message);
 	}
 
-	if (!(softwareName in supportedProjects)) {
-		return error(`Fediverse project "${softwareName}" is not supported yet.`);
-	}
-
-	const publishConfig = supportedProjects[softwareName] as ProjectPublishConfig;
-	return json(
-		{
-			domain,
-			project: softwareName,
-			...publishConfig,
-		},
-		200,
-		{
-			"Cache-Control": "public, s-maxage=604800, max-age=604800",
-		},
-	);
+	return json(data, 200, {
+		"Cache-Control": "public, s-maxage=604800, max-age=604800",
+	});
 };
