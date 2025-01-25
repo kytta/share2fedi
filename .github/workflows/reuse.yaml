@@ -1,0 +1,25 @@
+# This file is part of Share₂Fedi
+# https://github.com/kytta/share2fedi
+#
+# SPDX-FileCopyrightText: © 2025 Nikita Karamov <me@kytta.dev>
+# SPDX-License-Identifier: AGPL-3.0-only
+---
+name: REUSE
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: Check compliance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: fsfe/reuse-action@v5
