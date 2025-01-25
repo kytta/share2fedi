@@ -16,9 +16,7 @@ if (process.env.VERCEL) {
 	console.info("Using Vercel (serverless) adapter...");
 	const { default: vercel } = await import("@astrojs/vercel/serverless");
 	adapterConfig = {
-		adapter: vercel({
-			functionPerRoute: true,
-		}),
+		adapter: vercel({}),
 	};
 } else if (process.env.CF_PAGES) {
 	console.info("Using Cloudflare (Pages) adapter...");
