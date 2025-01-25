@@ -22,7 +22,6 @@
 		"check:eslint": "eslint .",
 		"check:prettier": "prettier --check --plugin=prettier-plugin-astro .",
 		"check:stylelint": "stylelint **/*.scss",
-		"check:typescript": "tsc --noEmit",
 		"fix": "pnpm fix:prettier . && pnpm fix:eslint .",
 		"fix:eslint": "eslint --fix",
 		"fix:prettier": "prettier --write --ignore-unknown --plugin=prettier-plugin-astro",
@@ -60,8 +59,7 @@
 		"sharp": "^0.33.5",
 		"stylelint": "^16.9.0",
 		"stylelint-config-standard-scss": "^13.1.0",
-		"svgo": "^3.3.2",
-		"typescript": "^5.6.2"
+		"svgo": "^3.3.2"
 	},
 	"lint-staged": {
 		"*": "pnpm run fix:prettier",
