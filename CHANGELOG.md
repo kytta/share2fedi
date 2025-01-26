@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [3.2.0] - 2025-01-26
 
 ### Added
 
@@ -310,7 +310,8 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://github.com/kytta/share2fedi/compare/v3.1.0...HEAD
+[Unreleased]: https://github.com/kytta/share2fedi/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/kytta/share2fedi/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/kytta/share2fedi/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/kytta/share2fedi/compare/v2.4.5...v3.0.0
 [2.4.5]: https://github.com/kytta/share2fedi/compare/v2.4.4...v2.4.5
