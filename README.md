@@ -173,7 +173,7 @@ share buttons) uses **Share₂Fedi** under the hood!
 
 ## Licence
 
-© 2020–2023 [Nikita Karamov]\
+© 2020 [Nikita Karamov]\
 Licensed under the [GNU Affero General Public License v3.0 only][AGPL-3.0-only].
 
 ---
