@@ -31,33 +31,34 @@
 	},
 	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
 	"dependencies": {
-		"@astrojs/cloudflare": "^11.0.4",
-		"@astrojs/netlify": "^5.5.2",
-		"@astrojs/node": "^8.3.3",
-		"@astrojs/vercel": "^7.8.1",
-		"@deno/astro-adapter": "~0.1.5",
+		"@astrojs/cloudflare": "^12.2.1",
+		"@astrojs/netlify": "^6.1.0",
+		"@astrojs/node": "^9.0.2",
+		"@astrojs/vercel": "^8.0.4",
+		"@deno/astro-adapter": "~0.2.0",
 		"@nanostores/persistent": "^0.10.2",
-		"astro": "^4.15.4",
-		"nanostores": "^0.11.3"
+		"astro": "^5.1.9",
+		"nanostores": "^0.11.3",
+		"zod": "^3.24.1"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@types/node": "^20.17.16",
+		"@types/node": "^22.10.10",
 		"@typescript-eslint/eslint-plugin": "^7.18.0",
 		"@typescript-eslint/parser": "^7.18.0",
-		"browserslist": "^4.23.3",
-		"eslint": "^8.57.0",
+		"browserslist": "^4.24.4",
+		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-astro": "^1.2.4",
+		"eslint-plugin-astro": "^1.3.1",
 		"eslint-plugin-unicorn": "^55.0.0",
-		"husky": "^9.1.6",
-		"lightningcss": "^1.27.0",
-		"lint-staged": "^15.2.10",
-		"prettier": "^3.3.3",
+		"husky": "^9.1.7",
+		"lightningcss": "^1.29.1",
+		"lint-staged": "^15.4.2",
+		"prettier": "^3.4.2",
 		"prettier-plugin-astro": "^0.14.1",
-		"sass": "^1.78.0",
+		"sass": "^1.83.4",
 		"sharp": "^0.33.5",
-		"stylelint": "^16.9.0",
+		"stylelint": "^16.14.0",
 		"stylelint-config-standard-scss": "^13.1.0",
 		"svgo": "^3.3.2"
 	},
@@ -74,6 +75,6 @@
 		"extends": "stylelint-config-standard-scss"
 	},
 	"engines": {
-		"node": "^18.17.0 || ^20.3.0"
+		"node": "^18.17.1 || ^20.3.0 || ^22.0.0"
 	}
 }

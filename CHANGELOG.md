@@ -28,9 +28,10 @@ and this project adheres to
 
 ### Changed
 
-- (POTENTIALLY BREAKING) Node.js version fixed to either 18 or 20.
-  - this (temporarily) drops (non-existent) support for Node.js 22
-  - by default, Share₂Fedi now assumes and prefers Node.js 20
+- (POTENTIALLY BREAKING) Astro upgraded to v5
+  - by default, Share₂Fedi now assumes and prefers Node.js 22
+  - only LTS versions of Node.js are supported (18, 20, and 22)
+  - Node.js v18.17.0 is not supported anymore; the earliest is 18.17.1
 - GraphQL requests now use variables (instead of string interpolation)
 - proxy cache (`s-maxage`) increased from 1 day to 1 week
 - Instead of API requests, Share2Fedi now uses Astro actions on the backend
