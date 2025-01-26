@@ -33,7 +33,7 @@ if (Astro.request.method === "POST") {
 		errors.instance += "Please enter instance domain. ";
 	} else {
 		instance = getUrlDomain(instance);
-		const { data, error } = await actions.detect(instance);
+		const { data, error } = await Astro.callAction(actions.detect, instance);
 
 		if (error) {
 			errors.instance += error.message + " ";
