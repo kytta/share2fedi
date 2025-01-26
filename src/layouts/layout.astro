@@ -48,11 +48,11 @@ import package_ from "../../package.json";
 		/>
 		<meta
 			property="og:image"
-			content="/banner.png"
+			content={new URL("/banner.png", Astro.url)}
 		/>
 		<meta
 			property="og:url"
-			content={`${Astro.url}banner.png`}
+			content={Astro.url.origin}
 		/>
 
 		<link
