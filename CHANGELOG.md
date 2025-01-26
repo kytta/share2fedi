@@ -24,7 +24,11 @@ and this project adheres to
 
 ### Fixed
 
+- `canonical` URL is now always the site's root URL
+  - this fixes potential data leakage in Google Search Console
 - Share2Fedi can be deployed to Deno Deploy again
+- OpenGraph tags are now fixed
+  - `url` used to point to the image URL, instead of the sites URL
 
 ### Changed
 
