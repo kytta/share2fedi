@@ -55,7 +55,7 @@
 		"globals": "^15.14.0",
 		"husky": "^9.1.7",
 		"lightningcss": "^1.29.1",
-		"lint-staged": "^15.4.2",
+		"nano-staged": "^0.8.0",
 		"postcss-html": "^1.8.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-astro": "^0.14.1",
@@ -68,7 +68,7 @@
 		"typescript": "^5.7.3",
 		"typescript-eslint": "^8.21.0"
 	},
-	"lint-staged": {
+	"nano-staged": {
 		"*": "pnpm run fix:prettier",
 		"*.{astro,js,ts}": "pnpm run fix:eslint",
 		"*.scss": "pnpm run fix:stylelint",
