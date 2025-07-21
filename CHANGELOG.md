@@ -14,6 +14,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.0] - 2025-07-21
+
+### Added
+
+- new translation languages
+  - Eesti/Estonian (thx Priit!)
+  - தமிழ்/Tamil (thx [TamilNeram](https://github.com/TamilNeram)!)
+
+### Changed
+
+- updated dependencies
+
 ## [3.2.0] - 2025-01-26
 
 ### Added
@@ -48,7 +60,7 @@ and this project adheres to
 - new translation languages
   - Nederlands/Dutch (thx [Heimen](https://github.com/Vistaus)!)
   - Español/Spanish (thx gallegonovato!)
-  - <span dir="rtl">العربية</span>/Arabic (thx ButterflyOfFire](https://mstdn.fr/@butterflyoffire)!)
+  - <span dir="rtl">العربية</span>/Arabic (thx [ButterflyOfFire](https://mstdn.fr/@butterflyoffire)!)
 
 ### Fixed
 
@@ -310,7 +322,8 @@ Initial release of the site
 
 - Add main code for the site
 
-[Unreleased]: https://github.com/kytta/share2fedi/compare/v3.2.0...HEAD
+[Unreleased]: https://github.com/kytta/share2fedi/compare/v3.3.0...HEAD
+[3.3.0]: https://github.com/kytta/share2fedi/compare/v3.2.0...v3.3.0
 [3.2.0]: https://github.com/kytta/share2fedi/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/kytta/share2fedi/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/kytta/share2fedi/compare/v2.4.5...v3.0.0
