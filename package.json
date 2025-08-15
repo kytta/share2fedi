@@ -33,7 +33,7 @@
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.2.1",
 		"@astrojs/netlify": "^6.1.0",
-		"@astrojs/node": "^9.0.2",
+		"@astrojs/node": "^9.4.1",
 		"@astrojs/vercel": "^8.0.4",
 		"@deno/astro-adapter": "~0.2.0",
 		"@nanostores/persistent": "^0.10.2",
