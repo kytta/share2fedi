@@ -110,7 +110,6 @@ with Deno, but Node.js is still required to build Share₂Fedi.
    Basically, you need to run a reverse proxy that would redirect all incoming
    requests to `localhost:3000`. Here's how to achieve this in various HTTP
    servers:
-
    1. Apache
 
    ```apacheconf
