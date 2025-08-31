@@ -134,7 +134,7 @@ input[type="submit"] {
 	padding-inline: 1.5rem;
 	border: 0;
 	cursor: pointer;
-	appearance: button;
+	appearance: auto;
 
 	&:hover {
 		background-color: var(--s2f-accent-color-light);
