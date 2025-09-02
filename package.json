@@ -29,7 +29,7 @@
 		"test": "pnpm run check",
 		"prepare": "husky"
 	},
-	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
+	"browserslist": "> 0.5%, last 4 versions, last 2.5 years, Firefox ESR, not dead",
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.7",
 		"@astrojs/netlify": "^6.5.9",
