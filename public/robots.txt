@@ -1,2 +1,7 @@
 User-agent: *
 Disallow: /
+
+# Well-known overly-aggressive bot that claims to respect robots.txt: http://mj12bot.com/
+User-agent: MJ12bot
+Disallow: /
+Crawl-Delay: 10
