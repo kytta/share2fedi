@@ -21,7 +21,7 @@
 		"check:astro": "astro check",
 		"check:eslint": "eslint .",
 		"check:prettier": "prettier --check --plugin=prettier-plugin-astro .",
-		"check:stylelint": "stylelint **/*.scss",
+		"check:stylelint": "stylelint **/*.css",
 		"fix": "pnpm fix:prettier . && pnpm fix:eslint .",
 		"fix:eslint": "eslint --fix",
 		"fix:prettier": "prettier --write --ignore-unknown --plugin=prettier-plugin-astro",
@@ -29,7 +29,7 @@
 		"test": "pnpm run check",
 		"prepare": "husky"
 	},
-	"browserslist": "cover 95%, last 2 versions, Firefox ESR, not dead",
+	"browserslist": "> 0.5%, last 4 versions, last 2.5 years, Firefox ESR, not dead",
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.7",
 		"@astrojs/netlify": "^6.5.9",
@@ -59,11 +59,10 @@
 		"postcss-html": "^1.8.0",
 		"prettier": "^3.6.2",
 		"prettier-plugin-astro": "^0.14.1",
-		"sass": "^1.91.0",
 		"sharp": "^0.34.3",
 		"stylelint": "^16.23.1",
 		"stylelint-config-html": "^1.1.0",
-		"stylelint-config-standard-scss": "^15.0.1",
+		"stylelint-config-standard": "^39.0.0",
 		"svgo": "^3.3.2",
 		"typescript": "^5.9.2",
 		"typescript-eslint": "^8.41.0"
@@ -71,7 +70,7 @@
 	"nano-staged": {
 		"*": "pnpm run fix:prettier",
 		"*.{astro,js,ts}": "pnpm run fix:eslint",
-		"*.scss": "pnpm run fix:stylelint",
+		"*.css": "pnpm run fix:stylelint",
 		"assets/*.{png,svg}": "pnpm run build:icons"
 	},
 	"prettier": {

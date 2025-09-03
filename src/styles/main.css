@@ -6,8 +6,6 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-@use "sass:math";
-
 *,
 *::before,
 *::after {
@@ -158,11 +156,11 @@ input[type="submit"] {
 	}
 
 	main {
-		width: math.div(200%, 3);
+		width: calc(200% / 3);
 	}
 
 	aside {
-		width: math.div(100%, 3);
+		width: calc(100% / 3);
 	}
 }
 

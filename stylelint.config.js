@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: CC0-1.0
 /** @type {import('stylelint').Config} */
 export default {
-	extends: ["stylelint-config-standard-scss", "stylelint-config-html/astro"],
+	extends: ["stylelint-config-standard", "stylelint-config-html/astro"],
 	rules: {
 		"selector-pseudo-class-no-unknown": [
 			true,
