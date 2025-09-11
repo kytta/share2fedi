@@ -9,7 +9,7 @@
 import { defineConfig } from "astro/config";
 
 import browserslist from "browserslist";
-import { browserslistToTargets, transform } from "lightningcss";
+import { browserslistToTargets } from "lightningcss";
 
 let adapterConfig = {};
 if (process.env.VERCEL) {
@@ -47,29 +47,6 @@ if (process.env.VERCEL) {
 	};
 }
 
-const lightningCssPlugin = () => {
-	const targets = browserslistToTargets(browserslist());
-	return {
-		name: "vite-plugin-lightningcss",
-		transform(source: string, id: string) {
-			if (!id.endsWith(".css")) return;
-
-			const { code, map } = transform({
-				filename: id,
-				code: Buffer.from(source),
-				minify: true,
-				sourceMap: true,
-				targets,
-			});
-			return {
-				code: code.toString(),
-				// eslint-disable-next-line unicorn/no-null
-				map: map ? map.toString() : null,
-			};
-		},
-	};
-};
-
 export default defineConfig({
 	site: "https://s2f.kytta.dev",
 
@@ -77,6 +54,14 @@ export default defineConfig({
 	...adapterConfig,
 
 	vite: {
-		plugins: [lightningCssPlugin()],
+		css: {
+			transformer: "lightningcss",
+			lightningcss: {
+				targets: browserslistToTargets(browserslist()),
+			},
+		},
+		build: {
+			cssMinify: "lightningcss",
+		},
 	},
 });
