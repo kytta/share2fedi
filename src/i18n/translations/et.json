@@ -1,5 +1,5 @@
 {
-    "metaDescription": "Share₂Fedi võimaldab jagada sisu Mastodoni, Misskey'sse, Friendicasse ja muudesse sarnastesse teenustesse. Sisesta oma postitse teksst, serveri võrguaadress ja klõpsi „Postita“!",
+    "metaDescription": "Share₂Fedi võimaldab jagada sisu Mastodoni, Misskey'sse, Friendicasse ja muudesse sarnastesse teenustesse. Sisesta oma postituse tekst, serveri võrguaadress ja klõpsi „Postita“!",
     "language": "Keel:",
     "publish": "Postita",
     "vercelPP": "Verceli privaatsus- ja andmekaitsereeglid",
@@ -9,7 +9,7 @@
     "previouslyUsed": "Viimati kasutatud:",
     "rememberInstance": "Jäta server selles seadmes meelde",
     "description": "Share₂Fedi on konkreetsest serverist ja teenusest sõltumatu jagamisleht {} võrgustiku jaoks. Siit saad sa ühelt lehelt postitada erinevate födereeritud platvormi serveritesse.",
-    "fediverse": "Födiversumi",
+    "fediverse": "Födiversum",
     "supportedProjects": "Toetatud projektid:",
     "incl": "sh.",
     "credits": "Share₂Fedi arendajaks on {}. Lähtekood leidub {}. Hostinguteenust korraldab {}. {}.",
