@@ -5109,8 +5109,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@6.4.0:
-    resolution: {integrity: sha512-oLnWs9Hak/LOlKjeSpOwD6JMks8BeICEdYMJBf6P4Lac/pO9tKiv/XhXnAM7nNfSkZahjlCZu9sS50zL8fSnsw==}
+  vite@6.4.1:
+    resolution: {integrity: sha512-+Oxm7q9hDoLMyJOYfUYBuHQo+dkAloi33apOPP56pzj+vsdJDzr+j1NISE5pyaAuKL4A3UD34qd0lx5+kfKp2g==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -5473,7 +5473,7 @@ snapshots:
       '@cloudflare/workers-types': 4.20251011.0
       astro: 5.14.5(@netlify/blobs@10.1.0)(@types/node@22.18.0)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(sass@1.91.0)(typescript@5.9.2)(yaml@2.8.1)
       tinyglobby: 0.2.15
-      vite: 6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
       wrangler: 4.41.0(@cloudflare/workers-types@4.20251011.0)
     transitivePeerDependencies:
       - '@types/node'
@@ -5554,12 +5554,12 @@ snapshots:
       '@astrojs/underscore-redirects': 1.0.0
       '@netlify/blobs': 10.1.0
       '@netlify/functions': 4.3.0(rollup@4.52.4)
-      '@netlify/vite-plugin': 2.7.1(@vercel/functions@2.2.13)(rollup@4.52.4)(vite@6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1))
+      '@netlify/vite-plugin': 2.7.1(@vercel/functions@2.2.13)(rollup@4.52.4)(vite@6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1))
       '@vercel/nft': 0.30.1(rollup@4.52.4)
       astro: 5.14.5(@netlify/blobs@10.1.0)(@types/node@22.18.0)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.1)(rollup@4.52.4)(sass@1.91.0)(typescript@5.9.2)(yaml@2.8.1)
       esbuild: 0.25.11
       tinyglobby: 0.2.15
-      vite: 6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -6596,12 +6596,12 @@ snapshots:
 
   '@netlify/types@2.1.0': {}
 
-  '@netlify/vite-plugin@2.7.1(@vercel/functions@2.2.13)(rollup@4.52.4)(vite@6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1))':
+  '@netlify/vite-plugin@2.7.1(@vercel/functions@2.2.13)(rollup@4.52.4)(vite@6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1))':
     dependencies:
       '@netlify/dev': 4.6.1(@vercel/functions@2.2.13)(rollup@4.52.4)
       '@netlify/dev-utils': 4.3.0
       dedent: 1.7.0
-      vite: 6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -7439,8 +7439,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.17.1(@netlify/blobs@10.1.0)(@vercel/functions@2.2.13)
       vfile: 6.0.3
-      vite: 6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
-      vitefu: 1.1.1(vite@6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1))
+      vite: 6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
+      vitefu: 1.1.1(vite@6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -11121,7 +11121,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1):
+  vite@6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
@@ -11137,9 +11137,9 @@ snapshots:
       sass: 1.91.0
       yaml: 2.8.1
 
-  vitefu@1.1.1(vite@6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)):
+  vitefu@1.1.1(vite@6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)):
     optionalDependencies:
-      vite: 6.4.0(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@22.18.0)(jiti@2.6.1)(lightningcss@1.30.1)(sass@1.91.0)(yaml@2.8.1)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.23):
     dependencies:
