@@ -37,7 +37,7 @@
 		"@astrojs/vercel": "^8.2.10",
 		"@deno/astro-adapter": "~0.2.1",
 		"@nanostores/persistent": "^0.10.2",
-		"astro": "^5.14.5",
+		"astro": "^5.15.6",
 		"nanostores": "^0.11.4",
 		"zod": "^3.25.76"
 	},
