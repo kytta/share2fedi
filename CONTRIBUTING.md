@@ -129,7 +129,7 @@ filing an issue. We do not have a preset issue template, but try to answer these
 questions in the issue body:
 
 1. What version of Share₂Fedi are you using?
-2. How do you deploy it (Node/Vercel/Netlify/Cloudflare/Deno)?
+2. How do you deploy it (Node/Vercel/Netlify/Cloudflare)?
 3. What did you do?
 4. What did you expect to see?
 5. What did you see instead?
