@@ -30,15 +30,8 @@ if (process.env.VERCEL) {
 	adapterConfig = {
 		adapter: netlify(),
 	};
-} else if (process.argv.includes("--s2f-use-deno")) {
-	console.info("Using Deno adapter...");
-	const { default: deno } = await import("@deno/astro-adapter");
-	adapterConfig = {
-		adapter: deno(),
-	};
 } else {
 	console.info("Using Node.js adapter...");
-	console.info("Run with '--s2f-use-deno' flag to use Deno");
 	const { default: node } = await import("@astrojs/node");
 	adapterConfig = {
 		adapter: node({

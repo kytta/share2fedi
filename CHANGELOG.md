@@ -14,6 +14,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased v4][Unreleased]
+
+This version will be, once again, a big step for Share₂Fedi. For multiple
+reasons, we will cease supporting deploying the project to different serverless
+providers, with the only actually supported option being Node.js. It would most
+likely still be possible to deploy Share₂Fedi to Netlify, Cloudflare, etc., but
+it would require active tinkering from your side.
+
+"In return", we will start officially supporting Node.js-in-Docker, including
+official Docker images.
+
+### ⚠️ BREAKING CHANGES
+
+- **Deploying to Deno is no longer supported.**
+  It _should_ still be possible to deploy it; read more under [contrib/deno](./contrib/deno/README.md)
+
 ## [3.4.0] - 2025-10-28
 
 ### Fixed
