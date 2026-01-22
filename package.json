@@ -32,7 +32,6 @@
 	"browserslist": "> 0.5%, last 4 versions, last 2.5 years, Firefox ESR, not dead",
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.12",
-		"@astrojs/netlify": "^6.6.3",
 		"@astrojs/node": "^9.5.1",
 		"@astrojs/vercel": "^9.0.2",
 		"@nanostores/persistent": "^0.10.2",
