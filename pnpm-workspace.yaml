@@ -6,6 +6,9 @@
 
 packages: []
 
+overrides:
+  "unstorage>@netlify/blobs": "-"
+
 onlyBuiltDependencies:
   - esbuild
   - workerd
