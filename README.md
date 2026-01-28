@@ -52,8 +52,7 @@ To deploy to Cloudflare Pages, fork the repository and
 
 Self-hosting Share₂Fedi outside of SSR providers requires some extra setup:
 
-**Prerequisites:** modern Node.js (v18 is recommended), `pnpm`. You can host
-with Deno, but Node.js is still required to build Share₂Fedi.
+**Prerequisites:** modern Node.js (v22 is recommended), `pnpm`.
 
 1. Install dependencies.
 
@@ -65,12 +64,6 @@ with Deno, but Node.js is still required to build Share₂Fedi.
 
    ```sh
    pnpm build
-   ```
-
-   If you want to use Deno, add the `--s2f-use-deno` flag:
-
-   ```sh
-   pnpm build --s2f-use-deno
    ```
 
 3. Run server.
@@ -93,15 +86,6 @@ with Deno, but Node.js is still required to build Share₂Fedi.
 
    > More information about self-hosting an Astro website with Node:
    > https://docs.astro.build/en/guides/integrations-guide/node/#standalone
-
-   If you've built Share₂Fedi for Deno:
-
-   ```sh
-   deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs
-   ```
-
-   > More information about self-hosting an Astro website with Deno:
-   > https://docs.astro.build/en/guides/integrations-guide/deno/#usage
 
 4. Set up a reverse proxy.
 
