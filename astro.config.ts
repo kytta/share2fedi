@@ -24,12 +24,6 @@ if (process.env.VERCEL) {
 	adapterConfig = {
 		adapter: cloudflare(),
 	};
-} else if (process.env.NETLIFY) {
-	console.info("Using Netlify (Functions) adapter...");
-	const { default: netlify } = await import("@astrojs/netlify");
-	adapterConfig = {
-		adapter: netlify(),
-	};
 } else {
 	console.info("Using Node.js adapter...");
 	const { default: node } = await import("@astrojs/node");
