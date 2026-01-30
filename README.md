@@ -37,16 +37,12 @@ appended if used later—handy!
 
 ## Hosting
 
-### Vercel, Netlify, Cloudflare Pages
+### Vercel
 
-Share₂Fedi was designed to run on [Vercel](https://vercel.com/), but you can
-also run it on [Cloudflare Pages](https://pages.cloudflare.com/). To deploy it
-yourself (it's free!), you can use the following buttons:
+Share₂Fedi was designed to run on [Vercel](https://vercel.com/). To deploy it
+yourself (it's free!), you can use the following button:
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkytta%2Fshare2fedi)
-
-To deploy to Cloudflare Pages, fork the repository and
-[follow the instructions](https://docs.astro.build/en/guides/deploy/cloudflare/#how-to-deploy-a-site-with-git).
 
 ### Host it yourself
 
