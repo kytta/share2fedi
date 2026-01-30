@@ -18,12 +18,6 @@ if (process.env.VERCEL) {
 	adapterConfig = {
 		adapter: vercel({}),
 	};
-} else if (process.env.CF_PAGES) {
-	console.info("Using Cloudflare (Pages) adapter...");
-	const { default: cloudflare } = await import("@astrojs/cloudflare");
-	adapterConfig = {
-		adapter: cloudflare(),
-	};
 } else {
 	console.info("Using Node.js adapter...");
 	const { default: node } = await import("@astrojs/node");
