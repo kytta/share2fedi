@@ -64,11 +64,6 @@
 		"typescript": "^5.9.2",
 		"typescript-eslint": "^8.41.0"
 	},
-	"pnpm": {
-		"overrides": {
-			"unstorage>@netlify/blobs": "-"
-		}
-	},
 	"nano-staged": {
 		"*": "pnpm run fix:prettier",
 		"*.{astro,js,ts}": "pnpm run fix:eslint",
