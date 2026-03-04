@@ -14,6 +14,7 @@
 		":pinDevDependencies",
 		":maintainLockFilesWeekly"
 	],
+	"postUpdateOptions": ["pnpmDedupe"],
 	"timezone": "Europe/Berlin",
 	"labels": ["dependencies"],
 	"prConcurrentLimit": 3
