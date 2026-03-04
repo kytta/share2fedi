@@ -13,6 +13,12 @@
 	"vulnerabilityAlerts": {
 		"rangeStrategy": "bump"
 	},
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["major", "minor"],
+			"dependencyDashboardApproval": true
+		}
+	],
 	"postUpdateOptions": ["pnpmDedupe"],
 	"timezone": "Europe/Berlin",
 	"labels": ["dependencies"],
