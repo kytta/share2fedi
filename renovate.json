@@ -21,6 +21,7 @@
 		}
 	],
 	"postUpdateOptions": ["pnpmDedupe"],
+	"commitMessageTopic": "{{depName}}",
 	"timezone": "Europe/Berlin",
 	"labels": ["dependencies"],
 	"prConcurrentLimit": 3
