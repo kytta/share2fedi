@@ -1,12 +1,8 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		"security:only-security-updates",
-		"docker:pinDigests",
-		"helpers:pinGitHubActionDigests",
-		":configMigration",
-		"abandonments:recommended",
-		"security:minimumReleaseAgeNpm",
+		"config:best-practices",
+		":maintainLockFilesMonthly",
 		"schedule:weekends"
 	],
 	"ignorePresets": [
