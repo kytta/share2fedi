@@ -34,6 +34,7 @@ SPDX-License-Identifier = "CC-BY-4.0"
 [[annotations]]
 path = [
   ".node-version",
+  "renovate.json",
   "vercel.json"
 ]
 SPDX-FileCopyrightText = "2023-2025 Nikita Karamov <me@kytta.dev>"
