@@ -10,6 +10,9 @@
 		":pinDevDependencies",
 		":maintainLockFilesWeekly"
 	],
+	"vulnerabilityAlerts": {
+		"rangeStrategy": "bump"
+	},
 	"postUpdateOptions": ["pnpmDedupe"],
 	"timezone": "Europe/Berlin",
 	"labels": ["dependencies"],
