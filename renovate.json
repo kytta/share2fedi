@@ -4,6 +4,8 @@
 		"config:best-practices",
 		":maintainLockFilesMonthly",
 		":assignAndReview(kytta)",
+		":label(dependencies)",
+		":timezone(Europe/Berlin)",
 		"schedule:weekends"
 	],
 	"ignorePresets": [
@@ -22,7 +24,5 @@
 	],
 	"postUpdateOptions": ["pnpmDedupe"],
 	"commitMessageTopic": "{{depName}}",
-	"timezone": "Europe/Berlin",
-	"labels": ["dependencies"],
 	"prConcurrentLimit": 3
 }
