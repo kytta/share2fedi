@@ -1,12 +1,12 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		"security:only-security-updates",
-		"docker:pinDigests",
-		"helpers:pinGitHubActionDigests",
-		":configMigration",
-		"abandonments:recommended",
-		"security:minimumReleaseAgeNpm",
+		"config:best-practices",
+		":maintainLockFilesMonthly",
+		":separatePatchReleases",
+		":assignAndReview(kytta)",
+		":label(dependencies)",
+		":timezone(Europe/Berlin)",
 		"schedule:weekends"
 	],
 	"ignorePresets": [
@@ -14,7 +14,16 @@
 		":pinDevDependencies",
 		":maintainLockFilesWeekly"
 	],
-	"timezone": "Europe/Berlin",
-	"labels": ["dependencies"],
+	"vulnerabilityAlerts": {
+		"rangeStrategy": "bump"
+	},
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["major", "minor"],
+			"dependencyDashboardApproval": true
+		}
+	],
+	"postUpdateOptions": ["pnpmDedupe"],
+	"commitMessageTopic": "{{depName}}",
 	"prConcurrentLimit": 3
 }
