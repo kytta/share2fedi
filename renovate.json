@@ -3,6 +3,7 @@
 	"extends": [
 		"config:best-practices",
 		":maintainLockFilesMonthly",
+		":assignAndReview(kytta)",
 		"schedule:weekends"
 	],
 	"ignorePresets": [
