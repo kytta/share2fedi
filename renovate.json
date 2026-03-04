@@ -3,6 +3,7 @@
 	"extends": [
 		"config:best-practices",
 		":maintainLockFilesMonthly",
+		":separatePatchReleases",
 		":assignAndReview(kytta)",
 		":label(dependencies)",
 		":timezone(Europe/Berlin)",
