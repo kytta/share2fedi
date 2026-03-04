@@ -19,7 +19,7 @@ COPY . .
 RUN pnpm run build
 
 FROM node:22-alpine
-RUN apk add --no-cache tini
+RUN apk add --no-cache tini=0.19.0-r3
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
 
