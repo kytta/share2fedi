@@ -13,7 +13,7 @@ import prettier from "eslint-config-prettier";
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export default [
 	{
-		ignores: [".astro", ".vercel/", "dist/", "script/"],
+		ignores: [".astro", "dist/", "script/"],
 	},
 	{
 		languageOptions: {
