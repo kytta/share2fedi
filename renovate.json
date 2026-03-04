@@ -2,5 +2,6 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": ["security:only-security-updates", "schedule:weekends"],
 	"ignorePresets": [":semanticPrefixFixDepsChoreOthers"],
+	"labels": ["dependencies"],
 	"prConcurrentLimit": 3
 }
