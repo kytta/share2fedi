@@ -1,0 +1,9 @@
+.git/
+.github/
+
+Containerfile
+node_modules/
+dist/
+contrib/
+.astro/
+.husky/
