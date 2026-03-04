@@ -3,6 +3,7 @@
 	"extends": [
 		"config:best-practices",
 		":maintainLockFilesMonthly",
+		":separateMultipleMajorReleases",
 		":separatePatchReleases",
 		":assignAndReview(kytta)",
 		":label(dependencies)",
