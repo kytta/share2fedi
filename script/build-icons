@@ -2,7 +2,7 @@
 # This file is part of Share₂Fedi
 # https://github.com/kytta/share2fedi
 #
-# SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
+# SPDX-FileCopyrightText: © 2023, 2026 Nikita Karamov <me@kytta.dev>
 # SPDX-License-Identifier: AGPL-3.0-only
 
 # This script converts raw SVG icons to favicons according to the article:
@@ -17,7 +17,7 @@ fi
 
 node script/icons.js
 
-magick convert public/favicon-32.png public/favicon-16.png public/favicon.ico
+magick public/favicon-32.png public/favicon-16.png public/favicon.ico
 rm public/favicon-32.png public/favicon-16.png
 
 echo "Done."
