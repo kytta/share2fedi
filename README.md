@@ -37,18 +37,13 @@ appended if used later—handy!
 
 ## Hosting
 
-### Vercel
+> [!NOTE]  
+> Share₂Fedi is currently undergoing some transitions in regards to deployment.
+> The steps below may be outdated. This will be fixed in v4.
 
-Share₂Fedi was designed to run on [Vercel](https://vercel.com/). To deploy it
-yourself (it's free!), you can use the following button:
+Self-hosting Share₂Fedi requires some extra setup:
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkytta%2Fshare2fedi)
-
-### Host it yourself
-
-Self-hosting Share₂Fedi outside of SSR providers requires some extra setup:
-
-**Prerequisites:** modern Node.js (v22 is recommended), `pnpm`.
+**Prerequisites:** Node.js v22, `pnpm`.
 
 1. Install dependencies.
 
@@ -112,8 +107,7 @@ Self-hosting Share₂Fedi outside of SSR providers requires some extra setup:
 
 If you _really_ have to use Docker, there is
 [a good guide on building Astro apps with Docker](https://docs.astro.build/en/recipes/docker/).
-**I will not** provide support for Docker-based deployments in the observable
-future.
+In the future, we will provide an official Docker image for Share₂Fedi.
 
 ## Contribute
 
