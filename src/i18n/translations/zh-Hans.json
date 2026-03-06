@@ -3,7 +3,7 @@
     "description": "Share₂Fedi 是一个与实例无关的分享页面，适用于 {}。通过它，您可以从一个页面向多个联邦平台发布内容。",
     "fediverse": "联邦宇宙",
     "supportedProjects": "支持的项目：",
-    "credits": "Share₂Fedi 由 {} 开发和维护。源代码在 {}。托管于 {}。 {}。",
+    "credits": "Share₂Fedi 由 {} 开发和维护。源代码在 {}。{}。",
     "nikita": "尼基塔·卡拉莫夫",
     "onGitHub": "GitHub 上",
     "statusPage": "状态页面",
@@ -20,6 +20,5 @@
     "publish": "发布",
     "language": "语言：",
     "incl": "包括：",
-    "vercelPP": "Vercel 的隐私政策",
     "postText": "帖子文本"
 }

@@ -36,6 +36,9 @@ official Docker images.
 - **Deploying to Cloudflare Pages is no longer supported.**
   It _should_ still be possible to deploy it; read more under [contrib/cloudflare](./contrib/cloudflare/README.md)
 
+- **Deploying to Vercel is no longer supported.**
+  It _should_ still be possible to deploy it; read more under [contrib/vercel](./contrib/vercel/README.md)
+
 ## [3.4.0] - 2025-10-28
 
 ### Fixed

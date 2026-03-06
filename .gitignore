@@ -22,7 +22,3 @@ node_modules/
 # Editors/IDEs
 .idea/
 .vscode/
-
-# Backend
-.vercel/
-deno.lock

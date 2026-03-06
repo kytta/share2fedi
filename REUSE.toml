@@ -35,9 +35,9 @@ SPDX-License-Identifier = "CC-BY-4.0"
 path = [
   ".node-version",
   "renovate.json",
-  "vercel.json"
+  "contrib/vercel/vercel.json"
 ]
-SPDX-FileCopyrightText = "2023-2025 Nikita Karamov <me@kytta.dev>"
+SPDX-FileCopyrightText = "2023-2026 Nikita Karamov <me@kytta.dev>"
 SPDX-License-Identifier = "CC0-1.0"
 
 # generated files
