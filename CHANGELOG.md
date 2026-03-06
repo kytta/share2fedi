@@ -39,6 +39,21 @@ official Docker images.
 - **Deploying to Vercel is no longer supported.**
   It _should_ still be possible to deploy it; read more under [contrib/vercel](./contrib/vercel/README.md)
 
+### Fixed
+
+- fixed duplicate "on on GitHub" in some translations
+- multiple vulnerable dependencies were patched
+
+### Changed
+
+- updated dependencies
+  - now powered by Astro 5.16
+
+### Behind the scenes
+
+- automatic dependency updates now powered by Renovate instead of Dependabot
+- GitHub Actions are now locked by their commit hash
+
 ## [3.4.0] - 2025-10-28
 
 ### Fixed
