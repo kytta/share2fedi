@@ -15,7 +15,6 @@
     "privacyNotice": "Avis de confidentialité",
     "privacy1": "s2f.kytta.dev est hébergé sur Vercel. Vercel traite les adresses IP, les informations de configuration système et d’autres informations sur le trafic vers et depuis s2f.kytta.dev. Vercel ne stocke pas ces informations et ne les partage pas avec des tiers. Voir {} pour plus d’informations.",
     "privacy2": "Lorsque vous cliquez sur le bouton « Publier », vous êtes redirigé vers une instance du Fediverse que vous avez spécifiée. Elle peut traiter et/ou stocker vos données. Veuillez vous référer à la politique de confidentialité de l’instance respective.",
-    "vercelPP": "Politique de confidentialité de Vercel",
     "postText": "Texte de la publication",
     "postTextPlaceholder": "Quoi de neuf ?",
     "instance": "Instance du Fediverse",

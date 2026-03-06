@@ -2,7 +2,6 @@
     "metaDescription": "Share₂Fedi võimaldab jagada sisu Mastodoni, Misskey'sse, Friendicasse ja muudesse sarnastesse teenustesse. Sisesta oma postituse tekst, serveri võrguaadress ja klõpsi „Postita“!",
     "language": "Keel:",
     "publish": "Postita",
-    "vercelPP": "Verceli privaatsus- ja andmekaitsereeglid",
     "postText": "Postituse tekst",
     "postTextPlaceholder": "Millest mõtled?",
     "instance": "Födiversumi server",
