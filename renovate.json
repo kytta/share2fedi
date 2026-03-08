@@ -3,7 +3,6 @@
 	"extends": [
 		"config:best-practices",
 		":maintainLockFilesMonthly",
-		":separateMultipleMajorReleases",
 		":separatePatchReleases",
 		":assignAndReview(kytta)",
 		":label(dependencies)",
@@ -22,6 +21,10 @@
 		{
 			"matchUpdateTypes": ["major", "minor"],
 			"dependencyDashboardApproval": true
+		},
+		{
+			"matchDepTypes": ["action"],
+			"extends": [":separateMultipleMajorReleases"]
 		},
 		{
 			"matchDatasources": ["docker", "node-version"],
