@@ -3,7 +3,6 @@
 	"extends": [
 		"config:best-practices",
 		":maintainLockFilesMonthly",
-		":separateMultipleMajorReleases",
 		":separatePatchReleases",
 		":assignAndReview(kytta)",
 		":label(dependencies)",
@@ -22,6 +21,35 @@
 		{
 			"matchUpdateTypes": ["major", "minor"],
 			"dependencyDashboardApproval": true
+		},
+		{
+			"matchDepTypes": ["action"],
+			"extends": [":separateMultipleMajorReleases"]
+		},
+		{
+			"matchDatasources": ["docker", "node-version"],
+			"matchPackageNames": ["/(?:^|/)node$/"],
+			"matchUpdateTypes": ["patch", "minor"],
+			"groupName": "Node.js",
+			"commitMessageTopic": "Node.js"
+		},
+		{
+			"matchDatasources": ["npm"],
+			"matchPackageNames": ["@types/node"],
+			"matchUpdateTypes": ["patch", "minor"],
+			"groupName": "Node.js"
+		},
+		{
+			"extends": ["packages:stylelint"],
+			"groupName": "Stylelint"
+		},
+		{
+			"extends": ["packages:eslint"],
+			"groupName": "ESLint"
+		},
+		{
+			"matchPackageNames": ["globals"],
+			"groupName": "ESLint"
 		}
 	],
 	"postUpdateOptions": ["pnpmDedupe"],
