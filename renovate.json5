@@ -59,6 +59,10 @@
 			matchPackageNames: ["globals"],
 			groupName: "ESLint",
 		},
+		{
+			matchSourceUrls: ["https://github.com/nanostores/**"],
+			groupName: "nanostores",
+		},
 	],
 	postUpdateOptions: ["pnpmDedupe"],
 	commitMessageTopic: "{{depName}}",
