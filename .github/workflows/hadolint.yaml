@@ -1,0 +1,52 @@
+# This file is part of Share₂Fedi
+# https://github.com/kytta/share2fedi
+#
+# SPDX-FileCopyrightText: © 2026 Nikita Karamov <me@kytta.dev>
+# SPDX-License-Identifier: AGPL-3.0-only
+name: Hadolint
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "Containerfile"
+      - ".dockerignore"
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "Containerfile"
+      - ".dockerignore"
+
+permissions: {}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hadolint:
+    name: hadolint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          persist-credentials: false
+
+      - uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5 # v3.3.0
+        name: Run hadolint
+        with:
+          dockerfile: ./Containerfile
+          format: sarif
+          output-file: hadolint-results.sarif
+          no-fail: true
+
+      - uses: github/codeql-action/upload-sarif@0d579ffd059c29b07949a3cce3983f0780820c98 # v4
+        name: Upload analysis results
+        with:
+          sarif_file: hadolint-results.sarif
+          wait-for-processing: true

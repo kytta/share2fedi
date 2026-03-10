@@ -1,6 +1,6 @@
 {
 	"name": "share2fedi",
-	"version": "3.4.0",
+	"version": "4.0.0-alpha.0",
 	"description": "Instance-agnostic share page for the Fediverse.",
 	"license": "AGPL-3.0-only",
 	"author": "Nikita Karamov <me@kytta.dev>",
@@ -27,7 +27,7 @@
 		"fix:prettier": "prettier --write --ignore-unknown --plugin=prettier-plugin-astro",
 		"fix:stylelint": "stylelint --fix",
 		"test": "pnpm run check",
-		"prepare": "husky"
+		"prepare": "husky || true"
 	},
 	"browserslist": "> 0.5%, last 4 versions, last 2.5 years, Firefox ESR, not dead",
 	"dependencies": {

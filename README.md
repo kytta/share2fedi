@@ -35,15 +35,46 @@ appended if used later—handy!
 > consider self-hosting it**. Although it's free now, running my instance may
 > become too expensive for me in the future.
 
-## Hosting
+## Self-hosting
 
 > [!NOTE]  
 > Share₂Fedi is currently undergoing some transitions in regards to deployment.
-> The steps below may be outdated. This will be fixed in v4.
+> The steps below are not yet stable. This will be fixed in v4.
 
-Self-hosting Share₂Fedi requires some extra setup:
+### Docker
+
+Share₂Fedi has an official container image that you can use with any OCI runner.
+For example, using Podman:
+
+```sh
+podman run --detach --publish 127.0.0.1:9999:3000/tcp ghcr.io/kytta/share2fedi:4.0.0-alpha.0
+```
+
+The app runs on port 3000, and the container exposes it. The example above
+publishes it as port 9999. Same configuration as a Compose file:
+
+```yaml
+services:
+  share2fedi:
+    image: ghcr.io/kytta/share2fedi:4.0.0-alpha.0
+    ports:
+      - "127.0.0.1:9999:3000/tcp"
+```
+
+It is **recommended** to run the app behind a reverse proxy. We won't go into
+detail here; you probably know what you're doing.
+
+Apart from versioned tags, there is also the `edge` tag, which is built from the
+latest commit on the main branch. It is _not recommended_ to use it, as it might
+contain bugs.
+
+### Bare metal
+
+You can host Share₂Fedi without Docker, but this requires some extra setup.
 
 **Prerequisites:** Node.js v22, `pnpm`.
+
+0. Clone the repository on the target machine, or download it as a tarball.
 
 1. Install dependencies.
 
@@ -59,7 +90,7 @@ Self-hosting Share₂Fedi requires some extra setup:
 
 3. Run server.
 
-   > By default, this will only listen on localhost port 3000. To enable
+   > By default, this will only listen on `localhost:3000`. To enable
    > listening on a certain host and/or port, set the `HOST` and `PORT`
    > environment variables, respectively.
 
@@ -102,12 +133,6 @@ Self-hosting Share₂Fedi requires some extra setup:
    ```caddy
    reverse_proxy :3000
    ```
-
-### Docker
-
-If you _really_ have to use Docker, there is
-[a good guide on building Astro apps with Docker](https://docs.astro.build/en/recipes/docker/).
-In the future, we will provide an official Docker image for Share₂Fedi.
 
 ## Contribute
 

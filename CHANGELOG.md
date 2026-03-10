@@ -39,6 +39,13 @@ official Docker images.
 - **Deploying to Vercel is no longer supported.**
   It _should_ still be possible to deploy it; read more under [contrib/vercel](./contrib/vercel/README.md)
 
+### Added
+
+- **Official container image.**
+  You can now self-host Share2Fedi using Podman, Docker, or other OCI runner.
+  The images are published to [GHCR](https://github.com/kytta/share2fedi/pkgs/container/share2fedi)
+  and [Docker Hub](https://hub.docker.com/r/kytta/share2fedi).
+
 ### Fixed
 
 - fixed duplicate "on on GitHub" in some translations
