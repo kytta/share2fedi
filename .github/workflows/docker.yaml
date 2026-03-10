@@ -63,6 +63,10 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
+          labels: |
+            org.opencontainers.image.title=Share2Fedi
+            org.opencontainers.image.authors=Nikita Karamov <me@kytta.dev>
+            org.opencontainers.image.vendor=Nikita Karamov
 
       - name: Build and push Docker image
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7
