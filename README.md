@@ -50,6 +50,12 @@ For example, using Podman:
 podman run --detach --publish 127.0.0.1:9999:3000/tcp ghcr.io/kytta/share2fedi:4.0.0-alpha.0
 ```
 
+You can pull the image from:
+
+- Docker Hub: `kytta/share2fedi`
+- GHCR: `ghcr.io/kytta/share2fedi`
+- Quay: `quay.io/kytta/share2fedi`
+
 The app runs on port 3000, and the container exposes it. The example above
 publishes it as port 9999. Same configuration as a Compose file:
 
