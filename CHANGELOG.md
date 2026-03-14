@@ -43,8 +43,9 @@ official Docker images.
 
 - **Official container image.**
   You can now self-host Share2Fedi using Podman, Docker, or other OCI runner.
-  The images are published to [GHCR](https://github.com/kytta/share2fedi/pkgs/container/share2fedi)
-  and [Docker Hub](https://hub.docker.com/r/kytta/share2fedi).
+  The images are published to [Docker Hub](https://hub.docker.com/r/kytta/share2fedi),
+  [GHCR](https://github.com/kytta/share2fedi/pkgs/container/share2fedi),
+  and [Quay.io](https://quay.io/kytta/share2fedi).
 
 ### Fixed
 
