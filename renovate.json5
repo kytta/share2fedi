@@ -48,15 +48,15 @@
 		},
 		{
 			extends: ["packages:stylelint"],
-			groupName: "Stylelint",
+			groupName: "Stylelint and plugins",
 		},
 		{
 			extends: ["packages:eslint"],
-			groupName: "ESLint",
+			groupName: "ESLint and plugins",
 		},
 		{
 			matchPackageNames: ["globals"],
-			groupName: "ESLint",
+			groupName: "ESLint and plugins",
 		},
 		{
 			matchSourceUrls: ["https://github.com/nanostores/**"],
