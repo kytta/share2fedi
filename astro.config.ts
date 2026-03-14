@@ -13,8 +13,6 @@ import browserslist from "browserslist";
 import { browserslistToTargets } from "lightningcss";
 
 export default defineConfig({
-	site: "https://s2f.kytta.dev",
-
 	output: "server",
 	adapter: node({
 		mode: "standalone",
