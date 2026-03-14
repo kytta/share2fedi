@@ -19,7 +19,9 @@ export default defineConfig({
 	adapter: node({
 		mode: "standalone",
 	}),
-
+	security: {
+		allowedDomains: [{}],
+	},
 	vite: {
 		css: {
 			transformer: "lightningcss",
