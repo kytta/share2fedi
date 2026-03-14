@@ -61,4 +61,5 @@ export const supportedProjects: Record<string, ProjectPublishConfig> = {
 	mastodon: mastodonConfig,
 	meisskey: misskeyConfig,
 	misskey: misskeyConfig,
+	sharkey: misskeyConfig,
 };
