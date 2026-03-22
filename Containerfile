@@ -9,7 +9,7 @@ ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN <<EOF
 corepack enable
-corepack prepare pnpm@latest-9 --activate
+corepack prepare pnpm@latest-10 --activate
 EOF
 
 WORKDIR /app
