@@ -55,10 +55,6 @@
 			groupName: "ESLint and plugins",
 		},
 		{
-			matchPackageNames: ["globals"],
-			groupName: "ESLint and plugins",
-		},
-		{
 			matchSourceUrls: ["https://github.com/nanostores/**"],
 			groupName: "nanostores",
 		},
