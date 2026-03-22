@@ -1,4 +1,3 @@
-/* eslint-env node */
 /*!
  * This file is part of Share₂Fedi
  * https://github.com/kytta/share2fedi
