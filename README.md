@@ -78,7 +78,7 @@ contain bugs.
 
 You can host Share₂Fedi without Docker, but this requires some extra setup.
 
-**Prerequisites:** Node.js v22, `pnpm`.
+**Prerequisites:** Node.js v24, `pnpm`.
 
 0. Clone the repository on the target machine, or download it as a tarball.
 
