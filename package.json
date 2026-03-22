@@ -31,13 +31,13 @@
 	},
 	"browserslist": "> 0.5%, last 4 versions, last 2.5 years, Firefox ESR, not dead",
 	"dependencies": {
-		"@astrojs/node": "^9.5.5",
+		"@astrojs/node": "^10.0.3",
 		"@nanostores/persistent": "^1.0.0",
-		"astro": "~5.18.0",
+		"astro": "~6.0.8",
 		"nanostores": "^1.0.0"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.6",
+		"@astrojs/check": "^0.9.8",
 		"@eslint/js": "^10.0.0",
 		"@types/node": "^24.0.0",
 		"@typescript-eslint/parser": "^8.57.1",
