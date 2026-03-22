@@ -12,7 +12,7 @@ import LanguageSelect from "@components/language-select.astro";
 import Licence from "@components/licence.html";
 import Privacy from "@components/privacy.html";
 
-import package_ from "../../package.json";
+import package_ from "../../package.json" with { type: "json" };
 ---
 
 <!doctype html>
