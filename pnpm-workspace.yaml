@@ -5,6 +5,5 @@
 # SPDX-License-Identifier: CC0-1.0
 
 onlyBuiltDependencies:
-  - "@parcel/watcher"
   - esbuild
   - sharp
