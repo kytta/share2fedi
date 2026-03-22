@@ -11,7 +11,7 @@ export const json = (
 	status: number = 200,
 	headers: Record<string, string> = {},
 ) => {
-	return new Response(JSON.stringify(body), {
+	return Response.json(body, {
 		headers: {
 			"Content-Type": "application/json",
 			...headers,
