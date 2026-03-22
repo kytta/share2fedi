@@ -7,7 +7,7 @@
  */
 
 import { defineAction, ActionError } from "astro:actions";
-import { z } from "astro:schema";
+import { z } from "astro/zod";
 
 import { getSoftwareName } from "@lib/nodeinfo";
 import { type ProjectPublishConfig, supportedProjects } from "@lib/project";

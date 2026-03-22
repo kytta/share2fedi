@@ -26,8 +26,5 @@ export default defineConfig({
 				targets: browserslistToTargets(browserslist()),
 			},
 		},
-		build: {
-			cssMinify: "lightningcss",
-		},
 	},
 });

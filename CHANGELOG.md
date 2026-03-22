@@ -58,7 +58,7 @@ official Docker images.
 ### Changed
 
 - updated dependencies
-  - now powered by Astro 5.16
+  - now powered by Astro 6
 
 ### Behind the scenes
 
