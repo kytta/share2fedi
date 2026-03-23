@@ -44,6 +44,7 @@ official Docker images.
 
 ### Added
 
+- **Sharkey** support (thx [solo](https://solonovamax.gay/)!)
 - **Official container image.**
   You can now self-host Share2Fedi using Podman, Docker, or other OCI runner.
   The images are published to [Docker Hub](https://hub.docker.com/r/kytta/share2fedi),
