@@ -3,7 +3,7 @@
 #
 # SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
 # SPDX-License-Identifier: AGPL-3.0-only
-name: Check and build
+name: CI
 
 on:
   push:
@@ -13,12 +13,20 @@ on:
     branches:
       - "main"
 
+permissions: {}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
+    name: Check and build
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          persist-credentials: false
       - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5
         with:
           version: 10
