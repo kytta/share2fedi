@@ -8,6 +8,7 @@
 {
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	extends: [
+		"forgejo>kytta/renovate-config",
 		"config:best-practices",
 		":maintainLockFilesMonthly",
 		":separatePatchReleases",
