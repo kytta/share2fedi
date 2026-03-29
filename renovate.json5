@@ -13,7 +13,7 @@
 		":separatePatchReleases",
 		":label(dependencies)",
 	],
-	ignorePresets: [":semanticPrefixFixDepsChoreOthers", "group:eslintMonorepo"],
+	ignorePresets: [":semanticPrefixFixDepsChoreOthers"],
 	packageRules: [
 		{
 			matchUpdateTypes: ["major", "minor"],
@@ -39,10 +39,6 @@
 		{
 			extends: ["packages:stylelint"],
 			groupName: "Stylelint and plugins",
-		},
-		{
-			extends: ["packages:eslint"],
-			groupName: "ESLint and plugins",
 		},
 	],
 	postUpdateOptions: ["pnpmDedupe"],
