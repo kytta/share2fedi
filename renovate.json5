@@ -13,7 +13,6 @@
 		":separatePatchReleases",
 		":label(dependencies)",
 	],
-	ignorePresets: [":semanticPrefixFixDepsChoreOthers"],
 	packageRules: [
 		{
 			matchUpdateTypes: ["major", "minor"],
