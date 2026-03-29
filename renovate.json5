@@ -15,10 +15,6 @@
 	],
 	packageRules: [
 		{
-			matchUpdateTypes: ["major", "minor"],
-			dependencyDashboardApproval: true,
-		},
-		{
 			matchDatasources: ["docker", "node-version"],
 			matchPackageNames: ["/(?:^|/)node$/"],
 			matchUpdateTypes: ["patch", "minor"],
