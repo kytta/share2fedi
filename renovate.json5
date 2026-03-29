@@ -8,58 +8,16 @@
 {
 	$schema: "https://docs.renovatebot.com/renovate-schema.json",
 	extends: [
-		"config:best-practices",
+		"https://codeberg.org/kytta/renovate-config/raw/branch/main/default.json",
 		":maintainLockFilesMonthly",
 		":separatePatchReleases",
 		":label(dependencies)",
-		":timezone(Europe/Berlin)",
-		"schedule:weekends",
 	],
-	ignorePresets: [
-		":semanticPrefixFixDepsChoreOthers",
-		":pinDevDependencies",
-		":maintainLockFilesWeekly",
-		"group:eslintMonorepo",
-	],
-	vulnerabilityAlerts: {
-		rangeStrategy: "bump",
-	},
 	packageRules: [
-		{
-			matchUpdateTypes: ["major", "minor"],
-			dependencyDashboardApproval: true,
-		},
-		{
-			matchDepTypes: ["action"],
-			extends: [":separateMultipleMajorReleases"],
-		},
-		{
-			matchDatasources: ["docker", "node-version"],
-			matchPackageNames: ["/(?:^|/)node$/"],
-			matchUpdateTypes: ["patch", "minor"],
-			groupName: "Node.js",
-			commitMessageTopic: "Node.js",
-		},
-		{
-			matchDatasources: ["npm"],
-			matchPackageNames: ["@types/node"],
-			matchUpdateTypes: ["patch", "minor"],
-			groupName: "Node.js",
-		},
 		{
 			extends: ["packages:stylelint"],
 			groupName: "Stylelint and plugins",
 		},
-		{
-			extends: ["packages:eslint"],
-			groupName: "ESLint and plugins",
-		},
-		{
-			matchSourceUrls: ["https://github.com/nanostores/**"],
-			groupName: "nanostores",
-		},
 	],
 	postUpdateOptions: ["pnpmDedupe"],
-	commitMessageTopic: "{{depName}}",
-	prConcurrentLimit: 3,
 }
