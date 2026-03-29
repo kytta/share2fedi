@@ -19,10 +19,6 @@
 			dependencyDashboardApproval: true,
 		},
 		{
-			matchDepTypes: ["action"],
-			extends: [":separateMultipleMajorReleases"],
-		},
-		{
 			matchDatasources: ["docker", "node-version"],
 			matchPackageNames: ["/(?:^|/)node$/"],
 			matchUpdateTypes: ["patch", "minor"],
