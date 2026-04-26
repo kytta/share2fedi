@@ -9,3 +9,6 @@ onlyBuiltDependencies:
   - sharp
 
 minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  # Renovate security update: @astrojs/node@10.0.5
+  - "@astrojs/node@10.0.5"
