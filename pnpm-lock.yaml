@@ -71,13 +71,13 @@ importers:
         version: 0.34.5
       stylelint:
         specifier: ^17.6.0
-        version: 17.9.1(typescript@5.9.3)
+        version: 17.13.0(typescript@5.9.3)
       stylelint-config-html:
         specifier: ^1.1.0
-        version: 1.1.0(postcss-html@1.8.1)(stylelint@17.9.1(typescript@5.9.3))
+        version: 1.1.0(postcss-html@1.8.1)(stylelint@17.13.0(typescript@5.9.3))
       stylelint-config-standard:
         specifier: ^40.0.0
-        version: 40.0.0(stylelint@17.9.1(typescript@5.9.3))
+        version: 40.0.0(stylelint@17.13.0(typescript@5.9.3))
       svgo:
         specifier: ^4.0.1
         version: 4.0.1
@@ -1916,10 +1916,6 @@ packages:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
     engines: {node: '>=12'}
 
-  is-plain-object@5.0.0:
-    resolution: {integrity: sha512-VRSzKkbMm5jMDoKLbltAkFQ5Qr7VDiTFGXxYFXXowVj387GeGNOCsOH6Msy00SGZ3Fp84b1Naa1psqgcCIEP5Q==}
-    engines: {node: '>=0.10.0'}
-
   is-regex@1.2.1:
     resolution: {integrity: sha512-MjYsKHO5O7mCsmRGxWcLWheFqN9DJ/2TmngvjKXihe6efViPqc274+Fx/4fYj/r03+ESvBdTXK0V6tA3rgez1g==}
     engines: {node: '>= 0.4'}
@@ -2805,8 +2801,8 @@ packages:
     peerDependencies:
       stylelint: ^17.0.0
 
-  stylelint@17.9.1:
-    resolution: {integrity: sha512-THTmnAPJTrg/JhkTWZlSyrO+HUYMx6ELthIHeMyD2WOKqXIJUFQv2Yxn91bvUrZdbBJaW2dUuQdPST2wcQ6C3g==}
+  stylelint@17.13.0:
+    resolution: {integrity: sha512-G1WYzMerp7ihOaIe9VJCHLt12MoAD2QLf1AFerYP37+BCRBUK5UCpq8e/mN+zCIaJPKQcaxhE4WlPmqdiOx/gw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -5248,8 +5244,6 @@ snapshots:
 
   is-plain-obj@4.1.0: {}
 
-  is-plain-object@5.0.0: {}
-
   is-regex@1.2.1:
     dependencies:
       call-bound: 1.0.4
@@ -6388,21 +6382,21 @@ snapshots:
 
   strip-indent@4.1.1: {}
 
-  stylelint-config-html@1.1.0(postcss-html@1.8.1)(stylelint@17.9.1(typescript@5.9.3)):
+  stylelint-config-html@1.1.0(postcss-html@1.8.1)(stylelint@17.13.0(typescript@5.9.3)):
     dependencies:
       postcss-html: 1.8.1
-      stylelint: 17.9.1(typescript@5.9.3)
+      stylelint: 17.13.0(typescript@5.9.3)
 
-  stylelint-config-recommended@18.0.0(stylelint@17.9.1(typescript@5.9.3)):
+  stylelint-config-recommended@18.0.0(stylelint@17.13.0(typescript@5.9.3)):
     dependencies:
-      stylelint: 17.9.1(typescript@5.9.3)
+      stylelint: 17.13.0(typescript@5.9.3)
 
-  stylelint-config-standard@40.0.0(stylelint@17.9.1(typescript@5.9.3)):
+  stylelint-config-standard@40.0.0(stylelint@17.13.0(typescript@5.9.3)):
     dependencies:
-      stylelint: 17.9.1(typescript@5.9.3)
-      stylelint-config-recommended: 18.0.0(stylelint@17.9.1(typescript@5.9.3))
+      stylelint: 17.13.0(typescript@5.9.3)
+      stylelint-config-recommended: 18.0.0(stylelint@17.13.0(typescript@5.9.3))
 
-  stylelint@17.9.1(typescript@5.9.3):
+  stylelint@17.13.0(typescript@5.9.3):
     dependencies:
       '@csstools/css-calc': 3.2.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
@@ -6425,7 +6419,6 @@ snapshots:
       html-tags: 5.1.0
       ignore: 7.0.5
       import-meta-resolve: 4.2.0
-      is-plain-object: 5.0.0
       mathml-tag-names: 4.0.0
       meow: 14.1.0
       micromatch: 4.0.8
