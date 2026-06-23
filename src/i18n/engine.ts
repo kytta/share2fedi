@@ -22,18 +22,17 @@ export function useTranslations(language: string) {
 
 export function findBestLanguage(): string {
 	const urlLang = new URLSearchParams(globalThis.location.search).get("lang");
-	if (urlLang && urlLang in languages) {
+	if (urlLang && Object.hasOwn(languages, urlLang)) {
 		return urlLang;
 	}
 
-	let browserLanguages = navigator.languages;
-	if (!navigator.languages) browserLanguages = [navigator.language];
+	const browserLanguages = navigator.languages || [navigator.language];
 	for (const language of browserLanguages) {
 		const locale = new Intl.Locale(language);
 		const minimized = locale.minimize();
 
 		for (const candidate of [locale.baseName, minimized.baseName]) {
-			if (candidate in languages) {
+			if (Object.hasOwn(languages, candidate)) {
 				return candidate;
 			}
 		}
@@ -43,7 +42,7 @@ export function findBestLanguage(): string {
 }
 
 export function applyTranslations(language: string) {
-	if (!(language in strings)) {
+	if (!Object.hasOwn(strings, language)) {
 		language = defaultLanguage;
 	}
 	const t = useTranslations(language);

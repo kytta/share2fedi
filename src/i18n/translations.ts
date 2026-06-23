@@ -17,6 +17,7 @@ import ru from "./translations/ru.json";
 import ta from "./translations/ta.json";
 import zhHans from "./translations/zh-Hans.json";
 
+// TODO: this should be a Map
 export const languages = {
 	ar: { autonym: "العربية", dir: "rtl" },
 	de: { autonym: "Deutsch", dir: "ltr" },

@@ -27,6 +27,7 @@ const misskeyConfig: ProjectPublishConfig = {
 	},
 };
 
+// TODO: this should really be a Map
 /**
  * Mapping of the supported fediverse projects.
  *

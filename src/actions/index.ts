@@ -12,10 +12,10 @@ import { z } from "astro/zod";
 import { getSoftwareName } from "@lib/nodeinfo";
 import { type ProjectPublishConfig, supportedProjects } from "@lib/project";
 
-export type Detection = {
+export type Detection = ProjectPublishConfig & {
 	domain: string;
 	project: keyof typeof supportedProjects;
-} & ProjectPublishConfig;
+};
 
 export const server = {
 	detect: defineAction({
@@ -29,7 +29,7 @@ export const server = {
 				});
 			}
 
-			if (!(softwareName in supportedProjects)) {
+			if (!Object.hasOwn(supportedProjects, softwareName)) {
 				throw new ActionError({
 					message: `Fediverse project "${softwareName}" is not supported yet.`,
 					code: "BAD_REQUEST",

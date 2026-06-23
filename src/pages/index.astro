@@ -50,7 +50,7 @@ if (Astro.request.method === "POST") {
 			[params.text, text as string],
 		]).toString();
 		// eslint-disable-next-line unicorn/prefer-module
-		return Astro.redirect(publishUrl.toString(), 303);
+		return Astro.redirect(publishUrl.href, 303);
 	}
 }
 ---
