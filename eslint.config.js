@@ -20,4 +20,11 @@ export default defineConfig(
 	unicorn.configs.recommended,
 	...astro.configs["jsx-a11y-strict"],
 	prettier,
+	{
+		files: ["src/stores/*"],
+		rules: {
+			// onMount is a side-effect I can get behind
+			"unicorn/no-top-level-side-effects": "off",
+		},
+	},
 );
