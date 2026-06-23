@@ -26,8 +26,7 @@ export function findBestLanguage(): string {
 		return urlLang;
 	}
 
-	let browserLanguages = navigator.languages;
-	if (!navigator.languages) browserLanguages = [navigator.language];
+	const browserLanguages = navigator.languages || [navigator.language];
 	for (const language of browserLanguages) {
 		const locale = new Intl.Locale(language);
 		const minimized = locale.minimize();
