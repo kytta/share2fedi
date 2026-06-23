@@ -29,7 +29,7 @@ export const server = {
 				});
 			}
 
-			if (!(softwareName in supportedProjects)) {
+			if (!Object.hasOwn(supportedProjects, softwareName)) {
 				throw new ActionError({
 					message: `Fediverse project "${softwareName}" is not supported yet.`,
 					code: "BAD_REQUEST",
