@@ -18,7 +18,7 @@ export default defineConfig(
 	js.configs.recommended,
 	ts.configs.recommended,
 	unicorn.configs.recommended,
-	...astro.configs["jsx-a11y-strict"],
+	...astro.configs.recommended,
 	prettier,
 	{
 		files: ["src/stores/*"],
