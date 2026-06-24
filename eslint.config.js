@@ -17,7 +17,7 @@ export default defineConfig(
 	},
 	js.configs.recommended,
 	ts.configs.recommended,
-	unicorn.configs.recommended,
+	unicorn.configs.unopinionated,
 	...astro.configs.recommended,
 	prettier,
 	{
