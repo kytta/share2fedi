@@ -1,1 +1,24 @@
-{}
+{
+    "language": "Bahasa:",
+    "description": "Share₂Fedi adalah halaman berbagi yang tidak bergantung pada instance untuk {}. Dengan ini, Anda dapat memposting ke berbagai platform federasi dari satu halaman.",
+    "fediverse": "Fediverse",
+    "supportedProjects": "Proyek yang didukung:",
+    "incl": "termasuk",
+    "credits": "Share₂Fedi dikembangkan dan dikelola oleh {}. Kode sumber tersedia {}. {}.",
+    "nikita": "Nikita Karamov",
+    "onGitHub": "di GitHub",
+    "statusPage": "Halaman status",
+    "licence": "Lisensi",
+    "licence1": "Share₂Fedi adalah perangkat lunak bebas: Anda dapat mendistribusikan ulang dan/atau memodifikasinya berdasarkan ketentuan GNU Affero General Public License versi 3 sebagaimana diterbitkan oleh Free Software Foundation.",
+    "licence2": "Share₂Fedi didistribusikan dengan harapan akan bermanfaat, tetapi TANPA JAMINAN APA PUN; bahkan tanpa jaminan tersirat atas KELAYAKAN JUAL atau KESESUAIAN UNTUK TUJUAN TERTENTU. Lihat GNU Affero General Public License untuk detail lebih lanjut.",
+    "privacyNotice": "Pemberitahuan Privasi",
+    "privacy1": "s2f.kytta.dev di-host di Vercel. Vercel memproses alamat IP, informasi konfigurasi sistem, dan informasi lain tentang lalu lintas ke dan dari s2f.kytta.dev. Vercel tidak menyimpan informasi ini dan juga tidak membagikannya kepada pihak ketiga. Lihat {} untuk informasi lebih lanjut.",
+    "privacy2": "Saat Anda mengklik tombol ‘Publikasikan’, Anda akan diarahkan ke instance Fediverse yang telah Anda tentukan. Instance tersebut dapat memproses dan/atau menyimpan data Anda. Harap merujuk pada kebijakan privasi instance terkait.",
+    "postText": "Teks postingan",
+    "postTextPlaceholder": "Apa yang sedang Anda pikirkan?",
+    "instance": "Instance Fediverse",
+    "previouslyUsed": "Yang sebelumnya digunakan:",
+    "rememberInstance": "Ingat instance di perangkat ini",
+    "publish": "Publikasikan",
+    "metaDescription": "Share₂Fedi adalah halaman berbagi untuk Mastodon, Misskey, Friendica, dan lainnya. Masukkan teks postingan Anda dan URL instance, lalu klik ‘Publikasikan’!"
+}
