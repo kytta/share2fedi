@@ -4,11 +4,10 @@
 # SPDX-FileCopyrightText: © 2025 Nikita Karamov <me@kytta.dev>
 # SPDX-License-Identifier: CC0-1.0
 
-onlyBuiltDependencies:
-  - esbuild
-  - sharp
+blockExoticSubdeps: true
+allowBuilds:
+  esbuild: true
+  sharp: true
+strictDepBuilds: true
 
 minimumReleaseAge: 4320
-minimumReleaseAgeExclude:
-  # Renovate security update: @astrojs/node@10.0.5
-  - "@astrojs/node@10.0.5"
