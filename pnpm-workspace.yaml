@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: © 2025 Nikita Karamov <me@kytta.dev>
 # SPDX-License-Identifier: CC0-1.0
 
+blockExoticSubdeps: true
 onlyBuiltDependencies:
   - esbuild
   - sharp
