@@ -12,6 +12,7 @@ import en from "./translations/en.json";
 import es from "./translations/es.json";
 import et from "./translations/et.json";
 import fr from "./translations/fr.json";
+import id from "./translations/id.json";
 import nl from "./translations/nl.json";
 import ru from "./translations/ru.json";
 import ta from "./translations/ta.json";
@@ -25,6 +26,7 @@ export const languages = {
 	es: { autonym: "Español", dir: "ltr" },
 	et: { autonym: "Eesti", dir: "ltr" },
 	fr: { autonym: "Français", dir: "ltr" },
+	id: { autonym: "Indonesia", dir: "ltr" },
 	nl: { autonym: "Nederlands", dir: "ltr" },
 	ru: { autonym: "Русский", dir: "ltr" },
 	ta: { autonym: "தமிழ்", dir: "ltr" },
@@ -38,6 +40,7 @@ export const strings: Record<keyof typeof languages, Record<string, string>> = {
 	es,
 	et,
 	fr,
+	id,
 	nl,
 	ru,
 	ta,
