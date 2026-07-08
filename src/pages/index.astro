@@ -6,7 +6,7 @@
  * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { actions } from "astro:actions";
+import { actions, isInputError } from "astro:actions";
 
 import Layout from "@layouts/layout.astro";
 import InstanceSelect from "@components/instance-select.astro";
@@ -36,7 +36,10 @@ if (Astro.request.method === "POST") {
 		const { data, error } = await Astro.callAction(actions.detect, instance);
 
 		if (error) {
-			errors.instance += error.message + " ";
+			errors.instance +=
+				(isInputError(error)
+					? error.issues.map((issue) => issue.message).join(" ")
+					: error.message) + " ";
 		} else {
 			detection = data;
 		}
