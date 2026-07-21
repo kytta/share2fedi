@@ -11,3 +11,6 @@ allowBuilds:
 strictDepBuilds: true
 
 minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  # Renovate security update: astro@7.1.0
+  - astro@7.1.0
