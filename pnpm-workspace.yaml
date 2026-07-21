@@ -11,3 +11,6 @@ allowBuilds:
 strictDepBuilds: true
 
 minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  # Renovate security update: @astrojs/node@11.0.2
+  - "@astrojs/node@11.0.2"
