@@ -51,7 +51,7 @@
 		"nano-staged": "^1.0.0",
 		"prettier": "^3.6.2",
 		"prettier-plugin-astro": "^0.14.1",
-		"sharp": "^0.34.5",
+		"sharp": "^0.35.0",
 		"stylelint": "^17.6.0",
 		"stylelint-config-html": "^1.1.0",
 		"stylelint-config-standard": "^40.0.0",

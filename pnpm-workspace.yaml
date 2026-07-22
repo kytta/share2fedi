@@ -11,3 +11,6 @@ allowBuilds:
 strictDepBuilds: true
 
 minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  # Renovate security update: sharp@0.35.0
+  - sharp@0.35.0
