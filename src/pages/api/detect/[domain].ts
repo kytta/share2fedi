@@ -9,15 +9,21 @@
 import type { APIRoute } from "astro";
 import { actions } from "astro:actions";
 
-import { error, json } from "@lib/response";
-
-export const GET: APIRoute = async ({ params, callAction }) => {
+import { error, json } from "@lib/response";	export const GET: APIRoute = async ({ params, callAction }) => {
 	const domain = params.domain as string;
 
 	const { data, error: actionError } = await callAction(actions.detect, domain);
 
 	if (actionError) {
-		return error(actionError.message);
+		// Safely extract a human-readable message.
+		// ActionError has .message, but input validation (Zod) errors may have .issues.
+		const message =
+			actionError?.message ||
+			(typeof actionError === 'string'
+				? actionError
+				: (actionError as any)?.issues?.[0]?.message) ||
+			'Could not detect Fediverse project.';
+		return error(message);
 	}
 
 	return json(data, 200, {
