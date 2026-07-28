@@ -22,6 +22,8 @@ const { instance, errors } = Astro.props;
 			name="instance"
 			id="instance"
 			list="popular-instances"
+			minlength="5"
+			pattern=".*[.].*"
 			required
 			aria-invalid={Boolean(errors)}
 			aria-errormessage={errors ? "instance-error" : undefined}
