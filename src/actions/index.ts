@@ -19,7 +19,7 @@ export type Detection = ProjectPublishConfig & {
 
 export const server = {
 	detect: defineAction({
-		input: z.string().min(5).includes("."),
+		input: z.string().min(4).includes("."),
 		handler: async (domain): Promise<Detection> => {
 			const softwareName = await getSoftwareName(domain);
 			if (softwareName === undefined) {
