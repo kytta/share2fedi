@@ -57,6 +57,7 @@ official Docker images.
 
 - fixed duplicate "on on GitHub" in some translations
 - multiple vulnerable dependencies were patched
+- errors on invalid domain names are now human-readable (thx [Kirill](https://github.com/vetrovk)!)
 
 ### Changed
 
