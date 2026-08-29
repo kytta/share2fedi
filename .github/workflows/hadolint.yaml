@@ -12,12 +12,14 @@ on:
     paths:
       - "Containerfile"
       - ".dockerignore"
+      - ".github/workflows/hadolint.yaml"
   pull_request:
     branches:
       - "main"
     paths:
       - "Containerfile"
       - ".dockerignore"
+      - ".github/workflows/hadolint.yaml"
 
 permissions: {}
 concurrency:
