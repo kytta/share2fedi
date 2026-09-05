@@ -55,6 +55,8 @@ official Docker images.
 
 ### Fixed
 
+- popular instances (`/api/instances` endpoint, and the instance selector dropdown)
+  should no longer be slow and flaky thanks to excessive caching
 - fixed duplicate "on on GitHub" in some translations
 - multiple vulnerable dependencies were patched
 - errors on invalid domain names are now human-readable (thx [Kirill](https://github.com/vetrovk)!)
