@@ -6,11 +6,21 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { supportedProjects } from "./project";
+import { type supportedProjects } from "./project";
 import {
 	version,
 	repository,
 } from "../../package.json" assert { type: "json" };
+
+// Testing has shown that top 200 fediverse servers run these projects' software.
+// This way, we can avoid checking all 10+ projects we support
+const POPULAR_SOFTWARES = [
+	"mastodon",
+	"fedibird",
+	"misskey",
+	"friendica",
+	"sharkey",
+] satisfies Array<keyof typeof supportedProjects>;
 
 interface Instance {
 	domain: string;
@@ -56,9 +66,7 @@ const getInstancesForProject = async (
 
 export const getPopularInstanceDomains = async (): Promise<string[]> => {
 	const instancesPerProject = await Promise.all(
-		Object.keys(supportedProjects).map((project) =>
-			getInstancesForProject(project),
-		),
+		POPULAR_SOFTWARES.map((project) => getInstancesForProject(project)),
 	);
 	const instances = instancesPerProject.flat();
 	instances.sort((a, b) => b.active_users_monthly - a.active_users_monthly);
