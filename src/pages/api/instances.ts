@@ -16,7 +16,7 @@ export const GET: APIRoute = async () => {
 	return json(popularInstanceDomains, 200, {
 		"Cache-Control":
 			popularInstanceDomains.length > 0
-				? "public, s-maxage=604800, max-age=604800"
+				? "public, s-maxage=604800, max-age=604800, stale-while-revalidate=2419200"
 				: "public, s-maxage=60, max-age=3600",
 	});
 };
