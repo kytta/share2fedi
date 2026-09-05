@@ -12,12 +12,14 @@ on:
     paths:
       - "Containerfile"
       - ".dockerignore"
+      - ".github/workflows/hadolint.yaml"
   pull_request:
     branches:
       - "main"
     paths:
       - "Containerfile"
       - ".dockerignore"
+      - ".github/workflows/hadolint.yaml"
 
 permissions: {}
 concurrency:
@@ -37,7 +39,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: hadolint/hadolint-action@2332a7b74a6de0dda2e2221d575162eba76ba5e5 # v3.3.0
+      - uses: hadolint/hadolint-action@06be81baf89a55ffd0e24b8f04a4185738dd3387 # v3.5.0
         name: Run hadolint
         with:
           dockerfile: ./Containerfile
