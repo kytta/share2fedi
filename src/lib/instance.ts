@@ -29,6 +29,17 @@ interface Instance {
 	total_users: number;
 }
 
+const query = `
+	query ($softwarename: String!) {
+		nodes(softwarename: $softwarename, status: "UP") {
+			domain
+			score
+			active_users_monthly
+			total_users
+		}
+	}
+`;
+
 const getInstancesForProject = async (
 	project: keyof typeof supportedProjects,
 ): Promise<Instance[]> => {
@@ -44,8 +55,8 @@ const getInstancesForProject = async (
 		const response = await fetch("https://api.fediverse.observer/", {
 			headers,
 			body: JSON.stringify({
-				query: `query($project:String!){nodes(status:"UP",softwarename:$project){domain score active_users_monthly total_users}}`,
-				variables: { project },
+				query,
+				variables: { softwarename: project },
 			}),
 			method: "POST",
 		});
