@@ -40,11 +40,23 @@ const query = `
 	}
 `;
 
+const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
+const instancesCache: Map<
+	keyof typeof supportedProjects,
+	{ value: Instance[] | undefined; lastFetched: number }
+> = new Map();
+
 const getInstancesForProject = async (
 	project: keyof typeof supportedProjects,
 ): Promise<Instance[]> => {
-	let instances: Instance[];
+	if (
+		instancesCache.get(project)?.value &&
+		Date.now() - instancesCache.get(project)!.lastFetched < CACHE_TTL_MS
+	) {
+		return instancesCache.get(project)!.value!;
+	}
 
+	let instances: Instance[];
 	try {
 		const response = await fetch("https://api.fediverse.observer/", {
 			headers: {
@@ -62,15 +74,25 @@ const getInstancesForProject = async (
 		instances = json.data.nodes;
 	} catch (error) {
 		console.error(`Could not fetch instances for "${project}"`, error);
-		return [];
+		return []; // not caching invalid result
 	}
 
-	return instances.filter(
+	const domains = instances.filter(
 		(instance) =>
 			instance.score > 90 &&
 			// sanity check for some spammy-looking instances
 			instance.total_users >= instance.active_users_monthly,
 	);
+
+	// only cache if not empty
+	if (domains.length > 0) {
+		instancesCache.set(project, {
+			value: domains,
+			lastFetched: Date.now(),
+		});
+	}
+
+	return domains;
 };
 
 export const getPopularInstanceDomains = async (): Promise<string[]> => {
