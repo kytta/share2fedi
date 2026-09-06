@@ -16,6 +16,7 @@ export default defineConfig({
 	adapter: node({
 		mode: "standalone",
 	}),
+	session: false,
 	security: {
 		allowedDomains: [{}],
 	},
