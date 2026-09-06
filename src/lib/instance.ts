@@ -7,10 +7,7 @@
  */
 
 import { type supportedProjects } from "./project";
-import {
-	version,
-	repository,
-} from "../../package.json" assert { type: "json" };
+import { version, repository } from "../../package.json" with { type: "json" };
 
 // Testing has shown that top 200 fediverse servers run these projects' software.
 // This way, we can avoid checking all 10+ projects we support
