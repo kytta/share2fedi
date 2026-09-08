@@ -40,6 +40,23 @@ The instance URL can be saved (this uses Local Storage) for later use.
 > Share₂Fedi is currently undergoing some transitions in regards to deployment.
 > The steps below are not yet stable. This will be fixed in v4.
 
+### Prerequisites
+
+Before you start, you need to [request an API key](https://fediverse.observer/apikey)
+from fediverse.observer. This is needed for the `/api/instances` endpoint that
+returns 200 popular supported Fediverse instances. It is also used for
+autosuggestions in the instance selector.
+
+Expose the API key in an environment variable named `FEDIVERSE_OBSERVER_API_KEY`.
+You can also use a .env file:
+
+```ini
+FEDIVERSE_OBSERVER_API_KEY=key-you-got-via-email
+```
+
+If you don't use an API key, the endpoint will still work, but slower and more
+flaky.
+
 ### Docker
 
 Share₂Fedi has an official container image that you can use with any OCI runner.
