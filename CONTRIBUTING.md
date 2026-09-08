@@ -24,9 +24,8 @@ Unsure where to begin contributing? You can start by looking through
 
 ## Improving code
 
-Before you start, make sure you've got a fresh Node.js version (v18 should work)
-installed. You'll also need to [install pnpm](https://pnpm.io/installation), as
-this is our package manager of choice.
+Before you start, make sure you've got Node.js v24 installed. You'll also need to
+[install pnpm v10](https://pnpm.io/10.x/installation), our package manager of choice.
 
 1. Fork the repository and clone it
 2. Install dependencies:
@@ -54,15 +53,14 @@ located at a fixed address. That means, that the address is the same for all
 users and all frontends. For example, Mastodon's "Share" page is always at
 `/share`. The share page should also accept the text of the post via URL
 parameters. For example, Mastodon allows pre-filling the text of a post using
-`?text=`. Lastly, it should be listed on
-[fediverse.observer](https://fediverse.observer/).
+`?text=`.
 
 If the Fediverse project satisfies these requirements, you can add it to
 Share2Fedi. For this:
 
 1. Add an entry to `supportedProjects` inside `src/lib/project.ts`.
    - keep the list in alphabetical order
-   - the key should match the software name from NodeInfo/fediverse.observer
+   - the key should match the software name from NodeInfo
    - the value should be an object of type `ProjectPublishConfig`. The endpoint
      is the path to the "Share" page (leading slash optional).
    - if the service you're adding is a flavour of an already supported service,
@@ -93,7 +91,7 @@ There are two ways you can add/edit translations:
      the correct email so that the changes can be attributed to you!
    - Weblate handles PRs automatically. You do not need to do anything other
      than use it to edit translations
-2. The JSON files under `src/i18n/translations` represent dictionaried for
+2. The JSON files under `src/i18n/translations` represent dictionaries for
    different languages. The two-letter codes correspond to the ISO 639-1
    language codes.
    - to edit translations, just edit the files. Refer to
