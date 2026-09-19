@@ -50,17 +50,16 @@ podman run --detach --publish 127.0.0.1:9999:3000/tcp ghcr.io/kytta/share2fedi:v
 ```
 
 > [!NOTE]  
-> By default, a container will spawn a Node worker for _each_ available core. If
-> you want to limit (or increase) the amount of workers, use the `PM2_INSTANCES`
-> environment variable:
+> By default, the container will spawn only one Node worker. You can improve
+> stability and performance by spawning multiple workers if you have multiple
+> CPUs. For this, use the `PM2_INSTANCES` environment variable:
 >
 > ```sh
-> # to start just two workers
+> # to start two workers
 > podman run --detach -e PM2_INSTANCES=2 ghcr.io/kytta/share2fedi
 > ```
 >
-> Keep in mind that more workers ≠ better performance, but at least two are
-> almost guaranteed to increase performance. Benchmark for your use case.
+> Keep in mind that more workers ≠ better performance. Benchmark for your needs.
 
 You can pull the image from:
 
