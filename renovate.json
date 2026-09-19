@@ -1,0 +1,17 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"https://codeberg.org/kytta/renovate-config/raw/branch/main/default.json",
+		":maintainLockFilesMonthly",
+		":separatePatchReleases",
+		":label(dependencies)"
+	],
+	"minimumReleaseAge": "3 days",
+	"packageRules": [
+		{
+			"extends": ["packages:stylelint"],
+			"groupName": "Stylelint and plugins"
+		}
+	],
+	"postUpdateOptions": ["pnpmDedupe"]
+}
