@@ -17,7 +17,13 @@ export default defineConfig(
 	},
 	js.configs.recommended,
 	ts.configs.recommended,
-	unicorn.configs.unopinionated,
+	{
+		extends: [unicorn.configs.unopinionated],
+		rules: {
+			// otherwise unreadable and sometimes desired
+			"unicorn/prefer-ternary": ["error", "only-single-line"],
+		},
+	},
 	...astro.configs.recommended,
 	prettier,
 	{
