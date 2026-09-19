@@ -26,7 +26,11 @@ COPY . .
 RUN pnpm run build
 
 FROM node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
-RUN --mount=type=cache,id=apk,target=/var/cache/apk apk add --update-cache tini=0.19.0-r3
+
+# renovate: datasource=npm packageName=pm2
+ARG PM2_VERSION=7.0.4
+
+RUN --mount=type=cache,target=/root/.npm npm install -g pm2@${PM2_VERSION}
 COPY --from=prod-deps /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
 
@@ -34,5 +38,5 @@ ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
 EXPOSE 3000
-ENTRYPOINT ["/sbin/tini", "-g", "--"]
-CMD ["node", "/app/dist/server/entry.mjs"]
+
+CMD ["pm2-runtime", "/app/dist/server/entry.mjs"]
