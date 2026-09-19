@@ -39,4 +39,4 @@ ENV HOST=0.0.0.0
 ENV PORT=3000
 EXPOSE 3000
 
-CMD ["pm2-runtime", "/app/dist/server/entry.mjs"]
+CMD ["pm2-runtime", "-i", "max", "/app/dist/server/entry.mjs"]
