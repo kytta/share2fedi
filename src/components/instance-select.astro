@@ -31,17 +31,15 @@ const { instance, errors } = Astro.props;
 			value={instance}
 		/>
 	</div>
-	{
-		errors && (
-			<p
-				class="error"
-				id="instance-error"
-				aria-live="assertive"
-			>
-				{errors}
-			</p>
-		)
-	}
+	{errors && (
+		<p
+			class="error"
+			id="instance-error"
+			aria-live="assertive"
+		>
+			{errors}
+		</p>
+	)}
 </label>
 
 <div
@@ -60,12 +58,15 @@ const { instance, errors } = Astro.props;
 		type="checkbox"
 		id="remember"
 		name="remember"
-	/>&#x0020;
-	<span data-translate="rememberInstance">Remember instance on this device</span
-	><noscript>.</noscript>
+	/>
+	&#x0020;
+	<span data-translate="rememberInstance">
+		Remember instance on this device
+	</span>
+	<noscript>.</noscript>
 	<noscript style="color:darkred;font-size:smaller">
-		This will not work when JavaScript is disabled.</noscript
-	>
+		This will not work when JavaScript is disabled.
+	</noscript>
 </label>
 
 <style>

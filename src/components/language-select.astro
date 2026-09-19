@@ -17,18 +17,16 @@ const initialLanguage = "en";
 		name="language"
 		id="language"
 	>
-		{
-			Object.entries(languages).map(([k, v]) => {
-				return (
-					<option
-						selected={k === initialLanguage}
-						value={k}
-					>
-						{v.autonym}
-					</option>
-				);
-			})
-		}
+		{Object.entries(languages).map(([k, v]) => {
+			return (
+				<option
+					selected={k === initialLanguage}
+					value={k}
+				>
+					{v.autonym}
+				</option>
+			);
+		})}
 	</select>
 </label>
 

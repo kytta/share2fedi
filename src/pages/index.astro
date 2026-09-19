@@ -75,19 +75,16 @@ if (Astro.request.method === "POST") {
 				aria-errormessage={errors.text ? "text-error" : undefined}
 				data-translate="postTextPlaceholder"
 				data-translate-attribute="placeholder"
-				>{text}</textarea
-			>
-			{
-				errors.text && (
-					<p
-						class="error"
-						id="text-error"
-						aria-live="assertive"
-					>
-						{errors.text}
-					</p>
-				)
-			}
+			>{text}</textarea>
+			{errors.text && (
+				<p
+					class="error"
+					id="text-error"
+					aria-live="assertive"
+				>
+					{errors.text}
+				</p>
+			)}
 		</label>
 
 		<InstanceSelect
