@@ -37,6 +37,7 @@ COPY --from=build /app/dist /app/dist
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
+ENV PM2_INSTANCES=max
 EXPOSE 3000
 
-CMD ["pm2-runtime", "-i", "max", "/app/dist/server/entry.mjs"]
+CMD ["sh", "-c", "exec pm2-runtime -i \"$PM2_INSTANCES\" /app/dist/server/entry.mjs"]
