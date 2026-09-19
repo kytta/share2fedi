@@ -1,0 +1,26 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"https://codeberg.org/kytta/renovate-config/raw/branch/main/default.json",
+		":maintainLockFilesMonthly",
+		":separatePatchReleases",
+		":label(dependencies)"
+	],
+	"customManagers": [
+		{
+			"customType": "regex",
+			"managerFilePatterns": ["/^Containerfile$/"],
+			"matchStrings": [
+				"# renovate: datasource=(?<datasource>[a-z-]+?)(?: depName=(?<depName>.+?))? packageName=(?<packageName>.+?)(?: versioning=(?<versioning>[a-z-]+?))?\\s(?:ENV|ARG) .+?_VERSION=(?<currentValue>.+?)\\s"
+			]
+		}
+	],
+	"minimumReleaseAge": "3 days",
+	"packageRules": [
+		{
+			"extends": ["packages:stylelint"],
+			"groupName": "Stylelint and plugins"
+		}
+	],
+	"postUpdateOptions": ["pnpmDedupe"]
+}

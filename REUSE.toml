@@ -30,10 +30,11 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "2023 Nikita Karamov <me@kytta.dev>"
 SPDX-License-Identifier = "CC-BY-4.0"
 
-# simple configs
+# configs
 [[annotations]]
 path = [
   ".node-version",
+  "renovate.json",
   "contrib/vercel/vercel.json"
 ]
 SPDX-FileCopyrightText = "2023-2026 Nikita Karamov <me@kytta.dev>"
