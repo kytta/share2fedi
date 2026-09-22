@@ -26,6 +26,10 @@
 			"groupName": "Astro dependencies"
 		},
 		{
+			"extends": ["packages:eslint"],
+			"groupName": "ESLint and plugins"
+		},
+		{
 			"extends": ["packages:stylelint"],
 			"groupName": "Stylelint and plugins"
 		}
