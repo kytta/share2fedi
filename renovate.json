@@ -18,6 +18,10 @@
 	"minimumReleaseAge": "3 days",
 	"packageRules": [
 		{
+			"matchManagers": ["github-actions"],
+			"groupName": "GitHub Actions"
+		},
+		{
 			"extends": ["packages:stylelint"],
 			"groupName": "Stylelint and plugins"
 		}
