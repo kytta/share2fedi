@@ -22,6 +22,10 @@
 			"groupName": "GitHub Actions"
 		},
 		{
+			"extends": ["monorepo:astro"],
+			"groupName": "Astro dependencies"
+		},
+		{
 			"extends": ["packages:stylelint"],
 			"groupName": "Stylelint and plugins"
 		}
