@@ -5,13 +5,22 @@
  * SPDX-FileCopyrightText: © 2023 Nikita Karamov <me@kytta.dev>
  * SPDX-License-Identifier: AGPL-3.0-only
  */
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import node from "@astrojs/node";
 
 import browserslist from "browserslist";
 import { browserslistToTargets } from "lightningcss";
 
 export default defineConfig({
+	env: {
+		schema: {
+			FEDIVERSE_OBSERVER_API_KEY: envField.string({
+				context: "server",
+				access: "secret",
+				optional: true,
+			}),
+		},
+	},
 	output: "server",
 	adapter: node({
 		mode: "standalone",

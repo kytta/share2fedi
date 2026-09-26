@@ -6,6 +6,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
+import { FEDIVERSE_OBSERVER_API_KEY } from "astro:env/server";
 import { type supportedProjects } from "./project";
 import { version, repository } from "../../package.json" with { type: "json" };
 
@@ -27,8 +28,8 @@ interface Instance {
 }
 
 const query = `
-	query ($softwarename: String!) {
-		nodes(softwarename: $softwarename, status: "UP") {
+	query ($softwarename: String!, $key: String) {
+		nodes(softwarename: $softwarename, status: "UP", key: $key) {
 			domain
 			score
 			active_users_monthly
@@ -36,6 +37,7 @@ const query = `
 		}
 	}
 `;
+type Variables = { softwarename: string; key?: string };
 
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 const instancesCache: Map<
@@ -55,6 +57,11 @@ const getInstancesForProject = async (
 
 	let instances: Instance[];
 	try {
+		const variables: Variables = { softwarename: project };
+		if (FEDIVERSE_OBSERVER_API_KEY) {
+			variables["key"] = FEDIVERSE_OBSERVER_API_KEY;
+		}
+
 		const response = await fetch("https://api.fediverse.observer/", {
 			headers: {
 				Accept: "application/graphql-response+json, application/json",
@@ -63,7 +70,7 @@ const getInstancesForProject = async (
 			},
 			body: JSON.stringify({
 				query,
-				variables: { softwarename: project },
+				variables,
 			}),
 			method: "POST",
 		});
