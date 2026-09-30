@@ -25,7 +25,7 @@ Unsure where to begin contributing? You can start by looking through
 ## Improving code
 
 Before you start, make sure you've got Node.js v24 installed. You'll also need to
-[install pnpm v10](https://pnpm.io/10.x/installation), our package manager of choice.
+[install pnpm v12](https://pnpm.io/12.x/installation), our package manager of choice.
 
 1. Fork the repository and clone it
 2. Install dependencies:

@@ -4,20 +4,20 @@
 # SPDX-FileCopyrightText: © 2026 Nikita Karamov <me@kytta.dev>
 # SPDX-License-Identifier: AGPL-3.0-only
 
-FROM node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf AS base
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN <<EOF
-corepack enable
-corepack prepare pnpm@latest-10 --activate
-EOF
+FROM ghcr.io/pnpm/pnpm:12.8.2@sha256:68daf29be83708810af256844a2e5e93cbe3abcd3a2d08587ac393add65aea46 AS base
+ENV PNPM_STORE_DIR=/pnpm/store
+
+# renovate: datasource=node-version packageName=node versioning=node
+ARG NODE_VERSION=24.20.0
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm runtime set node ${NODE_VERSION} -g
 
 WORKDIR /app
 COPY package.json pnpm-workspace.yaml ./
 COPY pnpm-lock.yaml ./
 
 FROM base AS prod-deps
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile --libc musl
 
 FROM base AS build
 ENV ASTRO_TELEMETRY_DISABLED=1
