@@ -22,3 +22,7 @@ node_modules/
 # Editors/IDEs
 .idea/
 .vscode/
+
+# Environments / secrets
+.env
+.env.*
