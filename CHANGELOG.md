@@ -30,6 +30,9 @@ official Docker images.
 - **Only support Node.js v24.**
   From now on, only one Node.js version will be supported at a time.
 
+- **Instance autosuggestions / popular instances API have been removed**
+  fediverse.observer has shut down, and we haven't found a better alternative.
+
 - **Deploying to Deno is no longer supported.**
   It _should_ still be possible to deploy it; read more under [contrib/deno](./contrib/deno/README.md)
 

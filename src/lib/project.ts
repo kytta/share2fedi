@@ -30,9 +30,6 @@ const misskeyConfig: ProjectPublishConfig = {
 // TODO: this should really be a Map
 /**
  * Mapping of the supported fediverse projects.
- *
- * The keys of this mapping can be used as keys for the fediverse.observer API,
- * icon names, etc.
  */
 export const supportedProjects: Record<string, ProjectPublishConfig> = {
 	calckey: misskeyConfig,
