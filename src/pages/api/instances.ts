@@ -7,16 +7,11 @@
  */
 
 import type { APIRoute } from "astro";
-import { getPopularInstanceDomains } from "@lib/instance";
 import { json } from "@lib/response";
 
 export const GET: APIRoute = async () => {
-	const popularInstanceDomains = await getPopularInstanceDomains();
-
-	return json(popularInstanceDomains, 200, {
-		"Cache-Control":
-			popularInstanceDomains.length > 0
-				? "public, s-maxage=604800, max-age=604800, stale-while-revalidate=2419200"
-				: "public, s-maxage=60, max-age=3600",
+	return json([], 200, {
+		Deprecation: "@1791741341",
+		Link: '<https://github.com/kytta/share2fedi/issues/392>; rel="deprecation"; type="text/html"',
 	});
 };
