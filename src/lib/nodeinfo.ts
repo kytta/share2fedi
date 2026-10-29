@@ -24,6 +24,14 @@ interface NodeInfo {
 	[key: string]: unknown;
 }
 
+// Some servers, such as GoToSocial, reject requests without a User-Agent (HTTP 418).
+const fetchOptions: RequestInit = {
+	headers: {
+		"User-Agent": "Share2Fedi (+https://github.com/kytta/share2fedi)",
+		Accept: "application/json",
+	},
+};
+
 export const getSoftwareName = async (
 	domain: string,
 ): Promise<string | undefined> => {
@@ -34,20 +42,27 @@ export const getSoftwareName = async (
 
 	let nodeInfoList: NodeInfoList;
 	try {
-		const nodeInfoListResponse = await fetch(nodeInfoListUrl);
+		const nodeInfoListResponse = await fetch(nodeInfoListUrl, fetchOptions);
+		if (!nodeInfoListResponse.ok) {
+			console.error(
+				"Could not fetch '.well-known/nodeinfo':",
+				nodeInfoListResponse.status,
+			);
+			return undefined;
+		}
 		nodeInfoList = await nodeInfoListResponse.json();
 	} catch (error) {
 		console.error("Could not fetch '.well-known/nodeinfo':", error);
 		return undefined;
 	}
 
-	for (const link of nodeInfoList.links) {
+	for (const link of nodeInfoList.links ?? []) {
 		if (
 			/^http:\/\/nodeinfo\.diaspora\.software\/ns\/schema\/(1\.0|1\.1|2\.0|2\.1)/.test(
 				link.rel,
 			)
 		) {
-			const nodeInfoResponse = await fetch(link.href);
+			const nodeInfoResponse = await fetch(link.href, fetchOptions);
 			const nodeInfo = (await nodeInfoResponse.json()) as NodeInfo;
 
 			return nodeInfo.software.name;
